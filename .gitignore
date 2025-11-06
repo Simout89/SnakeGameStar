@@ -9,6 +9,7 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Mm]emoryCaptures/
+/[Uu]serSettings/
 
 # Never ignore Asset meta data
 !/[Aa]ssets/**/*.meta
@@ -61,3 +62,43 @@ sysinfo.txt
 # Crashlytics generated file
 crashlytics-build.properties
 
+# IDE and Project specific files
+.idea/.idea.Under the Fear/.idea/
+
+# macOS files
+Assets/.DS_Store
+Assets/Plugins/.DS_Store
+Assets/Plugins/Zenject/.DS_Store
+
+# Plugin specific meta files
+Assets/Plugins/Zenject/Source/Zenject.csproj.meta
+Assets/Plugins/Zenject/package.json.meta
+
+# Wwise audio
+Assets/WwiseSettings.xml
+Assets/StreamingAssets/Audio/GeneratedSoundBanks/
+
+# FMOD audio
+/[Aa]ssets/Plugins/FMOD/Cache/
+/[Aa]ssets/Plugins/FMOD/Cache.meta
+/[Aa]ssets/StreamingAssets/*.bank
+/[Aa]ssets/StreamingAssets/*.bank.meta
+fmod_editor.log
+.cache/
+.restore/
+.user/
+
+# Package meta files
+Assets/LimitlessUnityDevelopment/RetroLookPro/High Definition Render Retro Look Pro.unitypackage.meta
+Assets/LimitlessUnityDevelopment/RetroLookPro/LWRP&Built-in Render Retro Look Pro.unitypackage.meta
+Assets/LimitlessUnityDevelopment/RetroLookPro/Resources/ColormapPresets.unitypackage.meta
+Assets/LimitlessUnityDevelopment/RetroLookPro/Universal Renderer Retro Look Pro.unitypackage.meta
+Assets/Plugins/Borodar/RainbowFolders/Editor/Source/RainbowFolders.src.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Custom Attribute Processors.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Custom Drawers.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Editor Windows.unitypackage.meta
+Assets/Plugins/Sirenix/Demos/Sample - RPG Editor.unitypackage.meta
+
+# User Settings
+UserSettings/Layouts/CurrentMaximizeLayout.dwlt
+UserSettings/Layouts/default-6000.dwlt
