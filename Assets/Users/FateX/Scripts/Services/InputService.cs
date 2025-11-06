@@ -8,11 +8,10 @@ namespace Скриптерсы.Services
     {
         public InputSystem_Actions InputSystemActions { get; private set; }
         
-        public InputService() // Убираем IInitializable
+        public InputService() 
         {
             InputSystemActions = new InputSystem_Actions();
             InputSystemActions.Enable();
-            Debug.Log("1234 - InputService создан");
         }
         
         public void Dispose()
