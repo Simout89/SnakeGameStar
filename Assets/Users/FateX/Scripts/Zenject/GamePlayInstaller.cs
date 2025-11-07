@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Entity;
 using Zenject;
 
 namespace Скриптерсы.Zenject
@@ -8,7 +9,15 @@ namespace Скриптерсы.Zenject
     {
         public override void InstallBindings()
         {
+            Container.BindInterfacesAndSelfTo<EnemySpawnArea>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<SnakeSpawner>().FromComponentsInHierarchy().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<EnemySpawner>().FromNewComponentOnNewGameObject().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<ActiveEntities>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameTimer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
         }
     }
 }

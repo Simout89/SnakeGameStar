@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace Users.FateX.Scripts.Entity
 {
@@ -6,7 +7,9 @@ namespace Users.FateX.Scripts.Entity
     {
         public virtual void Collect()
         {
-            
+            OnCollect?.Invoke();
         }
+
+        public event Action OnCollect;
     }
 }

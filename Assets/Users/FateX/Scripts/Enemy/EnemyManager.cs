@@ -9,6 +9,11 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private float enemySpeed = 5f;
     
     private List<Enemy> _enemies = new List<Enemy>();
+
+    public void SetSnake(Snake snake)
+    {
+        _snake = snake;
+    }
     
     public void AddEnemy(Enemy enemy)
     {

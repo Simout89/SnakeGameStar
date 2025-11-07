@@ -8,7 +8,7 @@ using Скриптерсы.Services;
 
 public class Snake : MonoBehaviour
 {
-    [Inject] private IInputService _inputService;
+    private IInputService _inputService;
     
     [Header("Settings")]
     [SerializeField] private float rotationSpeed = 200f;
@@ -21,9 +21,10 @@ public class Snake : MonoBehaviour
     
     private List<Transform> segments = new List<Transform>();
     public List<Transform> Segments => segments;
-
-    private void Awake()
+    public void Init(IInputService inputService)
     {
+        _inputService = inputService;
+        
         segments.Add(transform);
         for (int i = 0; i < startSize; i++)
         {
