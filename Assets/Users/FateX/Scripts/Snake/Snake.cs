@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
+using Users.FateX.Scripts;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -17,7 +18,8 @@ public class Snake : MonoBehaviour
     [SerializeField] private float segmentDistance = 0.5f;
     
     [Header("References")]
-    [SerializeField] private GameObject segmentPrefab;
+    [SerializeField] private SnakeBodyPartHealth segmentPrefab;
+    [SerializeField] private SnakeHealth snakeHealth;
     
     private List<Transform> segments = new List<Transform>();
     public List<Transform> Segments => segments;
@@ -57,10 +59,12 @@ public class Snake : MonoBehaviour
 
     public void Grow()
     {
-        GameObject newSegment = Instantiate(segmentPrefab);
+        var newSegment = Instantiate(segmentPrefab);
         Transform last = segments[segments.Count - 1];
         newSegment.transform.position = last.position;
         segments.Add(newSegment.transform);
+        snakeHealth.Add(newSegment);
+        
     }
     
 #if UNITY_EDITOR

@@ -55,6 +55,8 @@ namespace Users.FateX.Scripts
 
             _isRunning = false;
             OnTimerEnd?.Invoke();
+            
+            Debug.Log("Таймер закончился");
         }
     }
 }

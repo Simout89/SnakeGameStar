@@ -1,4 +1,5 @@
 ﻿using System;
+using Lean.Pool;
 using UnityEngine;
 using Users.FateX.Scripts.Entity;
 using Zenject;
@@ -10,9 +11,9 @@ namespace Users.FateX.Scripts
         [Inject] private EnemySpawnArea _enemySpawnArea;
         [Inject] private EnemyManager _enemyManager;
 
-        public void SpawnEnemy(Enemy enemyPrefab)
+        public void SpawnEnemy(EnemyBase enemyPrefab)
         {
-            Enemy enemy = Instantiate(enemyPrefab);
+            EnemyBase enemy = LeanPool.Spawn(enemyPrefab);
 
             enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
             

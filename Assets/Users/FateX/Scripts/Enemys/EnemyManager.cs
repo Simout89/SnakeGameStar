@@ -2,25 +2,26 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Enemy;
 
 public class EnemyManager : MonoBehaviour
 {
-    [SerializeField] private Snake _snake;
-    [SerializeField] private float enemySpeed = 5f;
+    private Snake _snake;
+    private float enemySpeed = 100f;
     
-    private List<Enemy> _enemies = new List<Enemy>();
+    private List<EnemyBase> _enemies = new List<EnemyBase>();
 
     public void SetSnake(Snake snake)
     {
         _snake = snake;
     }
     
-    public void AddEnemy(Enemy enemy)
+    public void AddEnemy(EnemyBase enemyBase)
     {
-        _enemies.Add(enemy);
+        _enemies.Add(enemyBase);
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         if (_snake == null || _snake.Segments.Count == 0) return;
         
@@ -37,7 +38,6 @@ public class EnemyManager : MonoBehaviour
                     nearestSegment = _snake.Segments[j];
                 }
             }
-            
             
             _enemies[i].Move((nearestSegment.position - _enemies[i].transform.position).normalized * (Time.deltaTime * enemySpeed));
         }

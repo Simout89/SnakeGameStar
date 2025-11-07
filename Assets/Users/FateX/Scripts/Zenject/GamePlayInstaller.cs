@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Entity;
 using Zenject;
 
@@ -18,6 +19,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<ActiveEntities>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameTimer>().AsSingle();
             Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
         }
     }
 }
