@@ -37,8 +37,17 @@ public class Snake : MonoBehaviour
     private void Update()
     {
         float horizontal = _inputService.InputSystemActions.Player.Move.ReadValue<Vector2>().x;
+        Vector2 joyStickInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), -SimpleInput.GetAxisRaw("Vertical"));
         
-        transform.Rotate(Vector3.forward * -horizontal * rotationSpeed * Time.deltaTime);
+        float snakeAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
+        Vector2 rotatedJoystick = new Vector2(
+            joyStickInput.x * Mathf.Cos(snakeAngle) - joyStickInput.y * Mathf.Sin(snakeAngle),
+            joyStickInput.x * Mathf.Sin(snakeAngle) + joyStickInput.y * Mathf.Cos(snakeAngle)
+        );
+        
+        float totalHorizontal = horizontal + rotatedJoystick.x;
+        
+        transform.Rotate(Vector3.forward * (-totalHorizontal) * rotationSpeed * Time.deltaTime);
         transform.Translate(Vector3.up * speed * Time.deltaTime, Space.Self);
         
         for (int i = 1; i < segments.Count; i++)
