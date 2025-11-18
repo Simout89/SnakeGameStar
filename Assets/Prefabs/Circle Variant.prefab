@@ -305,9 +305,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Snake
   rotationSpeed: 200
   speed: 5
-  startSize: 3
+  startSize: 1
   segmentDistance: 0.7
-  segmentPrefab: {fileID: -6253605660897574509, guid: 46d0cb61cdd3f064fbd4b78c9fa319f2, type: 3}
+  segmentPrefab: {fileID: 9096899513531105914, guid: fe7caf8fb73fd294c890153e22a216c7, type: 3}
   snakeHealth: {fileID: 8329123155480353806}
 --- !u!114 &8178039842898366849
 MonoBehaviour:
@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce93e8b0aea46c19ea481915177e877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeInteraction
-  snake: {fileID: 8231731484497945153}
+  snakeController: {fileID: 8231731484497945153}
 --- !u!114 &8329123155480353806
 MonoBehaviour:
   m_ObjectHideFlags: 0

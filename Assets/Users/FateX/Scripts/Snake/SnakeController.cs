@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Upgrade;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -18,10 +19,11 @@ public class SnakeController : MonoBehaviour
     [SerializeField] private float segmentDistance = 0.5f;
     
     [Header("References")]
-    [SerializeField] private SnakeBodyPartHealth segmentPrefab;
+    [SerializeField] private SnakeSegmentBase segmentPrefab;
     [SerializeField] private SnakeHealth snakeHealth;
     
     private List<Transform> segments = new List<Transform>();
+    private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
     public List<Transform> Segments => segments;
     public void Init(IInputService inputService)
     {
@@ -31,6 +33,14 @@ public class SnakeController : MonoBehaviour
         for (int i = 0; i < startSize; i++)
         {
             Grow();
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        foreach (var segment in segmentsBase)
+        {
+            segment.Tick();
         }
     }
 
@@ -72,19 +82,7 @@ public class SnakeController : MonoBehaviour
         Transform last = segments[segments.Count - 1];
         newSegment.transform.position = last.position;
         segments.Add(newSegment.transform);
-        snakeHealth.Add(newSegment);
-        
+        newSegment.Init();
+        segmentsBase.Add(newSegment);
     }
-    
-#if UNITY_EDITOR
-    [ContextMenu("GrowDebug")]
-    public void GrowDebug()
-    {
-        for (int i = 0; i < 50; i++)
-        {
-            Grow();
-        }
-    }
-#endif
-
 }

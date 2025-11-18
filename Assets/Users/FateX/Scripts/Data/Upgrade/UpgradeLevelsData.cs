@@ -17,7 +17,7 @@ namespace Users.FateX.Scripts.Data.Upgrade
         [field: SerializeField] public float AttackRange { get; private set; }
         [field: SerializeField] public float DelayBetweenShots { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
-        [field: SerializeField] public float ProjectileCount { get; private set; }
+        [field: SerializeField] public int ProjectileCount { get; private set; }
         [field: SerializeField] public float DamageArea { get; private set; }
         [field: SerializeField] public float BouncesCount { get; private set; }
         [field: SerializeField] public float Duration { get; private set; }

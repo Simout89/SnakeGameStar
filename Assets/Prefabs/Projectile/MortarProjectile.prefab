@@ -136,7 +136,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed06e4353f44672ab5f03ee91cf3bc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Combat.Projectile
-  projectile: {fileID: 4465970065159389625}
+  projectileTransform: {fileID: 4465970065159389625}
+  arcHeight: 5
 --- !u!1 &6418493529489327759
 GameObject:
   m_ObjectHideFlags: 0
