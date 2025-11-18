@@ -7,7 +7,7 @@ using Users.FateX.Scripts;
 using Zenject;
 using Скриптерсы.Services;
 
-public class Snake : MonoBehaviour
+public class SnakeController : MonoBehaviour
 {
     private IInputService _inputService;
     

@@ -5,6 +5,7 @@ namespace Users.FateX.Scripts.Upgrade
 {
     public class SnakeSegmentBase: MonoBehaviour, ITickable
     {
+        [Header("Data")]
         [SerializeField] protected UpgradeLevelsData upgradeLevelsData;
 
         private int currentLevel = 0;

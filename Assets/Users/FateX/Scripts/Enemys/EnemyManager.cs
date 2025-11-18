@@ -6,14 +6,14 @@ using Users.FateX.Scripts.Enemy;
 
 public class EnemyManager : MonoBehaviour
 {
-    private Snake _snake;
+    private SnakeController _snakeController;
     private float enemySpeed = 100f;
     
     private List<EnemyBase> _enemies = new List<EnemyBase>();
 
-    public void SetSnake(Snake snake)
+    public void SetSnake(SnakeController snakeController)
     {
-        _snake = snake;
+        _snakeController = snakeController;
     }
     
     public void AddEnemy(EnemyBase enemyBase)
@@ -23,19 +23,19 @@ public class EnemyManager : MonoBehaviour
 
     public void FixedUpdate()
     {
-        if (_snake == null || _snake.Segments.Count == 0) return;
+        if (_snakeController == null || _snakeController.Segments.Count == 0) return;
         
         for (int i = 0; i < _enemies.Count; i++)
         {
-            Transform nearestSegment = _snake.Segments[0];
+            Transform nearestSegment = _snakeController.Segments[0];
             
             
-            for (int j = 0; j < _snake.Segments.Count; j++)
+            for (int j = 0; j < _snakeController.Segments.Count; j++)
             {
-                if (Vector3.Distance(_snake.Segments[j].position, _enemies[i].transform.position) <
+                if (Vector3.Distance(_snakeController.Segments[j].position, _enemies[i].transform.position) <
                     Vector3.Distance(nearestSegment.position, _enemies[i].transform.position))
                 {
-                    nearestSegment = _snake.Segments[j];
+                    nearestSegment = _snakeController.Segments[j];
                 }
             }
             

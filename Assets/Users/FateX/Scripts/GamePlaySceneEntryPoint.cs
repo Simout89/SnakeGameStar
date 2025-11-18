@@ -20,9 +20,9 @@ namespace Users.FateX.Scripts
         {
             Debug.Log("W");
 
-            Snake snake = _snakeSpawner.SpawnSnake();
+            SnakeController snakeController = _snakeSpawner.SpawnSnake();
             
-            _enemyManager.SetSnake(snake);
+            _enemyManager.SetSnake(snakeController);
 
             WaveData waveData = Resources.LoadAll<WaveData>("Data/Waves")[0];
             

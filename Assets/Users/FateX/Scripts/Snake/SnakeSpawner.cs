@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Serialization;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -8,15 +9,15 @@ namespace Users.FateX.Scripts
     {
         [Inject] private IInputService _inputService;
         
-        [SerializeField] private Snake _snakePrefab;
+        [FormerlySerializedAs("_snakePrefab")] [SerializeField] private SnakeController snakeControllerPrefab;
         [SerializeField] private Transform spawnPoint;
 
-        public Snake SpawnSnake()
+        public SnakeController SpawnSnake()
         {
-            Snake snake = Instantiate(_snakePrefab);
-            snake.Init(_inputService);
-            snake.transform.position = spawnPoint.position;
-            return snake;
+            SnakeController snakeController = Instantiate(snakeControllerPrefab);
+            snakeController.Init(_inputService);
+            snakeController.transform.position = spawnPoint.position;
+            return snakeController;
         }
     }
 }
