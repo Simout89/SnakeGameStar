@@ -12,6 +12,10 @@ namespace Users.FateX.Scripts
         public float CurrentHealth { get; private set; }
         public event Action<float> OnHealthChanged;
         public event Action OnDie;
+        
+        public bool Visible = true;
+        public bool AlreadyDie = false;
+        
         public void Move(Vector3 direction)
         {
             // transform.position = transform.position + direction;

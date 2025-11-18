@@ -8,9 +8,9 @@ namespace Users.FateX.Scripts.Upgrade
         [SerializeField] protected UpgradeLevelsData upgradeLevelsData;
 
         private int currentLevel = 0;
-        protected UpgradeStats CurrentStats;
-
         private float timeToNextShot;
+        
+        protected UpgradeStats CurrentStats;
         
         public void Init()
         {
@@ -39,8 +39,6 @@ namespace Users.FateX.Scripts.Upgrade
             currentLevel++;
             CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
         }
-        
-        
     }
     
     
