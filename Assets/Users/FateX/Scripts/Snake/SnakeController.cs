@@ -23,14 +23,12 @@ public class SnakeController : MonoBehaviour
     [SerializeField] private SnakeHealth snakeHealth;
     [SerializeField] private Rigidbody2D _rigidbody;
     
-    private List<Transform> segments = new List<Transform>();
     private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
-    public List<Transform> Segments => segments;
+    public List<SnakeSegmentBase> SegmentsBase => segmentsBase;
     public void Init(IInputService inputService)
     {
         _inputService = inputService;
         
-        segments.Add(transform);
         segmentsBase.Add(GetComponent<SnakeSegmentBase>());
         
         for (int i = 0; i < startSize; i++)
@@ -51,7 +49,17 @@ public class SnakeController : MonoBehaviour
     {
         float horizontal = _inputService.InputSystemActions.Player.Move.ReadValue<Vector2>().x;
 
-        float rotation = -horizontal * rotationSpeed * Time.fixedDeltaTime;
+        Vector2 joyStickInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), -SimpleInput.GetAxisRaw("Vertical"));
+        
+        float snakeAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
+        Vector2 rotatedJoystick = new Vector2(
+            joyStickInput.x * Mathf.Cos(snakeAngle) - joyStickInput.y * Mathf.Sin(snakeAngle),
+            joyStickInput.x * Mathf.Sin(snakeAngle) + joyStickInput.y * Mathf.Cos(snakeAngle)
+        );
+
+        float totalHorizontal = horizontal + rotatedJoystick.x;
+
+        float rotation = -totalHorizontal * rotationSpeed * Time.fixedDeltaTime;
         _rigidbody.MoveRotation(_rigidbody.rotation + rotation);
 
         Vector2 moveDirection = transform.up * speed;
@@ -84,10 +92,9 @@ public class SnakeController : MonoBehaviour
     public void Grow()
     {
         var newSegment = Instantiate(segmentPrefab);
-        Transform last = segmentsBase[segments.Count - 1].Body;
+        Transform last = segmentsBase[segmentsBase.Count - 1].Body;
         newSegment.AdditionalParts.position = last.position;
         newSegment.Body.position = last.position;
-        segments.Add(newSegment.transform);
         newSegment.Init();
         segmentsBase.Add(newSegment);
     }
@@ -95,10 +102,9 @@ public class SnakeController : MonoBehaviour
     public void Grow(SnakeSegmentBase snakeSegmentBase)
     {
         var newSegment = Instantiate(snakeSegmentBase);
-        Transform last = segmentsBase[segments.Count - 1].Body;
+        Transform last = segmentsBase[segmentsBase.Count - 1].Body;
         newSegment.AdditionalParts.position = last.position;
         newSegment.Body.position = last.position;
-        segments.Add(newSegment.transform);
         newSegment.Init();
         segmentsBase.Add(newSegment);
     }
