@@ -19,6 +19,13 @@ public class EnemyManager : MonoBehaviour
     public void AddEnemy(EnemyBase enemyBase)
     {
         _enemies.Add(enemyBase);
+        enemyBase.OnDie += HandleEnemyDie;
+    }
+
+    private void HandleEnemyDie(EnemyBase enemyBase)
+    {
+        enemyBase.OnDie -= HandleEnemyDie;
+        _enemies.Remove(enemyBase);
     }
 
     public void FixedUpdate()

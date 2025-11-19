@@ -20,6 +20,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GameTimer>().AsSingle();
             Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
         }
     }
 }

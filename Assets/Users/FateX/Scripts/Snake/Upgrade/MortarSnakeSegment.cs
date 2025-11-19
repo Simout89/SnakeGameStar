@@ -1,6 +1,7 @@
 ﻿using System;
 using Lean.Pool;
 using UnityEngine;
+using Users.FateX.Scripts.Combat;
 using Users.FateX.Scripts.Utils;
 
 namespace Users.FateX.Scripts.Upgrade
@@ -20,7 +21,8 @@ namespace Users.FateX.Scripts.Upgrade
             foreach (var enemy in enemyBases)
             {
                 var projectile = LeanPool.Spawn(upgradeLevelsData.Projectile, gunPivot.position, Quaternion.identity);
-                projectile.Launch(enemy.transform, 1f);
+                
+                projectile.Launch(enemy.transform, 1f, CurrentStats.Damage, CurrentStats.DamageArea);
             }
         }
 

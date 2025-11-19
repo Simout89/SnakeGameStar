@@ -5,6 +5,8 @@ namespace Users.FateX.Scripts.Upgrade
 {
     public class SnakeSegmentBase: MonoBehaviour, ITickable
     {
+        [SerializeField] public Transform Body;
+        [SerializeField] public Transform AdditionalParts;
         [Header("Data")]
         [SerializeField] protected UpgradeLevelsData upgradeLevelsData;
 
@@ -13,7 +15,7 @@ namespace Users.FateX.Scripts.Upgrade
         
         protected UpgradeStats CurrentStats;
         
-        public void Init()
+        public virtual void Init()
         {
             CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
         }
@@ -35,7 +37,7 @@ namespace Users.FateX.Scripts.Upgrade
             return true;
         }
 
-        public void Upgrade()
+        public virtual void Upgrade()
         {
             currentLevel++;
             CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];

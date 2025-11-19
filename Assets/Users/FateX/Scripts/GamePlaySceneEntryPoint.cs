@@ -15,12 +15,15 @@ namespace Users.FateX.Scripts
         [Inject] private GameTimer _gameTimer;
         [Inject] private SnakeSpawner _snakeSpawner;
         [Inject] private EnemyManager _enemyManager;
-
+        [Inject] private GameContext _gameContext;
+        
         public void Initialize()
         {
             Debug.Log("W");
 
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
+            
+            _gameContext.Init(snakeController);
             
             _enemyManager.SetSnake(snakeController);
 

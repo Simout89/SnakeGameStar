@@ -21,6 +21,7 @@ public class SnakeController : MonoBehaviour
     [Header("References")]
     [SerializeField] private SnakeSegmentBase segmentPrefab;
     [SerializeField] private SnakeHealth snakeHealth;
+    [SerializeField] private Rigidbody2D _rigidbody;
     
     private List<Transform> segments = new List<Transform>();
     private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
@@ -30,6 +31,8 @@ public class SnakeController : MonoBehaviour
         _inputService = inputService;
         
         segments.Add(transform);
+        segmentsBase.Add(GetComponent<SnakeSegmentBase>());
+        
         for (int i = 0; i < startSize; i++)
         {
             Grow();
@@ -39,48 +42,62 @@ public class SnakeController : MonoBehaviour
     private void FixedUpdate()
     {
         foreach (var segment in segmentsBase)
-        {
             segment.Tick();
-        }
+
+        HandleMovement();
     }
 
-    private void Update()
+    private void HandleMovement()
     {
         float horizontal = _inputService.InputSystemActions.Player.Move.ReadValue<Vector2>().x;
-        Vector2 joyStickInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), -SimpleInput.GetAxisRaw("Vertical"));
-        
-        float snakeAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
-        Vector2 rotatedJoystick = new Vector2(
-            joyStickInput.x * Mathf.Cos(snakeAngle) - joyStickInput.y * Mathf.Sin(snakeAngle),
-            joyStickInput.x * Mathf.Sin(snakeAngle) + joyStickInput.y * Mathf.Cos(snakeAngle)
-        );
-        
-        float totalHorizontal = horizontal + rotatedJoystick.x;
-        
-        transform.Rotate(Vector3.forward * (-totalHorizontal) * rotationSpeed * Time.deltaTime);
-        transform.Translate(Vector3.up * speed * Time.deltaTime, Space.Self);
-        
-        for (int i = 1; i < segments.Count; i++)
-        {
-            Transform prev = segments[i - 1];
-            Transform curr = segments[i];
 
-            float distance = Vector3.Distance(prev.position, curr.position);
-            
-            if(distance > segmentDistance)
+        float rotation = -horizontal * rotationSpeed * Time.fixedDeltaTime;
+        _rigidbody.MoveRotation(_rigidbody.rotation + rotation);
+
+        Vector2 moveDirection = transform.up * speed;
+        _rigidbody.MovePosition(_rigidbody.position + moveDirection * Time.fixedDeltaTime);
+
+        UpdateSegments();
+    }
+    
+    private void UpdateSegments()
+    {
+        for (int i = 1; i < segmentsBase.Count; i++)
+        {
+            Transform prev = segmentsBase[i - 1].Body;
+            Transform curr = segmentsBase[i].Body;
+
+            Vector3 targetPosition = prev.position - prev.up * segmentDistance;
+            curr.position = Vector3.Lerp(curr.position, targetPosition, Time.deltaTime * 10f);
+            if(segmentsBase[i].AdditionalParts != null)
+                segmentsBase[i].AdditionalParts.position = Vector3.Lerp(curr.position, targetPosition, Time.deltaTime * 10f);
+
+            Vector3 direction = prev.position - curr.position;
+            if (direction != Vector3.zero)
             {
-                Vector3 direction = (prev.position - curr.position).normalized;
-                curr.position += direction * (distance - segmentDistance);
+                float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - 90f;
+                curr.rotation = Quaternion.Lerp(curr.rotation, Quaternion.Euler(0, 0, angle), Time.deltaTime * 10f);
             }
-            curr.rotation = Quaternion.Lerp(curr.rotation, prev.rotation, 0.5f);
         }
     }
 
     public void Grow()
     {
         var newSegment = Instantiate(segmentPrefab);
-        Transform last = segments[segments.Count - 1];
-        newSegment.transform.position = last.position;
+        Transform last = segmentsBase[segments.Count - 1].Body;
+        newSegment.AdditionalParts.position = last.position;
+        newSegment.Body.position = last.position;
+        segments.Add(newSegment.transform);
+        newSegment.Init();
+        segmentsBase.Add(newSegment);
+    }
+    
+    public void Grow(SnakeSegmentBase snakeSegmentBase)
+    {
+        var newSegment = Instantiate(snakeSegmentBase);
+        Transform last = segmentsBase[segments.Count - 1].Body;
+        newSegment.AdditionalParts.position = last.position;
+        newSegment.Body.position = last.position;
         segments.Add(newSegment.transform);
         newSegment.Init();
         segmentsBase.Add(newSegment);

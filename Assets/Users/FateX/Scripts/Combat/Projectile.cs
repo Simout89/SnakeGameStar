@@ -12,10 +12,15 @@ namespace Users.FateX.Scripts.Combat
 
         private Transform target;
         private CancellationTokenSource cts;
+        private float areaOfEffectRaidus;
+        private float damage;
 
-        public void Launch(Transform targetEnemy, float flightTime)
+        public void Launch(Transform targetEnemy, float flightTime, float damage, float AOERadius = 0)
         {
             target = targetEnemy;
+            areaOfEffectRaidus = AOERadius;
+            this.damage = damage;
+            
             cts = new CancellationTokenSource();
             
             Vector2 targetPos = PredictTargetPosition(targetEnemy, flightTime);
@@ -72,8 +77,19 @@ namespace Users.FateX.Scripts.Combat
 
         private void OnReachTarget()
         {
+            AreaOfEffectDamage();
+            
             LeanPool.Despawn(gameObject);
         }
+
+        private void AreaOfEffectDamage()
+        {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, areaOfEffectRaidus);
+            foreach (var collider in colliders)
+            {
+                if(collider.TryGetComponent(out IDamageable damageable)) damageable.TakeDamage(new DamageInfo(damage));
+            }
+        }   
 
         public void OnSpawn() { }
     }
