@@ -9,6 +9,7 @@ namespace Users.FateX.Scripts.Combat
     {
         [SerializeField] private Transform projectileTransform;
         [SerializeField] private float arcHeight = 4f;
+        [SerializeField] private GameObject explosionVfx;
 
         private Transform target;
         private CancellationTokenSource cts;
@@ -78,13 +79,15 @@ namespace Users.FateX.Scripts.Combat
         private void OnReachTarget()
         {
             AreaOfEffectDamage();
+
+            LeanPool.Despawn(LeanPool.Spawn(explosionVfx, projectileTransform.position, Quaternion.identity), 1f);
             
             LeanPool.Despawn(gameObject);
         }
 
         private void AreaOfEffectDamage()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, areaOfEffectRaidus);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(projectileTransform.position, areaOfEffectRaidus);
             foreach (var collider in colliders)
             {
                 if(collider.TryGetComponent(out IDamageable damageable)) damageable.TakeDamage(new DamageInfo(damage));

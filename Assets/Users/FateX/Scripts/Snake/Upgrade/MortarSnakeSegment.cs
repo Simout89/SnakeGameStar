@@ -16,7 +16,7 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
 
-            EnemyBase[] enemyBases = EnemyFinder.GetRandomEnemies(transform.position, CurrentStats.AttackRange, CurrentStats.ProjectileCount);
+            EnemyBase[] enemyBases = EnemyFinder.GetRandomEnemies(gunPivot.position, CurrentStats.AttackRange, CurrentStats.ProjectileCount);
             
             foreach (var enemy in enemyBases)
             {
