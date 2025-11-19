@@ -20,7 +20,7 @@ namespace Users.FateX.Scripts.Upgrade
             foreach (var enemy in enemyBases)
             {
                 var projectile = LeanPool.Spawn(upgradeLevelsData.Projectile, gunPivot.position, Quaternion.identity);
-                projectile.Launch(enemy.transform, 3f);
+                projectile.Launch(enemy.transform, 1f);
             }
         }
 
