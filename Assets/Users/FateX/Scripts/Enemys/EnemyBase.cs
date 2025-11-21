@@ -54,25 +54,40 @@ namespace Users.FateX.Scripts
                 OnDie?.Invoke(this);
                 
                 AlreadyDie = true;
+                
+                _rigidbody2D.linearVelocity = Vector2.zero;;
 
                 _shadow.DOScale(Vector3.zero, 0.5f);
                 
-                _spriteRenderer.material.DOFloat(1f, "_DissolveAmount", 0.5f).OnComplete((() =>
+                _spriteRenderer.DOKill(); // убираем твины
+                DOTween.To(
+                    () => GetFloat("_DissolveAmount"),
+                    v => SetFloat("_DissolveAmount", v),
+                    1f,
+                    0.5f
+                ).OnComplete(() =>
                 {
-                    _spriteRenderer.DOKill();
-                    
                     LeanPool.Despawn(gameObject);
-                }));
+                });
+
             }
         }
 
         private void DamageEffect()
         {
-            _spriteRenderer.material.DOComplete();
-            
-            _spriteRenderer.material.SetFloat("_FlashAmount", 1);
-            _spriteRenderer.material.DOFloat(0f, "_FlashAmount", 0.3f);
+            DOTween.Kill(_spriteRenderer);
+
+            // Flash = 1 → 0
+            DOTween.To(
+                () => GetFloat("_FlashAmount"),
+                v => SetFloat("_FlashAmount", v),
+                0f,
+                0.3f
+            ).SetTarget(_spriteRenderer);
+
+            SetFloat("_FlashAmount", 1f);
         }
+
 
         private void OnCollisionEnter2D(Collision2D other)
         {
@@ -83,15 +98,28 @@ namespace Users.FateX.Scripts
                 snakeBodyPartHealth.TakeDamage(damageInfo);
             }
         }
+        
+        private void SetFloat(string property, float value)
+        {
+            _spriteRenderer.GetPropertyBlock(materialPropertyBlock);
+            materialPropertyBlock.SetFloat(property, value);
+            _spriteRenderer.SetPropertyBlock(materialPropertyBlock);
+        }
+
+        private float GetFloat(string property)
+        {
+            _spriteRenderer.GetPropertyBlock(materialPropertyBlock);
+            return materialPropertyBlock.GetFloat(property);
+        }
+
 
         public void OnSpawn()
         {
-            _spriteRenderer.material.SetFloat("_FlashAmount", 0);
-            _spriteRenderer.material.SetFloat("_DissolveAmount", 0);
-            _shadow.localScale = startShadowScale;
-            
-            CurrentHealth = _enemyData.Health;
+            SetFloat("_FlashAmount", 0f);
+            SetFloat("_DissolveAmount", 0f);
 
+            _shadow.localScale = startShadowScale;
+            CurrentHealth = _enemyData.Health;
             AlreadyDie = false;
         }
 

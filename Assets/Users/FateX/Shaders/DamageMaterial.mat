@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Custom_SpriteFlashDissolve
+  m_Name: DamageMaterial
   m_Shader: {fileID: 4800000, guid: 3cabc3adfcec62746a374f40b9d8010c, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -24,6 +24,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DissolveNoise:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -44,7 +48,7 @@ Material:
     - _EdgeWidth: 0.078
     - _EnableExternalAlpha: 0
     - _FlashAmount: 0
-    - _FlashEmission: 1.54
+    - _FlashEmission: 1.58
     - _FlashIntensity: 3
     - _FlashPower: 1
     - _NoiseScale: 500
