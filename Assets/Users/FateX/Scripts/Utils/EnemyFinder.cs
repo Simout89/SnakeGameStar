@@ -153,7 +153,6 @@ namespace Users.FateX.Scripts.Utils
             int validCount = GetValidEnemies(startPosition, radius, out int totalCount);
             if (validCount == 0) return System.Array.Empty<EnemyBase>();
 
-            // Собираем всех валидных врагов
             EnemyBase[] allEnemies = new EnemyBase[validCount];
             int index = 0;
             for (int i = 0; i < totalCount; i++)
@@ -164,11 +163,9 @@ namespace Users.FateX.Scripts.Utils
                 }
             }
 
-            // Создаем массив для результата
             int resultCount = Mathf.Min(count, validCount);
             EnemyBase[] chainEnemies = new EnemyBase[resultCount];
 
-            // Начинаем с ближайшего к стартовой позиции
             EnemyBase current = null;
             float minDistance = float.MaxValue;
             int nearestIndex = -1;
@@ -186,11 +183,9 @@ namespace Users.FateX.Scripts.Utils
             current = allEnemies[nearestIndex];
             chainEnemies[0] = current;
 
-            // Убираем выбранного из списка
             var remaining = new System.Collections.Generic.List<EnemyBase>(allEnemies);
             remaining.RemoveAt(nearestIndex);
 
-            // Далее выбираем ближайших к предыдущему
             for (int i = 1; i < resultCount; i++)
             {
                 if (remaining.Count == 0) break;

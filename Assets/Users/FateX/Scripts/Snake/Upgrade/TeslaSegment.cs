@@ -28,20 +28,17 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
 
-            var enemy = EnemyFinder.GetChainEnemies(Body.position, CurrentStats.AttackRange,
-                CurrentStats.BouncesCount);
-
-            if (enemy.Length == 0)
-                return;
+            var enemy = EnemyFinder.GetChainEnemies(Body.position, CurrentStats.AttackRange, CurrentStats.BouncesCount);
+            if (enemy.Length == 0) return;
 
             lightingTrail = LeanPool.Spawn(upgradeLevelsData.Vfx, Body.position, Quaternion.identity);
 
-            _cancellationTokenSource?.Cancel();
-            _cancellationTokenSource?.Dispose();
-            _cancellationTokenSource = new CancellationTokenSource();
+            // Не отменяем предыдущий токен
+            var token = _cancellationTokenSource.Token;
 
-            AlternateAttack(enemy, _cancellationTokenSource.Token).Forget();
+            AlternateAttack(enemy, token).Forget();
         }
+
 
         private async UniTask AlternateAttack(EnemyBase[] enemyBase, CancellationToken cancellationToken)
         {
