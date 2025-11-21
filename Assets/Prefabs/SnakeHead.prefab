@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Upgrade.SnakeSegmentBase
   Body: {fileID: 3085388647483284007}
+  AdditionalParts: {fileID: 0}
   upgradeLevelsData: {fileID: 0}
 --- !u!1 &2623710573022005700
 GameObject:
@@ -365,7 +366,7 @@ Transform:
   m_GameObject: {fileID: 6107733173538723555}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.363, y: 0.452, z: 0}
+  m_LocalPosition: {x: -0.363, y: 0.727, z: 0}
   m_LocalScale: {x: -0.3568375, y: 0.35683745, z: 0.35683745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -417,7 +418,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 53e0ce457a6c28b4cbfe8cf30c0816e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -486,7 +487,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
+  - {fileID: 2100000, guid: 06a80064fc4dad246a7d722650bf3e71, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -545,7 +546,7 @@ Transform:
   m_GameObject: {fileID: 8772158413360074933}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.363, y: 0.452, z: 0}
+  m_LocalPosition: {x: 0.363, y: 0.727, z: 0}
   m_LocalScale: {x: 0.35683745, y: 0.35683745, z: 0.35683745}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -597,7 +598,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 53e0ce457a6c28b4cbfe8cf30c0816e7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

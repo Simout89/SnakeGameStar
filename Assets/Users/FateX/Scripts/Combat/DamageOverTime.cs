@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 
 namespace Users.FateX.Scripts.Combat
 {
@@ -26,6 +27,13 @@ namespace Users.FateX.Scripts.Combat
     {
         private static readonly List<DamageOverTimeInfo> _active = new();
         private static bool _tickLoopRunning;
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+        private static void Reset()
+        {
+            _active.Clear();
+            _tickLoopRunning = false;
+        }
 
         public static void StartDot(IDamageable target, IDamageDealer damageDealer, float tickDelay, DamageInfo damage)
         {

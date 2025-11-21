@@ -267,8 +267,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 0.0,
-            "y": 0.0
+            "x": 23.99992561340332,
+            "y": -25.60000228881836
         },
         "m_Blocks": [
             {
@@ -310,7 +310,7 @@
         "preventRotation": false
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 1,
+    "m_GraphPrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -1694,7 +1694,7 @@
     "m_PerRendererData": false,
     "m_customAttributes": [],
     "m_Value": {
-        "m_SerializedTexture": "{\"texture\":{\"fileID\":2800000,\"guid\":\"2c3e899961bdbd44cabb04d44a2e4fad\",\"type\":3}}",
+        "m_SerializedTexture": "",
         "m_Guid": ""
     },
     "isMainTexture": false,
@@ -2043,10 +2043,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": -1920.0,
-            "y": 225.9998779296875,
-            "width": 127.9998779296875,
-            "height": 34.0001220703125
+            "x": -1662.4000244140625,
+            "y": 145.60000610351563,
+            "width": 129.5999755859375,
+            "height": 33.59999084472656
         }
     },
     "m_Slots": [

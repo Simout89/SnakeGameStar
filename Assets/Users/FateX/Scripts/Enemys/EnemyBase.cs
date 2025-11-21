@@ -22,10 +22,13 @@ namespace Users.FateX.Scripts
         public bool Visible = true;
         public bool AlreadyDie = false;
         private Vector3 startShadowScale;
+        private MaterialPropertyBlock materialPropertyBlock;
 
         private void Awake()
         {
             startShadowScale = _shadow.localScale;
+            
+            materialPropertyBlock = new MaterialPropertyBlock();
         }
 
         public void Move(Vector3 direction)

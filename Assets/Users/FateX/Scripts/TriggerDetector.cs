@@ -5,21 +5,21 @@ namespace Users.FateX.Scripts
 {
     public class TriggerDetector : MonoBehaviour
     {
-        public event Action<Collider> onTriggerEntered;
-        public event Action<Collider> onTriggerStayed;
-        public event Action<Collider> onTriggerExited;
+        public event Action<Collider2D> onTriggerEntered;
+        public event Action<Collider2D> onTriggerStayed;
+        public event Action<Collider2D> onTriggerExited;
     
-        private void OnTriggerEnter(Collider other)
+        private void OnTriggerEnter2D(Collider2D other)
         {
             onTriggerEntered?.Invoke(other);
         }
 
-        private void OnTriggerStay(Collider other)
+        private void OnTriggerStay2D(Collider2D other)
         {
             onTriggerStayed?.Invoke(other);
         }
 
-        private void OnTriggerExit(Collider other)
+        private void OnTriggerExit2D(Collider2D other)
         {
             onTriggerExited?.Invoke(other);
         }
