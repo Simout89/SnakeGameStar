@@ -14,10 +14,12 @@ namespace Users.FateX.Scripts.Upgrade
         private float timeToNextShot;
         
         protected UpgradeStats CurrentStats;
+        protected SnakeController SnakeController;
         
-        public virtual void Init()
+        public virtual void Init(SnakeController snakeController)
         {
             CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
+            SnakeController = snakeController;
         }
 
         public virtual void Tick()

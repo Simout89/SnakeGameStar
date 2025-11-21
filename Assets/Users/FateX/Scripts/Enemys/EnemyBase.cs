@@ -2,6 +2,7 @@
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
+using Users.FateX.Scripts.Combat;
 using Users.FateX.Scripts.Data;
 
 namespace Users.FateX.Scripts
@@ -38,6 +39,9 @@ namespace Users.FateX.Scripts
 
         public void TakeDamage(DamageInfo damageInfo)
         {
+            if(AlreadyDie)
+                return;
+            
             CurrentHealth -= damageInfo.Amount;
 
             DamageEffect();
@@ -52,6 +56,8 @@ namespace Users.FateX.Scripts
                 
                 _spriteRenderer.material.DOFloat(1f, "_DissolveAmount", 0.5f).OnComplete((() =>
                 {
+                    _spriteRenderer.DOKill();
+                    
                     LeanPool.Despawn(gameObject);
                 }));
             }
@@ -88,7 +94,7 @@ namespace Users.FateX.Scripts
 
         public void OnDespawn()
         {
-            
+            DamageOverTime.StopAllDots(this);
         }
     }
 
@@ -105,6 +111,11 @@ namespace Users.FateX.Scripts
     {
         public float CurrentHealth { get; }
         public void TakeDamage(DamageInfo damageInfo);
+    }
+
+    public interface IDamageDealer
+    {
+        
     }
 
     public interface IEnemy

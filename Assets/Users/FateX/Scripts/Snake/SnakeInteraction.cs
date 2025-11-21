@@ -13,7 +13,7 @@ namespace Users.FateX.Scripts
             if(other.TryGetComponent(out ICollectable collectable))
             {
                 collectable.Collect();
-                snakeController.Grow();
+                // snakeController.Grow();
             }
         }
     }

@@ -15,15 +15,22 @@ namespace Users.FateX.Scripts.Upgrade
         [SerializeField] private DamageOrb damageOrbPrefab;
 
 
-        public override void Init()
+        public override void Init(SnakeController snakeController)
         {
-            base.Init();
+            base.Init(snakeController);
 
+            StartRotate();
+
+            UpdateOrbCount();
+        }
+
+        private void StartRotate()
+        {
+            orbContainer.DOKill();
+            
             orbContainer.DOLocalRotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
-
-            UpdateOrbCount();
         }
 
         public override void Upgrade()
@@ -35,6 +42,8 @@ namespace Users.FateX.Scripts.Upgrade
 
         private void UpdateOrbCount()
         {
+            orbContainer.DOKill();
+            
             foreach (Transform child in orbContainer)
             {
                 child.DOKill(true);
@@ -46,6 +55,8 @@ namespace Users.FateX.Scripts.Upgrade
                 var newOrb = Instantiate(damageOrbPrefab, position, Quaternion.identity, orbContainer);
                 newOrb.Init(CurrentStats.Damage);
             }
+
+            StartRotate();
         }
 
         private void OnDrawGizmos()

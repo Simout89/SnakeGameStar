@@ -627,6 +627,7 @@ MonoBehaviour:
   _snakeSegmentBase:
   - {fileID: 9096899513531105914, guid: fe7caf8fb73fd294c890153e22a216c7, type: 3}
   - {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
+  - {fileID: 1442814915543202480, guid: 1a421fb4d2c7c9a499a16e1daf80e9ba, type: 3}
   container: {fileID: 234463176}
   _buttonPrefab: {fileID: 8778933007183655035, guid: 6d558731692c20f4ead33eabb8996789, type: 3}
 --- !u!1 &898247094

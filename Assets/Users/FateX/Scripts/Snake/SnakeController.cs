@@ -30,11 +30,6 @@ public class SnakeController : MonoBehaviour
         _inputService = inputService;
         
         segmentsBase.Add(GetComponent<SnakeSegmentBase>());
-        
-        for (int i = 0; i < startSize; i++)
-        {
-            Grow();
-        }
     }
 
     private void FixedUpdate()
@@ -88,16 +83,6 @@ public class SnakeController : MonoBehaviour
             }
         }
     }
-
-    public void Grow()
-    {
-        var newSegment = Instantiate(segmentPrefab);
-        Transform last = segmentsBase[segmentsBase.Count - 1].Body;
-        newSegment.AdditionalParts.position = last.position;
-        newSegment.Body.position = last.position;
-        newSegment.Init();
-        segmentsBase.Add(newSegment);
-    }
     
     public void Grow(SnakeSegmentBase snakeSegmentBase)
     {
@@ -105,7 +90,7 @@ public class SnakeController : MonoBehaviour
         Transform last = segmentsBase[segmentsBase.Count - 1].Body;
         newSegment.AdditionalParts.position = last.position;
         newSegment.Body.position = last.position;
-        newSegment.Init();
-        segmentsBase.Add(newSegment);
+        newSegment.Init(this);
+        segmentsBase.Add(newSegment); 
     }
 }

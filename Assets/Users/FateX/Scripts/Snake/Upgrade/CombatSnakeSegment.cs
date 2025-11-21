@@ -1,6 +1,6 @@
 ﻿namespace Users.FateX.Scripts.Upgrade
 {
-    public class CombatSnakeSegment: SnakeSegmentBase
+    public class CombatSnakeSegment: SnakeSegmentBase, IDamageDealer
     {
         public override void Tick()
         {
