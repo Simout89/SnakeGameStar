@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
+  m_Name: Tesla
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
+  <UpgradeStats>k__BackingField:
+  - <AttackRange>k__BackingField: 10
+    <DelayBetweenShots>k__BackingField: 5
+    <Damage>k__BackingField: 2
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 5
+    <Duration>k__BackingField: 0
+  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
+  <Vfx>k__BackingField: {fileID: 1980034782213133366, guid: 9f6bc53e55a78e84aab3096781fcde03, type: 3}

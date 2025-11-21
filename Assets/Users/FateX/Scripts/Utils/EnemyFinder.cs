@@ -80,7 +80,7 @@ namespace Users.FateX.Scripts.Utils
 
             return null;
         }
-        
+
         public static EnemyBase[] GetNearestEnemies(Vector3 position, float radius, int count)
         {
             int validCount = GetValidEnemies(position, radius, out int totalCount);
@@ -147,6 +147,75 @@ namespace Users.FateX.Scripts.Utils
 
             return result;
         }
+
+        public static EnemyBase[] GetChainEnemies(Vector3 startPosition, float radius, int count)
+        {
+            int validCount = GetValidEnemies(startPosition, radius, out int totalCount);
+            if (validCount == 0) return System.Array.Empty<EnemyBase>();
+
+            // Собираем всех валидных врагов
+            EnemyBase[] allEnemies = new EnemyBase[validCount];
+            int index = 0;
+            for (int i = 0; i < totalCount; i++)
+            {
+                if (colliderBuffer[i].TryGetComponent(out EnemyBase enemy) && IsValidEnemy(enemy))
+                {
+                    allEnemies[index++] = enemy;
+                }
+            }
+
+            // Создаем массив для результата
+            int resultCount = Mathf.Min(count, validCount);
+            EnemyBase[] chainEnemies = new EnemyBase[resultCount];
+
+            // Начинаем с ближайшего к стартовой позиции
+            EnemyBase current = null;
+            float minDistance = float.MaxValue;
+            int nearestIndex = -1;
+
+            for (int i = 0; i < allEnemies.Length; i++)
+            {
+                float dist = Vector3.Distance(allEnemies[i].transform.position, startPosition);
+                if (dist < minDistance)
+                {
+                    minDistance = dist;
+                    nearestIndex = i;
+                }
+            }
+
+            current = allEnemies[nearestIndex];
+            chainEnemies[0] = current;
+
+            // Убираем выбранного из списка
+            var remaining = new System.Collections.Generic.List<EnemyBase>(allEnemies);
+            remaining.RemoveAt(nearestIndex);
+
+            // Далее выбираем ближайших к предыдущему
+            for (int i = 1; i < resultCount; i++)
+            {
+                if (remaining.Count == 0) break;
+
+                minDistance = float.MaxValue;
+                nearestIndex = -1;
+
+                for (int j = 0; j < remaining.Count; j++)
+                {
+                    float dist = Vector3.Distance(remaining[j].transform.position, current.transform.position);
+                    if (dist < minDistance)
+                    {
+                        minDistance = dist;
+                        nearestIndex = j;
+                    }
+                }
+
+                current = remaining[nearestIndex];
+                chainEnemies[i] = current;
+                remaining.RemoveAt(nearestIndex);
+            }
+
+            return chainEnemies;
+        }
+
 
         private static bool IsValidEnemy(EnemyBase enemy)
         {

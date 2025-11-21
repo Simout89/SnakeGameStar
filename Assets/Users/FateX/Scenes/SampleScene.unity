@@ -629,6 +629,7 @@ MonoBehaviour:
   - {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
   - {fileID: 1442814915543202480, guid: 1a421fb4d2c7c9a499a16e1daf80e9ba, type: 3}
   - {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
+  - {fileID: 740953566481237778, guid: 769e16ee4df55ee4bbf5a55bfdbfd13b, type: 3}
   container: {fileID: 234463176}
   _buttonPrefab: {fileID: 8778933007183655035, guid: 6d558731692c20f4ead33eabb8996789, type: 3}
 --- !u!1 &898247094

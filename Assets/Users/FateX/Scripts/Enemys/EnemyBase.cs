@@ -55,11 +55,11 @@ namespace Users.FateX.Scripts
                 
                 AlreadyDie = true;
                 
-                _rigidbody2D.linearVelocity = Vector2.zero;;
+                _rigidbody2D.linearVelocity = Vector2.zero;
 
                 _shadow.DOScale(Vector3.zero, 0.5f);
                 
-                _spriteRenderer.DOKill(); // убираем твины
+                _spriteRenderer.DOKill();
                 DOTween.To(
                     () => GetFloat("_DissolveAmount"),
                     v => SetFloat("_DissolveAmount", v),
@@ -76,8 +76,7 @@ namespace Users.FateX.Scripts
         private void DamageEffect()
         {
             DOTween.Kill(_spriteRenderer);
-
-            // Flash = 1 → 0
+            
             DOTween.To(
                 () => GetFloat("_FlashAmount"),
                 v => SetFloat("_FlashAmount", v),
