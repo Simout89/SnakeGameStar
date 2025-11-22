@@ -20,7 +20,7 @@ namespace Users.FateX.Scripts
         public void Initialize()
         {
             Debug.Log("W");
-
+            
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
             
             _gameContext.Init(snakeController);

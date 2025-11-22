@@ -33,7 +33,6 @@ namespace Users.FateX.Scripts.Upgrade
 
             lightingTrail = LeanPool.Spawn(upgradeLevelsData.Vfx, Body.position, Quaternion.identity);
 
-            // Не отменяем предыдущий токен
             var token = _cancellationTokenSource.Token;
 
             AlternateAttack(enemy, token).Forget();
