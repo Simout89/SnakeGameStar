@@ -9,13 +9,13 @@ namespace Users.FateX.Scripts
     {
         private List<SnakeSegmentBase> snakeBodyParts = new List<SnakeSegmentBase>();
 
+        private float timeToNextHit = 0;
+
         public void Add(SnakeSegmentBase snakeSegmentBase)
         {
             snakeBodyParts.Add(snakeSegmentBase);
 
             snakeSegmentBase.SnakeBodyPartHealth.OnTakeDamage += HandleTakeDamage;
-            
-            Debug.Log("Подписка");
         }
         
         public void Remove(SnakeSegmentBase snakeSegmentBase)
@@ -23,8 +23,6 @@ namespace Users.FateX.Scripts
             snakeSegmentBase.SnakeBodyPartHealth.OnTakeDamage -= HandleTakeDamage;
             
             snakeBodyParts.Remove(snakeSegmentBase);
-            
-            Debug.Log("Отписка");
         }
 
         private void OnDisable()
@@ -33,14 +31,17 @@ namespace Users.FateX.Scripts
             {
                 snakeBodyPart.SnakeBodyPartHealth.OnTakeDamage -= HandleTakeDamage;
             }
-            
-            Debug.Log("Отписка");
         }
 
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
-            Debug.Log("Змея получила урон");
+            if(Time.time < timeToNextHit)
+                return;
 
+            timeToNextHit = Time.time + 0.16f;
+            
+            Debug.Log("УРон");
+            
             foreach (var snakeBodyPart in snakeBodyParts)
             {
                 snakeBodyPart.DamageEffect();

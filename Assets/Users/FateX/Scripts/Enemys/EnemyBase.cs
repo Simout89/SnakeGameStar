@@ -8,7 +8,7 @@ using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts
 {
-    public class EnemyBase: MonoBehaviour, IEnemy, IDamageable, IPoolable
+    public class EnemyBase: MonoBehaviour, IEnemy, IDamageable, IPoolable, IDamageDealer
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
@@ -68,6 +68,8 @@ namespace Users.FateX.Scripts
                     0.5f
                 ).OnComplete(() =>
                 {
+                    DamageOverTime.StopAllDots((IDamageDealer)this);
+                    
                     LeanPool.Despawn(gameObject);
                 });
 
@@ -95,10 +97,18 @@ namespace Users.FateX.Scripts
             {
                 DamageInfo damageInfo = new DamageInfo(2);
                 
-                snakeBodyPartHealth.TakeDamage(damageInfo);
+                DamageOverTime.StartDot(snakeBodyPartHealth, this, 0.3f, damageInfo);
             }
         }
-        
+
+        private void OnCollisionExit2D(Collision2D other)
+        {
+            if(other.gameObject.TryGetComponent(out SnakeBodyPartHealth snakeBodyPartHealth))
+            {
+                DamageOverTime.StopDot(snakeBodyPartHealth, this);
+            }
+        }
+
         private void SetFloat(string property, float value)
         {
             _spriteRenderer.GetPropertyBlock(materialPropertyBlock);
@@ -125,7 +135,7 @@ namespace Users.FateX.Scripts
 
         public void OnDespawn()
         {
-            DamageOverTime.StopAllDots(this);
+            DamageOverTime.StopAllDots((IDamageable)this);
         }
     }
 

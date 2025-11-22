@@ -70,6 +70,15 @@ namespace Users.FateX.Scripts.Combat
                     _active.RemoveAt(i);
             }
         }
+        
+        public static void StopAllDots(IDamageDealer damageDealer)
+        {
+            for (int i = _active.Count - 1; i >= 0; i--)
+            {
+                if (_active[i].DamageDealer == damageDealer)
+                    _active.RemoveAt(i);
+            }
+        }
 
         private static async UniTask GlobalTickLoop()
         {

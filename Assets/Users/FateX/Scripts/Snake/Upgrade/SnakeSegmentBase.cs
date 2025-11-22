@@ -55,9 +55,9 @@ namespace Users.FateX.Scripts.Upgrade
             foreach (var sprite in snakeSprites)
             {
                 sprite.DOComplete();
-                    
+                
                 sprite.material.SetFloat("_FlashAmount", 1f);
-                sprite.material.DOFloat(0f, "_FlashAmount", 0.2f);
+                sprite.material.DOFloat(0f, "_FlashAmount", 0.15f);
             }
         }
     }
