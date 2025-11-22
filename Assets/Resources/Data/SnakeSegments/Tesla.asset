@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 2
+    <DelayBetweenShots>k__BackingField: 0.5
     <Damage>k__BackingField: 2
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0

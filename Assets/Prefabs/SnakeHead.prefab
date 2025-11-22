@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3480653366725518431}
   - component: {fileID: 5132878899567702349}
   - component: {fileID: 4162555195283317137}
+  - component: {fileID: 2564869600965193768}
   m_Layer: 6
   m_Name: SnakeHead
   m_TagString: Untagged
@@ -40,6 +41,7 @@ Transform:
   - {fileID: 368112368744041859}
   - {fileID: 8476223606916647761}
   - {fileID: 6785623557648519371}
+  - {fileID: 2570386729133794192}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5670120291175722244
@@ -193,6 +195,7 @@ MonoBehaviour:
   segmentDistance: 0.3
   segmentPrefab: {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
   snakeHealth: {fileID: 5132878899567702349}
+  _snakeInteraction: {fileID: 2564869600965193768}
   _rigidbody: {fileID: 4356812086395531333}
 --- !u!114 &5132878899567702349
 MonoBehaviour:
@@ -220,13 +223,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Upgrade.SnakeSegmentBase
   <Body>k__BackingField: {fileID: 3085388647483284007}
   <AdditionalParts>k__BackingField: {fileID: 0}
-  <CollectableTrigger>k__BackingField: {fileID: 0}
+  <CollectableTrigger>k__BackingField: {fileID: 7410383566233885758}
   <SnakeBodyPartHealth>k__BackingField: {fileID: 607063288584286175}
   snakeSprites:
   - {fileID: 3316330383296740798}
   - {fileID: 4112402284623872569}
   - {fileID: 5301231743219845105}
   upgradeLevelsData: {fileID: 0}
+--- !u!114 &2564869600965193768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1908539727450190954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ce93e8b0aea46c19ea481915177e877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeInteraction
 --- !u!1 &2623710573022005700
 GameObject:
   m_ObjectHideFlags: 0
@@ -587,3 +602,88 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &7831644095836258951
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 3085388647483284007}
+    m_Modifications:
+    - target: {fileID: 3905866936642536152, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_Name
+      value: CollectableTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.15546821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.15546821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.15546821
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+--- !u!4 &2570386729133794192 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+  m_PrefabInstance: {fileID: 7831644095836258951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7410383566233885758 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 754755740041240249, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+  m_PrefabInstance: {fileID: 7831644095836258951}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201a63aebbed4f77925e691ec0542202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.TriggerDetector

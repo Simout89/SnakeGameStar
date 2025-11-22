@@ -21,6 +21,7 @@ public class SnakeController : MonoBehaviour
     [Header("References")]
     [SerializeField] private SnakeSegmentBase segmentPrefab;
     [SerializeField] private SnakeHealth snakeHealth;
+    [SerializeField] private SnakeInteraction _snakeInteraction;
     [SerializeField] private Rigidbody2D _rigidbody;
     
     private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
@@ -32,6 +33,7 @@ public class SnakeController : MonoBehaviour
         segmentsBase.Add(GetComponent<SnakeSegmentBase>());
         
         snakeHealth.Add(GetComponent<SnakeSegmentBase>());
+        _snakeInteraction.Add(GetComponent<SnakeSegmentBase>());
     }
 
     private void FixedUpdate()
@@ -95,5 +97,6 @@ public class SnakeController : MonoBehaviour
         newSegment.Init(this);
         segmentsBase.Add(newSegment); 
         snakeHealth.Add(newSegment);
+        _snakeInteraction.Add(newSegment);
     }
 }

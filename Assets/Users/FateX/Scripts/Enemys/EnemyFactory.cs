@@ -6,7 +6,7 @@ using Zenject;
 
 namespace Users.FateX.Scripts
 {
-    public class EnemySpawner: MonoBehaviour
+    public class EnemyFactory
     {
         [Inject] private EnemySpawnArea _enemySpawnArea;
         [Inject] private EnemyManager _enemyManager;

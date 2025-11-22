@@ -1,6 +1,8 @@
 ﻿using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
+using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Entity;
 using Zenject;
 
@@ -13,7 +15,6 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<EnemySpawnArea>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SnakeSpawner>().FromComponentsInHierarchy().AsSingle();
             
-            Container.BindInterfacesAndSelfTo<EnemySpawner>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
             
             Container.BindInterfacesAndSelfTo<ActiveEntities>().AsSingle();
@@ -21,6 +22,11 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CollectableHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ExperienceSystem>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemyFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ExperienceFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<EnemyDeathHandler>().AsSingle();
         }
     }
 }

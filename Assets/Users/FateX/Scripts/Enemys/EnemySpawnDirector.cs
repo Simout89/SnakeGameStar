@@ -7,7 +7,7 @@ namespace Users.FateX.Scripts.Enemy
     public class EnemySpawnDirector: IInitializable, IDisposable
     {
         [Inject] private GameTimer _gameTimer;
-        [Inject] private EnemySpawner _enemySpawner;
+        [Inject] private EnemyFactory _enemyFactory;
 
         private WaveData _waveData;
         public void SetWaveData(WaveData waveData)
@@ -42,8 +42,8 @@ namespace Users.FateX.Scripts.Enemy
                     break;
                 }
             }
-    
-            _enemySpawner.SpawnEnemy(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+
+            _enemyFactory.SpawnEnemy(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
         }
     }
 }

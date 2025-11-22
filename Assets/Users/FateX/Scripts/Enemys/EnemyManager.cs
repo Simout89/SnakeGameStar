@@ -10,6 +10,7 @@ public class EnemyManager : MonoBehaviour
     private float enemySpeed = 100f;
     
     private List<EnemyBase> _enemies = new List<EnemyBase>();
+    public event Action<EnemyBase> OnEnemyDie;
 
     public void SetSnake(SnakeController snakeController)
     {
@@ -25,6 +26,7 @@ public class EnemyManager : MonoBehaviour
     private void HandleEnemyDie(EnemyBase enemyBase)
     {
         enemyBase.OnDie -= HandleEnemyDie;
+        OnEnemyDie?.Invoke(enemyBase);
         _enemies.Remove(enemyBase);
     }
 
