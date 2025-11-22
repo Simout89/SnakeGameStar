@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using TheBlackCat.TrailEffect2D;
 using UnityEngine;
 
 namespace Users.FateX.Scripts.Upgrade
@@ -51,16 +52,27 @@ namespace Users.FateX.Scripts.Upgrade
             {
                 sword.gameObject.SetActive(true);
                 sword.localScale = Vector3.zero;
-            }
-
-            foreach (var sword in swords)
-            {
-                currentSequence.Append(sword.DOScale(originScale, 0.3f));
+                sword.localRotation = Quaternion.Euler(0, 0, 45);
             }
 
             foreach (var swordSprite in swordSprites)
             {
-                currentSequence.Append(swordSprite.DOFade(0f, 0.1f));
+                TrailManager.Instance.StartTrail(swordSprite.gameObject);
+            }
+
+            foreach (var sword in swords)
+            {
+                currentSequence.Append(sword.DOScale(originScale, 0.1f));
+            }
+            
+            foreach (var sword in swords)
+            {
+                currentSequence.Append(sword.DOLocalRotate(new Vector3(0,0, -45), 0.2f));
+            }
+
+            foreach (var swordSprite in swordSprites)
+            {
+                currentSequence.Append(swordSprite.DOFade(0f, 0.05f));
             }
 
             currentSequence.OnComplete(() =>
@@ -73,9 +85,11 @@ namespace Users.FateX.Scripts.Upgrade
 
                 foreach (var swordSprite in swordSprites)
                 {
+                    TrailManager.Instance.StopTrail(swordSprite.gameObject);
                     var c = swordSprite.color;
                     c.a = 1f;
                     swordSprite.color = c;
+
                 }
                 
                 currentSequence = null;
