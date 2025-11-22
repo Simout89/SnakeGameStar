@@ -9,10 +9,9 @@ namespace Users.FateX.Scripts
         
         public void TakeDamage(DamageInfo damageInfo)
         {
-            OnHealthChanged?.Invoke(damageInfo.Amount);
+            OnTakeDamage?.Invoke(damageInfo);
         }
 
-        public event Action<float> OnHealthChanged;
-        public event Action OnDie;
+        public event Action<DamageInfo> OnTakeDamage;
     }
 }

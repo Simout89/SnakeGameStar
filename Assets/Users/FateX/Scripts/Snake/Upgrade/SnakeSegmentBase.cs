@@ -1,12 +1,17 @@
-﻿using UnityEngine;
+﻿using System;
+using DG.Tweening;
+using UnityEngine;
 using Users.FateX.Scripts.Data.Upgrade;
 
 namespace Users.FateX.Scripts.Upgrade
 {
     public class SnakeSegmentBase: MonoBehaviour, ITickable
     {
-        [SerializeField] public Transform Body;
-        [SerializeField] public Transform AdditionalParts;
+        [field: SerializeField] public  Transform Body { get; private set; }
+        [field: SerializeField] public  Transform AdditionalParts { get; private set; }
+        [field: SerializeField] public TriggerDetector CollectableTrigger { get; private set; }
+        [field: SerializeField] public SnakeBodyPartHealth SnakeBodyPartHealth { get; private set; }
+        [SerializeField] private SpriteRenderer[] snakeSprites;
         [Header("Data")]
         [SerializeField] protected UpgradeLevelsData upgradeLevelsData;
 
@@ -43,6 +48,17 @@ namespace Users.FateX.Scripts.Upgrade
         {
             currentLevel++;
             CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
+        }
+
+        public void DamageEffect()
+        {
+            foreach (var sprite in snakeSprites)
+            {
+                sprite.DOComplete();
+                    
+                sprite.material.SetFloat("_FlashAmount", 1f);
+                sprite.material.DOFloat(0f, "_FlashAmount", 0.2f);
+            }
         }
     }
     

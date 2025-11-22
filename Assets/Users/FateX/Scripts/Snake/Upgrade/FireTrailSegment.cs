@@ -11,6 +11,7 @@ namespace Users.FateX.Scripts.Upgrade
         [Header("References")]
         [SerializeField] private TrailRenderer _trailRenderer;
         [SerializeField] private EdgeCollider2D _edgeCollider2D;
+        [SerializeField] private TriggerDetector _edgeColliderTriggerDetector;
         
         public override void Attack()
         {
@@ -44,7 +45,19 @@ namespace Users.FateX.Scripts.Upgrade
             _edgeCollider2D.points = points2D.ToArray();
         }
 
-        private void OnTriggerEnter2D(Collider2D other)
+        private void OnEnable()
+        {
+            _edgeColliderTriggerDetector.onTriggerEntered += HandleEntered;
+            _edgeColliderTriggerDetector.onTriggerExited += HandleExited;
+        }
+        
+        private void OnDisable()
+        {
+            _edgeColliderTriggerDetector.onTriggerEntered -= HandleEntered;
+            _edgeColliderTriggerDetector.onTriggerExited -= HandleExited;
+        }
+
+        private void HandleEntered(Collider2D other)
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
@@ -52,7 +65,7 @@ namespace Users.FateX.Scripts.Upgrade
             }
         }
         
-        private void OnTriggerExit2D(Collider2D other)
+        private void HandleExited(Collider2D other)
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {

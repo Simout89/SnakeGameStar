@@ -4,6 +4,7 @@ using Lean.Pool;
 using UnityEngine;
 using Users.FateX.Scripts.Combat;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts
 {

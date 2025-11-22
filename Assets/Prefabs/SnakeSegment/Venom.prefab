@@ -32,6 +32,8 @@ Transform:
   m_Children:
   - {fileID: 7773392600413154033}
   - {fileID: 4290522579378895446}
+  - {fileID: 6403097230151559124}
+  - {fileID: 6186862072302476968}
   m_Father: {fileID: 5183364037793464122}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7693433735647725378
@@ -311,8 +313,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd3a75574d8e4fe688e3b88d071c8faf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Upgrade.VenomSegment
-  Body: {fileID: 6969747790068985052}
-  AdditionalParts: {fileID: 220529637061989244}
+  <Body>k__BackingField: {fileID: 6969747790068985052}
+  <AdditionalParts>k__BackingField: {fileID: 220529637061989244}
+  <CollectableTrigger>k__BackingField: {fileID: 2135126832186267770}
+  <SnakeBodyPartHealth>k__BackingField: {fileID: 8166095656893969906}
+  snakeSprites:
+  - {fileID: 7693433735647725378}
+  - {fileID: 6500454423049469340}
   upgradeLevelsData: {fileID: 11400000, guid: 937765bb9bc5c3a45b54f88f69a0d079, type: 2}
   _triggerDetector: {fileID: 2579630290046121218}
 --- !u!1 &5069763672935680489
@@ -495,6 +502,79 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &1718141753573656259
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6969747790068985052}
+    m_Modifications:
+    - target: {fileID: 3905866936642536152, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_Name
+      value: CollectableTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+--- !u!114 &2135126832186267770 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 754755740041240249, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+  m_PrefabInstance: {fileID: 1718141753573656259}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201a63aebbed4f77925e691ec0542202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.TriggerDetector
+--- !u!4 &6403097230151559124 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5693763597214081303, guid: 34a91eea250d2a842b6892a3f55fb2b7, type: 3}
+  m_PrefabInstance: {fileID: 1718141753573656259}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6551683779461708821
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -573,3 +653,76 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5375441185779111382, guid: 779c8e141f6dddc4e83337b8286986ce, type: 3}
   m_PrefabInstance: {fileID: 6551683779461708821}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &7689071416643308219
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 6969747790068985052}
+    m_Modifications:
+    - target: {fileID: 1829059737137613828, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_Name
+      value: HealthPart
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+--- !u!4 &6186862072302476968 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4569244807122080787, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+  m_PrefabInstance: {fileID: 7689071416643308219}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &8166095656893969906 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2010537331146374985, guid: 1f3f96aa7d26b3d428aebc0da2117368, type: 3}
+  m_PrefabInstance: {fileID: 7689071416643308219}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c80436fbaf347cca8d44ccb37c41c3a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeBodyPartHealth

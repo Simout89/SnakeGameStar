@@ -14,9 +14,7 @@ GameObject:
   - component: {fileID: 4356812086395531333}
   - component: {fileID: 607063288584286175}
   - component: {fileID: 3480653366725518431}
-  - component: {fileID: 6392543293446978911}
   - component: {fileID: 5132878899567702349}
-  - component: {fileID: 1481669563895097813}
   - component: {fileID: 4162555195283317137}
   m_Layer: 6
   m_Name: SnakeHead
@@ -196,19 +194,6 @@ MonoBehaviour:
   segmentPrefab: {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
   snakeHealth: {fileID: 5132878899567702349}
   _rigidbody: {fileID: 4356812086395531333}
---- !u!114 &6392543293446978911
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908539727450190954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6ce93e8b0aea46c19ea481915177e877, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeInteraction
-  snakeController: {fileID: 3480653366725518431}
 --- !u!114 &5132878899567702349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -221,20 +206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdf6c8d2a9e499bb0536130cb3db1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeHealth
-  snakeBodyPartHealths:
-  - {fileID: 1481669563895097813}
---- !u!114 &1481669563895097813
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1908539727450190954}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9c80436fbaf347cca8d44ccb37c41c3a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeBodyPartHealth
 --- !u!114 &4162555195283317137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -247,8 +218,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aab03b0acda34abb973b66601ff34d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Upgrade.SnakeSegmentBase
-  Body: {fileID: 3085388647483284007}
-  AdditionalParts: {fileID: 0}
+  <Body>k__BackingField: {fileID: 3085388647483284007}
+  <AdditionalParts>k__BackingField: {fileID: 0}
+  <CollectableTrigger>k__BackingField: {fileID: 0}
+  <SnakeBodyPartHealth>k__BackingField: {fileID: 607063288584286175}
+  snakeSprites:
+  - {fileID: 3316330383296740798}
+  - {fileID: 4112402284623872569}
+  - {fileID: 5301231743219845105}
   upgradeLevelsData: {fileID: 0}
 --- !u!1 &2623710573022005700
 GameObject:

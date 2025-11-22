@@ -1,29 +1,50 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
+using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts
 {
     public class SnakeHealth: MonoBehaviour
     {
-        [SerializeField] private List<SnakeBodyPartHealth> snakeBodyPartHealths = new List<SnakeBodyPartHealth>();
+        private List<SnakeSegmentBase> snakeBodyParts = new List<SnakeSegmentBase>();
 
-        public void Add(SnakeBodyPartHealth snakeBodyPartHealth)
+        public void Add(SnakeSegmentBase snakeSegmentBase)
         {
-            snakeBodyPartHealths.Add(snakeBodyPartHealth);
+            snakeBodyParts.Add(snakeSegmentBase);
 
-            snakeBodyPartHealth.OnHealthChanged += HandleHealthChanged;
-        }
-
-
-        public void Remove(SnakeBodyPartHealth snakeBodyPartHealth)
-        {
-            snakeBodyPartHealth.OnHealthChanged -= HandleHealthChanged;
+            snakeSegmentBase.SnakeBodyPartHealth.OnTakeDamage += HandleTakeDamage;
             
-            snakeBodyPartHealths.Remove(snakeBodyPartHealth);
+            Debug.Log("Подписка");
         }
-        private void HandleHealthChanged(float obj)
+        
+        public void Remove(SnakeSegmentBase snakeSegmentBase)
+        {
+            snakeSegmentBase.SnakeBodyPartHealth.OnTakeDamage -= HandleTakeDamage;
+            
+            snakeBodyParts.Remove(snakeSegmentBase);
+            
+            Debug.Log("Отписка");
+        }
+
+        private void OnDisable()
+        {
+            foreach (var snakeBodyPart in snakeBodyParts)
+            {
+                snakeBodyPart.SnakeBodyPartHealth.OnTakeDamage -= HandleTakeDamage;
+            }
+            
+            Debug.Log("Отписка");
+        }
+
+        private void HandleTakeDamage(DamageInfo damageInfo)
         {
             Debug.Log("Змея получила урон");
+
+            foreach (var snakeBodyPart in snakeBodyParts)
+            {
+                snakeBodyPart.DamageEffect();
+            }
         }
     }
 }

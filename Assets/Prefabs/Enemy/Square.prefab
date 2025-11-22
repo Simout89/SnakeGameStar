@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7325855469933552679}
   - component: {fileID: 6476539263843871288}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5769877817002735972}
   - component: {fileID: 7327734159398226422}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Fade-PNG-Image
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -192,7 +192,7 @@ GameObject:
   - component: {fileID: 2172284294067600571}
   - component: {fileID: 5204054223735525099}
   - component: {fileID: 2676739070057548179}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}

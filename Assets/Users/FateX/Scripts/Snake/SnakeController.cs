@@ -30,6 +30,8 @@ public class SnakeController : MonoBehaviour
         _inputService = inputService;
         
         segmentsBase.Add(GetComponent<SnakeSegmentBase>());
+        
+        snakeHealth.Add(GetComponent<SnakeSegmentBase>());
     }
 
     private void FixedUpdate()
@@ -92,5 +94,6 @@ public class SnakeController : MonoBehaviour
         newSegment.Body.position = last.position;
         newSegment.Init(this);
         segmentsBase.Add(newSegment); 
+        snakeHealth.Add(newSegment);
     }
 }
