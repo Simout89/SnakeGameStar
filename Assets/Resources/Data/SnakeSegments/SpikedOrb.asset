@@ -16,7 +16,7 @@ MonoBehaviour:
   - <AttackRange>k__BackingField: 3
     <DelayBetweenShots>k__BackingField: 1
     <Damage>k__BackingField: 1
-    <ProjectileCount>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 5
     <DamageArea>k__BackingField: 1
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 1

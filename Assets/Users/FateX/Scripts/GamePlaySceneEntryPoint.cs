@@ -19,14 +19,15 @@ namespace Users.FateX.Scripts
         [Inject] private GameContext _gameContext;
         [Inject] private CollectableHandler _collectableHandler;
         [Inject] private ExperienceFactory _experienceFactory;
+        [Inject] private CameraController _cameraController;
         
         public void Initialize()
         {
             Debug.Log("W");
             
-            Application.targetFrameRate = (int)Screen.currentResolution.refreshRate;  
-            
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
+            
+            _cameraController.SetTarget(snakeController.transform);
             
             _gameContext.Init(snakeController);
             
