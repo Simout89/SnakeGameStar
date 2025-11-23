@@ -24,6 +24,8 @@ namespace Users.FateX.Scripts
         {
             Debug.Log("W");
             
+            Application.targetFrameRate = (int)Screen.currentResolution.refreshRate;  
+            
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
             
             _gameContext.Init(snakeController);
