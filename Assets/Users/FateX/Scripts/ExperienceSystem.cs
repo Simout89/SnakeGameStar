@@ -17,8 +17,6 @@ namespace Users.FateX.Scripts
         
         public void AddExperiencePoints(IExperiencePoints experiencePoints)
         {
-            Debug.Log($"Получено опыта: {experiencePoints.Value}");
-            
             CurrentXp += experiencePoints.Value;
 
             OnChangeXp?.Invoke();

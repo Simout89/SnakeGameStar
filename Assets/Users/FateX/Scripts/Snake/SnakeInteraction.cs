@@ -30,7 +30,10 @@ namespace Users.FateX.Scripts
         {
             if (obj.TryGetComponent(out ICollectable collectable))
             {
-                OnCollect?.Invoke(collectable.Collect());
+                if (collectable.CanCollect())
+                {
+                    OnCollect?.Invoke(collectable.Collect());
+                }
             }
         }
     }

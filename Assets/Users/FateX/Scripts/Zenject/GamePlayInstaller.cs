@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Enemys;
@@ -16,6 +17,8 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<SnakeSpawner>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
             
+            Container.BindInterfacesAndSelfTo<CardMenuView>().FromComponentsInHierarchy().AsSingle();
+            
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
             
             Container.BindInterfacesAndSelfTo<ActiveEntities>().AsSingle();
@@ -24,10 +27,19 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
             Container.BindInterfacesAndSelfTo<CollectableHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ItemManager>().AsSingle();
             Container.BindInterfacesAndSelfTo<ExperienceSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<ExperienceFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyDeathHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<LevelUpHandler>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<GameStateManager>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<CardMenuController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<CardSelectionHandler>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
         }
     }
 }

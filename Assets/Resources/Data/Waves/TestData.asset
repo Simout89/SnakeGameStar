@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4f776e6a2144bdbc4fba01ed9cc41b, type: 3}
   m_Name: TestData
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.WaveData.WaveData
-  <TotalTime>k__BackingField: 600
+  <TotalTime>k__BackingField: 100
   WaveChangeSpawns:
   - <TimeMarker>k__BackingField: 0
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: da532416fe9f3ab4b9f56341054b7298, type: 3}
   - <TimeMarker>k__BackingField: 0.33
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: fee591ff17534c54e981b30e16469c67, type: 3}
+    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
   - <TimeMarker>k__BackingField: 0.66
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 6325e8918d1b7eb4b934f0e36e500397, type: 3}
+    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: c05ac6dcadebd624aaa628928150a363, type: 3}

@@ -1,6 +1,8 @@
 ﻿using System;
 using UnityEngine;
+using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
+using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Data.WaveData;
 using Users.FateX.Scripts.Enemy;
 using Zenject;
@@ -21,8 +23,15 @@ namespace Users.FateX.Scripts
         [Inject] private ExperienceFactory _experienceFactory;
         [Inject] private CameraController _cameraController;
         
+        [Inject] private GameConfig _gameConfig;
+
+        [Inject] private CardMenuController _cardMenuController;
+        [Inject] private GameStateManager _gameStateManager;
+        
         public void Initialize()
         {
+            Application.targetFrameRate = 60;
+            
             Debug.Log("W");
             
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
@@ -34,14 +43,20 @@ namespace Users.FateX.Scripts
             _collectableHandler.SetSnakeInteraction(snakeController.GetComponent<SnakeInteraction>());
             
             _enemyManager.SetSnake(snakeController);
+            
+            _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
 
             WaveData waveData = Resources.LoadAll<WaveData>("Data/Waves")[0];
             
-            _experienceFactory.SetPrefab(Resources.LoadAll<XpItem>("Prefabs")[0]);
+            _experienceFactory.SetPrefab(_gameConfig.GameConfigData.XpPrefab);
             
             _enemySpawnDirector.SetWaveData(waveData);
             
             _gameTimer.StartTimer(waveData.TotalTime);
+            
+            _cardMenuController.SpawnRandomCards();
+            
+            _gameStateManager.ChangeState(GameStates.CardMenu);
         }
     }
 }

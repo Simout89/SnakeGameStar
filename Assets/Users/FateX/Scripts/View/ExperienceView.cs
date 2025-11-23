@@ -1,4 +1,5 @@
 ﻿using System;
+using DG.Tweening;
 using UnityEngine;
 using UnityEngine.UI;
 using Zenject;
@@ -26,7 +27,8 @@ namespace Users.FateX.Scripts.View
 
         private void HandleChangeXp()
         {
-            _image.fillAmount = _experienceSystem.CurrentXp / _experienceSystem.NextLevelXp;
+            _image.DOComplete();
+            _image.DOFillAmount(_experienceSystem.CurrentXp / _experienceSystem.NextLevelXp, 0.2f);
         }
     }
 }

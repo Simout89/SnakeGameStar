@@ -125,6 +125,8 @@ namespace Users.FateX.Scripts
 
         public void OnSpawn()
         {
+            Visible = false;
+            
             SetFloat("_FlashAmount", 0f);
             SetFloat("_DissolveAmount", 0f);
 
@@ -136,6 +138,16 @@ namespace Users.FateX.Scripts
         public void OnDespawn()
         {
             DamageOverTime.StopAllDots((IDamageable)this);
+        }
+        
+        private void OnBecameVisible()
+        {
+            Visible = true;
+        }
+
+        private void OnBecameInvisible()
+        {
+            Visible = false;
         }
     }
 
