@@ -16,5 +16,10 @@
         {
             
         }
+
+        protected void DealDamage(DamageInfo damageInfo)
+        {
+            GameEvents.DamageDealt(damageInfo);
+        }
     }
 }

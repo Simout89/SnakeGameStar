@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Achievements;
 using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
@@ -38,6 +39,7 @@ namespace Скриптерсы.Zenject
             
             Container.BindInterfacesAndSelfTo<CardMenuController>().AsSingle();
             Container.BindInterfacesAndSelfTo<CardSelectionHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AchievementManager>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
         }
