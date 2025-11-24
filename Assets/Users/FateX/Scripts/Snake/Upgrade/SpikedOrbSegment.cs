@@ -8,10 +8,11 @@ using Users.FateX.Scripts.Utils;
 
 namespace Users.FateX.Scripts.Upgrade
 {
-    public class SpikedOrbSegment: CombatSnakeSegment
+    public class SpikedOrbSegment : CombatSnakeSegment
     {
-        [Header("References")]
-        [SerializeField] private Transform orbContainer;
+        [Header("References")] [SerializeField]
+        private Transform orbContainer;
+
         [SerializeField] private DamageOrb damageOrbPrefab;
 
 
@@ -27,7 +28,7 @@ namespace Users.FateX.Scripts.Upgrade
         private void StartRotate()
         {
             orbContainer.DOKill();
-            
+
             orbContainer.DOLocalRotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
                 .SetEase(Ease.Linear)
                 .SetLoops(-1, LoopType.Restart);
@@ -36,24 +37,27 @@ namespace Users.FateX.Scripts.Upgrade
         public override void Upgrade()
         {
             base.Upgrade();
-            
+
             UpdateOrbCount();
         }
 
         private void UpdateOrbCount()
         {
             orbContainer.DOKill();
-            
+
             foreach (Transform child in orbContainer)
             {
                 child.DOKill(true);
                 Destroy(child.gameObject);
             }
 
-            foreach (var position in MyUtils.GetPositionsInCircle2D(orbContainer.position, CurrentStats.AttackRange, CurrentStats.ProjectileCount))
+            var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
+            
+            foreach (var position in MyUtils.GetPositionsInCircle2D(orbContainer.position, CurrentStats.AttackRange,
+                         CurrentStats.ProjectileCount))
             {
                 var newOrb = Instantiate(damageOrbPrefab, position, Quaternion.identity, orbContainer);
-                newOrb.Init(CurrentStats.Damage);
+                newOrb.Init(damageInfo);
             }
 
             StartRotate();
@@ -65,9 +69,9 @@ namespace Users.FateX.Scripts.Upgrade
             {
                 return;
             }
+
             Gizmos.color = Color.red;
             Gizmos.DrawWireSphere(orbContainer.position, upgradeLevelsData.UpgradeStats[0].AttackRange);
         }
-
     }
 }

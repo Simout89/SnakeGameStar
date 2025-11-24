@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
   m_Name: FireTail
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
+  <SegmentName>k__BackingField: FireTrail
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 0
     <DelayBetweenShots>k__BackingField: 0.5
@@ -21,3 +22,4 @@ MonoBehaviour:
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
+  <Vfx>k__BackingField: {fileID: 0}

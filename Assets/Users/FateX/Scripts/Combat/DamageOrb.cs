@@ -5,18 +5,20 @@ namespace Users.FateX.Scripts.Combat
 {
     public class DamageOrb: MonoBehaviour
     {
-        private float damage;
+        private DamageInfo damageInfo;
         
-        public void Init(float damage)
+        public void Init(DamageInfo damageInfo)
         {
-            this.damage = damage;
+            this.damageInfo = damageInfo;
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
-                damageable.TakeDamage(new DamageInfo(damage));
+                damageable.TakeDamage(damageInfo);
+                
+                GameEvents.DamageDealt(damageInfo);
             }
         }
     }

@@ -24,12 +24,19 @@ namespace Users.FateX.Scripts
         public bool AlreadyDie = false;
         private Vector3 startShadowScale;
         private MaterialPropertyBlock materialPropertyBlock;
+        
+        public DamageInfo lastDamageInfo { get; private set; }
 
         private void Awake()
         {
             startShadowScale = _shadow.localScale;
             
             materialPropertyBlock = new MaterialPropertyBlock();
+        }
+
+        public EnemyData GetData()
+        {
+            return _enemyData;
         }
 
         public void Move(Vector3 direction)
@@ -45,6 +52,8 @@ namespace Users.FateX.Scripts
         {
             if(AlreadyDie)
                 return;
+
+            lastDamageInfo = damageInfo;
             
             CurrentHealth -= damageInfo.Amount;
 
@@ -95,7 +104,7 @@ namespace Users.FateX.Scripts
         {
             if(other.gameObject.TryGetComponent(out SnakeBodyPartHealth snakeBodyPartHealth))
             {
-                DamageInfo damageInfo = new DamageInfo(2);
+                DamageInfo damageInfo = new DamageInfo(_enemyData.Damage, _enemyData.EnemyName);
                 
                 DamageOverTime.StartDot(snakeBodyPartHealth, this, 0.3f, damageInfo);
             }
@@ -153,10 +162,12 @@ namespace Users.FateX.Scripts
 
     public struct DamageInfo
     {
+        public string DamageDealerName;
         public float Amount;
-        public DamageInfo(float amount)
+        public DamageInfo(float amount, string damageDealerName)
         {
             this.Amount = amount;
+            DamageDealerName = damageDealerName;
         }
     }
 

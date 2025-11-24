@@ -5,6 +5,7 @@ namespace Users.FateX.Scripts.Data
     [CreateAssetMenu(menuName = "Data/EnemyData")]
     public class EnemyData: ScriptableObject
     {
+        [field: SerializeField] public string EnemyName { get; private set; }
         [field: SerializeField] public int Health { get; private set; } = 10;
         [field: SerializeField] public int MoveSpeed { get; private set; } = 10;
         [field: SerializeField] public int Damage { get; private set; } = 10;

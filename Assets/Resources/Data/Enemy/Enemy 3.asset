@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2a85c9bf60e463083f8598593e4e879, type: 3}
   m_Name: Enemy 3
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.EnemyData
+  <EnemyName>k__BackingField: Eye
   <Health>k__BackingField: 5
   <MoveSpeed>k__BackingField: 10
-  <Damage>k__BackingField: 10
+  <Damage>k__BackingField: 1
   <AttackSpeed>k__BackingField: 10

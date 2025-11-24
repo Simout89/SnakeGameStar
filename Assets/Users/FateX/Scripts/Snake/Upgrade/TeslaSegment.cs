@@ -47,8 +47,12 @@ namespace Users.FateX.Scripts.Upgrade
                     return;
                 
                 await lightingTrail.transform.DOMove(enemy.transform.position, 0.1f).AsyncWaitForCompletion();
+
+                var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
+                enemy.TakeDamage(damageInfo);
                 
-                enemy.TakeDamage(new DamageInfo(CurrentStats.Damage));
+                DealDamage(damageInfo);
+
 
                 await UniTask.WaitForSeconds(0.1f, false, PlayerLoopTiming.Update, cancellationToken);
             }

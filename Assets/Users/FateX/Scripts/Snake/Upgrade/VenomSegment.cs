@@ -24,7 +24,7 @@ namespace Users.FateX.Scripts.Upgrade
         {
             if (obj.TryGetComponent(out IDamageable damageable))
             {
-                DamageOverTime.StartDot(damageable, this, CurrentStats.DelayBetweenShots, new DamageInfo(CurrentStats.Damage));
+                DamageOverTime.StartDot(damageable, this, CurrentStats.DelayBetweenShots, new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName));
             }
         }
 

@@ -104,6 +104,9 @@ namespace Users.FateX.Scripts.Combat
                     if (time >= dot.NextTickTime)
                     {
                         dot.Damageable.TakeDamage(dot.Damage);
+                        
+                        GameEvents.DamageDealt(dot.Damage);
+                        
                         dot.NextTickTime = time + dot.TickDelay;
                     }
 

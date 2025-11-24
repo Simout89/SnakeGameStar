@@ -22,7 +22,7 @@ namespace Users.FateX.Scripts.Upgrade
             {
                 var projectile = LeanPool.Spawn(upgradeLevelsData.Projectile, gunPivot.position, Quaternion.identity);
                 
-                projectile.Launch(enemy.transform, 1f, CurrentStats.Damage, CurrentStats.DamageArea);
+                projectile.Launch(enemy.transform, 1f, new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName), CurrentStats.DamageArea);
             }
         }
 

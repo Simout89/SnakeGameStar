@@ -36,7 +36,7 @@ namespace Users.FateX.Scripts.Upgrade
         {
             if (obj.TryGetComponent(out IDamageable damageable))
             {
-                var damageInfo = new DamageInfo(CurrentStats.Damage);
+                var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
                 
                 damageable.TakeDamage(damageInfo);
                 

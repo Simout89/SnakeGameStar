@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
   m_Name: Tesla
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
+  <SegmentName>k__BackingField: Tesla
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 10
     <DelayBetweenShots>k__BackingField: 0.5

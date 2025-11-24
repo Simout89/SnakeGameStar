@@ -27,6 +27,7 @@ public class EnemyManager : MonoBehaviour
     {
         enemyBase.OnDie -= HandleEnemyDie;
         OnEnemyDie?.Invoke(enemyBase);
+        GameEvents.EnemyDie(enemyBase.GetData(), enemyBase.lastDamageInfo);
         _enemies.Remove(enemyBase);
     }
 

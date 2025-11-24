@@ -14,13 +14,13 @@ namespace Users.FateX.Scripts.Combat
         private Transform target;
         private CancellationTokenSource cts;
         private float areaOfEffectRaidus;
-        private float damage;
+        private DamageInfo damageInfo;
 
-        public void Launch(Transform targetEnemy, float flightTime, float damage, float AOERadius = 0)
+        public void Launch(Transform targetEnemy, float flightTime, DamageInfo damageInfo, float AOERadius = 0)
         {
             target = targetEnemy;
             areaOfEffectRaidus = AOERadius;
-            this.damage = damage;
+            this.damageInfo = damageInfo;
             
             cts = new CancellationTokenSource();
             
@@ -90,7 +90,12 @@ namespace Users.FateX.Scripts.Combat
             Collider2D[] colliders = Physics2D.OverlapCircleAll(projectileTransform.position, areaOfEffectRaidus);
             foreach (var collider in colliders)
             {
-                if(collider.TryGetComponent(out IDamageable damageable)) damageable.TakeDamage(new DamageInfo(damage));
+                if(collider.TryGetComponent(out IDamageable damageable))
+                {
+                    damageable.TakeDamage(damageInfo);
+                    
+                    GameEvents.DamageDealt(damageInfo);
+                }
             }
         }   
 
