@@ -10,7 +10,8 @@ namespace Users.FateX.Scripts.Combat
         [SerializeField] private Transform projectileTransform;
         [SerializeField] private float arcHeight = 4f;
         [SerializeField] private GameObject explosionVfx;
-
+        [SerializeField] private LayerMask _snakeLayerMask; 
+            
         private Transform target;
         private CancellationTokenSource cts;
         private float areaOfEffectRaidus;
@@ -87,7 +88,7 @@ namespace Users.FateX.Scripts.Combat
 
         private void AreaOfEffectDamage()
         {
-            Collider2D[] colliders = Physics2D.OverlapCircleAll(projectileTransform.position, areaOfEffectRaidus);
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(projectileTransform.position, areaOfEffectRaidus, ~_snakeLayerMask);
             foreach (var collider in colliders)
             {
                 if(collider.TryGetComponent(out IDamageable damageable))

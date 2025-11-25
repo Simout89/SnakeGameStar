@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts
     {
         private float duration = 0;
         private bool _isRunning;
+        public int CurrentTime { get; private set; }
         
         public event Action<int> OnSecondChanged;
         public event Action OnTimerEnd;
@@ -47,6 +48,7 @@ namespace Users.FateX.Scripts
                 if (currentSecond != lastSecond)
                 {
                     lastSecond = currentSecond;
+                    CurrentTime = currentSecond;
                     OnSecondChanged?.Invoke(currentSecond);
                 }
                 

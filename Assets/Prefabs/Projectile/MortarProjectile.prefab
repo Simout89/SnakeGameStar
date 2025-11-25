@@ -231,6 +231,9 @@ MonoBehaviour:
   projectileTransform: {fileID: 2939062181490951046}
   arcHeight: 5
   explosionVfx: {fileID: 150612451543166323, guid: 17944bd760bb9fa418fc1bc1d82ec75e, type: 3}
+  _snakeLayerMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!114 &7476052967036275378
 MonoBehaviour:
   m_ObjectHideFlags: 0

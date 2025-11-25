@@ -11,6 +11,7 @@ public class EnemyManager : MonoBehaviour
     
     private List<EnemyBase> _enemies = new List<EnemyBase>();
     public event Action<EnemyBase> OnEnemyDie;
+    public event Action<int> AliveEnemyCountChanged;
 
     public void SetSnake(SnakeController snakeController)
     {
@@ -21,6 +22,7 @@ public class EnemyManager : MonoBehaviour
     {
         _enemies.Add(enemyBase);
         enemyBase.OnDie += HandleEnemyDie;
+        AliveEnemyCountChanged?.Invoke(_enemies.Count);
     }
 
     private void HandleEnemyDie(EnemyBase enemyBase)
@@ -29,6 +31,7 @@ public class EnemyManager : MonoBehaviour
         OnEnemyDie?.Invoke(enemyBase);
         GameEvents.EnemyDie(enemyBase.GetData(), enemyBase.lastDamageInfo);
         _enemies.Remove(enemyBase);
+        AliveEnemyCountChanged?.Invoke(_enemies.Count);
     }
 
     public void FixedUpdate()

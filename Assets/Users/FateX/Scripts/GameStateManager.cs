@@ -27,7 +27,7 @@ namespace Users.FateX.Scripts
                     case GameStates.Play:
                     {
                         Time.timeScale = 1;
-                        Cursor.lockState = CursorLockMode.Locked;
+                        Cursor.lockState = CursorLockMode.None;
                     }
                         break;
                     case GameStates.CardMenu:
