@@ -9,6 +9,9 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public CardType CardType { get; private set; }
         [field: SerializeField] public SnakeSegmentBase SnakeSegmentBase { get; private set; }
+        [field: TextArea(10, 10)]
+        [field: SerializeField] 
+        public string Description { get; private set; }
     }
 
     public enum CardType

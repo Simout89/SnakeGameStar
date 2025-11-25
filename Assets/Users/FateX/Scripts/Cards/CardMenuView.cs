@@ -9,19 +9,26 @@ namespace Users.FateX.Scripts.Cards
         [Inject] private GameConfig _gameConfig;
         
         [SerializeField] private Transform _cardContainer;
+        [SerializeField] private GameObject backGround;
+        
+        public CardEntryView ShowCard(CardData cardData)
+        {
+            var newCard = Instantiate(_gameConfig.GameConfigData.CardPrefab, _cardContainer);
 
+            newCard.Init(cardData, cardData.Description);
+
+            backGround.SetActive(true);
+
+            return newCard;
+        }
+        
         public CardEntryView ShowCard(CardData cardData, string text = "")
         {
             var newCard = Instantiate(_gameConfig.GameConfigData.CardPrefab, _cardContainer);
 
-            if (text == "")
-            {
-                newCard.Init(cardData);
-            }
-            else
-            {
-                newCard.Init(cardData, text);
-            }
+            newCard.Init(cardData, text);
+
+            backGround.SetActive(true);
 
             return newCard;
         }
@@ -34,6 +41,7 @@ namespace Users.FateX.Scripts.Cards
             {
                 Destroy(child.gameObject);
             }
+            backGround.SetActive(false);
         }
     }
 }

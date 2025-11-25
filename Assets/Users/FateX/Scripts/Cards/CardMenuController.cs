@@ -96,7 +96,7 @@ namespace Users.FateX.Scripts.Cards
                     var currentStats = data[snakeSegmentBase.CurrentLevel];
                     var nextStats = data[snakeSegmentBase.CurrentLevel + 1];
 
-                    string statsText = $"{snakeSegmentBase.UpgradeLevelsData.SegmentName}\n";
+                    string statsText = $"Улучшение: {snakeSegmentBase.UpgradeLevelsData.SegmentName}\n";
                     statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
                         "AttackSpeed", true);
                     statsText += GetStatDifference(currentStats.Damage, nextStats.Damage, "Damage");

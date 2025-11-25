@@ -15,3 +15,6 @@ MonoBehaviour:
   <Sprite>k__BackingField: {fileID: 21300000, guid: 3317e574544d56b4e85abd79c69933a5, type: 3}
   <CardType>k__BackingField: 0
   <SnakeSegmentBase>k__BackingField: {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
+  <Description>k__BackingField: "\u0428\u0438\u043F\u044B, \u0432\u0440\u0430\u0449\u0430\u044E\u0449\u0438\u0435\u0441\u044F
+    \u043F\u043E \u043E\u0440\u0431\u0438\u0442\u0435 \u0432\u043E\u043A\u0440\u0443\u0433
+    \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u0430."
