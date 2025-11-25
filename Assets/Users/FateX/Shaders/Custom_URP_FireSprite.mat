@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 8
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Custom_URP_FireSprite
+  m_Shader: {fileID: 4800000, guid: b385bb8ab0d38994fa003d9c021ae61c, type: 3}
+  m_Parent: {fileID: 0}
+  m_ModifiedSerializedProperties: 0
+  m_ValidKeywords: []
+  m_InvalidKeywords: []
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_LockedProperties: 
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Ints: []
+    m_Floats:
+    - _Brightness: 3
+    - _ColorBands: 10
+    - _CoreStability: 0.85
+    - _DstBlend: 10
+    - _FlameSpeed: 1.05
+    - _FlowDirection: 1
+    - _FlowSpeed: 1.46
+    - _NoiseScale: 1.5
+    - _OutlineWidth: 0.05
+    - _Sharpness: 5
+    - _SrcBlend: 5
+    - _StreamWidth: 1
+    - _Turbulence: 0.1
+    - _WaveAmplitude: 0.009
+    - _WaveFrequency: 10
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _FireColor1: {r: 1, g: 1, b: 0.8, a: 1}
+    - _FireColor2: {r: 1, g: 0.5, b: 0, a: 1}
+    - _FireColor3: {r: 1, g: 0.19999996, b: 0, a: 1}
+    - _OutlineColor: {r: 0.8, g: 0.29999998, b: 0, a: 1}
+  m_BuildTextureStacks: []
+  m_AllowLocking: 1
