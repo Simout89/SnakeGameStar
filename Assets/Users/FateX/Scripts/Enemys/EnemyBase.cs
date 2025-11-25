@@ -28,6 +28,7 @@ namespace Users.FateX.Scripts
         private Vector3 startShadowScale;
         private MaterialPropertyBlock materialPropertyBlock;
         private Vector3 originScale;
+        private Collider2D _collider2D;
         
         public DamageInfo lastDamageInfo { get; private set; }
 
@@ -35,6 +36,8 @@ namespace Users.FateX.Scripts
         {
             startShadowScale = _shadow.localScale;
             originScale = Body.localScale;
+
+            _collider2D = GetComponent<Collider2D>();
             
             materialPropertyBlock = new MaterialPropertyBlock();
             
@@ -93,6 +96,11 @@ namespace Users.FateX.Scripts
 
                 _shadow.DOScale(Vector3.zero, 0.5f);
                 
+                DamageOverTime.StopAllDots((IDamageDealer)this);
+                DamageOverTime.StopAllDots((IDamageable)this);
+                
+                _collider2D.enabled = false;
+                
                 _spriteRenderer.DOKill();
                 DOTween.To(
                     () => GetFloat("_DissolveAmount"),
@@ -101,11 +109,8 @@ namespace Users.FateX.Scripts
                     0.5f
                 ).OnComplete(() =>
                 {
-                    DamageOverTime.StopAllDots((IDamageDealer)this);
-                    
                     LeanPool.Despawn(gameObject);
                 });
-
             }
         }
 
@@ -159,6 +164,9 @@ namespace Users.FateX.Scripts
         public void OnSpawn()
         {
             Visible = false;
+
+            _collider2D.enabled = true;
+
             
             Body.localScale = originScale;
 
@@ -175,10 +183,8 @@ namespace Users.FateX.Scripts
         public void OnDespawn()
         {
             StopSwaying();
-
-            Body.localScale = originScale;
             
-            DamageOverTime.StopAllDots((IDamageable)this);
+            Body.localScale = originScale;
         }
         
         private void OnBecameVisible()

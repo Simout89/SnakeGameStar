@@ -1,4 +1,5 @@
-﻿using System.Threading;
+﻿using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Lean.Pool;
 using UnityEngine;
@@ -10,14 +11,15 @@ namespace Users.FateX.Scripts.Combat
         [SerializeField] private Transform projectileTransform;
         [SerializeField] private float arcHeight = 4f;
         [SerializeField] private GameObject explosionVfx;
-        [SerializeField] private LayerMask _snakeLayerMask; 
+        [SerializeField] private LayerMask _snakeLayerMask;
+        [SerializeField] private Rigidbody2D _rigidbody2D;
             
         private Transform target;
         private CancellationTokenSource cts;
         private float areaOfEffectRaidus;
         private DamageInfo damageInfo;
 
-        public void Launch(Transform targetEnemy, float flightTime, DamageInfo damageInfo, float AOERadius = 0)
+        public void LaunchArc(Transform targetEnemy, float flightTime, DamageInfo damageInfo, float AOERadius = 0)
         {
             target = targetEnemy;
             areaOfEffectRaidus = AOERadius;
@@ -28,6 +30,23 @@ namespace Users.FateX.Scripts.Combat
             Vector2 targetPos = PredictTargetPosition(targetEnemy, flightTime);
     
             FollowTarget(cts.Token, flightTime, targetPos).Forget();
+        }
+
+        public void SimpleLaunch(Vector3 direction, DamageInfo damageInfo)
+        {
+            this.damageInfo = damageInfo;
+
+            _rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
+        }
+
+        private void OnTriggerEnter2D(Collider2D other)
+        {
+            if (other.TryGetComponent(out IDamageable damageable))
+            {
+                damageable.TakeDamage(damageInfo);
+            }
+            
+            LeanPool.Despawn(gameObject);
         }
 
         private Vector2 PredictTargetPosition(Transform targetEnemy, float flightTime)

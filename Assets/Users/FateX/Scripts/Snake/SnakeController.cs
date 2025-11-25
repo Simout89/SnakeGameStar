@@ -36,7 +36,7 @@ public class SnakeController : MonoBehaviour
         _snakeInteraction.Add(GetComponent<SnakeSegmentBase>());
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         foreach (var segment in segmentsBase)
             segment.Tick();

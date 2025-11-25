@@ -1362,7 +1362,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 1
+  UpdateMethod: 0
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0
@@ -1490,6 +1490,7 @@ MonoBehaviour:
   - {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
   - {fileID: 740953566481237778, guid: 769e16ee4df55ee4bbf5a55bfdbfd13b, type: 3}
   - {fileID: 1983542577431105033, guid: bf48e4f93f22ad94abee5f789b2bb4da, type: 3}
+  - {fileID: 3390149356430078541, guid: f126837828a9aff40a3e1260c7e73fd3, type: 3}
   container: {fileID: 234463176}
   _buttonPrefab: {fileID: 8778933007183655035, guid: 6d558731692c20f4ead33eabb8996789, type: 3}
 --- !u!1001 &780221611
@@ -3373,8 +3374,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1936807937}
   - {fileID: 780221612}
+  - {fileID: 1936807937}
   - {fileID: 1479266425}
   - {fileID: 1980284465}
   m_Father: {fileID: 0}

@@ -82,39 +82,44 @@ namespace Users.FateX.Scripts.Combat
 
         private static async UniTask GlobalTickLoop()
         {
-            const float globalTickRate = 0.05f;
-
-            float time = 0f;
-
             while (_active.Count > 0)
             {
-                await UniTask.Delay(TimeSpan.FromSeconds(globalTickRate));
-                time += globalTickRate;
+                await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
+                float time = Time.time;
 
-                for (int i = _active.Count - 1; i >= 0; i--)
+                var activeCopy = new List<DamageOverTimeInfo>(_active);
+
+                foreach (var dot in activeCopy)
                 {
-                    var dot = _active[i];
+                    // Если dot был удалён во внешнем методе
+                    if (!_active.Contains(dot)) 
+                        continue;
 
                     if (dot.Damageable == null)
                     {
-                        _active.RemoveAt(i);
+                        _active.Remove(dot);
                         continue;
                     }
 
                     if (time >= dot.NextTickTime)
                     {
                         dot.Damageable.TakeDamage(dot.Damage);
-                        
                         GameEvents.DamageDealt(dot.Damage);
-                        
-                        dot.NextTickTime = time + dot.TickDelay;
-                    }
 
-                    _active[i] = dot;
+                        // Обновляем NextTickTime в оригинальном объекте
+                        int index = _active.IndexOf(dot);
+                        if (index != -1)
+                        {
+                            var updatedDot = _active[index];
+                            updatedDot.NextTickTime = time + updatedDot.TickDelay;
+                            _active[index] = updatedDot;
+                        }
+                    }
                 }
             }
 
             _tickLoopRunning = false;
         }
+
     }
 }
