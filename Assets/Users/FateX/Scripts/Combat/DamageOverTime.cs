@@ -91,7 +91,6 @@ namespace Users.FateX.Scripts.Combat
 
                 foreach (var dot in activeCopy)
                 {
-                    // Если dot был удалён во внешнем методе
                     if (!_active.Contains(dot)) 
                         continue;
 
@@ -106,7 +105,6 @@ namespace Users.FateX.Scripts.Combat
                         dot.Damageable.TakeDamage(dot.Damage);
                         GameEvents.DamageDealt(dot.Damage);
 
-                        // Обновляем NextTickTime в оригинальном объекте
                         int index = _active.IndexOf(dot);
                         if (index != -1)
                         {
