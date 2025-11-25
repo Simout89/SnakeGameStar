@@ -8,6 +8,8 @@ namespace Скриптерсы.Services
     {
         public InputSystem_Actions InputSystemActions { get; private set; }
         
+        public Vector2 joyStickInput { get; set; }
+
         public InputService() 
         {
             InputSystemActions = new InputSystem_Actions();
@@ -24,5 +26,6 @@ namespace Скриптерсы.Services
     public interface IInputService
     {
         public InputSystem_Actions InputSystemActions { get;}
+        public Vector2 joyStickInput { get; set; }
     }
 }

@@ -25,8 +25,23 @@ namespace Users.FateX.Scripts.Entity
                 return pos;
             }
 
+            Vector3 offset = new Vector3(
+                Random.Range(-checkRadius, checkRadius),
+                Random.Range(-checkRadius, checkRadius),
+                0
+            );
+            Vector3 newPos = lastSpawnPos + offset;
+
+            hit = Physics2D.OverlapCircle(newPos, checkRadius/2, LayerMask.GetMask("Wall"));
+            if (hit == null)
+            {
+                lastSpawnPos = newPos;
+                return newPos;
+            }
+
             return lastSpawnPos;
         }
+
 
         private Vector3 GenerateRandomBorderPosition()
         {

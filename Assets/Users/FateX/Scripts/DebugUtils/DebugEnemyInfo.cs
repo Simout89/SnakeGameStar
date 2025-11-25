@@ -28,7 +28,7 @@ namespace Users.FateX.Scripts.DebugUtils
 
         private void HandleChangedSpawnEnemyCount(float obj)
         {
-            enemySpawnCount.text = $"Врагов спавнится за раз: {obj.ToString("F5")}";
+            enemySpawnCount.text = $"Врагов спавнится за раз: {obj.ToString("F2")}";
         }
 
         private void HandleEnemyCountChanged(int obj)

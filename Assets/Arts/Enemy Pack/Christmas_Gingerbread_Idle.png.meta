@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 66998115430b2524a89e867843fbc99f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7969404980688482534
+    second: Christmas_Gingerbread_Idle_0
+  - first:
+      213: -1767069433267936255
+    second: Christmas_Gingerbread_Idle_1
+  - first:
+      213: 4725854040794633704
+    second: Christmas_Gingerbread_Idle_2
+  - first:
+      213: 6523417336691725888
+    second: Christmas_Gingerbread_Idle_3
+  - first:
+      213: 3745105879502110956
+    second: Christmas_Gingerbread_Idle_4
+  - first:
+      213: -8794541379097575571
+    second: Christmas_Gingerbread_Idle_5
+  - first:
+      213: -1179126613604203554
+    second: Christmas_Gingerbread_Idle_6
+  - first:
+      213: 6075338571794329953
+    second: Christmas_Gingerbread_Idle_7
+  - first:
+      213: 4995271264306891738
+    second: Christmas_Gingerbread_Idle_8
+  - first:
+      213: -6142335925231590909
+    second: Christmas_Gingerbread_Idle_9
+  - first:
+      213: -3985200189354487479
+    second: Christmas_Gingerbread_Idle_10
+  - first:
+      213: -7046419992120838078
+    second: Christmas_Gingerbread_Idle_11
+  - first:
+      213: -3667801680682917626
+    second: Christmas_Gingerbread_Idle_12
+  - first:
+      213: 7375896800767505239
+    second: Christmas_Gingerbread_Idle_13
+  - first:
+      213: -8595446016980459260
+    second: Christmas_Gingerbread_Idle_14
+  - first:
+      213: 4897483378858155071
+    second: Christmas_Gingerbread_Idle_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 431
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1f85dec46cf66190800000000000000
+      internalID: -7969404980688482534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 431
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1042d9876bb1a77e0800000000000000
+      internalID: -1767069433267936255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 431
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e598e1263b959140800000000000000
+      internalID: 4725854040794633704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 431
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04692235185d78a50800000000000000
+      internalID: 6523417336691725888
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 303
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce043f974f949f330800000000000000
+      internalID: 3745105879502110956
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 303
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f3a60163383f580800000000000000
+      internalID: -8794541379097575571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 303
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed389ea9796e2afe0800000000000000
+      internalID: -1179126613604203554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 303
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 161b7061e30ff4450800000000000000
+      internalID: 6075338571794329953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 175
+        width: 28
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adb8ab1bfb4c25540800000000000000
+      internalID: 4995271264306891738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 175
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 302637df40a02caa0800000000000000
+      internalID: -6142335925231590909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 175
+        width: 28
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 941d4b2da89b1b8c0800000000000000
+      internalID: -3985200189354487479
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 175
+        width: 28
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2483d67c956163e90800000000000000
+      internalID: -7046419992120838078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 47
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6016054edc9591dc0800000000000000
+      internalID: -3667801680682917626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 47
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 753ffa5af037c5660800000000000000
+      internalID: 7375896800767505239
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 47
+        width: 32
+        height: 38
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40165df5367d6b880800000000000000
+      internalID: -8595446016980459260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Gingerbread_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 47
+        width: 32
+        height: 39
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f3c58326f2b57f340800000000000000
+      internalID: 4897483378858155071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Christmas_Gingerbread_Idle_0: -7969404980688482534
+      Christmas_Gingerbread_Idle_1: -1767069433267936255
+      Christmas_Gingerbread_Idle_10: -3985200189354487479
+      Christmas_Gingerbread_Idle_11: -7046419992120838078
+      Christmas_Gingerbread_Idle_12: -3667801680682917626
+      Christmas_Gingerbread_Idle_13: 7375896800767505239
+      Christmas_Gingerbread_Idle_14: -8595446016980459260
+      Christmas_Gingerbread_Idle_15: 4897483378858155071
+      Christmas_Gingerbread_Idle_2: 4725854040794633704
+      Christmas_Gingerbread_Idle_3: 6523417336691725888
+      Christmas_Gingerbread_Idle_4: 3745105879502110956
+      Christmas_Gingerbread_Idle_5: -8794541379097575571
+      Christmas_Gingerbread_Idle_6: -1179126613604203554
+      Christmas_Gingerbread_Idle_7: 6075338571794329953
+      Christmas_Gingerbread_Idle_8: 4995271264306891738
+      Christmas_Gingerbread_Idle_9: -6142335925231590909
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

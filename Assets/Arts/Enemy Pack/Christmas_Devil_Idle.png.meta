@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: 455f6ce76ad946a40a458082b6f7a42f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2098114839855031771
+    second: Christmas_Devil_Idle_0
+  - first:
+      213: -2387380283201764434
+    second: Christmas_Devil_Idle_1
+  - first:
+      213: 2296202481892094621
+    second: Christmas_Devil_Idle_2
+  - first:
+      213: 7446838181713215698
+    second: Christmas_Devil_Idle_3
+  - first:
+      213: -6495875436235670384
+    second: Christmas_Devil_Idle_4
+  - first:
+      213: -7741969046107241385
+    second: Christmas_Devil_Idle_5
+  - first:
+      213: -8676169520216034462
+    second: Christmas_Devil_Idle_6
+  - first:
+      213: 3662462525938804979
+    second: Christmas_Devil_Idle_7
+  - first:
+      213: 4964065186155987685
+    second: Christmas_Devil_Idle_8
+  - first:
+      213: -7548219438321398941
+    second: Christmas_Devil_Idle_9
+  - first:
+      213: -142504330960411085
+    second: Christmas_Devil_Idle_10
+  - first:
+      213: -71605647351487692
+    second: Christmas_Devil_Idle_11
+  - first:
+      213: 5934727618883287415
+    second: Christmas_Devil_Idle_12
+  - first:
+      213: 1744811253146193612
+    second: Christmas_Devil_Idle_13
+  - first:
+      213: -3355182269956836040
+    second: Christmas_Devil_Idle_14
+  - first:
+      213: -4226428498824452720
+    second: Christmas_Devil_Idle_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 431
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd5e88f94500e1d10800000000000000
+      internalID: 2098114839855031771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 431
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea3ccf308425eded0800000000000000
+      internalID: -2387380283201764434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 431
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d927c81ddffbddf10800000000000000
+      internalID: 2296202481892094621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 431
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d005d80fdb785760800000000000000
+      internalID: 7446838181713215698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 54
+        y: 303
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09cbcf515b30ad5a0800000000000000
+      internalID: -6495875436235670384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 303
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 75445b8db200f8490800000000000000
+      internalID: -7741969046107241385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 303
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 263b3782acd089780800000000000000
+      internalID: -8676169520216034462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 303
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f823c5434ea3d230800000000000000
+      internalID: 3662462525938804979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 55
+        y: 175
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5e206be6cf6e3e440800000000000000
+      internalID: 4964065186155987685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 183
+        y: 175
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b872cb9665f3790800000000000000
+      internalID: -7548219438321398941
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 175
+        width: 19
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3366626e019b50ef0800000000000000
+      internalID: -142504330960411085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 175
+        width: 19
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 433e3b90b0b910ff0800000000000000
+      internalID: -71605647351487692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 47
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 779fc3a63536c5250800000000000000
+      internalID: 5934727618883287415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 47
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cce02ef1790d63810800000000000000
+      internalID: 1744811253146193612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 47
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 835b882808fff61d0800000000000000
+      internalID: -3355182269956836040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 47
+        width: 21
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0952bf24ca5b855c0800000000000000
+      internalID: -4226428498824452720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Christmas_Devil_Idle_0: 2098114839855031771
+      Christmas_Devil_Idle_1: -2387380283201764434
+      Christmas_Devil_Idle_10: -142504330960411085
+      Christmas_Devil_Idle_11: -71605647351487692
+      Christmas_Devil_Idle_12: 5934727618883287415
+      Christmas_Devil_Idle_13: 1744811253146193612
+      Christmas_Devil_Idle_14: -3355182269956836040
+      Christmas_Devil_Idle_15: -4226428498824452720
+      Christmas_Devil_Idle_2: 2296202481892094621
+      Christmas_Devil_Idle_3: 7446838181713215698
+      Christmas_Devil_Idle_4: -6495875436235670384
+      Christmas_Devil_Idle_5: -7741969046107241385
+      Christmas_Devil_Idle_6: -8676169520216034462
+      Christmas_Devil_Idle_7: 3662462525938804979
+      Christmas_Devil_Idle_8: 4964065186155987685
+      Christmas_Devil_Idle_9: -7548219438321398941
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -48,7 +48,7 @@ public class SnakeController : MonoBehaviour
     {
         float horizontal = _inputService.InputSystemActions.Player.Move.ReadValue<Vector2>().x;
 
-        Vector2 joyStickInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), -SimpleInput.GetAxisRaw("Vertical"));
+        Vector2 joyStickInput = new Vector2(_inputService.joyStickInput.x, -_inputService.joyStickInput.y);
     
         float snakeAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
         Vector2 rotatedJoystick = new Vector2(

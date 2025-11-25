@@ -1,0 +1,767 @@
+fileFormatVersion: 2
+guid: ddd4150932673464d9ecbaa73e77ca3f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2309950022598310898
+    second: Christmas_Devil_Attack_0
+  - first:
+      213: -4469025817092111569
+    second: Christmas_Devil_Attack_1
+  - first:
+      213: 7857582530696374676
+    second: Christmas_Devil_Attack_2
+  - first:
+      213: 8873475899641447196
+    second: Christmas_Devil_Attack_3
+  - first:
+      213: 6881798565203481608
+    second: Christmas_Devil_Attack_4
+  - first:
+      213: -5472278453700496188
+    second: Christmas_Devil_Attack_5
+  - first:
+      213: -8194266247470106405
+    second: Christmas_Devil_Attack_6
+  - first:
+      213: 3324668659410589555
+    second: Christmas_Devil_Attack_7
+  - first:
+      213: -1872876530261910332
+    second: Christmas_Devil_Attack_8
+  - first:
+      213: -4890865275118952647
+    second: Christmas_Devil_Attack_9
+  - first:
+      213: -7537024151388736155
+    second: Christmas_Devil_Attack_10
+  - first:
+      213: -3734501132247800733
+    second: Christmas_Devil_Attack_11
+  - first:
+      213: -2098046047892318504
+    second: Christmas_Devil_Attack_12
+  - first:
+      213: -7967008007107121437
+    second: Christmas_Devil_Attack_13
+  - first:
+      213: -9119241836372279895
+    second: Christmas_Devil_Attack_14
+  - first:
+      213: 4716901347373419964
+    second: Christmas_Devil_Attack_15
+  - first:
+      213: -2129830104630673968
+    second: Christmas_Devil_Attack_16
+  - first:
+      213: -9143999452894278809
+    second: Christmas_Devil_Attack_17
+  - first:
+      213: -1485713812538984893
+    second: Christmas_Devil_Attack_18
+  - first:
+      213: -6210674169068343438
+    second: Christmas_Devil_Attack_19
+  - first:
+      213: -3336897819038141389
+    second: Christmas_Devil_Attack_20
+  - first:
+      213: 7361177859211886922
+    second: Christmas_Devil_Attack_21
+  - first:
+      213: -4126653759270641353
+    second: Christmas_Devil_Attack_22
+  - first:
+      213: 1375953302311184127
+    second: Christmas_Devil_Attack_23
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_0
+      rect:
+        serializedVersion: 2
+        x: 53
+        y: 431
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fbb0e19e479e0020800000000000000
+      internalID: 2309950022598310898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_1
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 431
+        width: 22
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f23cc2082b4daf1c0800000000000000
+      internalID: -4469025817092111569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_2
+      rect:
+        serializedVersion: 2
+        x: 308
+        y: 431
+        width: 21
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499e87f2eadbb0d60800000000000000
+      internalID: 7857582530696374676
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_3
+      rect:
+        serializedVersion: 2
+        x: 438
+        y: 431
+        width: 33
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c134e19215be42b70800000000000000
+      internalID: 8873475899641447196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_4
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 431
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8041fbe655f018f50800000000000000
+      internalID: 6881798565203481608
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_5
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 431
+        width: 25
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c4782f5dbf8e04b0800000000000000
+      internalID: -5472278453700496188
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_6
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 303
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd83294534e184e80800000000000000
+      internalID: -8194266247470106405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_7
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 303
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 377da08e788932e20800000000000000
+      internalID: 3324668659410589555
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_8
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 303
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cc9299f7b43206e0800000000000000
+      internalID: -1872876530261910332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_9
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 303
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fdd38f1f7202cb0800000000000000
+      internalID: -4890865275118952647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_10
+      rect:
+        serializedVersion: 2
+        x: 563
+        y: 303
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5653fe8977c176790800000000000000
+      internalID: -7537024151388736155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_11
+      rect:
+        serializedVersion: 2
+        x: 693
+        y: 303
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3646317a1036c2cc0800000000000000
+      internalID: -3734501132247800733
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_12
+      rect:
+        serializedVersion: 2
+        x: 47
+        y: 175
+        width: 31
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d657f04c3e32e2e0800000000000000
+      internalID: -2098046047892318504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_13
+      rect:
+        serializedVersion: 2
+        x: 171
+        y: 175
+        width: 36
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eeefa5bd608f6190800000000000000
+      internalID: -7967008007107121437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_14
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 175
+        width: 33
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ad362a9dd1f17180800000000000000
+      internalID: -9119241836372279895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_15
+      rect:
+        serializedVersion: 2
+        x: 423
+        y: 175
+        width: 37
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbd01c2c8ccc57140800000000000000
+      internalID: 4716901347373419964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_16
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 175
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd3e8dddc25172e0800000000000000
+      internalID: -2129830104630673968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_17
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 175
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76bcedfc1fcf91180800000000000000
+      internalID: -9143999452894278809
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_18
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 47
+        width: 24
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 346f8bdb82fa16be0800000000000000
+      internalID: -1485713812538984893
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_19
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 47
+        width: 24
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27facf0bfb04fc9a0800000000000000
+      internalID: -6210674169068343438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_20
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 47
+        width: 23
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334b47cfc15f0b1d0800000000000000
+      internalID: -3336897819038141389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_21
+      rect:
+        serializedVersion: 2
+        x: 425
+        y: 47
+        width: 32
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a418bc20348282660800000000000000
+      internalID: 7361177859211886922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_22
+      rect:
+        serializedVersion: 2
+        x: 553
+        y: 47
+        width: 34
+        height: 34
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 731a4a7154e2bb6c0800000000000000
+      internalID: -4126653759270641353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Christmas_Devil_Attack_23
+      rect:
+        serializedVersion: 2
+        x: 690
+        y: 47
+        width: 26
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff6a8c30d3e581310800000000000000
+      internalID: 1375953302311184127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Christmas_Devil_Attack_0: 2309950022598310898
+      Christmas_Devil_Attack_1: -4469025817092111569
+      Christmas_Devil_Attack_10: -7537024151388736155
+      Christmas_Devil_Attack_11: -3734501132247800733
+      Christmas_Devil_Attack_12: -2098046047892318504
+      Christmas_Devil_Attack_13: -7967008007107121437
+      Christmas_Devil_Attack_14: -9119241836372279895
+      Christmas_Devil_Attack_15: 4716901347373419964
+      Christmas_Devil_Attack_16: -2129830104630673968
+      Christmas_Devil_Attack_17: -9143999452894278809
+      Christmas_Devil_Attack_18: -1485713812538984893
+      Christmas_Devil_Attack_19: -6210674169068343438
+      Christmas_Devil_Attack_2: 7857582530696374676
+      Christmas_Devil_Attack_20: -3336897819038141389
+      Christmas_Devil_Attack_21: 7361177859211886922
+      Christmas_Devil_Attack_22: -4126653759270641353
+      Christmas_Devil_Attack_23: 1375953302311184127
+      Christmas_Devil_Attack_3: 8873475899641447196
+      Christmas_Devil_Attack_4: 6881798565203481608
+      Christmas_Devil_Attack_5: -5472278453700496188
+      Christmas_Devil_Attack_6: -8194266247470106405
+      Christmas_Devil_Attack_7: 3324668659410589555
+      Christmas_Devil_Attack_8: -1872876530261910332
+      Christmas_Devil_Attack_9: -4890865275118952647
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -5,6 +5,7 @@ using UnityEngine;
 using Users.FateX.Scripts.Combat;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
+using Random = UnityEngine.Random;
 
 namespace Users.FateX.Scripts
 {
@@ -13,8 +14,10 @@ namespace Users.FateX.Scripts
         [Header("References")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private Transform _shadow;
+        [field: SerializeField] public Transform Body { get; private set; }
         [SerializeField] private EnemyData _enemyData;
         [SerializeField] private Rigidbody2D _rigidbody2D;
+        private Tween swayTween;
         
         public float CurrentHealth { get; private set; }
         public event Action<float> OnHealthChanged;
@@ -24,20 +27,41 @@ namespace Users.FateX.Scripts
         public bool AlreadyDie = false;
         private Vector3 startShadowScale;
         private MaterialPropertyBlock materialPropertyBlock;
+        private Vector3 originScale;
         
         public DamageInfo lastDamageInfo { get; private set; }
 
         private void Awake()
         {
             startShadowScale = _shadow.localScale;
+            originScale = Body.localScale;
             
             materialPropertyBlock = new MaterialPropertyBlock();
+            
+            StartSwaying();
         }
 
         public EnemyData GetData()
         {
             return _enemyData;
         }
+
+        public void StartSwaying()
+        {
+            swayTween?.Kill();
+
+            swayTween = Body.DOLocalRotate(new Vector3(0, 0, 10), Random.Range(0.4f, 0.5f))
+                .From(new Vector3(0, 0, -10))
+                .SetLoops(-1, LoopType.Yoyo)
+                .SetEase(Ease.InOutSine);
+        }
+
+        public void StopSwaying()
+        {
+            swayTween?.Kill();
+            Body.localRotation = Quaternion.identity;
+        }
+
 
         public void Move(Vector3 direction)
         {
@@ -136,6 +160,10 @@ namespace Users.FateX.Scripts
         {
             Visible = false;
             
+            Body.localScale = originScale;
+
+            StartSwaying();
+            
             SetFloat("_FlashAmount", 0f);
             SetFloat("_DissolveAmount", 0f);
 
@@ -146,17 +174,23 @@ namespace Users.FateX.Scripts
 
         public void OnDespawn()
         {
+            StopSwaying();
+
+            Body.localScale = originScale;
+            
             DamageOverTime.StopAllDots((IDamageable)this);
         }
         
         private void OnBecameVisible()
         {
             Visible = true;
+            StartSwaying();
         }
 
         private void OnBecameInvisible()
         {
             Visible = false;
+            StopSwaying();
         }
     }
 

@@ -37,22 +37,33 @@ public class EnemyManager : MonoBehaviour
     public void FixedUpdate()
     {
         if (_snakeController == null || _snakeController.SegmentsBase.Count == 0) return;
-        
+
         for (int i = 0; i < _enemies.Count; i++)
         {
             Transform nearestSegment = _snakeController.SegmentsBase[0].Body;
-            
-            
-            for (int j = 0; j < _snakeController.SegmentsBase.Count; j++)
+            float minDistance = Vector3.Distance(nearestSegment.position, _enemies[i].transform.position);
+
+            for (int j = 1; j < _snakeController.SegmentsBase.Count; j++)
             {
-                if (Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position) <
-                    Vector3.Distance(nearestSegment.position, _enemies[i].transform.position))
+                float dist = Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position);
+                if (dist < minDistance)
                 {
                     nearestSegment = _snakeController.SegmentsBase[j].Body;
+                    minDistance = dist;
                 }
             }
-            
-            _enemies[i].Move((nearestSegment.position - _enemies[i].transform.position).normalized * (Time.deltaTime * enemySpeed));
+
+            Vector3 direction = (nearestSegment.position - _enemies[i].transform.position).normalized;
+
+            if (Mathf.Abs(direction.x) > 0.01f)
+            {
+                Vector3 localScale = _enemies[i].transform.localScale;
+                localScale.x = direction.x >= 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
+                _enemies[i].transform.localScale = localScale;
+            }
+
+            _enemies[i].Move(direction * (Time.deltaTime * enemySpeed));
         }
     }
+
 }
