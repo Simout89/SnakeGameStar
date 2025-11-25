@@ -43,7 +43,10 @@ namespace Users.FateX.Scripts.Enemy
                 }
             }
 
-            _enemyFactory.SpawnEnemy(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+            for (int i = 0; i < 5; i++)
+            {
+                _enemyFactory.SpawnEnemy(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+            }
         }
     }
 }

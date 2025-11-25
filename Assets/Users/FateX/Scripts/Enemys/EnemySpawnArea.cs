@@ -2,14 +2,33 @@
 
 namespace Users.FateX.Scripts.Entity
 {
-    public class EnemySpawnArea: MonoBehaviour
+    public class EnemySpawnArea : MonoBehaviour
     {
         [SerializeField] private Transform centerPoint;
-        
+
         [SerializeField] private float sizeX;
         [SerializeField] private float sizeY;
 
+        [SerializeField] private float checkRadius = 0.5f;
+
+        private Vector3 lastSpawnPos;
+
         public Vector3 GetRandomPositionOnBorder()
+        {
+            Vector3 pos = GenerateRandomBorderPosition();
+
+            Collider2D hit = Physics2D.OverlapCircle(pos, checkRadius, LayerMask.GetMask("Wall"));
+
+            if (hit == null)
+            {
+                lastSpawnPos = pos;
+                return pos;
+            }
+
+            return lastSpawnPos;
+        }
+
+        private Vector3 GenerateRandomBorderPosition()
         {
             float halfX = sizeX / 2f;
             float halfY = sizeY / 2f;
@@ -34,16 +53,18 @@ namespace Users.FateX.Scripts.Entity
 
             return pos;
         }
-        
+
         private void OnDrawGizmos()
         {
             Gizmos.color = Color.yellow;
-        
-            Gizmos.DrawLine(centerPoint.position - Vector3.down * sizeY/2 + Vector3.right * sizeX/2, centerPoint.position - Vector3.down * sizeY/2 - Vector3.right * sizeX/2);
-            Gizmos.DrawLine(centerPoint.position + Vector3.down * sizeY/2 + Vector3.right * sizeX/2, centerPoint.position + Vector3.down * sizeY/2 - Vector3.right * sizeX/2);
-        
-            Gizmos.DrawLine(centerPoint.position + Vector3.right * sizeX/2 + Vector3.up * sizeY/2, centerPoint.position + Vector3.right * sizeX/2 - Vector3.up * sizeY/2);
-            Gizmos.DrawLine(centerPoint.position - Vector3.right * sizeX/2 + Vector3.up * sizeY/2, centerPoint.position - Vector3.right * sizeX/2 - Vector3.up * sizeY/2);
+            Gizmos.DrawLine(centerPoint.position - Vector3.down * sizeY / 2 + Vector3.right * sizeX / 2,
+                centerPoint.position - Vector3.down * sizeY / 2 - Vector3.right * sizeX / 2);
+            Gizmos.DrawLine(centerPoint.position + Vector3.down * sizeY / 2 + Vector3.right * sizeX / 2,
+                centerPoint.position + Vector3.down * sizeY / 2 - Vector3.right * sizeX / 2);
+            Gizmos.DrawLine(centerPoint.position + Vector3.right * sizeX / 2 + Vector3.up * sizeY / 2,
+                centerPoint.position + Vector3.right * sizeX / 2 - Vector3.up * sizeY / 2);
+            Gizmos.DrawLine(centerPoint.position - Vector3.right * sizeX / 2 + Vector3.up * sizeY / 2,
+                centerPoint.position - Vector3.right * sizeX / 2 - Vector3.up * sizeY / 2);
         }
     }
 }

@@ -146,7 +146,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1908539727450190954}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -189,10 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087d5a61d22e490459168c5ea8cb64f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snake
-  rotationSpeed: 200
-  speed: 5
-  startSize: 0
-  segmentDistance: 0.3
+  <SnakeData>k__BackingField: {fileID: 11400000, guid: 9f5f055e95e549446990deb409d0e14d, type: 2}
   segmentPrefab: {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
   snakeHealth: {fileID: 5132878899567702349}
   _snakeInteraction: {fileID: 2564869600965193768}
@@ -209,6 +206,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3fdf6c8d2a9e499bb0536130cb3db1e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeHealth
+  _snakeController: {fileID: 3480653366725518431}
 --- !u!114 &4162555195283317137
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,7 +15,10 @@ namespace Users.FateX.Scripts.Upgrade
         [Header("Data")]
         [SerializeField] protected UpgradeLevelsData upgradeLevelsData;
 
+        public UpgradeLevelsData UpgradeLevelsData => upgradeLevelsData;
+
         private int currentLevel = 0;
+        public int CurrentLevel => currentLevel;
         private float timeToNextShot;
         
         protected UpgradeStats CurrentStats;

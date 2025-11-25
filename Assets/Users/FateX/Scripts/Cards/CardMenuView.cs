@@ -10,13 +10,23 @@ namespace Users.FateX.Scripts.Cards
         
         [SerializeField] private Transform _cardContainer;
 
-        public CardEntryView ShowCard(CardData cardData)
+        public CardEntryView ShowCard(CardData cardData, string text = "")
         {
             var newCard = Instantiate(_gameConfig.GameConfigData.CardPrefab, _cardContainer);
-            newCard.Init(cardData);
+
+            if (text == "")
+            {
+                newCard.Init(cardData);
+            }
+            else
+            {
+                newCard.Init(cardData, text);
+            }
 
             return newCard;
         }
+        
+        
 
         public void ClearAllCards()
         {

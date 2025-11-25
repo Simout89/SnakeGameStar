@@ -5,6 +5,7 @@ using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Data.WaveData;
 using Users.FateX.Scripts.Enemy;
+using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -27,6 +28,8 @@ namespace Users.FateX.Scripts
 
         [Inject] private CardMenuController _cardMenuController;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private HealthView _healthView;
+        [Inject] private DeathHandler _deathHandler;
 
         public void Initialize()
         {
@@ -46,6 +49,11 @@ namespace Users.FateX.Scripts
             _collectableHandler.SetSnakeInteraction(snakeController.GetComponent<SnakeInteraction>());
 
             _enemyManager.SetSnake(snakeController);
+
+            var snakeHealth = snakeController.GetComponent<SnakeHealth>();
+            _healthView.SetSnakeHealth(snakeHealth);
+            
+            _deathHandler.SetSnakeHealth(snakeHealth);
 
             _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
 

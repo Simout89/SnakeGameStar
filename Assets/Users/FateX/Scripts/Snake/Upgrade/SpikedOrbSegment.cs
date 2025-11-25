@@ -20,18 +20,14 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Init(snakeController);
 
-            StartRotate();
-
             UpdateOrbCount();
         }
 
-        private void StartRotate()
+        public override void Tick()
         {
-            orbContainer.DOKill();
-
-            orbContainer.DOLocalRotate(new Vector3(0, 0, 360), 2f, RotateMode.FastBeyond360)
-                .SetEase(Ease.Linear)
-                .SetLoops(-1, LoopType.Restart);
+            base.Tick();
+            
+            orbContainer.Rotate(0f, 0, 150f * Time.deltaTime);
         }
 
         public override void Upgrade()
@@ -43,11 +39,8 @@ namespace Users.FateX.Scripts.Upgrade
 
         private void UpdateOrbCount()
         {
-            orbContainer.DOKill();
-
             foreach (Transform child in orbContainer)
             {
-                child.DOKill(true);
                 Destroy(child.gameObject);
             }
 
@@ -59,8 +52,6 @@ namespace Users.FateX.Scripts.Upgrade
                 var newOrb = Instantiate(damageOrbPrefab, position, Quaternion.identity, orbContainer);
                 newOrb.Init(damageInfo);
             }
-
-            StartRotate();
         }
 
         private void OnDrawGizmos()

@@ -16,7 +16,14 @@ MonoBehaviour:
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 0
     <DelayBetweenShots>k__BackingField: 0.3
-    <Damage>k__BackingField: 0.5
+    <Damage>k__BackingField: 0.7
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 0
+    <DelayBetweenShots>k__BackingField: 0.2
+    <Damage>k__BackingField: 0.8
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0

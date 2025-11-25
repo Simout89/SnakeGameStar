@@ -6,6 +6,7 @@ using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Entity;
+using Users.FateX.Scripts.View;
 using Zenject;
 
 namespace Скриптерсы.Zenject
@@ -19,6 +20,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
             
             Container.BindInterfacesAndSelfTo<CardMenuView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<HealthView>().FromComponentsInHierarchy().AsSingle();
             
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
             
@@ -40,6 +42,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CardMenuController>().AsSingle();
             Container.BindInterfacesAndSelfTo<CardSelectionHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<AchievementManager>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DeathHandler>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
         }

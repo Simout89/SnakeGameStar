@@ -4,6 +4,7 @@ using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
 using Zenject;
 using Скриптерсы.Services;
@@ -12,20 +13,19 @@ public class SnakeController : MonoBehaviour
 {
     private IInputService _inputService;
     
-    [Header("Settings")]
-    [SerializeField] private float rotationSpeed = 200f;
-    [SerializeField] private float speed = 5f;
-    [SerializeField] private int startSize = 3;
-    [SerializeField] private float segmentDistance = 0.5f;
+    private float rotationSpeed => SnakeData.BaseRotateSpeed;
+    private float speed => SnakeData.BaseMoveSpeed;
+    private float segmentDistance => SnakeData.SegmentDistance;
     
     [Header("References")]
+    [field: SerializeField] public SnakeData SnakeData { get; private set; }
     [SerializeField] private SnakeSegmentBase segmentPrefab;
     [SerializeField] private SnakeHealth snakeHealth;
     [SerializeField] private SnakeInteraction _snakeInteraction;
     [SerializeField] private Rigidbody2D _rigidbody;
     
     private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
-    public List<SnakeSegmentBase> SegmentsBase => segmentsBase;
+    public IReadOnlyList<SnakeSegmentBase> SegmentsBase => segmentsBase;
     public void Init(IInputService inputService)
     {
         _inputService = inputService;
@@ -36,7 +36,7 @@ public class SnakeController : MonoBehaviour
         _snakeInteraction.Add(GetComponent<SnakeSegmentBase>());
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         foreach (var segment in segmentsBase)
             segment.Tick();
@@ -49,7 +49,7 @@ public class SnakeController : MonoBehaviour
         float horizontal = _inputService.InputSystemActions.Player.Move.ReadValue<Vector2>().x;
 
         Vector2 joyStickInput = new Vector2(SimpleInput.GetAxisRaw("Horizontal"), -SimpleInput.GetAxisRaw("Vertical"));
-        
+    
         float snakeAngle = transform.eulerAngles.z * Mathf.Deg2Rad;
         Vector2 rotatedJoystick = new Vector2(
             joyStickInput.x * Mathf.Cos(snakeAngle) - joyStickInput.y * Mathf.Sin(snakeAngle),
@@ -61,8 +61,7 @@ public class SnakeController : MonoBehaviour
         float rotation = -totalHorizontal * rotationSpeed * Time.fixedDeltaTime;
         _rigidbody.MoveRotation(_rigidbody.rotation + rotation);
 
-        Vector2 moveDirection = transform.up * speed;
-        _rigidbody.MovePosition(_rigidbody.position + moveDirection * Time.fixedDeltaTime);
+        _rigidbody.linearVelocity = transform.up * speed;
 
         UpdateSegments();
     }

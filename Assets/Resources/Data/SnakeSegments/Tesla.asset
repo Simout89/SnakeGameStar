@@ -21,5 +21,12 @@ MonoBehaviour:
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 5
     <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 12
+    <DelayBetweenShots>k__BackingField: 0.5
+    <Damage>k__BackingField: 3
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 7
+    <Duration>k__BackingField: 0
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <Vfx>k__BackingField: {fileID: 1980034782213133366, guid: 9f6bc53e55a78e84aab3096781fcde03, type: 3}
