@@ -99,7 +99,7 @@ namespace Users.FateX.Scripts.Cards
                     string statsText = $"Улучшение: {snakeSegmentBase.UpgradeLevelsData.SegmentName}\n";
                     statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
                         "AttackSpeed", true);
-                    statsText += GetStatDifference(currentStats.Damage, nextStats.Damage, "Damage");
+                    statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer, nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Damage");
                     statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Duration");
                     statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "AttackRange");
                     statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, "BouncesCount");

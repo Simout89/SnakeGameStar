@@ -15,6 +15,7 @@ MonoBehaviour:
   <XpPrefab>k__BackingField: {fileID: 4043232107286505601, guid: 0d2951f07091d584681f98e884aa0643, type: 3}
   <MagnetPrefab>k__BackingField: {fileID: 6485121111209911736, guid: e488eb9cdb4aa2446acb0bd390f910da, type: 3}
   <CardPrefab>k__BackingField: {fileID: 1222528997471321660, guid: 0152b471e801a5248a50c39722fafff7, type: 3}
+  <DamageViewPrefab>k__BackingField: {fileID: 3325979279292723863, guid: 0f05cf9067c01be47a545cb238de3b27, type: 3}
   <CardDatas>k__BackingField:
   - {fileID: 11400000, guid: b77f9f64f4127cd4d879f7033d957579, type: 2}
   - {fileID: 11400000, guid: ae14fa50c8a913847b3611edefc9ec62, type: 2}

@@ -22,6 +22,7 @@ namespace Users.FateX.Scripts
         public float CurrentHealth { get; private set; }
         public event Action<float> OnHealthChanged;
         public event Action<EnemyBase> OnDie;
+        public event Action<EnemyBase> OnEnemyTakeDamage;
         
         public bool Visible = true;
         public bool AlreadyDie = false;
@@ -83,6 +84,8 @@ namespace Users.FateX.Scripts
             lastDamageInfo = damageInfo;
             
             CurrentHealth -= damageInfo.Amount;
+            
+            OnEnemyTakeDamage?.Invoke(this);
 
             DamageEffect();
 

@@ -43,6 +43,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CardSelectionHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<AchievementManager>().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<DamageShow>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
         }
