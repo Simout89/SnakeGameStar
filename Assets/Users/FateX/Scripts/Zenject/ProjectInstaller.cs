@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Users.FateX.Scripts;
+using Zenject;
 using Скриптерсы.Services;
 
 namespace Скриптерсы.Zenject
@@ -10,6 +11,7 @@ namespace Скриптерсы.Zenject
             Container.Bind<ISaveLoadService>().To<SaveLoadService>().AsSingle();
             Container.BindInterfacesAndSelfTo<InputService>().AsSingle();
             Container.BindInterfacesAndSelfTo<CurrencyService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<PlayerStats>().AsSingle();
         }
 
     }

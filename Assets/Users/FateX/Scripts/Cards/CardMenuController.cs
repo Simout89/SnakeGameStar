@@ -9,30 +9,61 @@ using Random = UnityEngine.Random;
 
 namespace Users.FateX.Scripts.Cards
 {
-    public class CardMenuController: IInitializable, IDisposable
+    public class CardMenuController : IInitializable, IDisposable
     {
         [Inject] private GameConfig _gameConfig;
         [Inject] private CardMenuView _cardMenuView;
         [Inject] private GameContext _gameContext;
+        [Inject] private PlayerStats _playerStats;
 
+        private int rerrolUsed = 0;
+        private int exileUsed = 0;
         public event Action OnCardSelected;
-        
+
         private List<CardData> _lastShownCards = new List<CardData>();
-        
+        private List<CardData> _exiledCards = new List<CardData>();
+
+        private bool _exiledModeBacking;
+
+        private bool _exiledMode
+        {
+            get => _exiledModeBacking;
+            set
+            {
+                _exiledModeBacking = value;          
+                _cardMenuView.ChangeExileMode(value);
+            }
+        }
+
         public void Initialize()
         {
             _cardMenuView.RerollButton.onClick.AddListener(HandleRerollClick);
+            _cardMenuView.ExileButton.onClick.AddListener(HandleExileClick);
         }
 
         public void Dispose()
         {
             _cardMenuView.RerollButton.onClick.RemoveListener(HandleRerollClick);
+            _cardMenuView.ExileButton.onClick.RemoveListener(HandleExileClick);
+        }
+
+        private void HandleExileClick()
+        {
+            if(_playerStats.exile - exileUsed <= 0)
+                return;
+            _exiledMode = !_exiledMode;
         }
 
         private void HandleRerollClick()
         {
+            if (_playerStats.rerolls <= rerrolUsed)
+            {
+                return;
+            }
+
+            rerrolUsed++;
             _cardMenuView.ClearAllCards();
-            SpawnRandomCards(3, true); // Передаём флаг, что это рерол
+            SpawnRandomCards(3, true);
         }
 
         public void SpawnRandomCards(int cardsCount = 3, bool isReroll = false)
@@ -43,13 +74,13 @@ namespace Users.FateX.Scripts.Cards
             if (cardDatas.Count == 0) return;
 
             List<CardData> availableCards;
-            
+
             // Фильтруем только если это рерол
             if (isReroll && _lastShownCards.Count > 0)
             {
                 // Удаляем последние показанные карты из доступных, если есть альтернативы
                 availableCards = cardDatas.Where(card => !_lastShownCards.Contains(card)).ToList();
-                
+
                 // Если после фильтрации осталось мало карт, используем все доступные
                 if (availableCards.Count < cardsCount)
                 {
@@ -94,6 +125,7 @@ namespace Users.FateX.Scripts.Cards
                         i--;
                         continue;
                     }
+
                     currentlyShownCards.Add(currentCard);
                     availableCards.Remove(currentCard);
                 }
@@ -105,10 +137,22 @@ namespace Users.FateX.Scripts.Cards
 
             // Сохраняем текущие показанные карты для следующего рерола
             _lastShownCards = currentlyShownCards;
+
+            _exiledMode = false;
+            
+            _cardMenuView.UpdateRerollCountText(_playerStats.rerolls - rerrolUsed);
+            _cardMenuView.UpdateExileCountText(_playerStats.exile - exileUsed);
+
         }
 
         private bool CanProcessCard(CardData card)
         {
+            foreach (var exiledCard in _exiledCards)
+            {
+                if (card == exiledCard)
+                    return false;
+            }
+
             if (card.CardType == CardType.Upgrade &&
                 _gameContext.SnakeController.SegmentsBase.Count <= 1)
             {
@@ -132,7 +176,7 @@ namespace Users.FateX.Scripts.Cards
                     return false;
                 }
             }
-            
+
             return true;
         }
 
@@ -140,10 +184,22 @@ namespace Users.FateX.Scripts.Cards
         {
             _cardMenuView.ShowCard(card).Button.onClick.AddListener(() =>
             {
-                _gameContext.SnakeController.Grow(card.SnakeSegmentBase);
-                _cardMenuView.ClearAllCards();
-                _lastShownCards.Clear(); // Очищаем историю при выборе карты
-                OnCardSelected?.Invoke();
+                if (_exiledMode)
+                {
+                    _exiledCards.Add(card);
+                    _cardMenuView.ClearAllCards();
+                    _exiledMode = false;
+                    exileUsed++;
+                    _cardMenuView.UpdateExileCountText(_playerStats.exile - exileUsed);
+                    OnCardSelected?.Invoke();
+                }
+                else
+                {
+                    _gameContext.SnakeController.Grow(card.SnakeSegmentBase);
+                    _cardMenuView.ClearAllCards();
+                    _lastShownCards.Clear();
+                    OnCardSelected?.Invoke();
+                }
             });
         }
 
@@ -163,7 +219,7 @@ namespace Users.FateX.Scripts.Cards
 
             string statsText = GenerateUpgradeStatsText(segmentToUpgrade);
             ShowUpgradeCard(card, segmentToUpgrade, statsText);
-            
+
             return true;
         }
 
@@ -202,7 +258,7 @@ namespace Users.FateX.Scripts.Cards
             string statsText = $"Улучшение: {segment.UpgradeLevelsData.SegmentName}\n";
             statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
                 "AttackSpeed", true);
-            statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer, 
+            statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer,
                 nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Damage");
             statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Duration");
             statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "AttackRange");
@@ -218,11 +274,23 @@ namespace Users.FateX.Scripts.Cards
         {
             _cardMenuView.ShowCard(card, statsText).Button.onClick.AddListener(() =>
             {
+                HandleClickOnCard(card, segment);
+            });
+        }
+
+        private void HandleClickOnCard(CardData card, SnakeSegmentBase segment)
+        {
+            if (_exiledMode)
+            {
+                
+            }
+            else
+            {
                 segment.Upgrade();
                 _cardMenuView.ClearAllCards();
-                _lastShownCards.Clear(); // Очищаем историю при выборе карты
+                _lastShownCards.Clear();
                 OnCardSelected?.Invoke();
-            });
+            }
         }
 
         private string GetStatDifference(float currentValue, float nextValue, string statName, bool invertValue = false)
