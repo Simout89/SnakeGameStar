@@ -2,14 +2,14 @@
 
 namespace Users.FateX.Scripts.CollectableItem
 {
-    public class MagnetItem: MonoBehaviour, ICollectable, IMagnet
+    public class MagnetItem : MonoBehaviour, ICollectable, IMagnet
     {
         private bool alreadyCollect;
 
         public GameObject Collect()
         {
             alreadyCollect = true;
-            
+
             return gameObject;
         }
 
@@ -21,6 +21,5 @@ namespace Users.FateX.Scripts.CollectableItem
 
     public interface IMagnet
     {
-        
     }
 }

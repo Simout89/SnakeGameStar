@@ -31,15 +31,19 @@ namespace Users.FateX.Scripts
         [Inject] private HealthView _healthView;
         [Inject] private DeathHandler _deathHandler;
 
+
+
+        [Inject] private CurrencyService _currencyService;
+
         public void Initialize()
         {
 #if UNITY_ANDROID && !UNITY_EDITOR
     Application.targetFrameRate = 90;
 #endif
+            
 
-
-            Debug.Log("W");
-
+            // УРовень
+            
             SnakeController snakeController = _snakeSpawner.SpawnSnake();
 
             _cameraController.SetTarget(snakeController.transform);

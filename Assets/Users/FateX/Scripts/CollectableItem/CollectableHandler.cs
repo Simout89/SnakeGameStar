@@ -2,6 +2,7 @@
 using Lean.Pool;
 using UnityEngine;
 using Zenject;
+using Скриптерсы.Services;
 
 namespace Users.FateX.Scripts.CollectableItem
 {
@@ -9,6 +10,7 @@ namespace Users.FateX.Scripts.CollectableItem
     {
         [Inject] private ExperienceSystem _experienceSystem;
         [Inject] private ItemManager _itemManager;
+        [Inject] private ICurrencyService _currencyService;
         
         private SnakeInteraction _snakeInteraction;
         
@@ -44,6 +46,11 @@ namespace Users.FateX.Scripts.CollectableItem
                     
                     _itemManager.RemoveXpItem(xpItem.GetComponent<XpItem>());
                 }
+            }
+
+            if (obj.TryGetComponent(out ICoin coin))
+            {
+                _currencyService.AddCoins(coin.CoinAmount);
             }
             
             HomingMover.StartMove(obj.transform, _snakeInteraction.transform, () =>
