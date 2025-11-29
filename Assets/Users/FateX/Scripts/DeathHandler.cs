@@ -1,5 +1,6 @@
 ﻿using System;
 using DG.Tweening;
+using Lean.Pool;
 using UnityEngine.SceneManagement;
 
 namespace Users.FateX.Scripts
@@ -22,6 +23,8 @@ namespace Users.FateX.Scripts
         private void HandleDie()
         {
             DOTween.KillAll();
+            
+            LeanPool.DespawnAll();
             
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

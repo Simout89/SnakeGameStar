@@ -14,6 +14,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public CardEntryView CardPrefab { get; private set; }
         [field: SerializeField] public DamageView DamageViewPrefab { get; private set; }
         [field: SerializeField] public CardData[] CardDatas { get; private set; }
+        [field: SerializeField] public ShopProductData[] ShopProductDatas { get; private set; }
         [field: SerializeField, Header("Settings")] public float DropCoinChance { get; private set; }
 
     }

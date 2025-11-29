@@ -20,8 +20,8 @@ namespace Users.FateX.Scripts.Upgrade
 
         private void OnDisable()
         {
-            _cancellationTokenSource.Cancel();
-            _cancellationTokenSource.Dispose();
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
         }
 
         public override void Attack()
@@ -33,28 +33,24 @@ namespace Users.FateX.Scripts.Upgrade
 
             lightingTrail = LeanPool.Spawn(upgradeLevelsData.Vfx, Body.position, Quaternion.identity);
 
-            var token = _cancellationTokenSource.Token;
-
-            AlternateAttack(enemy, token).Forget();
+            AlternateAttack(enemy, _cancellationTokenSource.Token).Forget();
         }
 
-
-        private async UniTask AlternateAttack(EnemyBase[] enemyBase, CancellationToken cancellationToken)
+        private async UniTask AlternateAttack(EnemyBase[] enemyBase, CancellationToken token)
         {
             foreach (var enemy in enemyBase)
             {
                 if(Vector3.Distance(enemy.transform.position, lightingTrail.transform.position) > CurrentStats.AttackRange)
-                    return;
+                    break;
                 
-                await lightingTrail.transform.DOMove(enemy.transform.position, 0.1f).AsyncWaitForCompletion();
+                await lightingTrail.transform.DOMove(enemy.transform.position, 0.1f)
+                    .WithCancellation(token);
 
                 var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
                 enemy.TakeDamage(damageInfo);
-                
                 DealDamage(damageInfo);
 
-
-                await UniTask.WaitForSeconds(0.1f, false, PlayerLoopTiming.Update, cancellationToken);
+                await UniTask.Delay(100, cancellationToken: token);
             }
 
             LeanPool.Despawn(lightingTrail, 1f);

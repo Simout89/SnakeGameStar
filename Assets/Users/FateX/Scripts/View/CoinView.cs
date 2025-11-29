@@ -11,6 +11,7 @@ namespace Users.FateX.Scripts.View
         [Inject] private ICurrencyService _currencyService;
 
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private bool showOnlyCoinCount;
 
         private void OnEnable()
         {
@@ -30,7 +31,13 @@ namespace Users.FateX.Scripts.View
 
         private void UpdateText(int obj)
         {
-            _text.text = $"Монет: {obj}";
+            if (showOnlyCoinCount)
+            {
+                _text.text = $"{obj}";
+            }else
+            {
+                _text.text = $"Монет: {obj}";
+            }
         }
     }
 }
