@@ -62,9 +62,7 @@ namespace Users.FateX.Scripts
             _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
 
             WaveData waveData = Resources.LoadAll<WaveData>("Data/Waves")[0];
-
-            _itemFactory.SetPrefab(_gameConfig.GameConfigData.XpPrefab);
-
+            
             _enemySpawnDirector.SetWaveData(waveData);
 
             _gameTimer.StartTimer(waveData.TotalTime);

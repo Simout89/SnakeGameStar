@@ -10,16 +10,10 @@ namespace Users.FateX.Scripts
         [Inject] private ItemManager _itemManager;
 
         [Inject] private GameConfig _gameConfig;
-        private XpItem xpItemPrefab;
-
-        public void SetPrefab(XpItem xpItem)
-        {
-            xpItemPrefab = xpItem;
-        }
         
         public void SpawnXp(Vector3 position)
         {
-            var newXp = LeanPool.Spawn(xpItemPrefab);
+            var newXp = LeanPool.Spawn(_gameConfig.GameConfigData.XpPrefab);
             newXp.transform.position = position;
             _itemManager.AddXpItem(newXp);
         }

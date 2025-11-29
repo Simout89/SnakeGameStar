@@ -24,11 +24,11 @@ namespace Users.FateX.Scripts.Enemys
         private void HandleEnemyDie(EnemyBase obj)
         {
             var transformPosition = obj.transform.position;
-            _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle);
+            _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle / 2);
 
             if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance * 100f)
             {
-                _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle);
+                _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }
         }
     }
