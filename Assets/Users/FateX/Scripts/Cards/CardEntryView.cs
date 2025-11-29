@@ -1,4 +1,5 @@
-﻿using TMPro;
+﻿using DG.Tweening;
+using TMPro;
 using UnityEngine;
 using Users.FateX.Scripts.Data;
 using Button = UnityEngine.UI.Button;
@@ -11,6 +12,7 @@ namespace Users.FateX.Scripts.Cards
         [field: SerializeField] public Button Button { get; private set; }
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private Transform body;
         public void Init(CardData cardData)
         {
             _image.sprite = cardData.Sprite;
@@ -18,9 +20,11 @@ namespace Users.FateX.Scripts.Cards
 
         public void Init(CardData cardData, string text)
         {
+            _text.text = text;
+            
             _image.sprite = cardData.Sprite;
 
-            _text.text = text;
+            body.transform.DOLocalMove(Vector3.zero, 0.5f).SetUpdate(true).SetEase(Ease.OutCirc);
         }
     }
 }

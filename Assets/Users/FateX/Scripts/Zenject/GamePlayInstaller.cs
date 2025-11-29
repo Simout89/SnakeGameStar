@@ -33,7 +33,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<ItemManager>().AsSingle();
             Container.BindInterfacesAndSelfTo<ExperienceSystem>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyFactory>().AsSingle();
-            Container.BindInterfacesAndSelfTo<ExperienceFactory>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ItemFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyDeathHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<LevelUpHandler>().AsSingle();
             

@@ -27,6 +27,7 @@ namespace Users.FateX.Scripts.CollectableItem
 
         public void OnDespawn()
         {
+            alreadyCollect = false;
         }
     }
 

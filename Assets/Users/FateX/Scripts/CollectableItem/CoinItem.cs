@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using Lean.Pool;
+using UnityEngine;
 
 namespace Users.FateX.Scripts.CollectableItem
 {
-    public class CoinItem : MonoBehaviour, ICollectable, ICoin
+    public class CoinItem : MonoBehaviour, ICollectable, ICoin, IPoolable
     {
         private bool alreadyCollect;
 
@@ -17,6 +18,16 @@ namespace Users.FateX.Scripts.CollectableItem
         public bool CanCollect()
         {
             return !alreadyCollect;
+        }
+
+        public void OnSpawn()
+        {
+            alreadyCollect = false;
+        }
+
+        public void OnDespawn()
+        {
+            alreadyCollect = false;
         }
     }
 

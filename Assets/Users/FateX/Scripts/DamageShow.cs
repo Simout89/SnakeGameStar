@@ -14,8 +14,6 @@ namespace Users.FateX.Scripts
 
         private void HandleEnemyDie(EnemyBase obj)
         {
-            Debug.Log("e");
-            
             var newDamageView = LeanPool.Spawn(_gameConfig.GameConfigData.DamageViewPrefab, obj.transform.position + Vector3.up / 2 + (Vector3)Random.insideUnitCircle / 2, Quaternion.identity);
             newDamageView.TMPText.text = ((obj.lastDamageInfo.Amount * GameConstant.VisualDamageMultiplayer + Random.Range(-3, 5)).ToString());
 

@@ -21,7 +21,7 @@ namespace Users.FateX.Scripts
         [Inject] private EnemyManager _enemyManager;
         [Inject] private GameContext _gameContext;
         [Inject] private CollectableHandler _collectableHandler;
-        [Inject] private ExperienceFactory _experienceFactory;
+        [Inject] private ItemFactory _itemFactory;
         [Inject] private CameraController _cameraController;
 
         [Inject] private GameConfig _gameConfig;
@@ -63,7 +63,7 @@ namespace Users.FateX.Scripts
 
             WaveData waveData = Resources.LoadAll<WaveData>("Data/Waves")[0];
 
-            _experienceFactory.SetPrefab(_gameConfig.GameConfigData.XpPrefab);
+            _itemFactory.SetPrefab(_gameConfig.GameConfigData.XpPrefab);
 
             _enemySpawnDirector.SetWaveData(waveData);
 
