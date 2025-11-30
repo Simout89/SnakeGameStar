@@ -17,6 +17,10 @@ MonoBehaviour:
   <CoinItemPrefab>k__BackingField: {fileID: 1889280363881644124, guid: e18bd1c7d5f502b4992a21928d3e0780, type: 3}
   <CardPrefab>k__BackingField: {fileID: 1222528997471321660, guid: 0152b471e801a5248a50c39722fafff7, type: 3}
   <DamageViewPrefab>k__BackingField: {fileID: 3325979279292723863, guid: 0f05cf9067c01be47a545cb238de3b27, type: 3}
+  <SpecialCards>k__BackingField:
+    UpgradeCard: {fileID: 11400000, guid: ad4b07baf8ee7d34c851ba7ba5acdf71, type: 2}
+    HealCard: {fileID: 11400000, guid: d6688225a4bbb4445bd8d6ccb2dd9a10, type: 2}
+    CoinCard: {fileID: 11400000, guid: 2fac202a6671cce49b3af79d3e36176d, type: 2}
   <CardDatas>k__BackingField:
   - {fileID: 11400000, guid: b77f9f64f4127cd4d879f7033d957579, type: 2}
   - {fileID: 11400000, guid: ae14fa50c8a913847b3611edefc9ec62, type: 2}
@@ -24,7 +28,6 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 61d246ea927c9464aa485e74cfc84a25, type: 2}
   - {fileID: 11400000, guid: f6ac1cd716736954b94c394e11dc2528, type: 2}
   - {fileID: 11400000, guid: bcc48c27ec1cce84185ff2d1bd55e26e, type: 2}
-  - {fileID: 11400000, guid: ad4b07baf8ee7d34c851ba7ba5acdf71, type: 2}
   - {fileID: 11400000, guid: be868d4c912169446ad1752a6799b023, type: 2}
   <ShopProductDatas>k__BackingField: []
   <DropCoinChance>k__BackingField: 5

@@ -13,17 +13,17 @@ namespace Users.FateX.Scripts.View
         
         private void OnDestroy()
         {
-            _snakeHealth.OnTakeDamage -= HandleTakeDamage;
+            _snakeHealth.OnHealthChanged -= HandleHealthChanged;
         }
 
         public void SetSnakeHealth(SnakeHealth snakeHealth)
         {
             _snakeHealth = snakeHealth;
-            _snakeHealth.OnTakeDamage += HandleTakeDamage;
+            _snakeHealth.OnHealthChanged += HandleHealthChanged;
 
         }
         
-        private void HandleTakeDamage()
+        private void HandleHealthChanged()
         {
             _image.DOComplete();
             _image.DOFillAmount(_snakeHealth.CurrentHealth / _snakeHealth.MaxHealth, 0.1f);

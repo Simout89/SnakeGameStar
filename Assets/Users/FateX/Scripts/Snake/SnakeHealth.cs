@@ -15,7 +15,7 @@ namespace Users.FateX.Scripts
         
         private float timeToNextHit = 0;
 
-        public event Action OnTakeDamage;
+        public event Action OnHealthChanged;
         public event Action OnDie;
 
         private void Awake()
@@ -45,6 +45,16 @@ namespace Users.FateX.Scripts
             }
         }
 
+        public void Heal(float amount)
+        {
+            CurrentHealth += amount;
+
+            if (CurrentHealth > MaxHealth)
+                CurrentHealth = MaxHealth;
+            
+            OnHealthChanged?.Invoke();
+        }
+
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
             if(Time.time < timeToNextHit)
@@ -61,7 +71,7 @@ namespace Users.FateX.Scripts
 
             CurrentHealth -= damageInfo.Amount;
 
-            OnTakeDamage?.Invoke();
+            OnHealthChanged?.Invoke();
             
             if (CurrentHealth <= 0)
             {

@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts.Data
     {
         [field: SerializeField] public Sprite Sprite { get; private set; }
         [field: SerializeField] public CardType CardType { get; private set; }
+        [field: SerializeField] public float Value { get; private set; }
         [field: SerializeField] public SnakeSegmentBase SnakeSegmentBase { get; private set; }
         [field: TextArea(10, 10)]
         [field: SerializeField] 
