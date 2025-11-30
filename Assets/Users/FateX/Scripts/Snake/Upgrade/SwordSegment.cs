@@ -12,6 +12,8 @@ namespace Users.FateX.Scripts.Upgrade
         [SerializeField] private SpriteRenderer[] swordSprites;
 
         private Vector3 originScale;
+        private Vector3 maxScale;
+        private Vector3 originPosition;
         private Sequence currentSequence;
 
         private void OnEnable()
@@ -30,6 +32,17 @@ namespace Users.FateX.Scripts.Upgrade
             }
             
             currentSequence?.Kill();
+        }
+
+        public override void Upgrade()
+        {
+            base.Upgrade();
+
+            foreach (var sword in swordTriggers)
+            {
+                maxScale = originScale * CurrentStats.AttackRange;
+                sword.transform.localPosition = originPosition + originPosition * Mathf.Max(1, (1 - CurrentStats.AttackRange) / 2);
+            }
         }
 
         private void HandleEntered(Collider2D obj)
@@ -66,7 +79,7 @@ namespace Users.FateX.Scripts.Upgrade
 
             foreach (var sword in swords)
             {
-                currentSequence.Append(sword.DOScale(originScale, 0.1f));
+                currentSequence.Append(sword.DOScale(maxScale, 0.1f));
             }
             
             foreach (var sword in swords)
@@ -105,6 +118,9 @@ namespace Users.FateX.Scripts.Upgrade
             base.Init(snakeController);
 
             originScale = swords[0].localScale;
+            originPosition = swordTriggers[0].transform.localPosition;
+
+            maxScale = originScale;
             
             foreach (var sword in swords)
             {

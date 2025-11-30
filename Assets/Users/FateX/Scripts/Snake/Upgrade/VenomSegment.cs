@@ -7,6 +7,12 @@ namespace Users.FateX.Scripts.Upgrade
     public class VenomSegment: CombatSnakeSegment
     {
         [SerializeField] private TriggerDetector _triggerDetector;
+        private Vector3 originScale;
+        
+        private void Awake()
+        {
+            originScale = _triggerDetector.transform.localScale;
+        }
 
         private void OnEnable()
         {
@@ -18,6 +24,13 @@ namespace Users.FateX.Scripts.Upgrade
         {
             _triggerDetector.onTriggerEntered -= HandleEntered;
             _triggerDetector.onTriggerExited -= HandleExited;
+        }
+
+        public override void Upgrade()
+        {
+            base.Upgrade();
+
+            _triggerDetector.transform.localScale = originScale * CurrentStats.AttackRange;
         }
 
         private void HandleEntered(Collider2D obj)

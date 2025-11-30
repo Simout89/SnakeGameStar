@@ -13,20 +13,21 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: Sword
+  <BaseSegmentsCount>k__BackingField: 1
+  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <UpgradeStats>k__BackingField:
-  - <AttackRange>k__BackingField: 10
+  - <AttackRange>k__BackingField: 1
     <DelayBetweenShots>k__BackingField: 2
     <Damage>k__BackingField: 2
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
-    <BouncesCount>k__BackingField: 5
+    <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  - <AttackRange>k__BackingField: 10
+  - <AttackRange>k__BackingField: 1.5
     <DelayBetweenShots>k__BackingField: 2
     <Damage>k__BackingField: 3
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
-    <BouncesCount>k__BackingField: 5
+    <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <Vfx>k__BackingField: {fileID: 1980034782213133366, guid: 9f6bc53e55a78e84aab3096781fcde03, type: 3}
