@@ -11,6 +11,8 @@ namespace Users.FateX.Scripts.Enemys
         [Inject] private ItemFactory _itemFactory;
         [Inject] private GameConfig _gameConfig;
 
+        private int totalEnemyDie = 0;
+
         public void Initialize()
         {
             _enemyManager.OnEnemyDie += HandleEnemyDie;
@@ -23,12 +25,19 @@ namespace Users.FateX.Scripts.Enemys
 
         private void HandleEnemyDie(EnemyBase obj)
         {
+            totalEnemyDie++;
+            
             var transformPosition = obj.transform.position;
             _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle / 2);
 
             if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance * 100f)
             {
                 _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle / 2);
+            }
+
+            if (totalEnemyDie % (100 / _gameConfig.GameConfigData.MagnetDropChance) == 0)
+            {
+                _itemFactory.SpawnMagnet(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }
         }
     }

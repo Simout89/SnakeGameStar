@@ -52,15 +52,15 @@ public class EnemyManager : MonoBehaviour
             Transform nearestSegment = _snakeController.SegmentsBase[0].Body;
             float minDistance = Vector3.Distance(nearestSegment.position, _enemies[i].transform.position);
 
-            for (int j = 1; j < _snakeController.SegmentsBase.Count; j++)
-            {
-                float dist = Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position);
-                if (dist < minDistance)
-                {
-                    nearestSegment = _snakeController.SegmentsBase[j].Body;
-                    minDistance = dist;
-                }
-            }
+            //for (int j = 1; j < _snakeController.SegmentsBase.Count; j++)
+            //{
+            //    float dist = Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position);
+            //    if (dist < minDistance)
+            //    {
+            //        nearestSegment = _snakeController.SegmentsBase[j].Body;
+            //        minDistance = dist;
+            //    }
+            //}
 
             Vector3 direction = (nearestSegment.position - _enemies[i].transform.position).normalized;
 
@@ -71,7 +71,7 @@ public class EnemyManager : MonoBehaviour
                 _enemies[i].transform.localScale = localScale;
             }
 
-            _enemies[i].Move(direction * (Time.deltaTime * enemySpeed));
+            _enemies[i].Move(direction);
         }
     }
 

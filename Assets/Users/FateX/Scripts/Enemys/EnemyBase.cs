@@ -16,6 +16,7 @@ namespace Users.FateX.Scripts
         [SerializeField] private Transform _shadow;
         [field: SerializeField] public Transform Body { get; private set; }
         [SerializeField] private EnemyData _enemyData;
+        public EnemyData EnemyData => _enemyData;
         [SerializeField] private Rigidbody2D _rigidbody2D;
         private Tween swayTween;
         
@@ -67,13 +68,14 @@ namespace Users.FateX.Scripts
         }
 
 
-        public void Move(Vector3 direction)
+        public void Move(Vector2 direction)
         {
             // transform.position = transform.position + direction;
             if(AlreadyDie)
                 return;
             
-            _rigidbody2D.linearVelocity = direction;
+            _rigidbody2D.linearVelocity = (direction * _enemyData.MoveSpeed  * Time.fixedDeltaTime);
+            //_rigidbody2D.position += direction * _enemyData.MoveSpeed  * Time.fixedDeltaTime;
         }
 
         public void TakeDamage(DamageInfo damageInfo)
@@ -227,6 +229,6 @@ namespace Users.FateX.Scripts
 
     public interface IEnemy
     {
-        public void Move(Vector3 direction);
+        public void Move(Vector2 direction);
     }
 }

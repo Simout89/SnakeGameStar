@@ -32,3 +32,4 @@ MonoBehaviour:
   <ShopProductDatas>k__BackingField: []
   <DropCoinChance>k__BackingField: 5
   <XpValue>k__BackingField: 0.8
+  <MagnetDropChance>k__BackingField: 0.5
