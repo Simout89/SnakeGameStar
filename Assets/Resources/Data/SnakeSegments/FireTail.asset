@@ -13,20 +13,42 @@ MonoBehaviour:
   m_Name: FireTail
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: FireTrail
+  <BaseSegmentsCount>k__BackingField: 1
+  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <UpgradeStats>k__BackingField:
-  - <AttackRange>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1
     <DelayBetweenShots>k__BackingField: 0.5
     <Damage>k__BackingField: 1
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  - <AttackRange>k__BackingField: 0
-    <DelayBetweenShots>k__BackingField: 0.3
-    <Damage>k__BackingField: 1
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.45
+    <Damage>k__BackingField: 1.25
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 1.25
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 1.35
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.37
+    <Damage>k__BackingField: 1.5
+    <ProjectileCount>k__BackingField: 0
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
   <Vfx>k__BackingField: {fileID: 0}

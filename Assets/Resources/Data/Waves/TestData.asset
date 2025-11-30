@@ -16,7 +16,9 @@ MonoBehaviour:
   WaveChangeSpawns:
   - <TimeMarker>k__BackingField: 0
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: da532416fe9f3ab4b9f56341054b7298, type: 3}
-  - <TimeMarker>k__BackingField: 0.33
+  - <TimeMarker>k__BackingField: 0.25
+    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: fd3a91aabc7ff494abb0e123a9038148, type: 3}
+  - <TimeMarker>k__BackingField: 0.5
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
-  - <TimeMarker>k__BackingField: 0.66
+  - <TimeMarker>k__BackingField: 0.75
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: c05ac6dcadebd624aaa628928150a363, type: 3}

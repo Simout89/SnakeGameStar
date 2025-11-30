@@ -19,7 +19,13 @@ namespace Users.FateX.Scripts.CollectableItem
             return !alreadyCollect;
         }
 
-        public float Value { get; private set; } = 1;
+        public void SetValue(float value)
+        {
+            Value = value;
+        }
+
+
+        public float Value { get; private set; } = 0.1f;
         public void OnSpawn()
         {
             alreadyCollect = false;

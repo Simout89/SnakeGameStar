@@ -18,6 +18,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public CardData[] CardDatas { get; private set; }
         [field: SerializeField] public ShopProductData[] ShopProductDatas { get; private set; }
         [field: SerializeField, Header("Settings")] public float DropCoinChance { get; private set; }
+        [field: SerializeField] public float XpValue { get; private set; } = 0.4f;
 
     }
 

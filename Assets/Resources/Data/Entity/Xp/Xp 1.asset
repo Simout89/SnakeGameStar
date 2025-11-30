@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Xp 1
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Enity.XpEntityData
   <Sprite>k__BackingField: {fileID: 0}
-  <XpAmount>k__BackingField: 5
+  <XpAmount>k__BackingField: 1

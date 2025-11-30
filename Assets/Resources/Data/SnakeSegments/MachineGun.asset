@@ -13,6 +13,8 @@ MonoBehaviour:
   m_Name: MachineGun
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: Machine Gun
+  <BaseSegmentsCount>k__BackingField: 1
+  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 1da8f4f20e6bc8847bfecfd33ce42d26, type: 3}
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 10
     <DelayBetweenShots>k__BackingField: 2
@@ -21,19 +23,32 @@ MonoBehaviour:
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  - <AttackRange>k__BackingField: 15
+  - <AttackRange>k__BackingField: 11
+    <DelayBetweenShots>k__BackingField: 2
+    <Damage>k__BackingField: 2
+    <ProjectileCount>k__BackingField: 2
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 12
     <DelayBetweenShots>k__BackingField: 2
     <Damage>k__BackingField: 2
     <ProjectileCount>k__BackingField: 3
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  - <AttackRange>k__BackingField: 20
+  - <AttackRange>k__BackingField: 13
     <DelayBetweenShots>k__BackingField: 2
     <Damage>k__BackingField: 2
-    <ProjectileCount>k__BackingField: 6
+    <ProjectileCount>k__BackingField: 4
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
-  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 1da8f4f20e6bc8847bfecfd33ce42d26, type: 3}
+  - <AttackRange>k__BackingField: 15
+    <DelayBetweenShots>k__BackingField: 2
+    <Damage>k__BackingField: 2.5
+    <ProjectileCount>k__BackingField: 5
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
   <Vfx>k__BackingField: {fileID: 0}
