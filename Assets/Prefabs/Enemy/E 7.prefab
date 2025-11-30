@@ -25,13 +25,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2779810463763214553}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: 0.13052598, w: 0.9914449}
-  m_LocalPosition: {x: 0, y: 0.33, z: 0}
-  m_LocalScale: {x: 1.0116802, y: 1.0116802, z: 1.0116802}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.015, y: 0.486, z: 0}
+  m_LocalScale: {x: 0.76060027, y: 0.76060027, z: 0.76060027}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 6788877009436376216}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &6476539263843871288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 4612130215040278351, guid: 7ae04715d06ee64419e0278384939019, type: 3}
+  m_Sprite: {fileID: -5920340977296960050, guid: 22addb6201b2e044795c4cdb1213570b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +116,7 @@ Transform:
   m_GameObject: {fileID: 4050524874741960788}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.653, z: 0}
+  m_LocalPosition: {x: 0, y: -0.485, z: 0}
   m_LocalScale: {x: 0.41870892, y: 0.08843132, z: 0.41870892}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 2676739070057548179}
   - component: {fileID: 4488482449999176757}
   m_Layer: 7
-  m_Name: 2
+  m_Name: E 7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ MonoBehaviour:
   _spriteRenderer: {fileID: 6476539263843871288}
   _shadow: {fileID: 5769877817002735972}
   <Body>k__BackingField: {fileID: 7325855469933552679}
-  _enemyData: {fileID: 11400000, guid: cff99cb79a9f9e240a8dbe54e11e44a2, type: 2}
+  _enemyData: {fileID: 11400000, guid: 3d5ee53e1c1c80046a66dddf35d7b302, type: 2}
   _rigidbody2D: {fileID: 5204054223735525099}
   Visible: 1
   AlreadyDie: 0

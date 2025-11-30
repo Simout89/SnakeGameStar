@@ -78,7 +78,7 @@ namespace Users.FateX.Scripts.Enemy
             float baseLevel = 1f + enemyIndex * 0.1f;
     
             // Дополнительный рост по времени
-            float timeGrowth = 1f + _gameTimer.CurrentTime * 0.015f;
+            float timeGrowth = 1f + _gameTimer.CurrentTime * 0.002f;
     
             // Пилообразная волна
             float sawtoothWave = segmentProgress;
