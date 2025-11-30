@@ -17,6 +17,8 @@ namespace Users.FateX.Scripts.Data
     public enum CardType
     {
         Segment,
-        Upgrade
+        Upgrade,
+        Coin,
+        Heal
     }
 }
