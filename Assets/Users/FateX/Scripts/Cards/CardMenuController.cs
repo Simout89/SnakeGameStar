@@ -27,6 +27,9 @@ namespace Users.FateX.Scripts.Cards
 
         private bool _exiledModeBacking;
 
+        // НОВОЕ: Шанс появления карты улучшения (от 0 до 1)
+        private const float UPGRADE_CARD_CHANCE = 0.5f; // 50% шанс
+
         private bool _exiledMode
         {
             get => _exiledModeBacking;
@@ -72,22 +75,26 @@ namespace Users.FateX.Scripts.Cards
         {
             if (cardsCount <= 0) return;
 
-            // Собираем пулы доступных карт
             var availableSegmentCards = GetAvailableSegmentCards(isReroll);
             var upgradeableSegments = GetUpgradeableSegments();
             
             List<CardData> cardsToShow = new List<CardData>();
 
-            // Определяем, сколько карт каждого типа можем показать
             int maxUpgradeCards = Mathf.Min(upgradeableSegments.Count, cardsCount);
             int maxSegmentCards = Mathf.Min(availableSegmentCards.Count, cardsCount);
 
-            // Генерируем карты улучшений (до 3 штук, каждая для разного сегмента)
+            // ИЗМЕНЕНО: Генерируем карты улучшений с учетом шанса
             List<SnakeSegmentBase> usedSegments = new List<SnakeSegmentBase>();
             int upgradeCardsAdded = 0;
             
             while (upgradeCardsAdded < maxUpgradeCards && cardsToShow.Count < cardsCount)
             {
+                // Проверяем шанс появления карты улучшения
+                if (Random.value > UPGRADE_CARD_CHANCE)
+                {
+                    break; // Не добавляем карту улучшения в этот раз
+                }
+
                 var segment = upgradeableSegments.FirstOrDefault(s => !usedSegments.Contains(s));
                 if (segment == null) break;
 
@@ -108,7 +115,6 @@ namespace Users.FateX.Scripts.Cards
             // Заполняем оставшиеся слоты карточками Heal и Coin
             while (cardsToShow.Count < cardsCount)
             {
-                // Чередуем Heal и Coin
                 if (cardsToShow.Count % 2 == 0)
                 {
                     cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.HealCard);
@@ -165,15 +171,12 @@ namespace Users.FateX.Scripts.Cards
 
             foreach (var card in allSegmentCards)
             {
-                // Проверяем, не в изгнании ли карта
                 if (_exiledCards.Contains(card))
                     continue;
 
-                // Проверяем, не показывали ли её в прошлый раз при рероле
                 if (isReroll && _lastShownCards.Contains(card))
                     continue;
 
-                // Проверяем лимит сегментов этого типа
                 int currentCount = _gameContext.SnakeController.SegmentsBase
                     .Count(s => s.GetType() == card.SnakeSegmentBase.GetType());
 
@@ -195,7 +198,6 @@ namespace Users.FateX.Scripts.Cards
 
             List<SnakeSegmentBase> upgradeableSegments = new List<SnakeSegmentBase>();
 
-            // Пропускаем голову (индекс 0)
             for (int i = 1; i < segments.Length; i++)
             {
                 var segment = segments[i];
@@ -205,7 +207,6 @@ namespace Users.FateX.Scripts.Cards
                 }
             }
 
-            // Перемешиваем для случайности
             return upgradeableSegments.OrderBy(x => Random.value).ToList();
         }
 
@@ -247,8 +248,6 @@ namespace Users.FateX.Scripts.Cards
                     return;
                 }
 
-                // Логика лечения
-                // _gameContext.SnakeController.Heal(card.Value);
                 _gameContext.SnakeHealth.Heal(card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
@@ -266,8 +265,6 @@ namespace Users.FateX.Scripts.Cards
                     return;
                 }
 
-                // Логика получения монет
-                // _playerStats.AddCoins((int)card.Value);
                 _currencyService.AddCoins((int)card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();

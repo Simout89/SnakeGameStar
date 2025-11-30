@@ -15,7 +15,7 @@ namespace Users.FateX.Scripts
         private void HandleEnemyDie(EnemyBase obj)
         {
             var newDamageView = LeanPool.Spawn(_gameConfig.GameConfigData.DamageViewPrefab, obj.transform.position + Vector3.up / 2 + (Vector3)Random.insideUnitCircle / 2, Quaternion.identity);
-            newDamageView.TMPText.text = ((obj.lastDamageInfo.Amount * GameConstant.VisualDamageMultiplayer + Random.Range(-3, 5)).ToString());
+            newDamageView.TMPText.text = (((int)(obj.lastDamageInfo.Amount * GameConstant.VisualDamageMultiplayer + Random.Range(-2, 3))).ToString());
 
             var _baseScale = newDamageView.transform.localScale;
             
@@ -38,13 +38,11 @@ namespace Users.FateX.Scripts
         public void Initialize()
         {
             enemyManager.OnEnemyTakeDamage += HandleEnemyDie;
-            Debug.Log("e");
         }
 
         public void Dispose()
         {
             enemyManager.OnEnemyTakeDamage -= HandleEnemyDie;
-            Debug.Log("d");
         }
     }
 }

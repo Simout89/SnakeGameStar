@@ -43,6 +43,7 @@ namespace Users.FateX.Scripts.Combat
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
+                GameEvents.DamageDealt(damageInfo);
                 damageable.TakeDamage(damageInfo);
             }
             

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using Lean.Pool;
 using UnityEngine;
@@ -13,12 +14,25 @@ namespace Users.FateX.Scripts.Upgrade
         [SerializeField] private Transform muzzle;
 
         private Transform nearestEnemy;
+        private CancellationTokenSource _cancellationTokenSource;
+
 
         private void Awake()
         {
             Quaternion targetRotation = Quaternion.Euler(0, 0, Random.Range(-360, 360));
 
             machineGun.localRotation = targetRotation;
+        }
+
+        private void OnEnable()
+        {
+            _cancellationTokenSource = new CancellationTokenSource();
+        }
+
+        private void OnDisable()
+        {
+            _cancellationTokenSource?.Cancel();
+            _cancellationTokenSource?.Dispose();
         }
 
         public override void Tick()
@@ -47,10 +61,10 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
 
-            Shoot().Forget();
+            Shoot(_cancellationTokenSource.Token).Forget();
         }
 
-        private async UniTask Shoot()
+        private async UniTask Shoot(CancellationToken cancellationToken)
         {
             for (int i = 0; i < CurrentStats.ProjectileCount; i++)
             {
@@ -64,7 +78,7 @@ namespace Users.FateX.Scripts.Upgrade
                     muzzle.up * 15,
                     new DamageInfo(CurrentStats.Damage, UpgradeLevelsData.SegmentName)
                 );
-                await UniTask.Delay(TimeSpan.FromSeconds(0.1f));
+                await UniTask.Delay(TimeSpan.FromSeconds(0.1f), cancellationToken: cancellationToken);
             }
         }
     }

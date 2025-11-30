@@ -47,8 +47,8 @@ namespace Users.FateX.Scripts.Upgrade
                     .WithCancellation(token);
 
                 var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
-                enemy.TakeDamage(damageInfo);
                 DealDamage(damageInfo);
+                enemy.TakeDamage(damageInfo);
 
                 await UniTask.Delay(100, cancellationToken: token);
             }

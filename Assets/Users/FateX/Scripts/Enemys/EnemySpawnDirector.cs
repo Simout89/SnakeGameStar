@@ -75,7 +75,7 @@ namespace Users.FateX.Scripts.Enemy
         public float GetEnemyCountFloat(float segmentProgress, int enemyIndex)
         {
             // Базовый рост зависит от индекса врага
-            float baseLevel = 1f + enemyIndex * 1f;
+            float baseLevel = 1f + enemyIndex * 0.1f;
     
             // Дополнительный рост по времени
             float timeGrowth = 1f + _gameTimer.CurrentTime * 0.015f;

@@ -2,11 +2,15 @@
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine.SceneManagement;
+using Users.FateX.Scripts.View;
+using Zenject;
 
 namespace Users.FateX.Scripts
 {
     public class DeathHandler: IDisposable
     {
+        [Inject] private DeathView _deathView;
+        [Inject] private GameStateManager _gameStateManager;
         private SnakeHealth _snakeHealth;
         
         public void SetSnakeHealth(SnakeHealth snakeHealth)
@@ -22,11 +26,15 @@ namespace Users.FateX.Scripts
 
         private void HandleDie()
         {
+            _deathView.Show();
+            
+            _gameStateManager.ChangeState(GameStates.Death);
+            
             DOTween.KillAll();
             
             LeanPool.DespawnAll();
             
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
     }
 }

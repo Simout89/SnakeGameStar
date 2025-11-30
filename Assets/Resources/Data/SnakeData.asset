@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SnakeData
   <BaseMoveSpeed>k__BackingField: 5
   <BaseRotateSpeed>k__BackingField: 200
-  <BaseHealth>k__BackingField: 10
+  <BaseHealth>k__BackingField: 20
   <SegmentDistance>k__BackingField: 0.3

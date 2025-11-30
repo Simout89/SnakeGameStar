@@ -51,9 +51,9 @@ namespace Users.FateX.Scripts.Upgrade
             {
                 var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
                 
+                DealDamage(damageInfo);
                 damageable.TakeDamage(damageInfo);
                 
-                DealDamage(damageInfo);
             }
         }
 
