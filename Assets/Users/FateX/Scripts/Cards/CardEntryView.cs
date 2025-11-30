@@ -1,4 +1,5 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
 using TMPro;
 using UnityEngine;
 using Users.FateX.Scripts.Data;
@@ -25,6 +26,11 @@ namespace Users.FateX.Scripts.Cards
             _image.sprite = cardData.Sprite;
 
             body.transform.DOLocalMove(Vector3.zero, 0.5f).SetUpdate(true).SetEase(Ease.OutCirc);
+        }
+
+        public void OnDestroy()
+        {
+            body.transform.DOKill();
         }
     }
 }

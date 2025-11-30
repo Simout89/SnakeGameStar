@@ -35,7 +35,7 @@ namespace Users.FateX.Scripts.Cards
             get => _exiledModeBacking;
             set
             {
-                _exiledModeBacking = value;          
+                _exiledModeBacking = value;
                 _cardMenuView.ChangeExileMode(value);
             }
         }
@@ -54,7 +54,7 @@ namespace Users.FateX.Scripts.Cards
 
         private void HandleExileClick()
         {
-            if(_playerStats.exile - exileUsed <= 0)
+            if (_playerStats.exile - exileUsed <= 0)
                 return;
             _exiledMode = !_exiledMode;
         }
@@ -76,63 +76,59 @@ namespace Users.FateX.Scripts.Cards
             if (cardsCount <= 0) return;
 
             var availableSegmentCards = GetAvailableSegmentCards(isReroll);
+            availableSegmentCards = availableSegmentCards.OrderBy(x => Random.value).ToList();
             var upgradeableSegments = GetUpgradeableSegments();
-            
+
             List<CardData> cardsToShow = new List<CardData>();
-
-            int maxUpgradeCards = Mathf.Min(upgradeableSegments.Count, cardsCount);
-            int maxSegmentCards = Mathf.Min(availableSegmentCards.Count, cardsCount);
-
-            // ИЗМЕНЕНО: Генерируем карты улучшений с учетом шанса
             List<SnakeSegmentBase> usedSegments = new List<SnakeSegmentBase>();
-            int upgradeCardsAdded = 0;
-            
-            while (upgradeCardsAdded < maxUpgradeCards && cardsToShow.Count < cardsCount)
+
+            // 1. Пробуем добавить карты улучшений сегментов с шансом
+            foreach (var segment in upgradeableSegments)
             {
-                // Проверяем шанс появления карты улучшения
-                if (Random.value > UPGRADE_CARD_CHANCE)
+                if (Random.value <= UPGRADE_CARD_CHANCE)
                 {
-                    break; // Не добавляем карту улучшения в этот раз
+                    usedSegments.Add(segment);
+                    cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.UpgradeCard);
+                    if (cardsToShow.Count >= cardsCount) break;
                 }
-
-                var segment = upgradeableSegments.FirstOrDefault(s => !usedSegments.Contains(s));
-                if (segment == null) break;
-
-                usedSegments.Add(segment);
-                cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.UpgradeCard);
-                upgradeCardsAdded++;
             }
 
-            // Добавляем карты сегментов
-            List<CardData> shuffledSegments = availableSegmentCards.OrderBy(x => Random.value).ToList();
-            int segmentCardsToAdd = Mathf.Min(shuffledSegments.Count, cardsCount - cardsToShow.Count);
-            
-            for (int i = 0; i < segmentCardsToAdd; i++)
+            // 2. Добавляем доступные сегменты, которых ещё нет
+            foreach (var card in availableSegmentCards)
             {
-                cardsToShow.Add(shuffledSegments[i]);
+                if (cardsToShow.Count >= cardsCount) break;
+                if (!cardsToShow.Contains(card))
+                    cardsToShow.Add(card);
             }
 
-            // Заполняем оставшиеся слоты карточками Heal и Coin
+            // 3. Проверяем оставшиеся пустые слоты и добиваем картами улучшений
+            var remainingUpgradeable = upgradeableSegments.Except(usedSegments).ToList();
+            while (cardsToShow.Count < cardsCount && remainingUpgradeable.Count > 0)
+            {
+                var segment = remainingUpgradeable[0];
+                usedSegments.Add(segment);
+                remainingUpgradeable.RemoveAt(0);
+                cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.UpgradeCard);
+            }
+
+            // 4. Если после всего остались пустые слоты — добавляем Heal/Coin
             while (cardsToShow.Count < cardsCount)
             {
-                if (cardsToShow.Count % 2 == 0)
-                {
-                    cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.HealCard);
-                }
-                else
-                {
-                    cardsToShow.Add(_gameConfig.GameConfigData.SpecialCards.CoinCard);
-                }
+                cardsToShow.Add(cardsToShow.Count % 2 == 0
+                    ? _gameConfig.GameConfigData.SpecialCards.HealCard
+                    : _gameConfig.GameConfigData.SpecialCards.CoinCard);
             }
 
             // Перемешиваем финальный список карт
             cardsToShow = cardsToShow.OrderBy(x => Random.value).ToList();
 
+            _cardMenuView.ClearAllCards();
+
             // Отображаем карты
             for (int i = 0; i < cardsToShow.Count; i++)
             {
                 var card = cardsToShow[i];
-                
+
                 if (card.CardType == CardType.Upgrade)
                 {
                     var segment = usedSegments[0];
@@ -156,10 +152,11 @@ namespace Users.FateX.Scripts.Cards
 
             _lastShownCards = cardsToShow.Where(c => c.CardType == CardType.Segment).ToList();
             _exiledMode = false;
-            
+
             _cardMenuView.UpdateRerollCountText(_playerStats.rerolls - rerrolUsed);
             _cardMenuView.UpdateExileCountText(_playerStats.exile - exileUsed);
         }
+
 
         private List<CardData> GetAvailableSegmentCards(bool isReroll)
         {
@@ -192,7 +189,7 @@ namespace Users.FateX.Scripts.Cards
         private List<SnakeSegmentBase> GetUpgradeableSegments()
         {
             var segments = _gameContext.SnakeController.SegmentsBase.ToArray();
-            
+
             if (segments.Length <= 1)
                 return new List<SnakeSegmentBase>();
 
