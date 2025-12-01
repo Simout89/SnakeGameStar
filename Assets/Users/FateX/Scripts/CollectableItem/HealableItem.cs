@@ -1,4 +1,5 @@
-﻿using Lean.Pool;
+﻿using DG.Tweening;
+using Lean.Pool;
 using UnityEngine;
 
 namespace Users.FateX.Scripts.CollectableItem
@@ -9,6 +10,8 @@ namespace Users.FateX.Scripts.CollectableItem
         
         public GameObject Collect()
         {
+            transform.DOKill();
+            
             alreadyCollect = true;
             
             return gameObject;
@@ -25,7 +28,7 @@ namespace Users.FateX.Scripts.CollectableItem
         }
 
 
-        public float Value { get; private set; } = 1f;
+        public float Value { get; private set; } = 2f;
         public void OnSpawn()
         {
             alreadyCollect = false;

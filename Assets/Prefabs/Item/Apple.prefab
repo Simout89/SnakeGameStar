@@ -99,8 +99,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7462258598969594947}
-  - component: {fileID: 4043232107286505601}
   - component: {fileID: 7382412738736509956}
+  - component: {fileID: 3770474225613000502}
   m_Layer: 8
   m_Name: Apple
   m_TagString: Untagged
@@ -125,18 +125,6 @@ Transform:
   - {fileID: 5669249092590384114}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4043232107286505601
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7785640004610985577}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9478064d40fe4318ae5f88639c759d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.CollectableItem.XpItem
 --- !u!58 &7382412738736509956
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -173,6 +161,18 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &3770474225613000502
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785640004610985577}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 73d90ba06c0649daa21044c653af4670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.CollectableItem.HealableItem
 --- !u!1 &8566926785797290232
 GameObject:
   m_ObjectHideFlags: 0
@@ -252,7 +252,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -4
-  m_Sprite: {fileID: -5347527576110967013, guid: 8c8f97318072a5148a4d5dcb04cf8fe7, type: 3}
+  m_Sprite: {fileID: -3946612055665836118, guid: 2bef337dee8cb9045a5b1da12cb5d5ab, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
