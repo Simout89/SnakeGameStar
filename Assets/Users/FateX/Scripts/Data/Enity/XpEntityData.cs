@@ -6,6 +6,6 @@ namespace Users.FateX.Scripts.Data.Enity
     public class XpEntityData: ScriptableObject
     {
         [field: SerializeField] public Sprite Sprite { get; private set; }
-        [field: SerializeField] public int XpAmount { get; private set; } = 10;
+        [field: SerializeField] public float XpAmount { get; private set; } = 10;
     }
 }

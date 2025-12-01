@@ -1,10 +1,12 @@
 ﻿using Lean.Pool;
 using UnityEngine;
+using Users.FateX.Scripts.Data.Enity;
 
 namespace Users.FateX.Scripts.CollectableItem
 {
     public class XpItem: MonoBehaviour, ICollectable, IExperiencePoints, IPoolable
     {
+        [SerializeField] private XpEntityData _xpEntityData;
         private bool alreadyCollect;
         
         public GameObject Collect()
@@ -29,6 +31,7 @@ namespace Users.FateX.Scripts.CollectableItem
         public void OnSpawn()
         {
             alreadyCollect = false;
+            Value = _xpEntityData.XpAmount;
         }
 
         public void OnDespawn()

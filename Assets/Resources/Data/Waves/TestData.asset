@@ -34,3 +34,30 @@ MonoBehaviour:
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: dabc8f378d7a956478a20a8cdb415713, type: 3}
   - <TimeMarker>k__BackingField: 0.9
     <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: a7a9a3de245af2b4b8fe149d70fe716d, type: 3}
+  WaveEventSpawns:
+  - <TimeMarker>k__BackingField: 0.05
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1
+  - <TimeMarker>k__BackingField: 0.15
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1
+  - <TimeMarker>k__BackingField: 0.25
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1
+  - <TimeMarker>k__BackingField: 0.35
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1

@@ -59,8 +59,8 @@ namespace Users.FateX.Scripts.Interactable
                 
                 _spriteRenderer.DOKill();
                 DOTween.To(
-                    () => GetFloat("_DissolveAmount"),
-                    v => SetFloat("_DissolveAmount", v),
+                    () => GetFloat("_FadeAmount"),
+                    v => SetFloat("_FadeAmount", v),
                     1f,
                     0.5f
                 ).OnComplete(() =>
@@ -77,13 +77,13 @@ namespace Users.FateX.Scripts.Interactable
             DOTween.Kill(_spriteRenderer);
             
             DOTween.To(
-                () => GetFloat("_FlashAmount"),
-                v => SetFloat("_FlashAmount", v),
+                () => GetFloat("_HitEffectBlend"),
+                v => SetFloat("_HitEffectBlend", v),
                 0f,
                 0.3f
             ).SetTarget(_spriteRenderer);
 
-            SetFloat("_FlashAmount", 1f);
+            SetFloat("_HitEffectBlend", 1f);
         }
         
         private void SetFloat(string property, float value)

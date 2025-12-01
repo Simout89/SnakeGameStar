@@ -28,7 +28,15 @@ namespace Users.FateX.Scripts.Enemys
             totalEnemyDie++;
             
             var transformPosition = obj.transform.position;
-            _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle / 2);
+            if(obj.GetData().OverrideLootXP == null || obj.GetData().OverrideLootXP.Length == 0)
+                _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle / 2);
+            else
+            {
+                foreach (var xpItem in obj.GetData().OverrideLootXP)
+                {
+                    _itemFactory.SpawnXp(transformPosition + (Vector3)Random.insideUnitCircle / 2, xpItem);
+                }
+            }
 
             if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance * 100f)
             {

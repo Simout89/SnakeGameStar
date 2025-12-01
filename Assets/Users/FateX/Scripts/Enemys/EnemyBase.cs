@@ -108,9 +108,9 @@ namespace Users.FateX.Scripts
                 
                 _spriteRenderer.DOKill();
                 DOTween.To(
-                    () => GetFloat("_DissolveAmount"),
-                    v => SetFloat("_DissolveAmount", v),
-                    1f,
+                    () => GetFloat("_FadeAmount"),
+                    v => SetFloat("_FadeAmount", v),
+                    0.5f,
                     0.5f
                 ).OnComplete(() =>
                 {
@@ -123,14 +123,15 @@ namespace Users.FateX.Scripts
         {
             DOTween.Kill(_spriteRenderer);
             
+            SetFloat("_HitEffectBlend", 1f);
+            
             DOTween.To(
-                () => GetFloat("_FlashAmount"),
-                v => SetFloat("_FlashAmount", v),
-                0f,
+                () => GetFloat("_HitEffectBlend"),
+                v => SetFloat("_HitEffectBlend", v),
+                0,
                 0.3f
             ).SetTarget(_spriteRenderer);
 
-            SetFloat("_FlashAmount", 1f);
         }
 
 
@@ -177,8 +178,8 @@ namespace Users.FateX.Scripts
 
             StartSwaying();
             
-            SetFloat("_FlashAmount", 0f);
-            SetFloat("_DissolveAmount", 0f);
+            SetFloat("_HitEffectBlend", 0f);
+            SetFloat("_FadeAmount", 0f);
 
             _shadow.localScale = startShadowScale;
             CurrentHealth = _enemyData.Health;

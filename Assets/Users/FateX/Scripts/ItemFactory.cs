@@ -15,7 +15,13 @@ namespace Users.FateX.Scripts
         {
             var newXp = LeanPool.Spawn(_gameConfig.GameConfigData.XpPrefab);
             newXp.transform.position = position;
-            newXp.SetValue(_gameConfig.GameConfigData.XpValue);
+            _itemManager.AddXpItem(newXp);
+        }
+        
+        public void SpawnXp(Vector3 position, XpItem xpItem)
+        {
+            var newXp = LeanPool.Spawn(xpItem);
+            newXp.transform.position = position;
             _itemManager.AddXpItem(newXp);
         }
 

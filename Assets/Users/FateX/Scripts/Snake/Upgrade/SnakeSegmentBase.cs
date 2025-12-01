@@ -59,8 +59,8 @@ namespace Users.FateX.Scripts.Upgrade
             {
                 sprite.DOComplete();
                 
-                sprite.material.SetFloat("_FlashAmount", 1f);
-                sprite.material.DOFloat(0f, "_FlashAmount", 0.15f);
+                sprite.material.SetFloat("_HitEffectBlend", 1f);
+                sprite.material.DOFloat(0f, "_HitEffectBlend", 0.15f);
             }
         }
     }

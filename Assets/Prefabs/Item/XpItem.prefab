@@ -137,6 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9478064d40fe4318ae5f88639c759d14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.CollectableItem.XpItem
+  _xpEntityData: {fileID: 11400000, guid: b330389455c907149b5974cc1e837cd2, type: 2}
 --- !u!58 &7382412738736509956
 CircleCollider2D:
   m_ObjectHideFlags: 0

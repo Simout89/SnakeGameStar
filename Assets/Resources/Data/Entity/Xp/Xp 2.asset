@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 6acae16324dd419989ac2dac053e7759, type: 3}
-  m_Name: Xp 1
+  m_Name: Xp 2
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Enity.XpEntityData
   <Sprite>k__BackingField: {fileID: 0}
-  <XpAmount>k__BackingField: 0.8
+  <XpAmount>k__BackingField: 5
