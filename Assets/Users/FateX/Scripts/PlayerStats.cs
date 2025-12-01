@@ -4,5 +4,6 @@
     {
         public int rerolls = 4;
         public int exile = 2;
+        public float CoinDropChance = 0;
     }
 }

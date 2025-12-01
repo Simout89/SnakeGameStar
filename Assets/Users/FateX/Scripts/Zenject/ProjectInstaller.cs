@@ -12,6 +12,8 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<InputService>().AsSingle();
             Container.BindInterfacesAndSelfTo<CurrencyService>().AsSingle();
             Container.BindInterfacesAndSelfTo<PlayerStats>().AsSingle();
+            Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
+
         }
 
     }

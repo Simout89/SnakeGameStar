@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Users.FateX.Scripts.Data
 {
@@ -7,6 +8,7 @@ namespace Users.FateX.Scripts.Data
     public class ShopProductData: ScriptableObject
     {
         [field: SerializeField] public string Name { get; private set; }
+        [field: SerializeField] public Sprite Icon { get; private set; }
     }
 
     [Serializable]

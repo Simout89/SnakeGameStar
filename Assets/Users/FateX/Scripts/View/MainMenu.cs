@@ -7,7 +7,7 @@ namespace Users.FateX.Scripts.View
     {
         public void OnPlayClick()
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene((int)Scenes.Gameplay);
         }
     }
 }

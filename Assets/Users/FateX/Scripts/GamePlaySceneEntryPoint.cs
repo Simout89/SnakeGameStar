@@ -23,9 +23,7 @@ namespace Users.FateX.Scripts
         [Inject] private CollectableHandler _collectableHandler;
         [Inject] private ItemFactory _itemFactory;
         [Inject] private CameraController _cameraController;
-
-        [Inject] private GameConfig _gameConfig;
-
+        
         [Inject] private CardMenuController _cardMenuController;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private HealthView _healthView;
@@ -58,9 +56,7 @@ namespace Users.FateX.Scripts
             _healthView.SetSnakeHealth(snakeHealth);
             
             _deathHandler.SetSnakeHealth(snakeHealth);
-
-            _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
-
+            
             WaveData waveData = Resources.LoadAll<WaveData>("Data/Waves")[0];
             
             _enemySpawnDirector.SetWaveData(waveData);

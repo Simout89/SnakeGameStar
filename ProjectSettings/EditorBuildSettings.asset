@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Users/FateX/Scenes/Bootstrap.unity
+    guid: 6808d0ff7ce5b0d4a95d9339c08a7b27
+  - enabled: 1
     path: Assets/Users/FateX/Scenes/MainMenu.unity
     guid: 33374a6ae328a76419ac48564905b019
   - enabled: 1

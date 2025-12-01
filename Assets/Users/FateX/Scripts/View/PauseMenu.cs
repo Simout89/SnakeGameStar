@@ -45,7 +45,7 @@ namespace Users.FateX.Scripts.View
         public void OnMainMenuClick()
         {
             _gameStateManager.ChangeState(GameStates.Play);
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene((int)Scenes.MainMenu);
         }
     }
 }

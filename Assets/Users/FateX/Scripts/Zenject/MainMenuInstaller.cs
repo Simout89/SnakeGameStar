@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using Users.FateX.Scripts.Shop;
+using Zenject;
 
 namespace Скриптерсы.Zenject
 {
@@ -6,7 +7,8 @@ namespace Скриптерсы.Zenject
     {
         public override void InstallBindings()
         {
-            
+            Container.BindInterfacesAndSelfTo<ShopView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<ShopController>().AsSingle().NonLazy();
         }
     }
 }
