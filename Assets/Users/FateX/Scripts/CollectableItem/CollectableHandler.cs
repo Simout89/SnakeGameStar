@@ -11,6 +11,7 @@ namespace Users.FateX.Scripts.CollectableItem
         [Inject] private ExperienceSystem _experienceSystem;
         [Inject] private ItemManager _itemManager;
         [Inject] private ICurrencyService _currencyService;
+        [Inject] private GameContext _gameContext;
         
         private SnakeInteraction _snakeInteraction;
         
@@ -51,6 +52,11 @@ namespace Users.FateX.Scripts.CollectableItem
             if (obj.TryGetComponent(out ICoin coin))
             {
                 _currencyService.AddCoins(coin.CoinAmount);
+            }
+            
+            if (obj.TryGetComponent(out IHealableItem healable))
+            {
+                _gameContext.SnakeHealth.Heal(healable.Value);
             }
             
             HomingMover.StartMove(obj.transform, _snakeInteraction.transform, () =>
