@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts.Data
     public class ShopProductData: ScriptableObject
     {
         [field: SerializeField] public string Name { get; private set; }
+        [field: SerializeField] public string Desription { get; private set; }
         [field: SerializeField] public Sprite Icon { get; private set; }
     }
 
@@ -21,6 +22,7 @@ namespace Users.FateX.Scripts.Data
         public ShopProductProgress(ShopProductData shopProductData)
         {
             Name = shopProductData.Name;
+            CurrentLevel = 0;
         }
     }
 }

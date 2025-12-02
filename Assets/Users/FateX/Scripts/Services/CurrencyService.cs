@@ -1,10 +1,12 @@
 ﻿using System;
 using UnityEngine;
+using Zenject;
 
 namespace Скриптерсы.Services
 {
     public class CurrencyService: ICurrencyService
     {
+        [Inject] private ISaveLoadService _saveLoadService;
         private readonly PlayerCurrencyData _playerCurrencyData;
 
         public int Coins
@@ -21,12 +23,18 @@ namespace Скриптерсы.Services
         {
             _playerCurrencyData = save.LoadCurrencyData();
         }
+
+        public void Reset()
+        {
+            _playerCurrencyData.Coins = 0;
+        }
         
         public void AddCoins(int amount)
         {
             _playerCurrencyData.Coins += amount;
             OnCoinsChanged?.Invoke(_playerCurrencyData.Coins);
-            
+
+            _saveLoadService.SaveCurrencyData(_playerCurrencyData);
             Debug.Log("Добавлены монеты");
         }
 
@@ -40,6 +48,7 @@ namespace Скриптерсы.Services
             {
                 _playerCurrencyData.Coins -= amount;
                 OnCoinsChanged?.Invoke(_playerCurrencyData.Coins);
+                _saveLoadService.SaveCurrencyData(_playerCurrencyData);
                 return true;
             }
         }

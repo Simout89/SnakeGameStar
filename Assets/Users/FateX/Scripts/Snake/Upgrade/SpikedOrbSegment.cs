@@ -44,10 +44,10 @@ namespace Users.FateX.Scripts.Upgrade
                 Destroy(child.gameObject);
             }
 
-            var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
+            var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName);
             
             foreach (var position in MyUtils.GetPositionsInCircle2D(orbContainer.position, CurrentStats.AttackRange,
-                         CurrentStats.ProjectileCount))
+                         CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum))
             {
                 var newOrb = Instantiate(damageOrbPrefab, position, Quaternion.identity, orbContainer);
                 newOrb.Init(damageInfo);

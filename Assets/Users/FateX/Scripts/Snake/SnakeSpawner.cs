@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts
     public class SnakeSpawner: MonoBehaviour
     {
         [Inject] private IInputService _inputService;
+        [Inject] private PlayerStats _playerStats;
         
         [FormerlySerializedAs("_snakePrefab")] [SerializeField] private SnakeController snakeControllerPrefab;
         [SerializeField] private Transform spawnPoint;
@@ -15,7 +16,7 @@ namespace Users.FateX.Scripts
         public SnakeController SpawnSnake()
         {
             SnakeController snakeController = Instantiate(snakeControllerPrefab);
-            snakeController.Init(_inputService);
+            snakeController.Init(_inputService, _playerStats);
             snakeController.transform.position = spawnPoint.position;
             return snakeController;
         }

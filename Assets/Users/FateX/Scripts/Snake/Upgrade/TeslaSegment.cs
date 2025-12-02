@@ -28,7 +28,7 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
 
-            var enemy = EnemyFinder.GetChainEnemies(Body.position, CurrentStats.AttackRange, CurrentStats.BouncesCount);
+            var enemy = EnemyFinder.GetChainEnemies(Body.position, CurrentStats.AttackRange, CurrentStats.BouncesCount + SnakeController.PlayerStats.ProjectileCount.Sum);
             if (enemy.Length == 0) return;
 
             lightingTrail = LeanPool.Spawn(upgradeLevelsData.Vfx, Body.position, Quaternion.identity);
@@ -46,7 +46,7 @@ namespace Users.FateX.Scripts.Upgrade
                 await lightingTrail.transform.DOMove(enemy.transform.position, 0.1f)
                     .WithCancellation(token);
 
-                var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
+                var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName);
                 DealDamage(damageInfo);
                 enemy.TakeDamage(damageInfo);
 

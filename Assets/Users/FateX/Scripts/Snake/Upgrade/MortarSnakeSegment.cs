@@ -16,13 +16,13 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
 
-            EnemyBase[] enemyBases = EnemyFinder.GetRandomEnemies(gunPivot.position, CurrentStats.AttackRange, CurrentStats.ProjectileCount);
+            EnemyBase[] enemyBases = EnemyFinder.GetRandomEnemies(gunPivot.position, CurrentStats.AttackRange, CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum);
             
             foreach (var enemy in enemyBases)
             {
                 var projectile = LeanPool.Spawn(upgradeLevelsData.Projectile, gunPivot.position, Quaternion.identity);
                 
-                projectile.LaunchArc(enemy.transform, 1f, new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName), CurrentStats.DamageArea);
+                projectile.LaunchArc(enemy.transform, 1f, new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName), CurrentStats.DamageArea);
             }
         }
 

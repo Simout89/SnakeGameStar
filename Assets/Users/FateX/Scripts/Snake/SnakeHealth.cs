@@ -18,9 +18,9 @@ namespace Users.FateX.Scripts
         public event Action OnHealthChanged;
         public event Action OnDie;
 
-        private void Awake()
+        private void Start()
         {
-            CurrentHealth = _snakeController.SnakeData.BaseHealth;
+            CurrentHealth = _snakeController.SnakeData.BaseHealth + _snakeController.PlayerStats.Health.Sum;
         }
 
         public void Add(SnakeSegmentBase snakeSegmentBase)

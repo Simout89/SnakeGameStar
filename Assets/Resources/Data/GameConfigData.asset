@@ -31,7 +31,12 @@ MonoBehaviour:
   - {fileID: 11400000, guid: bcc48c27ec1cce84185ff2d1bd55e26e, type: 2}
   - {fileID: 11400000, guid: be868d4c912169446ad1752a6799b023, type: 2}
   <StatsShopProducts>k__BackingField:
+  - {fileID: 11400000, guid: e92632e96309a2a479196a272c9b9121, type: 2}
   - {fileID: 11400000, guid: 635c1010ce03185449a81871b3337988, type: 2}
+  - {fileID: 11400000, guid: 7ba1688f59f16824ba3d2ccf0801ef04, type: 2}
+  - {fileID: 11400000, guid: a2d4400deb76f644f940985179818692, type: 2}
+  - {fileID: 11400000, guid: d85608da021b46b4ca2a64b2b6ffb213, type: 2}
+  - {fileID: 11400000, guid: 04627416dee318e4ca2cf3cbbc0b2669, type: 2}
   <DropCoinChance>k__BackingField: 5
   <XpValue>k__BackingField: 0.8
   <MagnetDropChance>k__BackingField: 0.5

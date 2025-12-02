@@ -49,7 +49,7 @@ namespace Users.FateX.Scripts.Upgrade
         {
             if (obj.TryGetComponent(out IDamageable damageable))
             {
-                var damageInfo = new DamageInfo(CurrentStats.Damage, upgradeLevelsData.SegmentName);
+                var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName);
                 
                 DealDamage(damageInfo);
                 damageable.TakeDamage(damageInfo);

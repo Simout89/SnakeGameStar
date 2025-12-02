@@ -26,9 +26,12 @@ public class SnakeController : MonoBehaviour
     
     private List<SnakeSegmentBase> segmentsBase = new List<SnakeSegmentBase>();
     public IReadOnlyList<SnakeSegmentBase> SegmentsBase => segmentsBase;
-    public void Init(IInputService inputService)
+    public PlayerStats PlayerStats { get; private set; }
+    public void Init(IInputService inputService, PlayerStats playerStats)
     {
         _inputService = inputService;
+
+        PlayerStats = playerStats;
         
         segmentsBase.Add(GetComponent<SnakeSegmentBase>());
         

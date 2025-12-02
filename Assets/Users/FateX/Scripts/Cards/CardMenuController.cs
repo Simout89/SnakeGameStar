@@ -54,14 +54,14 @@ namespace Users.FateX.Scripts.Cards
 
         private void HandleExileClick()
         {
-            if (_playerStats.exile - exileUsed <= 0)
+            if (_playerStats.Exile.Sum - exileUsed <= 0)
                 return;
             _exiledMode = !_exiledMode;
         }
 
         private void HandleRerollClick()
         {
-            if (_playerStats.rerolls <= rerrolUsed)
+            if (_playerStats.Rerolls.Sum <= rerrolUsed)
             {
                 return;
             }
@@ -153,8 +153,8 @@ namespace Users.FateX.Scripts.Cards
             _lastShownCards = cardsToShow.Where(c => c.CardType == CardType.Segment).ToList();
             _exiledMode = false;
 
-            _cardMenuView.UpdateRerollCountText(_playerStats.rerolls - rerrolUsed);
-            _cardMenuView.UpdateExileCountText(_playerStats.exile - exileUsed);
+            _cardMenuView.UpdateRerollCountText(_playerStats.Rerolls.Sum - rerrolUsed);
+            _cardMenuView.UpdateExileCountText(_playerStats.Exile.Sum - exileUsed);
         }
 
 
@@ -222,7 +222,7 @@ namespace Users.FateX.Scripts.Cards
                     _cardMenuView.ClearAllCards();
                     _exiledMode = false;
                     exileUsed++;
-                    _cardMenuView.UpdateExileCountText(_playerStats.exile - exileUsed);
+                    _cardMenuView.UpdateExileCountText(_playerStats.Exile.Sum - exileUsed);
                     OnCardSelected?.Invoke();
                 }
                 else

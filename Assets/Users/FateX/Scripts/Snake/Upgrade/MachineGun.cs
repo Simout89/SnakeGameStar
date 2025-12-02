@@ -66,7 +66,7 @@ namespace Users.FateX.Scripts.Upgrade
 
         private async UniTask Shoot(CancellationToken cancellationToken)
         {
-            for (int i = 0; i < CurrentStats.ProjectileCount; i++)
+            for (int i = 0; i < CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum; i++)
             {
                 var projectile = LeanPool.Spawn(
                     UpgradeLevelsData.Projectile,
@@ -76,7 +76,7 @@ namespace Users.FateX.Scripts.Upgrade
 
                 projectile.SimpleLaunch(
                     muzzle.up * 15,
-                    new DamageInfo(CurrentStats.Damage, UpgradeLevelsData.SegmentName)
+                    new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, UpgradeLevelsData.SegmentName)
                 );
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f), cancellationToken: cancellationToken);
             }

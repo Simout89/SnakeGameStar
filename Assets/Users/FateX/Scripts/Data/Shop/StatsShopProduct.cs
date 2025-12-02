@@ -17,7 +17,14 @@ namespace Users.FateX.Scripts.Data
     [Serializable]
     public class StatsUpgradeLevel
     {
-        [field: SerializeField] public float Cost { get; private set; }
+        [field: SerializeField] public int Cost { get; private set; }
         [field: SerializeField] public float GoldDropChance { get; private set; }
+        [field: SerializeField] public int Exile { get; private set; }
+        [field: SerializeField] public int Reroll { get; private set; }
+        [field: SerializeField] public int Health { get; private set; }
+        [field: SerializeField] public float Damage { get; private set; }
+        [field: SerializeField] public int ProjectileCount { get; private set; }
+        [field: SerializeField] public int PickUpRange { get; private set; }
+        [field: SerializeField] public float MoveSpeed { get; private set; }
     }
 }
