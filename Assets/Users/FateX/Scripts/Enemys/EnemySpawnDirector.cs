@@ -158,8 +158,12 @@ namespace Users.FateX.Scripts.Enemy
             if (enemies == null || enemies.Length == 0)
                 return;
 
+            if (_currentEnemyArrayIndex >= enemies.Length)
+                _currentEnemyArrayIndex = 0;
+
             _enemyFactory.SpawnEnemy(enemies[_currentEnemyArrayIndex]);
             _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % enemies.Length;
         }
+
     }
 }
