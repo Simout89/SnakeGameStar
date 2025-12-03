@@ -52,17 +52,17 @@ public class EnemyManager : MonoBehaviour
             Transform nearestSegment = _snakeController.SegmentsBase[0].Body;
             float minDistance = Vector3.Distance(nearestSegment.position, _enemies[i].transform.position);
 
-            //for (int j = 1; j < _snakeController.SegmentsBase.Count; j++)
-            //{
-            //    float dist = Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position);
-            //    if (dist < minDistance)
-            //    {
-            //        nearestSegment = _snakeController.SegmentsBase[j].Body;
-            //        minDistance = dist;
-            //    }
-            //}
+            for (int j = 1; j < _snakeController.SegmentsBase.Count; j++)
+            {
+                float dist = Vector3.Distance(_snakeController.SegmentsBase[j].Body.position, _enemies[i].transform.position);
+                if (dist < minDistance)
+                {
+                    nearestSegment = _snakeController.SegmentsBase[j].Body;
+                    minDistance = dist;
+                }
+            }
 
-            Vector3 direction = (nearestSegment.position - _enemies[i].transform.position).normalized;
+            Vector2 direction = ((Vector2)nearestSegment.position - (Vector2)_enemies[i].transform.position).normalized;
 
             if (Mathf.Abs(direction.x) > 0.01f)
             {
@@ -70,6 +70,7 @@ public class EnemyManager : MonoBehaviour
                 localScale.x = direction.x >= 0 ? Mathf.Abs(localScale.x) : -Mathf.Abs(localScale.x);
                 _enemies[i].transform.localScale = localScale;
             }
+            //Debug.Log($"Enemy {i}: distance to target={minDistance}, direction={direction}");
 
             _enemies[i].Move(direction);
         }

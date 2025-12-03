@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.EnemyData
   <EnemyName>k__BackingField: Eye
   <Health>k__BackingField: 7
-  <MoveSpeed>k__BackingField: 125
+  <MoveSpeed>k__BackingField: 100
   <Damage>k__BackingField: 1
   <AttackSpeed>k__BackingField: 10
   <OverrideLootXP>k__BackingField:

@@ -292,7 +292,7 @@ namespace Users.FateX.Scripts.Cards
 
         private void ShowUpgradeCard(CardData card, SnakeSegmentBase segment, string statsText)
         {
-            _cardMenuView.ShowCard(card, statsText).Button.onClick.AddListener(() =>
+            _cardMenuView.ShowCardUpgradeCard(statsText, segment.UpgradeLevelsData.SegmentIcon).Button.onClick.AddListener(() =>
             {
                 HandleClickOnCard(card, segment);
             });

@@ -22,19 +22,44 @@ MonoBehaviour:
     <GoldDropChance>k__BackingField: 1
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
   - <Cost>k__BackingField: 0
     <GoldDropChance>k__BackingField: 2
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
   - <Cost>k__BackingField: 0
     <GoldDropChance>k__BackingField: 3
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
   - <Cost>k__BackingField: 0
     <GoldDropChance>k__BackingField: 4
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
   - <Cost>k__BackingField: 0
     <GoldDropChance>k__BackingField: 5
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0

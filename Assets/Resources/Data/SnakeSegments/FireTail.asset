@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: FireTail
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: FireTrail
+  <SegmentIcon>k__BackingField: {fileID: 21300000, guid: cae001880fe4f034ea54589c78e48bed, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <UpgradeStats>k__BackingField:

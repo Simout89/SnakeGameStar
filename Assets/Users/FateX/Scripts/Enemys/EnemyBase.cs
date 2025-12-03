@@ -74,7 +74,10 @@ namespace Users.FateX.Scripts
             if(AlreadyDie)
                 return;
             
-            _rigidbody2D.linearVelocity = (direction * _enemyData.MoveSpeed  * Time.fixedDeltaTime);
+            // Debug.Log($"Enemy {name}: direction={direction}, magnitude={direction.magnitude}, velocity will be={direction * _enemyData.MoveSpeed}");
+
+            
+            _rigidbody2D.linearVelocity = direction * (_enemyData.MoveSpeed * Time.fixedDeltaTime);
             //_rigidbody2D.position += direction * _enemyData.MoveSpeed  * Time.fixedDeltaTime;
         }
 

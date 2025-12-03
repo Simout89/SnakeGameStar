@@ -29,6 +29,17 @@ namespace Users.FateX.Scripts.Cards
 
             return newCard;
         }
+        
+        public CardEntryView ShowCardUpgradeCard(string customText , Sprite sprite)
+        {
+            var newCard = Instantiate(_gameConfig.GameConfigData.CardPrefab, _cardContainer);
+            
+            newCard.InitUpgradeCard(customText, sprite);
+
+            SetBackgroundActive(true);
+
+            return newCard;
+        }
 
         public void ChangeExileMode(bool mode)
         {

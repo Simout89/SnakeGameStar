@@ -12,14 +12,14 @@ namespace Users.FateX.Scripts.Enemy
         [Inject] private EnemyFactory _enemyFactory;
 
         private float _enemySpawnBuffer = 0f;
-
         private WaveData _waveData;
 
         // ————— Новое —————
         private HashSet<WaveEventSpawn> _triggeredEvents = new();
-
         private float _overrideSpawnRate = -1;
         private float _multiplySpawnRate = -1;
+
+        private int _currentEnemyArrayIndex = 0;
         // ——————————————
 
         public event Action<float> OnChangeSpawnEnemyCount;
@@ -41,6 +41,8 @@ namespace Users.FateX.Scripts.Enemy
 
         private void HandleSecondTick(int obj)
         {
+            if (_waveData == null) return;
+
             float normalizedTime = (float)obj / _waveData.TotalTime;
 
             // ——— ИВЕНТЫ ———
@@ -80,7 +82,7 @@ namespace Users.FateX.Scripts.Enemy
             if (spawnCount > 0)
             {
                 for (int i = 0; i < spawnCount; i++)
-                    _enemyFactory.SpawnEnemy(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+                    SpawnNextEnemyInArray(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
 
                 _enemySpawnBuffer -= spawnCount;
             }
@@ -98,22 +100,13 @@ namespace Users.FateX.Scripts.Enemy
 
                 if (normalizedTime >= evt.TimeMarker)
                 {
-                    // Спавним всех врагов
+                    // Спавним всех врагов сразу
                     foreach (var enemy in evt.Enemys)
-                    {
                         _enemyFactory.SpawnEnemy(enemy);
-                    }
 
                     // Устанавливаем модификаторы
                     _overrideSpawnRate = evt.OverrideSpawnRate;
                     _multiplySpawnRate = evt.MultiplaySpawnRate;
-
-                    // Если оба -1 → сброс
-                    if (_overrideSpawnRate == -1 && _multiplySpawnRate == -1)
-                    {
-                        _overrideSpawnRate = -1;
-                        _multiplySpawnRate = -1;
-                    }
 
                     _triggeredEvents.Add(evt);
                 }
@@ -134,20 +127,12 @@ namespace Users.FateX.Scripts.Enemy
         // ——————————————————————————
         //    MAIN SPAWN CURVE LOGIC
         // ——————————————————————————
-
-
         public float GetEnemyCountFloat(float segmentProgress, int enemyIndex)
         {
-            // Базовый рост зависит от индекса врага
             float baseLevel = 1f + enemyIndex * 0.1f;
-
-            // Дополнительный рост по времени
             float timeGrowth = 1f + _gameTimer.CurrentTime * 0.002f;
 
-            // Пилообразная волна
             float sawtoothWave = segmentProgress;
-
-            // Резкое падение в конце сегмента
             float dropoffThreshold = 0.9f;
             if (sawtoothWave > dropoffThreshold)
             {
@@ -155,19 +140,26 @@ namespace Users.FateX.Scripts.Enemy
                 sawtoothWave = Mathf.Lerp(1f, 0.13f, dropProgress * dropProgress);
             }
 
-            // Комбинируем
             float intensityMultiplier = 12f + 10f * sawtoothWave;
             float spawnIntensity = (baseLevel * timeGrowth) * intensityMultiplier;
-
-            // Ограничиваем
             spawnIntensity = Mathf.Clamp(spawnIntensity, 0.5f, 99999f);
 
-            // Конвертируем в врагов в секунду
             float enemiesPerSecond = spawnIntensity / 15f;
-
             OnChangeSpawnEnemyCount?.Invoke(enemiesPerSecond);
 
             return enemiesPerSecond;
+        }
+
+        // ——————————————————————————
+        //       SPAWN ENEMIES SEQUENTIALLY
+        // ——————————————————————————
+        private void SpawnNextEnemyInArray(EnemyBase[] enemies)
+        {
+            if (enemies == null || enemies.Length == 0)
+                return;
+
+            _enemyFactory.SpawnEnemy(enemies[_currentEnemyArrayIndex]);
+            _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % enemies.Length;
         }
     }
 }

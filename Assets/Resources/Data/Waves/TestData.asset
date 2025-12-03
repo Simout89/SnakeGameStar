@@ -15,25 +15,25 @@ MonoBehaviour:
   <TotalTime>k__BackingField: 450
   WaveChangeSpawns:
   - <TimeMarker>k__BackingField: 0
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: da532416fe9f3ab4b9f56341054b7298, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.1
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: fd3a91aabc7ff494abb0e123a9038148, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.2
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.3
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: c05ac6dcadebd624aaa628928150a363, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.4
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 621ed13701a471d4da938c6117eacdcb, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.5
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 911ceb7ce4250d9468a8b48a3a2ea1b9, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.6
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 4fa521aa059c54144a1a90cc52e1f0fe, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.7
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: 6f5360e9bfc7198498c2879d45470f1a, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.8
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: dabc8f378d7a956478a20a8cdb415713, type: 3}
+    <Enemy>k__BackingField: []
   - <TimeMarker>k__BackingField: 0.9
-    <Enemy>k__BackingField: {fileID: 2172284294067600571, guid: a7a9a3de245af2b4b8fe149d70fe716d, type: 3}
+    <Enemy>k__BackingField: []
   WaveEventSpawns:
   - <TimeMarker>k__BackingField: 0.05
     <Enemys>k__BackingField:

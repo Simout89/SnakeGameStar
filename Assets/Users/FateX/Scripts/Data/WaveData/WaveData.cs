@@ -16,7 +16,7 @@ namespace Users.FateX.Scripts.Data.WaveData
     public class WaveChangeSpawn
     {
         [field: SerializeField] public float TimeMarker { get; private set; } = 0; // от 0 до 1
-        [field: SerializeField] public EnemyBase Enemy { get; private set; }
+        [field: SerializeField] public EnemyBase[] Enemy { get; private set; }
     }
 
     [Serializable]

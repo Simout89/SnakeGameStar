@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Tesla
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: Tesla
+  <SegmentIcon>k__BackingField: {fileID: 4352589117243522375, guid: 5731f15a0a51eb643ad839795e750aa2, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <UpgradeStats>k__BackingField:
