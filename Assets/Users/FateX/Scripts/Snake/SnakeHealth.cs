@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
+using Cysharp.Threading.Tasks;
 using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts
@@ -14,6 +16,8 @@ namespace Users.FateX.Scripts
         public float MaxHealth => _snakeController.SnakeData.BaseHealth;
         
         private float timeToNextHit = 0;
+        private bool isInvincible = false;
+        private CancellationTokenSource cts;
 
         public event Action OnHealthChanged;
         public event Action OnDie;
@@ -39,10 +43,18 @@ namespace Users.FateX.Scripts
 
         private void OnDisable()
         {
+            cts?.Cancel();
+            cts?.Dispose();
+            
             foreach (var snakeBodyPart in snakeBodyParts)
             {
                 snakeBodyPart.SnakeBodyPartHealth.OnTakeDamage -= HandleTakeDamage;
             }
+        }
+
+        private void OnDestroy()
+        {
+            cts?.Dispose();
         }
 
         public void Heal(float amount)
@@ -55,14 +67,35 @@ namespace Users.FateX.Scripts
             OnHealthChanged?.Invoke();
         }
 
+        public void SetInvincible(float duration)
+        {
+            SetInvincibleAsync(duration, this.GetCancellationTokenOnDestroy()).Forget();
+        }
+
+        private async UniTaskVoid SetInvincibleAsync(float duration, CancellationToken token)
+        {
+            cts?.Cancel();
+            cts?.Dispose();
+            cts = CancellationTokenSource.CreateLinkedTokenSource(token);
+
+            isInvincible = true;
+
+            await UniTask.Delay(TimeSpan.FromSeconds(duration), cancellationToken: cts.Token);
+            
+            isInvincible = false;
+        }
+
         private void HandleTakeDamage(DamageInfo damageInfo)
         {
+            if (isInvincible)
+                return;
+
             if(Time.time < timeToNextHit)
                 return;
 
             timeToNextHit = Time.time + 0.16f;
             
-            Debug.Log("УРон");
+            Debug.Log("Урон");
             
             foreach (var snakeBodyPart in snakeBodyParts)
             {

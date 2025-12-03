@@ -7,6 +7,7 @@ namespace Users.FateX.Scripts.Cards
     {
         [Inject] private CardMenuController _cardMenuController;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private GameContext _gameContext;
         
         public void Initialize()
         {
@@ -20,6 +21,7 @@ namespace Users.FateX.Scripts.Cards
 
         private void HandleSelected()
         {
+            _gameContext.SnakeHealth.SetInvincible(1);
             _gameStateManager.ChangeState(GameStates.Play);
         }
     }
