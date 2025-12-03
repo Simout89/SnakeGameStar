@@ -26,6 +26,18 @@ namespace Users.FateX.Scripts
                 UpLevel();
             }
         }
+        
+        public void AddExperiencePoints(float value)
+        {
+            CurrentXp += value;
+            OnChangeXp?.Invoke();
+
+            // Обрабатываем ситуацию, когда опыта больше, чем нужно для уровня
+            while (CurrentXp >= NextLevelXp)
+            {
+                UpLevel();
+            }
+        }
 
         private void UpLevel()
         {

@@ -6,8 +6,10 @@ using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Entity;
+using Users.FateX.Scripts.SlotMachine;
 using Users.FateX.Scripts.View;
 using Zenject;
+using Скриптерсы.Services;
 
 namespace Скриптерсы.Zenject
 {
@@ -22,6 +24,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<CardMenuView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<HealthView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<SlotMachineView>().FromComponentsInHierarchy().AsSingle();
             
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
             
@@ -37,6 +40,9 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<ItemFactory>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemyDeathHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<LevelUpHandler>().AsSingle();
+            Container.BindInterfacesAndSelfTo<RoundCurrency>().AsSingle();
+            Container.BindInterfacesAndSelfTo<StatisticsService>().AsSingle();
+            Container.BindInterfacesAndSelfTo<SlotMachineController>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameStateManager>().AsSingle();
             

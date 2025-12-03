@@ -12,7 +12,7 @@ namespace Users.FateX.Scripts.Enemys
         [Inject] private GameConfig _gameConfig;
         [Inject] private PlayerStats _playerStats;
         
-        private int totalEnemyDie = 0;
+        public int TotalEnemyDie { get; private set; }
 
         public void Initialize()
         {
@@ -26,7 +26,7 @@ namespace Users.FateX.Scripts.Enemys
 
         private void HandleEnemyDie(EnemyBase obj)
         {
-            totalEnemyDie++;
+            TotalEnemyDie++;
             
             var transformPosition = obj.transform.position;
             if(obj.GetData().OverrideLootXP == null || obj.GetData().OverrideLootXP.Length == 0)
@@ -39,12 +39,12 @@ namespace Users.FateX.Scripts.Enemys
                 }
             }
 
-            if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance + _playerStats.CoinDropChance.Sum * 100f)
+            if (Random.Range(0f, 10000f) < (_gameConfig.GameConfigData.DropCoinChance + _playerStats.CoinDropChance.Sum) * 100f)
             {
                 _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }
 
-            if (totalEnemyDie % (100 / _gameConfig.GameConfigData.MagnetDropChance) == 0)
+            if (TotalEnemyDie % (100 / _gameConfig.GameConfigData.MagnetDropChance) == 0)
             {
                 _itemFactory.SpawnMagnet(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }

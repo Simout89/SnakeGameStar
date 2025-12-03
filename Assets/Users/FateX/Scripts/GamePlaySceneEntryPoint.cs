@@ -29,10 +29,7 @@ namespace Users.FateX.Scripts
         [Inject] private HealthView _healthView;
         [Inject] private DeathHandler _deathHandler;
 
-
-
-        [Inject] private CurrencyService _currencyService;
-
+        
         public void Initialize()
         {
 #if UNITY_ANDROID && !UNITY_EDITOR

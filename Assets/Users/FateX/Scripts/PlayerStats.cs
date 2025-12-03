@@ -10,7 +10,7 @@ namespace Users.FateX.Scripts
         public ValueCompositeAdditive<int> Health = new ValueCompositeAdditive<int>(0);
         public ValueCompositeAdditive<float> Damage = new ValueCompositeAdditive<float>(0);
         public ValueCompositeAdditive<int> ProjectileCount = new ValueCompositeAdditive<int>(0);
-        public ValueCompositeAdditive<int> PickUpRange = new ValueCompositeAdditive<int>(0);
+        public ValueCompositeAdditive<float> PickUpRange = new ValueCompositeAdditive<float>(0);
         public ValueCompositeAdditive<float> MoveSpeed = new ValueCompositeAdditive<float>(0);
     }
 }

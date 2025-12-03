@@ -24,7 +24,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public int Health { get; private set; }
         [field: SerializeField] public float Damage { get; private set; }
         [field: SerializeField] public int ProjectileCount { get; private set; }
-        [field: SerializeField] public int PickUpRange { get; private set; }
+        [field: SerializeField] public float PickUpRange { get; private set; }
         [field: SerializeField] public float MoveSpeed { get; private set; }
     }
 }

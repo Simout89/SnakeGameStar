@@ -13,7 +13,7 @@ namespace Users.FateX.Scripts
         private List<SnakeSegmentBase> snakeBodyParts = new List<SnakeSegmentBase>();
 
         public float CurrentHealth { get; private set; }
-        public float MaxHealth => _snakeController.SnakeData.BaseHealth;
+        public float MaxHealth => _snakeController.SnakeData.BaseHealth + _snakeController.PlayerStats.Health.Sum;
         
         private float timeToNextHit = 0;
         private bool isInvincible = false;

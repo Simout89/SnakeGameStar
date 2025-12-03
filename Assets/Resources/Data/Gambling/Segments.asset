@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b19a7785eef40f9bfff1768a1d4612e, type: 3}
+  m_Name: Segments
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SlotMachinePrizeData
+  <Icon>k__BackingField: {fileID: -5347527576110967013, guid: bfc43e91764c3a04ba5abaf80e137d2f, type: 3}
+  <SlotMachinePrizeType>k__BackingField: 4
+  <SnakeSegmentBase>k__BackingField:
+  - {fileID: 1442814915543202480, guid: 1a421fb4d2c7c9a499a16e1daf80e9ba, type: 3}
+  - {fileID: 3390149356430078541, guid: f126837828a9aff40a3e1260c7e73fd3, type: 3}
+  - {fileID: 9096899513531105914, guid: fe7caf8fb73fd294c890153e22a216c7, type: 3}
+  - {fileID: 7981571428156464248, guid: 66f78eea4eea7464995de59c5cb178d5, type: 3}
+  - {fileID: 1983542577431105033, guid: bf48e4f93f22ad94abee5f789b2bb4da, type: 3}
+  - {fileID: 740953566481237778, guid: 769e16ee4df55ee4bbf5a55bfdbfd13b, type: 3}
+  - {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
+  <Amount>k__BackingField: 20

@@ -23,6 +23,7 @@ namespace Users.FateX.Scripts.Shop
 
         public void SetDescription(string title, string description, string price)
         {
+            BuyButton.gameObject.SetActive(true);
             this.title.text = title;
             this.description.text = description;
             this.price.text = price + "$";

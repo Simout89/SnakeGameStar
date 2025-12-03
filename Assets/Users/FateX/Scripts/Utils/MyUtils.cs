@@ -65,5 +65,13 @@ namespace Users.FateX.Scripts.Utils
 
             return positions;
         }
+        
+        
+        public static string FormatSeconds(int obj)
+        {
+            int minutes = obj / 60;
+            int seconds = obj % 60;
+            return $"{minutes:D2}:{seconds:D2}";
+        }
     }
 }

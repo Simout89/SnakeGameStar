@@ -1,6 +1,7 @@
 ﻿using System;
 using Lean.Pool;
 using UnityEngine;
+using Users.FateX.Scripts.SlotMachine;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -10,10 +11,14 @@ namespace Users.FateX.Scripts.CollectableItem
     {
         [Inject] private ExperienceSystem _experienceSystem;
         [Inject] private ItemManager _itemManager;
-        [Inject] private ICurrencyService _currencyService;
         [Inject] private GameContext _gameContext;
+        [Inject] private RoundCurrency _roundCurrency;
+        [Inject] private SlotMachineController _slotMachineController;
         
         private SnakeInteraction _snakeInteraction;
+        
+        public int HealItemUsed { get; private set; }
+        public int MagnetItemUsed { get; private set; }
         
         public void SetSnakeInteraction(SnakeInteraction snakeInteraction)
         {
@@ -38,25 +43,22 @@ namespace Users.FateX.Scripts.CollectableItem
             
             if (obj.TryGetComponent(out IMagnet magnet ))
             {
-                foreach (var xpItem in _itemManager.GetXpItemsArray())
-                {
-                    HomingMover.StartMove(xpItem.transform, _snakeInteraction.transform, () =>
-                    {
-                        LeanPool.Despawn(obj);
-                    });
-                    
-                    _itemManager.RemoveXpItem(xpItem.GetComponent<XpItem>());
-                }
+                UseMagnet(obj);
             }
 
             if (obj.TryGetComponent(out ICoin coin))
             {
-                _currencyService.AddCoins(coin.CoinAmount);
+                _roundCurrency.AddCoin(coin.CoinAmount);
             }
             
             if (obj.TryGetComponent(out IHealableItem healable))
             {
-                _gameContext.SnakeHealth.Heal(healable.Value);
+                UseHeal(healable);
+            }
+            
+            if (obj.TryGetComponent(out IGamblingItem gamblingItem))
+            {
+                _slotMachineController.Gambling();
             }
             
             HomingMover.StartMove(obj.transform, _snakeInteraction.transform, () =>
@@ -66,6 +68,32 @@ namespace Users.FateX.Scripts.CollectableItem
             
             // LeanPool.Despawn(obj);
         }
+
+        public void UseHeal(IHealableItem healable)
+        {
+            _gameContext.SnakeHealth.Heal(healable.Value);
+            HealItemUsed++;
+        }
         
+        public void UseHeal(float value)
+        {
+            _gameContext.SnakeHealth.Heal(value);
+            HealItemUsed++;
+        }
+
+        public void UseMagnet(GameObject obj)
+        {
+            foreach (var xpItem in _itemManager.GetXpItemsArray())
+            {
+                HomingMover.StartMove(xpItem.transform, _snakeInteraction.transform, () =>
+                {
+                    LeanPool.Despawn(obj);
+                });
+                    
+                _itemManager.RemoveXpItem(xpItem.GetComponent<XpItem>());
+            }
+
+            MagnetItemUsed++;
+        }
     }
 }

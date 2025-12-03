@@ -26,8 +26,13 @@ namespace Users.FateX.Scripts.Upgrade
         
         public virtual void Init(SnakeController snakeController)
         {
-            CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
+            if(upgradeLevelsData != null)
+            {
+                CurrentStats = upgradeLevelsData.UpgradeStats[currentLevel];
+            }
             SnakeController = snakeController;
+            CollectableTrigger.transform.localScale += CollectableTrigger.transform.localScale *
+                                                       snakeController.PlayerStats.PickUpRange.Sum;
         }
 
         public virtual void Tick()

@@ -37,6 +37,14 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a2d4400deb76f644f940985179818692, type: 2}
   - {fileID: 11400000, guid: d85608da021b46b4ca2a64b2b6ffb213, type: 2}
   - {fileID: 11400000, guid: 04627416dee318e4ca2cf3cbbc0b2669, type: 2}
+  - {fileID: 11400000, guid: 4f41cc0d0192f8048aa7bc7195be059c, type: 2}
+  - {fileID: 11400000, guid: 944ca0a93d504f3409b3026ea4c4301b, type: 2}
+  <SlotMachinePrizeDatas>k__BackingField:
+  - {fileID: 11400000, guid: d3fef15ece04a034f813ec5bee69ac2b, type: 2}
+  - {fileID: 11400000, guid: 08bb0ef55ac291646b58696fcb648f23, type: 2}
+  - {fileID: 11400000, guid: 7003e6d7a84bb9648ad38325925e3e80, type: 2}
+  - {fileID: 11400000, guid: 814394bd2b7a29c40873e9887c61f921, type: 2}
+  - {fileID: 11400000, guid: 398cef130eef6994686d7d8416f65f3c, type: 2}
   <DropCoinChance>k__BackingField: 5
   <XpValue>k__BackingField: 0.8
   <MagnetDropChance>k__BackingField: 0.5

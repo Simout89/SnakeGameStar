@@ -32,11 +32,13 @@ public class SnakeController : MonoBehaviour
         _inputService = inputService;
 
         PlayerStats = playerStats;
+
+        var snakeSegmentBase = GetComponent<SnakeSegmentBase>();
+        snakeSegmentBase.Init(this);
+        segmentsBase.Add(snakeSegmentBase);
         
-        segmentsBase.Add(GetComponent<SnakeSegmentBase>());
-        
-        snakeHealth.Add(GetComponent<SnakeSegmentBase>());
-        _snakeInteraction.Add(GetComponent<SnakeSegmentBase>());
+        snakeHealth.Add(snakeSegmentBase);
+        _snakeInteraction.Add(snakeSegmentBase);
     }
 
     private void FixedUpdate()
@@ -64,7 +66,7 @@ public class SnakeController : MonoBehaviour
         float rotation = -totalHorizontal * rotationSpeed * Time.fixedDeltaTime;
         _rigidbody.MoveRotation(_rigidbody.rotation + rotation);
 
-        _rigidbody.linearVelocity = transform.up * speed;
+        _rigidbody.linearVelocity = transform.up * (speed + PlayerStats.MoveSpeed.Sum);
 
         UpdateSegments();
     }

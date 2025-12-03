@@ -1,6 +1,7 @@
 ﻿using System;
 using TMPro;
 using UnityEngine;
+using Users.FateX.Scripts.Utils;
 using Zenject;
 
 namespace Users.FateX.Scripts.View
@@ -22,9 +23,7 @@ namespace Users.FateX.Scripts.View
 
         private void HandleSecondChanged(int obj)
         {
-            int minutes = obj / 60;
-            int seconds = obj % 60;
-            _text.text = $"{minutes:D2}:{seconds:D2}";
+            _text.text = MyUtils.FormatSeconds(obj);
         }
     }
 }
