@@ -20,6 +20,7 @@ namespace Users.FateX.Scripts.Upgrade
         private int currentLevel = 0;
         public int CurrentLevel => currentLevel;
         private float timeToNextShot;
+        public bool Origin = true;
         
         protected UpgradeStats CurrentStats;
         protected SnakeController SnakeController;

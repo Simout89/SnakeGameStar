@@ -14,5 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SlotMachinePrizeData
   <Icon>k__BackingField: {fileID: -6595421577638052570, guid: 4f102a2e3ed7de14782e7358196f8def, type: 3}
   <SlotMachinePrizeType>k__BackingField: 2
-  <SnakeSegmentBase>k__BackingField: {fileID: 0}
-  <Amount>k__BackingField: 20
+  <SnakeSegmentBase>k__BackingField:
+  - {fileID: 0}
+  <Amount>k__BackingField: 26
+  <Weight>k__BackingField: 1

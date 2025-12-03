@@ -22,7 +22,7 @@ namespace Users.FateX.Scripts.Cards
         private void HandleSelected()
         {
             _gameContext.SnakeHealth.SetInvincible(1);
-            _gameStateManager.ChangeState(GameStates.Play);
+            // _gameStateManager.ChangeState(GameStates.Play);
         }
     }
 }

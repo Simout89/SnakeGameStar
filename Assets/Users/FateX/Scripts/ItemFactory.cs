@@ -31,6 +31,12 @@ namespace Users.FateX.Scripts
             newCoin.transform.position = position;
         }
         
+        public void SpawnGamblingItem(Vector3 position)
+        {
+            var newCoin = LeanPool.Spawn(_gameConfig.GameConfigData.GamblingItemPrefab);
+            newCoin.transform.position = position;
+        }
+        
         public void SpawnMagnet(Vector3 position)
         {
             var newMagnet = LeanPool.Spawn(_gameConfig.GameConfigData.MagnetPrefab);

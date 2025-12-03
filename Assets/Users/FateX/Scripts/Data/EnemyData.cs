@@ -12,5 +12,6 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public int Damage { get; private set; } = 10;
         [field: SerializeField] public int AttackSpeed { get; private set; } = 10;
         [field: SerializeField] public XpItem[] OverrideLootXP { get; private set; }
+        [field: SerializeField] public GameObject[] ItemLoot { get; private set; }
     }
 }

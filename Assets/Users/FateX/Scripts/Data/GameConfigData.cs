@@ -11,6 +11,7 @@ namespace Users.FateX.Scripts.Data
     {
         [field: SerializeField, Header("Prefabs")] public XpItem XpPrefab { get; private set; }
         [field: SerializeField] public MagnetItem MagnetPrefab { get; private set; }
+        [field: SerializeField] public GamblingItem GamblingItemPrefab { get; private set; }
         [field: SerializeField] public CoinItem CoinItemPrefab { get; private set; }
         [field: SerializeField] public HealableItem HealableItemPrefab { get; private set; }
         [field: SerializeField] public CardEntryView CardPrefab { get; private set; }

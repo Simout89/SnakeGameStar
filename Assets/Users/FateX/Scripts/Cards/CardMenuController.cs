@@ -175,7 +175,7 @@ namespace Users.FateX.Scripts.Cards
                     continue;
 
                 int currentCount = _gameContext.SnakeController.SegmentsBase
-                    .Count(s => s.GetType() == card.SnakeSegmentBase.GetType());
+                    .Count(s => s.GetType() == card.SnakeSegmentBase.GetType() && s.Origin);
 
                 if (currentCount < card.SnakeSegmentBase.UpgradeLevelsData.BaseSegmentsCount)
                 {

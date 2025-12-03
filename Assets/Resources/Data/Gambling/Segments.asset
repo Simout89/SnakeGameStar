@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b19a7785eef40f9bfff1768a1d4612e, type: 3}
   m_Name: Segments
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SlotMachinePrizeData
-  <Icon>k__BackingField: {fileID: -5347527576110967013, guid: bfc43e91764c3a04ba5abaf80e137d2f, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 9ba33a9d670f9114eb33777250f34d02, type: 3}
   <SlotMachinePrizeType>k__BackingField: 4
   <SnakeSegmentBase>k__BackingField:
   - {fileID: 1442814915543202480, guid: 1a421fb4d2c7c9a499a16e1daf80e9ba, type: 3}
@@ -23,3 +23,4 @@ MonoBehaviour:
   - {fileID: 740953566481237778, guid: 769e16ee4df55ee4bbf5a55bfdbfd13b, type: 3}
   - {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
   <Amount>k__BackingField: 20
+  <Weight>k__BackingField: 15

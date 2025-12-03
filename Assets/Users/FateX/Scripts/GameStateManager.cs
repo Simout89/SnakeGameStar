@@ -48,6 +48,12 @@ namespace Users.FateX.Scripts
                         Cursor.lockState = CursorLockMode.None;
                     }
                         break;
+                    case GameStates.Gambling:
+                    {
+                        Time.timeScale = 0;
+                        Cursor.lockState = CursorLockMode.None;
+                    }
+                        break;
                 }
 
                 previousState = currentState;
@@ -62,6 +68,7 @@ namespace Users.FateX.Scripts
             Play, 
             CardMenu,
             Death,
-            Pause
+            Pause,
+            Gambling
         }
     }

@@ -92,13 +92,14 @@ public class SnakeController : MonoBehaviour
         }
     }
     
-    public void Grow(SnakeSegmentBase snakeSegmentBase)
+    public void Grow(SnakeSegmentBase snakeSegmentBase, bool origin = true)
     {
         var newSegment = Instantiate(snakeSegmentBase);
         Transform last = segmentsBase[segmentsBase.Count - 1].Body;
         newSegment.AdditionalParts.position = last.position;
         newSegment.Body.position = last.position;
         newSegment.Init(this);
+        newSegment.Origin = origin;
         segmentsBase.Add(newSegment); 
         snakeHealth.Add(newSegment);
         _snakeInteraction.Add(newSegment);

@@ -1,4 +1,5 @@
 ﻿using System;
+using Lean.Pool;
 using UnityEngine;
 using Zenject;
 using Random = UnityEngine.Random;
@@ -47,6 +48,14 @@ namespace Users.FateX.Scripts.Enemys
             if (TotalEnemyDie % (100 / _gameConfig.GameConfigData.MagnetDropChance) == 0)
             {
                 _itemFactory.SpawnMagnet(transformPosition + (Vector3)Random.insideUnitCircle / 2);
+            }
+
+            if (obj.GetData().ItemLoot != null)
+            {
+                foreach (var VARIABLE in obj.GetData().ItemLoot)
+                {
+                    LeanPool.Spawn(VARIABLE, obj.transform.position + (Vector3)Random.insideUnitCircle, Quaternion.identity);
+                }
             }
         }
     }
