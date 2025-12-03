@@ -15,29 +15,11 @@ MonoBehaviour:
   <Name>k__BackingField: "\u0416\u0430\u0434\u043D\u043E\u0441\u0442\u044C"
   <Desription>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
     \u0448\u0430\u043D\u0441 \u0432\u044B\u043F\u0430\u0434\u0435\u043D\u0438\u044F
-    \u0437\u043E\u043B\u043E\u0442\u0430 \u043D\u0430 1 \u0437\u0430 \u0440\u0430\u043D\u0433"
+    \u0437\u043E\u043B\u043E\u0442\u0430 \u043D\u0430 2% \u0437\u0430 \u0440\u0430\u043D\u0433"
   <Icon>k__BackingField: {fileID: 4554926571645443856, guid: 4f102a2e3ed7de14782e7358196f8def, type: 3}
   <StatsUpgradeLevels>k__BackingField:
   - <Cost>k__BackingField: 0
-    <GoldDropChance>k__BackingField: 1
-    <Exile>k__BackingField: 0
-    <Reroll>k__BackingField: 0
-    <Health>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <ProjectileCount>k__BackingField: 0
-    <PickUpRange>k__BackingField: 0
-    <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
     <GoldDropChance>k__BackingField: 2
-    <Exile>k__BackingField: 0
-    <Reroll>k__BackingField: 0
-    <Health>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <ProjectileCount>k__BackingField: 0
-    <PickUpRange>k__BackingField: 0
-    <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
-    <GoldDropChance>k__BackingField: 3
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
     <Health>k__BackingField: 0
@@ -55,7 +37,25 @@ MonoBehaviour:
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
   - <Cost>k__BackingField: 0
-    <GoldDropChance>k__BackingField: 5
+    <GoldDropChance>k__BackingField: 6
+    <Exile>k__BackingField: 0
+    <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
+  - <Cost>k__BackingField: 0
+    <GoldDropChance>k__BackingField: 8
+    <Exile>k__BackingField: 0
+    <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
+  - <Cost>k__BackingField: 0
+    <GoldDropChance>k__BackingField: 10
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
     <Health>k__BackingField: 0

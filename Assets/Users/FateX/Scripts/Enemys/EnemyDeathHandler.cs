@@ -10,7 +10,8 @@ namespace Users.FateX.Scripts.Enemys
         [Inject] private EnemyManager _enemyManager;
         [Inject] private ItemFactory _itemFactory;
         [Inject] private GameConfig _gameConfig;
-
+        [Inject] private PlayerStats _playerStats;
+        
         private int totalEnemyDie = 0;
 
         public void Initialize()
@@ -38,7 +39,7 @@ namespace Users.FateX.Scripts.Enemys
                 }
             }
 
-            if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance * 100f)
+            if (Random.Range(0f, 10000f) < _gameConfig.GameConfigData.DropCoinChance + _playerStats.CoinDropChance.Sum * 100f)
             {
                 _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }
