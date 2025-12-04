@@ -4,6 +4,7 @@ using UnityEngine.UI;
 using Users.FateX.Scripts.Data;
 using System.Collections.Generic;
 using System;
+using DG.Tweening;
 using Zenject;
 using Random = UnityEngine.Random;
 
@@ -78,7 +79,9 @@ namespace Users.FateX.Scripts.SlotMachine
 
         public void StartGambling(SlotMachinePrizeData slotMachinePrizeData)
         {
+            body.transform.localScale = Vector3.zero;
             body.SetActive(true);
+            body.transform.DOScale(Vector3.one, 0.3f).SetUpdate(true).OnComplete(() => {});
             skipAnimation = false;
             currentPrize = slotMachinePrizeData;
             StartSpin(slotMachinePrizeData).Forget();

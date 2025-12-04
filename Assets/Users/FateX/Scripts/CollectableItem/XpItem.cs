@@ -7,7 +7,7 @@ namespace Users.FateX.Scripts.CollectableItem
     public class XpItem: MonoBehaviour, ICollectable, IExperiencePoints, IPoolable
     {
         [SerializeField] private XpEntityData _xpEntityData;
-        private bool alreadyCollect;
+        [HideInInspector] public bool alreadyCollect;
         
         public GameObject Collect()
         {

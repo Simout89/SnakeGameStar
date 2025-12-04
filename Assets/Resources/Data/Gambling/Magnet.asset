@@ -16,5 +16,5 @@ MonoBehaviour:
   <SlotMachinePrizeType>k__BackingField: 2
   <SnakeSegmentBase>k__BackingField:
   - {fileID: 0}
-  <Amount>k__BackingField: 26
-  <Weight>k__BackingField: 1
+  <Amount>k__BackingField: 5
+  <Weight>k__BackingField: 26

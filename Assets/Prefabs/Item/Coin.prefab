@@ -27,7 +27,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.257, z: 0}
-  m_LocalScale: {x: 0.5981216, y: 0.5981216, z: 0.5981216}
+  m_LocalScale: {x: 0.18489337, y: 0.18489337, z: 0.18489337}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4324283623910616544}
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4398808273024648824, guid: 07311d981a08a8e45966919eb7beb045, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 25ec1bd2aa6bb9b4899ca56c3ddb3c38, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -332,3 +332,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e09c4ba2761645d1a8f8f34eb7382f64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.CollectableItem.CoinItem
+  alreadyCollect: 0

@@ -5,7 +5,7 @@ namespace Users.FateX.Scripts.CollectableItem
 {
     public class MagnetItem : MonoBehaviour, ICollectable, IMagnet, IPoolable
     {
-        private bool alreadyCollect;
+        [HideInInspector] public bool alreadyCollect;
 
         public GameObject Collect()
         {

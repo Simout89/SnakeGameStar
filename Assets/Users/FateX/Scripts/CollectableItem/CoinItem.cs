@@ -5,7 +5,7 @@ namespace Users.FateX.Scripts.CollectableItem
 {
     public class CoinItem : MonoBehaviour, ICollectable, ICoin, IPoolable
     {
-        private bool alreadyCollect;
+        [HideInInspector] public bool alreadyCollect;
 
         public int CoinAmount { get; private set; } = 1;
 

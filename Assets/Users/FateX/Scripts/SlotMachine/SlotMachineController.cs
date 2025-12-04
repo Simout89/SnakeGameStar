@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using UnityEngine;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Utils;
 using Zenject;
 using Random = UnityEngine.Random;
 
@@ -17,6 +19,7 @@ namespace Users.FateX.Scripts.SlotMachine
         [Inject] private CollectableHandler _collectableHandler;
         [Inject] private SlotMachineView _slotMachineView;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private ItemFactory _itemFactory;
         
         private SlotMachinePrizeData _prizeData;
         private float _totalWeight;
@@ -104,19 +107,56 @@ namespace Users.FateX.Scripts.SlotMachine
             switch (_prizeData.SlotMachinePrizeType)
             {
                 case SlotMachinePrizeType.Coin:
-                    _roundCurrency.AddCoin((int)_prizeData.Amount);
+                {
+                    var position = MyUtils.GetPositionsInCircle2D(_gameContext.SnakeController.transform.position, 5,
+                        (int)_prizeData.Amount);
+                    foreach (var pos in position)
+                    {
+                        _itemFactory.SpawnCoinWithArc(_gameContext.SnakeController.transform.position, pos + (Vector3)Random.insideUnitCircle);
+                    }
+                    //_roundCurrency.AddCoin((int)_prizeData.Amount);
+                }
                     break;
                     
                 case SlotMachinePrizeType.Heal:
-                    _collectableHandler.UseHeal((int)_prizeData.Amount);
+                {
+                    // _collectableHandler.UseHeal((int)_prizeData.Amount);
+                    
+                    var position = MyUtils.GetPositionsInCircle2D(_gameContext.SnakeController.transform.position, 5,
+                        (int)_prizeData.Amount);
+                    foreach (var pos in position)
+                    {
+                        _itemFactory.SpawnAppleWitchArc(_gameContext.SnakeController.transform.position, pos + (Vector3)Random.insideUnitCircle);
+                    }
+                }
                     break;
                     
                 case SlotMachinePrizeType.Xp:
-                    _experienceSystem.AddExperiencePoints(_prizeData.Amount);
+                {
+                    var position = MyUtils.GetPositionsInCircle2D(_gameContext.SnakeController.transform.position, 5,
+                        (int)_prizeData.Amount);
+                    foreach (var pos in position)
+                    {
+                        _itemFactory.SpawnXpWithArc(_gameContext.SnakeController.transform.position, pos + (Vector3)Random.insideUnitCircle);
+                    }
+                    
+                    // _experienceSystem.AddExperiencePoints(_prizeData.Amount);
+                }
                     break;
                     
                 case SlotMachinePrizeType.Magnet:
-                    _collectableHandler.UseMagnet(null);
+                {
+                    //_collectableHandler.UseMagnet(null);
+                    
+                    var position = MyUtils.GetPositionsInCircle2D(_gameContext.SnakeController.transform.position, 5,
+                        (int)5);
+                    
+                    var randomPos = position[Random.Range(0, position.Count)];
+
+                    
+                    _itemFactory.SpawnMagnetWitchArc(_gameContext.SnakeController.transform.position, randomPos + (Vector3)Random.insideUnitCircle);
+
+                }
                     break;
                     
                 case SlotMachinePrizeType.Segment:

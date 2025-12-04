@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b19a7785eef40f9bfff1768a1d4612e, type: 3}
   m_Name: Coin
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SlotMachinePrizeData
-  <Icon>k__BackingField: {fileID: -4398808273024648824, guid: 07311d981a08a8e45966919eb7beb045, type: 3}
+  <Icon>k__BackingField: {fileID: 21300000, guid: 25ec1bd2aa6bb9b4899ca56c3ddb3c38, type: 3}
   <SlotMachinePrizeType>k__BackingField: 0
   <SnakeSegmentBase>k__BackingField:
   - {fileID: 0}
-  <Amount>k__BackingField: 28
-  <Weight>k__BackingField: 1
+  <Amount>k__BackingField: 30
+  <Weight>k__BackingField: 28

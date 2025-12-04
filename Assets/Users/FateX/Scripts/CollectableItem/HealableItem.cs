@@ -6,7 +6,7 @@ namespace Users.FateX.Scripts.CollectableItem
 {
     public class HealableItem: MonoBehaviour, ICollectable, IHealableItem, IPoolable
     {
-        private bool alreadyCollect;
+        public bool alreadyCollect;
         
         public GameObject Collect()
         {
