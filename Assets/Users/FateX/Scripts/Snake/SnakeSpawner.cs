@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Serialization;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

@@ -5,6 +5,7 @@ using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Data.WaveData;
 using Users.FateX.Scripts.Enemy;
+using Users.FateX.Scripts.Services;
 using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;

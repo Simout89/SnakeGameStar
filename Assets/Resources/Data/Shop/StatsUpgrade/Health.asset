@@ -18,7 +18,7 @@ MonoBehaviour:
     \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
   <Icon>k__BackingField: {fileID: -138528370736062383, guid: 4f102a2e3ed7de14782e7358196f8def, type: 3}
   <StatsUpgradeLevels>k__BackingField:
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 40
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
@@ -27,7 +27,7 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 65
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
@@ -36,7 +36,7 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 90
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
@@ -45,7 +45,7 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 130
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
@@ -54,7 +54,7 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 160
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0

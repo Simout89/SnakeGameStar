@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

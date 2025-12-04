@@ -5,6 +5,7 @@ using NUnit.Framework;
 using UnityEngine;
 using Users.FateX.Scripts;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Services;
 using Users.FateX.Scripts.Upgrade;
 using Zenject;
 using Скриптерсы.Services;
