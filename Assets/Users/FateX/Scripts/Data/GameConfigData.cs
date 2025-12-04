@@ -21,6 +21,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public CardData[] CardDatas { get; private set; }
         [field: SerializeField] public StatsShopProduct[] StatsShopProducts { get; private set; }
         [field: SerializeField] public SlotMachinePrizeData[] SlotMachinePrizeDatas { get; private set; }
+        [field: SerializeField] public EnemyBase InfinityEnemy { get; private set; }
         [field: SerializeField, Header("Settings")] public float DropCoinChance { get; private set; }
         [field: SerializeField] public float XpValue { get; private set; } = 0.4f;
         [field: SerializeField] public float MagnetDropChance { get; private set; } = 0.5f;

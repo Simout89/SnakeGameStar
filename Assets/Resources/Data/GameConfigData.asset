@@ -48,6 +48,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7003e6d7a84bb9648ad38325925e3e80, type: 2}
   - {fileID: 11400000, guid: 814394bd2b7a29c40873e9887c61f921, type: 2}
   - {fileID: 11400000, guid: 398cef130eef6994686d7d8416f65f3c, type: 2}
+  <InfinityEnemy>k__BackingField: {fileID: 2172284294067600571, guid: e13a93561533de947808f2f141ea2b76, type: 3}
   <DropCoinChance>k__BackingField: 5
   <XpValue>k__BackingField: 0.8
   <MagnetDropChance>k__BackingField: 0.5

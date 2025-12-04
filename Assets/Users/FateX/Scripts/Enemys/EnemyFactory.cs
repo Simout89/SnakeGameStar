@@ -20,6 +20,17 @@ namespace Users.FateX.Scripts
             
             _enemyManager.AddEnemy(enemy);
         }
+        
+        public void SpawnFinalEnemy(float statsMultiply)
+        {
+            EnemyBase enemy = LeanPool.Spawn(_gameConfig.GameConfigData.InfinityEnemy);
+            
+            enemy.MultiplyStats(statsMultiply);
+            
+            enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
+            
+            _enemyManager.AddEnemy(enemy);
+        }
 
         public EnemyBase SpawnEliteEnemy(EnemyBase enemyPrefab)
         {

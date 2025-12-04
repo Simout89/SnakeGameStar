@@ -69,9 +69,10 @@ namespace Users.FateX.Scripts
             Body.localRotation = Quaternion.identity;
         }
 
-        public void MultiplyStats(int value)
+        public void MultiplyStats(float value)
         {
             CurrentHealth *= value;
+            statsMultiplayer = value;
         }
 
         public void Move(Vector2 direction)
