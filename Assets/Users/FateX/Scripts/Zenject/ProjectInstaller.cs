@@ -1,4 +1,5 @@
 ﻿using Users.FateX.Scripts;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

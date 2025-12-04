@@ -8,7 +8,7 @@ using Image = UnityEngine.UI.Image;
 
 namespace Users.FateX.Scripts.Cards
 {
-    public class CardEntryView: MonoBehaviour
+    public class CardEntryView : MonoBehaviour
     {
         [field: SerializeField] public Button Button { get; private set; }
         [SerializeField] private Image _image;
@@ -16,6 +16,7 @@ namespace Users.FateX.Scripts.Cards
         [SerializeField] private TMP_Text _cardName;
         [SerializeField] private Transform body;
         [SerializeField] private GameObject upgradeIcon;
+
         public void Init(CardData cardData)
         {
             _image.sprite = cardData.Sprite;
@@ -27,12 +28,12 @@ namespace Users.FateX.Scripts.Cards
 
             _text.lineSpacing = 15f;
 
-            _cardName.text = cardData.SnakeSegmentBase.UpgradeLevelsData.SegmentName;
-            
+            if (cardData.SnakeSegmentBase != null)
+                _cardName.text = cardData.SnakeSegmentBase.UpgradeLevelsData.SegmentName;
+
             _image.sprite = cardData.Sprite;
 
             body.transform.DOLocalMove(Vector3.zero, 0.5f).SetUpdate(true).SetEase(Ease.OutCirc);
-            
         }
 
         public void InitUpgradeCard(string text, Sprite sprite)
@@ -40,11 +41,10 @@ namespace Users.FateX.Scripts.Cards
             _text.text = text;
 
             _image.sprite = sprite;
-            
-            upgradeIcon.SetActive(true);
-            
-            body.transform.DOLocalMove(Vector3.zero, 0.5f).SetUpdate(true).SetEase(Ease.OutCirc);
 
+            upgradeIcon.SetActive(true);
+
+            body.transform.DOLocalMove(Vector3.zero, 0.5f).SetUpdate(true).SetEase(Ease.OutCirc);
         }
 
         public void OnDestroy()

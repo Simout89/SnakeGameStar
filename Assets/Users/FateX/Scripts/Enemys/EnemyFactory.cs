@@ -18,6 +18,8 @@ namespace Users.FateX.Scripts
 
             enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
             
+            enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.DefaultMaterial;
+            
             _enemyManager.AddEnemy(enemy);
         }
         

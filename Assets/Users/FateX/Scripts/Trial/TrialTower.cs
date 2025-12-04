@@ -96,10 +96,10 @@ namespace Users.FateX.Scripts.Trial
         {
             isTimerRunning = true;
             captureSlider.transform.localScale = Vector3.zero;
-            captureSlider.SetActive(true);
             captureSlider.transform.DOComplete();
             captureSlider.transform.DOScale(originScaleSlider, 0.3f);
             _captureField.DOComplete();
+            captureSlider.SetActive(true);
             _captureField.DOFade(0.2f, 0.3f);
             
             float elapsed = 0f;

@@ -1,8 +1,7 @@
 ﻿using System;
 using UnityEngine;
-using Zenject;
 
-namespace Скриптерсы.Services
+namespace Users.FateX.Scripts.Services
 {
     public class InputService: IInputService, IDisposable
     {

@@ -39,5 +39,6 @@ namespace Users.FateX.Scripts.Data
     public class EnemyMaterials
     {
         [field: SerializeField] public Material EliteEnemy { get; private set; }
+        [field: SerializeField] public Material DefaultMaterial { get; private set; }
     }
 }

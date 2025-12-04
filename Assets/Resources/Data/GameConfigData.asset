@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.GameConfigData
   <EnemyMaterials>k__BackingField:
     <EliteEnemy>k__BackingField: {fileID: 2100000, guid: ffa5339c3bddcea46a96b2b97ba5c700, type: 2}
+    <DefaultMaterial>k__BackingField: {fileID: 2100000, guid: 57ad75e32f1df654a837dad59062bec4, type: 2}
   <XpPrefab>k__BackingField: {fileID: 4043232107286505601, guid: 0d2951f07091d584681f98e884aa0643, type: 3}
   <MagnetPrefab>k__BackingField: {fileID: 6485121111209911736, guid: e488eb9cdb4aa2446acb0bd390f910da, type: 3}
   <GamblingItemPrefab>k__BackingField: {fileID: 5680374288626682495, guid: 04807228487ef774482b90a6491ad44c, type: 3}
