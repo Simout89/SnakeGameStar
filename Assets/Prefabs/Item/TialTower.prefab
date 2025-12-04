@@ -258,6 +258,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Trial.TrialTower
   _triggerDetector: {fileID: 252446259856371754}
   _captureField: {fileID: 1457978172610853716}
+  _towerSprite: {fileID: 3121276151141273799}
   _image: {fileID: 112136802893296101}
   captureSlider: {fileID: 7182387178389065984}
 --- !u!1 &5291688858918059996

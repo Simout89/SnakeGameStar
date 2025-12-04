@@ -16,6 +16,7 @@ namespace Users.FateX.Scripts.Trial
         
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private SpriteRenderer _captureField;
+        [SerializeField] private SpriteRenderer _towerSprite;
         [SerializeField] private Image _image;
         [SerializeField] private GameObject captureSlider;
 
@@ -131,6 +132,7 @@ namespace Users.FateX.Scripts.Trial
         {
             captured = true;
             _trialDirector.OnTowerCaptured(this);
+            _towerSprite.color = Color.darkGray;
         }
     }
 }

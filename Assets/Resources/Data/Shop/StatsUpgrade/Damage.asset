@@ -54,12 +54,12 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 0
+  - <Cost>k__BackingField: 175
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 0
     <Reroll>k__BackingField: 0
     <Health>k__BackingField: 0
-    <Damage>k__BackingField: 175
+    <Damage>k__BackingField: 1
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0

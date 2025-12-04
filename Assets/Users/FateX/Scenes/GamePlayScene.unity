@@ -44404,6 +44404,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 824915877}
   m_CullTransparentMesh: 1
+--- !u!212 &825323823 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3121276151141273799, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
+  m_PrefabInstance: {fileID: 1252137779}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &830027272
 GameObject:
   m_ObjectHideFlags: 0
@@ -69972,6 +69977,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4440455438817000682, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
+      propertyPath: _towerSprite
+      value: 
+      objectReference: {fileID: 825323823}
     - target: {fileID: 5095657381326606779, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
       propertyPath: m_Name
       value: TialTower (5)

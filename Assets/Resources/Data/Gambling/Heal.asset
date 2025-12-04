@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b19a7785eef40f9bfff1768a1d4612e, type: 3}
   m_Name: Heal
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SlotMachinePrizeData
-  <Icon>k__BackingField: {fileID: -3946612055665836118, guid: 2bef337dee8cb9045a5b1da12cb5d5ab, type: 3}
+  <Icon>k__BackingField: {fileID: 1350917729271960948, guid: fd11ae82a14811e41abe189c263f1b17, type: 3}
   <SlotMachinePrizeType>k__BackingField: 3
   <SnakeSegmentBase>k__BackingField:
   - {fileID: 0}
