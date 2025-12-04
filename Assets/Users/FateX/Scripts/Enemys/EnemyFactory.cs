@@ -17,8 +17,13 @@ namespace Users.FateX.Scripts
             EnemyBase enemy = LeanPool.Spawn(enemyPrefab);
 
             enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
-            
-            enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.DefaultMaterial;
+
+            if (enemyPrefab.EnemyData.OverrideMaterial == null)
+                enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.DefaultMaterial;
+            else
+            {
+                enemy.SpriteRenderer.material = enemyPrefab.EnemyData.OverrideMaterial;
+            }
             
             _enemyManager.AddEnemy(enemy);
         }

@@ -46,7 +46,7 @@ namespace Users.FateX.Scripts.Upgrade
                 await lightingTrail.transform.DOMove(enemy.transform.position, 0.1f)
                     .WithCancellation(token);
 
-                var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName);
+                var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName, Body.transform.position);
                 DealDamage(damageInfo);
                 enemy.TakeDamage(damageInfo);
 

@@ -76,7 +76,8 @@ namespace Users.FateX.Scripts.Upgrade
 
                 projectile.SimpleLaunch(
                     muzzle.up * 15,
-                    new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, UpgradeLevelsData.SegmentName)
+                    new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum,
+                        UpgradeLevelsData.SegmentName, Body.transform.position)
                 );
                 await UniTask.Delay(TimeSpan.FromSeconds(0.1f), cancellationToken: cancellationToken);
             }

@@ -324,11 +324,11 @@ namespace Users.FateX.Scripts.Cards
             {
                 if (invertValue)
                 {
-                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{currentValue - nextValue}</color><line-height=1em>\n";
+                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{Mathf.Ceil((currentValue - nextValue) * 10f) / 10f}</color><line-height=1em>\n";
                 }
                 else
                 {
-                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{nextValue - currentValue}</color><line-height=1em>\n";
+                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{Mathf.Ceil((nextValue - currentValue) * 10f) / 10f}</color><line-height=1em>\n";
                 }
             }
 

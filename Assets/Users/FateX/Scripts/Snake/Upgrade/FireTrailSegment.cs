@@ -6,18 +6,17 @@ using Users.FateX.Scripts.Combat;
 
 namespace Users.FateX.Scripts.Upgrade
 {
-    public class FireTrailSegment: CombatSnakeSegment
+    public class FireTrailSegment : CombatSnakeSegment
     {
-        [Header("References")]
-        [SerializeField] private TrailRenderer _trailRenderer;
+        [Header("References")] [SerializeField]
+        private TrailRenderer _trailRenderer;
+
         [SerializeField] private EdgeCollider2D _edgeCollider2D;
         [SerializeField] private TriggerDetector _edgeColliderTriggerDetector;
-        
+
         public override void Attack()
         {
             base.Attack();
-            
-            
         }
 
         public override void Tick()
@@ -25,7 +24,7 @@ namespace Users.FateX.Scripts.Upgrade
             base.Tick();
 
             var lastTransform = GetLastSegmentTransform();
-            if(_trailRenderer.transform.parent != lastTransform)
+            if (_trailRenderer.transform.parent != lastTransform)
             {
                 _trailRenderer.transform.parent = lastTransform;
                 _trailRenderer.transform.position = lastTransform.position;
@@ -35,13 +34,13 @@ namespace Users.FateX.Scripts.Upgrade
             _trailRenderer.GetPositions(positions);
 
             List<Vector2> points2D = new List<Vector2>();
-    
+
             for (int i = 0; i < positions.Length; i += 7)
             {
                 Vector3 localPos = transform.InverseTransformPoint(positions[i]);
                 points2D.Add(new Vector2(localPos.x, localPos.y));
             }
-            
+
             _edgeCollider2D.points = points2D.ToArray();
         }
 
@@ -50,7 +49,7 @@ namespace Users.FateX.Scripts.Upgrade
             _edgeColliderTriggerDetector.onTriggerEntered += HandleEntered;
             _edgeColliderTriggerDetector.onTriggerExited += HandleExited;
         }
-        
+
         private void OnDisable()
         {
             _edgeColliderTriggerDetector.onTriggerEntered -= HandleEntered;
@@ -61,10 +60,12 @@ namespace Users.FateX.Scripts.Upgrade
         {
             if (other.TryGetComponent(out IDamageable damageable))
             {
-                DamageOverTime.StartDot(damageable,this, CurrentStats.DelayBetweenShots, new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName));
+                DamageOverTime.StartDot(damageable, this, CurrentStats.DelayBetweenShots,
+                    new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum,
+                        upgradeLevelsData.SegmentName, GetLastSegmentTransform().position));
             }
         }
-        
+
         private void HandleExited(Collider2D other)
         {
             if (other.TryGetComponent(out IDamageable damageable))

@@ -44,7 +44,7 @@ namespace Users.FateX.Scripts.Upgrade
                 Destroy(child.gameObject);
             }
 
-            var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName);
+            var damageInfo = new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum, upgradeLevelsData.SegmentName, Body.transform.position);
             
             foreach (var position in MyUtils.GetPositionsInCircle2D(orbContainer.position, CurrentStats.AttackRange,
                          CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum))

@@ -17,6 +17,7 @@ MonoBehaviour:
   <MoveSpeed>k__BackingField: 100
   <Damage>k__BackingField: 1
   <AttackSpeed>k__BackingField: 10
+  <OverrideMaterial>k__BackingField: {fileID: 2100000, guid: a9ade750dffea614ba07d88d8ff3b1e6, type: 2}
   <OverrideLootXP>k__BackingField:
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
@@ -24,3 +25,4 @@ MonoBehaviour:
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
+  <ItemLoot>k__BackingField: []
