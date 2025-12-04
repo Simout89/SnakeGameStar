@@ -13,6 +13,7 @@ namespace Users.FateX.Scripts
     {
         [Header("References")]
         [SerializeField] private SpriteRenderer _spriteRenderer;
+        public SpriteRenderer SpriteRenderer => _spriteRenderer;
         [SerializeField] private Transform _shadow;
         [field: SerializeField] public Transform Body { get; private set; }
         [SerializeField] private EnemyData _enemyData;
@@ -33,6 +34,7 @@ namespace Users.FateX.Scripts
         private Collider2D _collider2D;
         
         public DamageInfo lastDamageInfo { get; private set; }
+        private float statsMultiplayer = 1;
 
         private void Awake()
         {
@@ -67,6 +69,10 @@ namespace Users.FateX.Scripts
             Body.localRotation = Quaternion.identity;
         }
 
+        public void MultiplyStats(int value)
+        {
+            CurrentHealth *= value;
+        }
 
         public void Move(Vector2 direction)
         {
@@ -142,7 +148,7 @@ namespace Users.FateX.Scripts
         {
             if(other.gameObject.TryGetComponent(out SnakeBodyPartHealth snakeBodyPartHealth))
             {
-                DamageInfo damageInfo = new DamageInfo(_enemyData.Damage, _enemyData.EnemyName);
+                DamageInfo damageInfo = new DamageInfo(_enemyData.Damage * statsMultiplayer, _enemyData.EnemyName);
                 
                 DamageOverTime.StartDot(snakeBodyPartHealth, this, 0.3f, damageInfo);
             }

@@ -21,5 +21,4 @@ MonoBehaviour:
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
-  <ItemLoot>k__BackingField:
-  - {fileID: 7161741165014281432, guid: 04807228487ef774482b90a6491ad44c, type: 3}
+  <ItemLoot>k__BackingField: []

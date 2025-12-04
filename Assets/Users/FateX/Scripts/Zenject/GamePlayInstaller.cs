@@ -7,6 +7,7 @@ using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Entity;
 using Users.FateX.Scripts.SlotMachine;
+using Users.FateX.Scripts.Trial;
 using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;
@@ -43,6 +44,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<RoundCurrency>().AsSingle();
             Container.BindInterfacesAndSelfTo<StatisticsService>().AsSingle();
             Container.BindInterfacesAndSelfTo<SlotMachineController>().AsSingle();
+            Container.BindInterfacesAndSelfTo<TrialDirector>().AsSingle();
             
             Container.BindInterfacesAndSelfTo<GameStateManager>().AsSingle();
             

@@ -9,6 +9,7 @@ namespace Users.FateX.Scripts.Data
     [CreateAssetMenu(menuName = "Data/GameConfigData")]
     public class GameConfigData: ScriptableObject
     {
+        [field: SerializeField] public EnemyMaterials EnemyMaterials { get; private set; }
         [field: SerializeField, Header("Prefabs")] public XpItem XpPrefab { get; private set; }
         [field: SerializeField] public MagnetItem MagnetPrefab { get; private set; }
         [field: SerializeField] public GamblingItem GamblingItemPrefab { get; private set; }
@@ -32,5 +33,10 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public CardData UpgradeCard;
         [field: SerializeField] public CardData HealCard;
         [field: SerializeField] public CardData CoinCard;
+    }
+    [Serializable]
+    public class EnemyMaterials
+    {
+        [field: SerializeField] public Material EliteEnemy { get; private set; }
     }
 }

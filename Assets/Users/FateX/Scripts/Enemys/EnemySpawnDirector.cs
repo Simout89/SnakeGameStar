@@ -14,13 +14,12 @@ namespace Users.FateX.Scripts.Enemy
         private float _enemySpawnBuffer = 0f;
         private WaveData _waveData;
 
-        // ————— Новое —————
         private HashSet<WaveEventSpawn> _triggeredEvents = new();
         private float _overrideSpawnRate = -1;
         private float _multiplySpawnRate = -1;
 
         private int _currentEnemyArrayIndex = 0;
-        // ——————————————
+        private int _currentWaveIndex = 0; // Добавлено для отслеживания текущей волны
 
         public event Action<float> OnChangeSpawnEnemyCount;
 
@@ -45,9 +44,7 @@ namespace Users.FateX.Scripts.Enemy
 
             float normalizedTime = (float)obj / _waveData.TotalTime;
 
-            // ——— ИВЕНТЫ ———
             HandleEventSpawns(normalizedTime);
-            // ————————————
 
             int currentEnemyIndex = 0;
             float segmentProgress = 0f;
@@ -57,6 +54,7 @@ namespace Users.FateX.Scripts.Enemy
                 if (normalizedTime >= _waveData.WaveChangeSpawns[i].TimeMarker)
                 {
                     currentEnemyIndex = i;
+                    _currentWaveIndex = i; // Сохраняем текущий индекс волны
 
                     float currentMarker = _waveData.WaveChangeSpawns[i].TimeMarker;
                     float nextMarker = (i + 1 < _waveData.WaveChangeSpawns.Length)
@@ -71,10 +69,7 @@ namespace Users.FateX.Scripts.Enemy
             }
 
             float enemiesToAdd = GetEnemyCountFloat(segmentProgress, currentEnemyIndex);
-
-            // применяем Override / Multiply
             enemiesToAdd = ApplyEventModifiers(enemiesToAdd);
-
             _enemySpawnBuffer += enemiesToAdd;
 
             int spawnCount = Mathf.FloorToInt(_enemySpawnBuffer);
@@ -89,6 +84,66 @@ namespace Users.FateX.Scripts.Enemy
         }
 
         // ——————————————————————————
+        //    МЕТОДЫ ПОЛУЧЕНИЯ ВРАГОВ
+        // ——————————————————————————
+        
+        /// <summary>
+        /// Возвращает массив врагов текущей волны
+        /// </summary>
+        public EnemyBase[] GetCurrentWaveEnemies()
+        {
+            if (_waveData == null || _waveData.WaveChangeSpawns == null || _waveData.WaveChangeSpawns.Length == 0)
+                return Array.Empty<EnemyBase>();
+
+            if (_currentWaveIndex >= _waveData.WaveChangeSpawns.Length)
+                return Array.Empty<EnemyBase>();
+
+            return _waveData.WaveChangeSpawns[_currentWaveIndex].Enemy;
+        }
+
+        /// <summary>
+        /// Возвращает массив врагов волны на N волн выше текущей
+        /// Если запрошенная волна выходит за пределы, возвращает максимально возможную волну
+        /// </summary>
+        /// <param name="wavesAhead">Количество волн вперед (1 = следующая волна, 2 = через одну и т.д.)</param>
+        public EnemyBase[] GetEnemiesNWavesAhead(int wavesAhead)
+        {
+            if (_waveData == null || _waveData.WaveChangeSpawns == null || _waveData.WaveChangeSpawns.Length == 0)
+                return Array.Empty<EnemyBase>();
+
+            int targetWaveIndex = _currentWaveIndex + wavesAhead;
+
+            // Если индекс меньше 0, вернем первую волну
+            if (targetWaveIndex < 0)
+                targetWaveIndex = 0;
+
+            // Если индекс больше максимального, вернем последнюю волну
+            if (targetWaveIndex >= _waveData.WaveChangeSpawns.Length)
+                targetWaveIndex = _waveData.WaveChangeSpawns.Length - 1;
+
+            return _waveData.WaveChangeSpawns[targetWaveIndex].Enemy;
+        }
+
+        /// <summary>
+        /// Возвращает текущий индекс волны
+        /// </summary>
+        public int GetCurrentWaveIndex()
+        {
+            return _currentWaveIndex;
+        }
+
+        /// <summary>
+        /// Возвращает общее количество волн
+        /// </summary>
+        public int GetTotalWavesCount()
+        {
+            if (_waveData == null || _waveData.WaveChangeSpawns == null)
+                return 0;
+
+            return _waveData.WaveChangeSpawns.Length;
+        }
+
+        // ——————————————————————————
         //           EVENT LOGIC
         // ——————————————————————————
         private void HandleEventSpawns(float normalizedTime)
@@ -100,11 +155,9 @@ namespace Users.FateX.Scripts.Enemy
 
                 if (normalizedTime >= evt.TimeMarker)
                 {
-                    // Спавним всех врагов сразу
                     foreach (var enemy in evt.Enemys)
                         _enemyFactory.SpawnEnemy(enemy);
 
-                    // Устанавливаем модификаторы
                     _overrideSpawnRate = evt.OverrideSpawnRate;
                     _multiplySpawnRate = evt.MultiplaySpawnRate;
 
@@ -164,6 +217,5 @@ namespace Users.FateX.Scripts.Enemy
             _enemyFactory.SpawnEnemy(enemies[_currentEnemyArrayIndex]);
             _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % enemies.Length;
         }
-
     }
 }
