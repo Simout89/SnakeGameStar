@@ -13,6 +13,7 @@ namespace Users.FateX.Scripts.Cards
         [field: SerializeField] public Button Button { get; private set; }
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private TMP_Text _cardName;
         [SerializeField] private Transform body;
         [SerializeField] private GameObject upgradeIcon;
         public void Init(CardData cardData)
@@ -23,6 +24,10 @@ namespace Users.FateX.Scripts.Cards
         public void Init(CardData cardData, string text)
         {
             _text.text = text;
+
+            _text.lineSpacing = 15f;
+
+            _cardName.text = cardData.SnakeSegmentBase.UpgradeLevelsData.SegmentName;
             
             _image.sprite = cardData.Sprite;
 

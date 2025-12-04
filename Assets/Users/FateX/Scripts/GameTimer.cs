@@ -1,29 +1,37 @@
 ﻿using System;
+using System.Threading;
 using Cysharp.Threading.Tasks;
 using UnityEngine;
 
 namespace Users.FateX.Scripts
 {
-    public class GameTimer
+    public class GameTimer: IDisposable
     {
         private float duration = 0;
         private bool _isRunning;
         public int CurrentTime { get; private set; }
+
+        private CancellationTokenSource cancellationTokenSource;
         
         public event Action<int> OnSecondChanged;
         public event Action OnTimerEnd;
 
-        public async void StartTimer()
+        public void StartTimer()
         {
             if (_isRunning) return;
             
             Debug.Log("Таймер запущен");
 
             _isRunning = true;
-            await RunTimerAsync();
+            
+            cancellationTokenSource?.Cancel();
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = new CancellationTokenSource();
+            
+            RunTimerAsync(cancellationTokenSource.Token).Forget();
         }
         
-        public async void StartTimer(float duration)
+        public void StartTimer(float duration)
         {
             this.duration = duration;
             
@@ -32,33 +40,62 @@ namespace Users.FateX.Scripts
             Debug.Log("Таймер запущен");
 
             _isRunning = true;
-            await RunTimerAsync();
+
+            cancellationTokenSource?.Cancel();
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = new CancellationTokenSource();
+            
+            RunTimerAsync(cancellationTokenSource.Token).Forget();
         }
 
-        private async UniTask RunTimerAsync()
+        private async UniTask RunTimerAsync(CancellationToken cancellationToken)
         {
-            float elapsed = 0f;
-            int lastSecond = -1;
-
-            while (elapsed < duration && this != null)
+            try
             {
-                elapsed += Time.deltaTime;
-                
-                int currentSecond = Mathf.FloorToInt(elapsed);
-                if (currentSecond != lastSecond)
-                {
-                    lastSecond = currentSecond;
-                    CurrentTime = currentSecond;
-                    OnSecondChanged?.Invoke(currentSecond);
-                }
-                
-                await UniTask.Yield();
-            }
+                float elapsed = 0f;
+                int lastSecond = -1;
 
-            _isRunning = false;
-            OnTimerEnd?.Invoke();
+                while (elapsed < duration)
+                {
+                    elapsed += Time.deltaTime;
+                    
+                    int currentSecond = Mathf.FloorToInt(elapsed);
+                    if (currentSecond != lastSecond)
+                    {
+                        lastSecond = currentSecond;
+                        CurrentTime = currentSecond;
+                        OnSecondChanged?.Invoke(currentSecond);
+                    }
+                    
+                    await UniTask.Yield(cancellationToken);
+                }
+
+                _isRunning = false;
+                OnTimerEnd?.Invoke();
+                
+                Debug.Log("Таймер закончился");
+            }
+            catch (OperationCanceledException)
+            {
+                // Таймер был отменён - это нормально
+                Debug.Log("Таймер был отменён");
+                _isRunning = false;
+            }
+        }
+
+        public void StopTimer()
+        {
+            if (!_isRunning) return;
             
-            Debug.Log("Таймер закончился");
+            cancellationTokenSource?.Cancel();
+            _isRunning = false;
+        }
+
+        public void Dispose()
+        {
+            StopTimer();
+            cancellationTokenSource?.Dispose();
+            cancellationTokenSource = null;
         }
     }
 }

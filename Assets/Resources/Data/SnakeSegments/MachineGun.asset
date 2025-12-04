@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
-  <SegmentName>k__BackingField: Machine Gun
+  <SegmentName>k__BackingField: "\u041F\u0443\u043B\u0435\u043C\u0435\u0442"
   <SegmentIcon>k__BackingField: {fileID: 21300000, guid: be5e3b9d57b6a634c8178459bc653964, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 1da8f4f20e6bc8847bfecfd33ce42d26, type: 3}

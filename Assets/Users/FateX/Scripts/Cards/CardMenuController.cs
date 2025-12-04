@@ -275,17 +275,23 @@ namespace Users.FateX.Scripts.Cards
             var currentStats = data[segment.CurrentLevel];
             var nextStats = data[segment.CurrentLevel + 1];
 
-            string statsText = $"Улучшение: {segment.UpgradeLevelsData.SegmentName}\n";
+            string statsText = "";
+
+            if (!segment.Origin)
+            {
+                statsText += $"<color=red>Копия</color><line-height=1em>\n";
+            }
+            
             statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
-                "AttackSpeed", true);
+                "Скорость атаки:", true);
             statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer,
-                nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Damage");
-            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Duration");
-            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "AttackRange");
-            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, "BouncesCount");
-            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, "DamageArea");
+                nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Урон:");
+            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Длителность:");
+            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "Радиус атаки:");
+            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, "Кол-во отскоков:");
+            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, "Область действия:");
             statsText += GetStatDifference(currentStats.ProjectileCount, nextStats.ProjectileCount,
-                "ProjectileCount");
+                "Кол-во снарядов:");
 
             return statsText;
         }
@@ -318,11 +324,11 @@ namespace Users.FateX.Scripts.Cards
             {
                 if (invertValue)
                 {
-                    return $"{statName} +{currentValue - nextValue}\n";
+                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{currentValue - nextValue}</color><line-height=1em>\n";
                 }
                 else
                 {
-                    return $"{statName} +{nextValue - currentValue}\n";
+                    return $"<align=left>{statName}<line-height=0>\n<align=right><color=yellow>+{nextValue - currentValue}</color><line-height=1em>\n";
                 }
             }
 
