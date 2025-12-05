@@ -1,6 +1,6 @@
-name: Unity Build
+name: Unity Build & Test 🚀
 
-on:
+on: 
   push:
     branches: [ main, develop ]
   pull_request:
@@ -11,34 +11,74 @@ env:
   UNITY_VERSION: 6000.2.8f1
 
 jobs:
-  build:
-    name: Build for ${{ matrix.targetPlatform }}
+  # Тесты (опционально, можно убрать если не нужны)
+  test:
+    name: Test 🧪
     runs-on: ubuntu-latest
+    steps:
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          df -h
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Test-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-Test-
+
+      - name: Run tests
+        uses: game-ci/unity-test-runner@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          unityVersion: ${{ env.UNITY_VERSION }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+
+  # Билды
+  build:
+    name: Build ${{ matrix.targetPlatform }} ✨
+    runs-on: ubuntu-latest
+    needs: test # Если тесты не нужны, уберите эту строку
     strategy:
       fail-fast: false
+      max-parallel: 1 # По одному, чтобы не кончилось место
       matrix:
         targetPlatform:
           - StandaloneWindows64
           - Android
     steps:
-      # Checkout
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+          df -h
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
-      # Cache
       - name: Cache Library
         uses: actions/cache@v4
         with:
           path: Library
           key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: |
-            Library-${{ matrix.targetPlatform }}-
-            Library-
+          restore-keys: Library-${{ matrix.targetPlatform }}-
 
-      # Build
       - name: Build project
         uses: game-ci/unity-builder@v4
         env:
@@ -49,22 +89,22 @@ jobs:
           targetPlatform: ${{ matrix.targetPlatform }}
           unityVersion: ${{ env.UNITY_VERSION }}
           buildName: MyGame
-          buildsPath: builds
+          buildsPath: build
+          customImage: unityci/editor:ubuntu-6000.2.8f1-base-3
 
-      # Upload артефакты
       - name: Upload Build
         uses: actions/upload-artifact@v4
         with:
           name: Build-${{ matrix.targetPlatform }}
-          path: builds/${{ matrix.targetPlatform }}
+          path: build/${{ matrix.targetPlatform }}
           retention-days: 7
 
-  # Опционально: создание релиза при тегах
+  # Релиз (опционально)
   release:
-    name: Create Release
+    name: Create Release 📦
     runs-on: ubuntu-latest
     needs: build
-    if: startsWith(github.ref, 'refs/tags/')
+    if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Download all builds
         uses: actions/download-artifact@v4
@@ -74,7 +114,6 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            builds/**/*
+          files: builds/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
