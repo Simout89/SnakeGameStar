@@ -15,7 +15,16 @@ namespace Users.FateX.Scripts
         private void HandleEnemyDie(EnemyBase obj)
         {
             var newDamageView = LeanPool.Spawn(_gameConfig.GameConfigData.DamageViewPrefab, obj.transform.position + Vector3.up / 2 + (Vector3)Random.insideUnitCircle / 2, Quaternion.identity);
-            newDamageView.TMPText.text = (((int)(obj.lastDamageInfo.Amount * GameConstant.VisualDamageMultiplayer + Random.Range(-2, 3))).ToString());
+            var damage = ((int)(obj.lastDamageInfo.Amount * GameConstant.VisualDamageMultiplayer + Random.Range(-2, 3)));
+            newDamageView.TMPText.text = (damage.ToString());
+            if (damage >= 30)
+            {
+                newDamageView.TMPText.color = Color.yellow;
+            }else if (damage >= 45)
+            {
+                newDamageView.TMPText.color = Color.red;
+            }
+                
 
             var _baseScale = newDamageView.transform.localScale;
             

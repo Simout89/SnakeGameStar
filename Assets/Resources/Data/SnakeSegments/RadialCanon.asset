@@ -1,0 +1,56 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
+  m_Name: RadialCanon
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
+  <SegmentName>k__BackingField: "\u041A\u0440\u0443\u0433\u043E\u0432\u0430\u044F
+    \u043F\u0443\u0448\u043A\u0430"
+  <SegmentIcon>k__BackingField: {fileID: 21300000, guid: b6a2c3edd2a31dd489485d1f5c00af56, type: 3}
+  <BaseSegmentsCount>k__BackingField: 1
+  <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: cffe55d4b7d51a24bae43eadcd09574a, type: 3}
+  <UpgradeStats>k__BackingField:
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.7
+    <Damage>k__BackingField: 0.5
+    <ProjectileCount>k__BackingField: 2
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1
+    <DelayBetweenShots>k__BackingField: 0.7
+    <Damage>k__BackingField: 0.6
+    <ProjectileCount>k__BackingField: 4
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.1
+    <DelayBetweenShots>k__BackingField: 0.6
+    <Damage>k__BackingField: 0.6
+    <ProjectileCount>k__BackingField: 6
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.1
+    <DelayBetweenShots>k__BackingField: 0.5
+    <Damage>k__BackingField: 0.6
+    <ProjectileCount>k__BackingField: 8
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 0.6
+    <ProjectileCount>k__BackingField: 10
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  <Vfx>k__BackingField: {fileID: 0}

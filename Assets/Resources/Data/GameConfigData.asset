@@ -34,6 +34,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: f6ac1cd716736954b94c394e11dc2528, type: 2}
   - {fileID: 11400000, guid: bcc48c27ec1cce84185ff2d1bd55e26e, type: 2}
   - {fileID: 11400000, guid: be868d4c912169446ad1752a6799b023, type: 2}
+  - {fileID: 11400000, guid: d01ecfcb0f16f4947a701e256ca9a61e, type: 2}
+  - {fileID: 11400000, guid: f2e0f15a34b66634aa24b375446df9f1, type: 2}
+  - {fileID: 11400000, guid: ccd1470c6bf150f4b88a649cec3af499, type: 2}
   <StatsShopProducts>k__BackingField:
   - {fileID: 11400000, guid: e92632e96309a2a479196a272c9b9121, type: 2}
   - {fileID: 11400000, guid: 635c1010ce03185449a81871b3337988, type: 2}

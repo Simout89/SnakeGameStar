@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
@@ -26,11 +27,15 @@ namespace Users.FateX.Scripts.View
         private List<Image> squares = new List<Image>();
         private CancellationTokenSource cancellationTokenSource;
 
+        public event Action OnDeathAnimationEnd;
+
         public async void Show()
         {
             cancellationTokenSource = new CancellationTokenSource();
             
             await PlayDeathAnimation(cancellationTokenSource.Token);
+            
+            OnDeathAnimationEnd?.Invoke();
             
             body.SetActive(true);
 

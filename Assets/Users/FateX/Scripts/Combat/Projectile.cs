@@ -18,6 +18,7 @@ namespace Users.FateX.Scripts.Combat
         private CancellationTokenSource cts;
         private float areaOfEffectRaidus;
         private DamageInfo damageInfo;
+        private bool piercing;
 
         public void LaunchArc(Transform targetEnemy, float flightTime, DamageInfo damageInfo, float AOERadius = 0)
         {
@@ -32,22 +33,41 @@ namespace Users.FateX.Scripts.Combat
             FollowTarget(cts.Token, flightTime, targetPos).Forget();
         }
 
-        public void SimpleLaunch(Vector3 direction, DamageInfo damageInfo)
+        public void SimpleLaunch(Vector3 direction, DamageInfo damageInfo, bool piercing = false)
         {
             this.damageInfo = damageInfo;
 
+            this.piercing = piercing;
+
             _rigidbody2D.AddForce(direction, ForceMode2D.Impulse);
+            
+            LeanPool.Despawn(gameObject, 10f);
         }
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.TryGetComponent(out IDamageable damageable))
+            if (!piercing)
             {
-                GameEvents.DamageDealt(damageInfo);
-                damageable.TakeDamage(damageInfo);
-            }
+                if (other.TryGetComponent(out IDamageable damageable))
+                {
+                    GameEvents.DamageDealt(damageInfo);
+                    damageable.TakeDamage(damageInfo);
+                }
             
-            LeanPool.Despawn(gameObject);
+                LeanPool.Despawn(gameObject);
+            }
+            else
+            {
+                if (other.TryGetComponent(out IDamageable damageable))
+                {
+                    GameEvents.DamageDealt(damageInfo);
+                    damageable.TakeDamage(damageInfo);
+                }
+                else
+                {
+                    LeanPool.Despawn(gameObject);
+                }
+            }
         }
 
         private Vector2 PredictTargetPosition(Transform targetEnemy, float flightTime)

@@ -22,5 +22,8 @@ MonoBehaviour:
   - {fileID: 1983542577431105033, guid: bf48e4f93f22ad94abee5f789b2bb4da, type: 3}
   - {fileID: 740953566481237778, guid: 769e16ee4df55ee4bbf5a55bfdbfd13b, type: 3}
   - {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
+  - {fileID: 7742535736117989413, guid: 5df4a2427b076cc41aa85a102396ebeb, type: 3}
+  - {fileID: 7156440767524787949, guid: 55414d944bdbf024ba1622b1ec51188e, type: 3}
+  - {fileID: 4181765518045109835, guid: f5ae52a647e64c44096ae02f7194acef, type: 3}
   <Amount>k__BackingField: 20
   <Weight>k__BackingField: 15

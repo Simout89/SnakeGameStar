@@ -17,11 +17,24 @@ namespace Users.FateX.Scripts
         {
             _snakeHealth = snakeHealth;
             _snakeHealth.OnDie += HandleDie;
+            _deathView.OnDeathAnimationEnd += HandleDeathAnimationEnd;
         }
         
         public void Dispose()
         {
             _snakeHealth.OnDie -= HandleDie;
+            _deathView.OnDeathAnimationEnd -= HandleDeathAnimationEnd;
+            
+            DOTween.KillAll();
+            
+            LeanPool.DespawnAll();
+        }
+
+        private void HandleDeathAnimationEnd()
+        {
+            DOTween.KillAll();
+            
+            LeanPool.DespawnAll();
         }
 
         private void HandleDie()
@@ -29,10 +42,6 @@ namespace Users.FateX.Scripts
             _deathView.Show();
             
             _gameStateManager.ChangeState(GameStates.Death);
-            
-            DOTween.KillAll();
-            
-            LeanPool.DespawnAll();
             
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
