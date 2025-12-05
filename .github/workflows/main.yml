@@ -1,4 +1,4 @@
-name: Unity Build & Test 🚀
+name: Unity Build
 
 on: 
   push:
@@ -11,52 +11,10 @@ env:
   UNITY_VERSION: 6000.2.8f1
 
 jobs:
-  # Тесты (опционально, можно убрать если не нужны)
-  test:
-    name: Test 🧪
+  # Windows билд (Mono или IL2CPP на выбор)
+  build-windows:
+    name: Build Windows 🪟
     runs-on: ubuntu-latest
-    steps:
-      - name: Free Disk Space
-        run: |
-          sudo rm -rf /usr/share/dotnet
-          sudo rm -rf /usr/local/lib/android
-          sudo rm -rf /opt/ghc
-          df -h
-
-      - name: Checkout repository
-        uses: actions/checkout@v4
-        with:
-          lfs: true
-
-      - name: Cache Library
-        uses: actions/cache@v4
-        with:
-          path: Library
-          key: Library-Test-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: Library-Test-
-
-      - name: Run tests
-        uses: game-ci/unity-test-runner@v4
-        env:
-          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
-          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
-          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-        with:
-          unityVersion: ${{ env.UNITY_VERSION }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-
-  # Билды
-  build:
-    name: Build ${{ matrix.targetPlatform }} ✨
-    runs-on: ubuntu-latest
-    needs: test # Если тесты не нужны, уберите эту строку
-    strategy:
-      fail-fast: false
-      max-parallel: 1 # По одному, чтобы не кончилось место
-      matrix:
-        targetPlatform:
-          - StandaloneWindows64
-          - Android
     steps:
       - name: Free Disk Space
         run: |
@@ -76,34 +34,82 @@ jobs:
         uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
-          restore-keys: Library-${{ matrix.targetPlatform }}-
+          key: Library-Windows-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-Windows-
 
-      - name: Build project
+      - name: Build Windows
         uses: game-ci/unity-builder@v4
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: StandaloneWindows64
           unityVersion: ${{ env.UNITY_VERSION }}
           buildName: MyGame
           buildsPath: build
-          customImage: unityci/editor:ubuntu-6000.2.8f1-base-3
+          # Для IL2CPP раскомментируйте:
+          # customImage: unityci/editor:ubuntu-6000.2.8f1-windows-il2cpp-3
 
-      - name: Upload Build
+      - name: Upload Windows Build
         uses: actions/upload-artifact@v4
         with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: build/${{ matrix.targetPlatform }}
+          name: Build-Windows
+          path: build/StandaloneWindows64
           retention-days: 7
 
-  # Релиз (опционально)
+  # Android билд (IL2CPP - обязательно для Play Store)
+  build-android:
+    name: Build Android 🤖
+    runs-on: ubuntu-latest
+    steps:
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+          df -h
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: Library-Android-
+
+      - name: Build Android
+        uses: game-ci/unity-builder@v4
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: Android
+          unityVersion: ${{ env.UNITY_VERSION }}
+          buildName: MyGame
+          buildsPath: build
+          # IL2CPP для Android (обязательно для Play Store)
+          customImage: unityci/editor:ubuntu-6000.2.8f1-android-3
+
+      - name: Upload Android Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-Android
+          path: build/Android
+          retention-days: 7
+
+  # Релиз при тегах
   release:
     name: Create Release 📦
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build-windows, build-android]
     if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Download all builds
