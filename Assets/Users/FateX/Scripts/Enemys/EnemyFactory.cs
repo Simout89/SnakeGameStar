@@ -54,6 +54,7 @@ namespace Users.FateX.Scripts
             
             enemy.SpriteRenderer.material.EnableKeyword("OUTBASE_ON");
             enemy.SpriteRenderer.material.EnableKeyword("OUTTEX_ON");
+            enemy.SpriteRenderer.material.SetColor("_OutlineColor", Color.white);
 
             
             _enemyManager.AddEnemy(enemy);
