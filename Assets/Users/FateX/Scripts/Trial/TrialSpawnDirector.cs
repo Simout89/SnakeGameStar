@@ -24,7 +24,7 @@ namespace Users.FateX.Scripts.Trial
             var spawnPoints = GameObject.FindGameObjectsWithTag("TrialTowerPoint");
             availablePoints = new List<GameObject>(spawnPoints);
 
-            _weightedRandomGenerator = new WeightedRandomGenerator(0, availablePoints.Count - 1, 1.5f);
+            _weightedRandomGenerator = new WeightedRandomGenerator(0, Enum.GetValues(typeof(TrialTowerType)).Length - 1, 1.5f);
         }
 
         public void SpawnRandomTower()
