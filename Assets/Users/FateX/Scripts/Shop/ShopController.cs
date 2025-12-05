@@ -8,32 +8,51 @@ namespace Users.FateX.Scripts.Shop
     public class ShopController : IInitializable
     {
         [Inject] private GameConfig gameConfig;
-        [Inject] private ShopView _shopView;
+        [InjectOptional] private ShopView _shopView;
         [Inject] private ICurrencyService _currencyService;
         [Inject] private PlayerStats _playerStats;
         [Inject] private ISaveLoadService _saveService;
 
         private ShopModel _shopModel;
-
         private int selectedProductIndex;
 
         public void Initialize()
         {
             _shopModel = new ShopModel(gameConfig.GameConfigData.StatsShopProducts, _saveService);
-
             var allProducts = _shopModel.GetAllProducts();
 
+            // Применяем эффекты всех купленных улучшений
+            for (int i = 0; i < allProducts.Length; i++)
+            {
+                var progress = _shopModel.ShopModelPositions[i].ShopProductProgress;
+                var product = _shopModel.ShopModelPositions[i].StatsShopProduct;
+
+                // Применяем эффекты для всех купленных уровней
+                for (int level = 0; level < progress.CurrentLevel; level++)
+                {
+                    ApplyUpgradeEffect(product, level);
+                }
+            }
+
+            // UI-часть только если ShopView есть
+            if (_shopView != null)
+            {
+                InitializeUI(allProducts);
+            }
+        }
+
+        private void InitializeUI(StatsShopProduct[] allProducts)
+        {
             for (int i = 0; i < allProducts.Length; i++)
             {
                 _shopView.AddProduct(allProducts[i], out ShopSlotEntry shopSlotEntry);
                 _shopModel.ShopModelPositions[i].ShopSlotEntry = shopSlotEntry;
 
                 var progress = _shopModel.ShopModelPositions[i].ShopProductProgress;
-                var product = _shopModel.ShopModelPositions[i].StatsShopProduct;
 
+                // Добавляем визуальные индикаторы
                 for (int level = 0; level < progress.CurrentLevel; level++)
                 {
-                    ApplyUpgradeEffect(product, level);
                     shopSlotEntry.AddLight();
                 }
 
@@ -46,6 +65,8 @@ namespace Users.FateX.Scripts.Shop
 
         private void OnProductClicked(int index)
         {
+            if (_shopView == null) return;
+
             selectedProductIndex = index;
             var product = _shopModel.ShopModelPositions[index];
             int currentLevel = product.ShopProductProgress.CurrentLevel;
@@ -82,6 +103,8 @@ namespace Users.FateX.Scripts.Shop
 
         public void HandleBuyButtonClicked()
         {
+            if (_shopView == null) return;
+
             var product = _shopModel.ShopModelPositions[selectedProductIndex];
             var progress = product.ShopProductProgress;
 

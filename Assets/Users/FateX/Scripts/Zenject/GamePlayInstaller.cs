@@ -6,6 +6,7 @@ using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Entity;
+using Users.FateX.Scripts.Shop;
 using Users.FateX.Scripts.SlotMachine;
 using Users.FateX.Scripts.Trial;
 using Users.FateX.Scripts.View;
@@ -77,6 +78,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<AchievementManager>().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathHandler>().AsSingle();
             Container.BindInterfacesAndSelfTo<DamageShow>().AsSingle();
+            Container.BindInterfacesAndSelfTo<ShopController>().AsSingle();
 
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
         }
