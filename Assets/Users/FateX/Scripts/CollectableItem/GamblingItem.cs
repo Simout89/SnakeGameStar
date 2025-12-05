@@ -11,10 +11,12 @@ namespace Users.FateX.Scripts.CollectableItem
         private bool alreadyCollect;
         private Sequence animSequence;
         private Vector3 initialLocalPosition;
+        private Vector3 initialLocalScale;
 
         private void Awake()
         {
             initialLocalPosition = body.localPosition;
+            initialLocalScale = body.localScale;
             StartAnimation();
         }
 
@@ -35,7 +37,7 @@ namespace Users.FateX.Scripts.CollectableItem
             alreadyCollect = false;
             body.localPosition = initialLocalPosition; // Сброс позиции
             body.localRotation = Quaternion.identity;   // Сброс поворота
-            body.localScale = Vector3.one;              // Сброс масштаба
+            body.localScale = initialLocalScale;              // Сброс масштаба
             StartAnimation();
         }
 

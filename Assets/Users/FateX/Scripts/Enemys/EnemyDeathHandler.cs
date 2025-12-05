@@ -50,6 +50,11 @@ namespace Users.FateX.Scripts.Enemys
                 _itemFactory.SpawnMagnet(transformPosition + (Vector3)Random.insideUnitCircle / 2);
             }
 
+            for (int i = 0; i < obj.CoinDropCount; i++)
+            {
+                _itemFactory.SpawnCoin(transformPosition + (Vector3)Random.insideUnitCircle / 2);
+            }
+
             if (obj.GetData().ItemLoot != null)
             {
                 foreach (var VARIABLE in obj.GetData().ItemLoot)

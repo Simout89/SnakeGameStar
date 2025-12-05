@@ -104,18 +104,18 @@ namespace Users.FateX.Scripts.Enemy
 
         private void InfinityMobSpawn(int currentTime)
         {
-            // Индекс врагов растёт — влияет на количество
-            _infinityEnemyIndex += Time.deltaTime * 0.2f;
+            if (_infinityEnemyIndex == 0)
+                _infinityEnemyIndex = _currentWaveIndex;
+
+            _infinityEnemyIndex += Time.deltaTime * 0.5f;
             if (_infinityEnemyIndex > 9999f)
                 _infinityEnemyIndex = 9999f;
 
-            // Множитель статов растёт непрерывно
             _infinityStatMultiplier += Time.deltaTime * 0.03f;
 
-            // Максимальный прогресс сегмента
-            float segmentProgress = 1f;
-
-            // Формула спавна — твоя же
+            // Используем 0.89f вместо 1f - это пик перед падением!
+            float segmentProgress = 0.89f;
+    
             float enemiesToAdd = GetEnemyCountFloat(segmentProgress, Mathf.FloorToInt(_infinityEnemyIndex));
             enemiesToAdd = ApplyEventModifiers(enemiesToAdd);
             _enemySpawnBuffer += enemiesToAdd;
@@ -128,10 +128,7 @@ namespace Users.FateX.Scripts.Enemy
 
                 for (int i = 0; i < spawnCount; i++)
                 {
-                    _enemyFactory.SpawnFinalEnemy(
-                        _infinityStatMultiplier
-                    );
-
+                    _enemyFactory.SpawnFinalEnemy(_infinityStatMultiplier);
                     _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % finalEnemies.Length;
                 }
 

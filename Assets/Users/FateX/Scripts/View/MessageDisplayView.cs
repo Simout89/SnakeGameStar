@@ -9,9 +9,17 @@ namespace Users.FateX.Scripts.View
     public class MessageDisplayView: MonoBehaviour
     {
         [SerializeField] private TMP_Text _text;
+        [SerializeField] private Color _defaultColor = Color.white;
+        
         private Vector3 originPos;
-        private Queue<string> messageQueue = new Queue<string>();
+        private Queue<MessageData> messageQueue = new Queue<MessageData>();
         private bool isShowing = false;
+        
+        private struct MessageData
+        {
+            public string Text;
+            public Color Color;
+        }
         
         private void Awake()
         {
@@ -20,7 +28,12 @@ namespace Users.FateX.Scripts.View
 
         public void ShowText(string text)
         {
-            messageQueue.Enqueue(text);
+            ShowText(text, _defaultColor);
+        }
+
+        public void ShowText(string text, Color color)
+        {
+            messageQueue.Enqueue(new MessageData { Text = text, Color = color });
             
             if (!isShowing)
             {
@@ -37,11 +50,12 @@ namespace Users.FateX.Scripts.View
             }
 
             isShowing = true;
-            string text = messageQueue.Dequeue();
+            MessageData data = messageQueue.Dequeue();
             
             _text.transform.localPosition = originPos;
             _text.gameObject.SetActive(true);
-            _text.text = text;
+            _text.text = data.Text;
+            _text.color = data.Color;
             _text.transform.localScale = Vector3.zero;
             
             var seq = DOTween.Sequence();

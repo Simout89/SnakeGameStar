@@ -35,6 +35,7 @@ namespace Users.FateX.Scripts
         private MaterialPropertyBlock materialPropertyBlock;
         private Vector3 originScale;
         private Collider2D _collider2D;
+        public int CoinDropCount;
 
         public DamageInfo lastDamageInfo { get; private set; }
         private float statsMultiplayer = 1;

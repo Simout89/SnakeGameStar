@@ -24,6 +24,10 @@ namespace Users.FateX.Scripts
             {
                 newDamageView.TMPText.color = Color.red;
             }
+            else
+            {
+                newDamageView.TMPText.color = Color.white;
+            }
                 
 
             var _baseScale = newDamageView.transform.localScale;

@@ -26,6 +26,8 @@ MonoBehaviour:
     UpgradeCard: {fileID: 11400000, guid: ad4b07baf8ee7d34c851ba7ba5acdf71, type: 2}
     HealCard: {fileID: 11400000, guid: d6688225a4bbb4445bd8d6ccb2dd9a10, type: 2}
     CoinCard: {fileID: 11400000, guid: 2fac202a6671cce49b3af79d3e36176d, type: 2}
+  <TrialTower>k__BackingField: {fileID: 4440455438817000682, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
+  <InfinityEnemy>k__BackingField: {fileID: 2172284294067600571, guid: e13a93561533de947808f2f141ea2b76, type: 3}
   <CardDatas>k__BackingField:
   - {fileID: 11400000, guid: b77f9f64f4127cd4d879f7033d957579, type: 2}
   - {fileID: 11400000, guid: ae14fa50c8a913847b3611edefc9ec62, type: 2}
@@ -52,7 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7003e6d7a84bb9648ad38325925e3e80, type: 2}
   - {fileID: 11400000, guid: 814394bd2b7a29c40873e9887c61f921, type: 2}
   - {fileID: 11400000, guid: 398cef130eef6994686d7d8416f65f3c, type: 2}
-  <InfinityEnemy>k__BackingField: {fileID: 2172284294067600571, guid: e13a93561533de947808f2f141ea2b76, type: 3}
   <DropCoinChance>k__BackingField: 5
   <XpValue>k__BackingField: 0.8
   <MagnetDropChance>k__BackingField: 0.5
+  <SpawnTrialTowerEverySeconds>k__BackingField: 90

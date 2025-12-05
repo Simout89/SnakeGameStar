@@ -12,11 +12,13 @@ namespace Users.FateX.Scripts.Trial
 {
     public class TrialTower : MonoBehaviour
     {
-        [Inject] private TrialDirector _trialDirector;
+        [Inject] private TrialWaveDirector _trialWaveDirector;
         
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private SpriteRenderer _captureField;
         [SerializeField] private SpriteRenderer _towerSprite;
+        public SpriteRenderer TowerSprite => _towerSprite;
+        [HideInInspector] public TrialTowerType TrialTowerType;
         [SerializeField] private Image _image;
         [SerializeField] private GameObject captureSlider;
 
@@ -131,7 +133,7 @@ namespace Users.FateX.Scripts.Trial
         private void OnTimerEnd()
         {
             captured = true;
-            _trialDirector.OnTowerCaptured(this);
+            _trialWaveDirector.OnTowerCaptured(this);
             _towerSprite.color = Color.darkGray;
         }
     }

@@ -7,7 +7,7 @@ using Users.FateX.Scripts.View;
 
 namespace Users.FateX.Scripts.Trial
 {
-    public class TrialDirector
+    public class TrialWaveDirector
     {
         [Inject] private EnemyFactory enemyFactory;
         [Inject] private EnemySpawnDirector _enemySpawnDirector;
@@ -18,11 +18,37 @@ namespace Users.FateX.Scripts.Trial
         {
             var enemies = new List<EnemyBase>();
             var handlers = new Dictionary<EnemyBase, Action<EnemyBase>>();
-            _messageDisplayView.ShowText("Лудоманы вызваны");
+
+            int spawnCount = 5;
             
-            for (int i = 0; i < 5; i++)
+            switch (tower.TrialTowerType)
             {
-                var enemy = enemyFactory.SpawnEliteEnemy(_enemySpawnDirector.GetEnemiesNWavesAhead(2)[0]);
+                case TrialTowerType.Gambling:
+                {
+                    _messageDisplayView.ShowText("Лудоманы вызваны", Color.purple);
+                    spawnCount = 5;
+                } break;
+                case TrialTowerType.GoldRush:
+                {
+                    _messageDisplayView.ShowText("Денежные мешки вызваны", Color.yellow);
+                    spawnCount = 15;
+                } break;
+            }
+            
+            for (int i = 0; i < spawnCount; i++)
+            {
+                var enemyPrefab = _enemySpawnDirector.GetEnemiesNWavesAhead(2)[0];
+
+                EnemyBase enemy = new EnemyBase();
+                
+                switch (tower.TrialTowerType)
+                {
+                    case TrialTowerType.Gambling:
+                        enemy = enemyFactory.SpawnGamblingEnemy(enemyPrefab); break;
+                    case TrialTowerType.GoldRush:
+                        enemy = enemyFactory.SpawnGoldRushEnemy(enemyPrefab); break;
+                }
+                
                 enemies.Add(enemy);
                 
                 Action<EnemyBase> handler = (_) => OnEnemyDied(enemy, enemies, handlers, tower);
@@ -51,7 +77,11 @@ namespace Users.FateX.Scripts.Trial
         private void OnPackCleared(TrialTower tower, Vector3 lastEnemyPosition)
         {
             Debug.Log($"Башня {tower.name}: все враги зачищены! Последний был в {lastEnemyPosition}");
-            _itemFactory.SpawnGamblingItem(lastEnemyPosition);
+            switch (tower.TrialTowerType)
+            {
+                case TrialTowerType.Gambling:
+                    _itemFactory.SpawnGamblingItem(lastEnemyPosition); break;
+            }
         }
     }
 }

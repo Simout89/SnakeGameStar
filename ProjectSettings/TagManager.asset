@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Body
   - Food
+  - TrialTowerPoint
   layers:
   - Default
   - TransparentFX
