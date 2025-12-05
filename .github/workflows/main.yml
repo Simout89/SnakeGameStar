@@ -73,6 +73,7 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
           buildName: ${{ env.PROJECT_NAME }}
           buildsPath: build
+          allowDirtyBuild: true
           # Mono (быстрее) или раскомментируйте для IL2CPP:
           # customImage: unityci/editor:ubuntu-6000.2.8f1-windows-il2cpp-3
 
@@ -141,6 +142,7 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
           buildName: ${{ env.PROJECT_NAME }}
           buildsPath: build
+          allowDirtyBuild: true
           customImage: unityci/editor:ubuntu-6000.2.8f1-webgl-3
 
       - name: Upload WebGL Build
@@ -208,6 +210,7 @@ jobs:
           unityVersion: ${{ env.UNITY_VERSION }}
           buildName: ${{ env.PROJECT_NAME }}
           buildsPath: build
+          allowDirtyBuild: true
           customImage: unityci/editor:ubuntu-6000.2.8f1-android-3
 
       - name: Upload Android Build
