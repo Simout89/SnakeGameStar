@@ -12,6 +12,7 @@ namespace Users.FateX.Scripts.Interactable
     {
         [SerializeField] private SpriteRenderer _spriteRenderer;
         [SerializeField] private BreakableObjectData _breakableObjectData;
+        [SerializeField] private Transform shadow;
         private MaterialPropertyBlock materialPropertyBlock;
         private bool alreadyDie = false;
 
@@ -56,6 +57,8 @@ namespace Users.FateX.Scripts.Interactable
                     newObject.transform.DOJump(endPos, jumpPower, 1, duration)
                         .SetEase(Ease.OutQuad);
                 }
+
+                shadow.DOScale(Vector3.zero, 0.5f);
                 
                 _spriteRenderer.DOKill();
                 DOTween.To(

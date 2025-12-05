@@ -22,6 +22,7 @@ public class SnakeController : MonoBehaviour
     [field: SerializeField] public SnakeData SnakeData { get; private set; }
     [SerializeField] private SnakeSegmentBase segmentPrefab;
     [SerializeField] private SnakeHealth snakeHealth;
+    public SnakeHealth SnakeHealth => snakeHealth;
     [SerializeField] private SnakeInteraction _snakeInteraction;
     [SerializeField] private Rigidbody2D _rigidbody;
     

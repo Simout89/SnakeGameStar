@@ -73,5 +73,20 @@ namespace Users.FateX.Scripts.Utils
             int seconds = obj % 60;
             return $"{minutes:D2}:{seconds:D2}";
         }
+        
+        public static Color HexToColor(string hex)
+        {
+            hex = hex.Replace("#", "");
+        
+            if (hex.Length == 6)
+                hex += "FF";
+        
+            byte r = byte.Parse(hex.Substring(0, 2), System.Globalization.NumberStyles.HexNumber);
+            byte g = byte.Parse(hex.Substring(2, 2), System.Globalization.NumberStyles.HexNumber);
+            byte b = byte.Parse(hex.Substring(4, 2), System.Globalization.NumberStyles.HexNumber);
+            byte a = byte.Parse(hex.Substring(6, 2), System.Globalization.NumberStyles.HexNumber);
+        
+            return new Color(r / 255f, g / 255f, b / 255f, a / 255f);
+        }
     }
 }

@@ -3,6 +3,7 @@ using Users.FateX.Scripts.Enemy;
 using Zenject;
 using System;
 using System.Collections.Generic;
+using Users.FateX.Scripts.View;
 
 namespace Users.FateX.Scripts.Trial
 {
@@ -11,11 +12,13 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private EnemyFactory enemyFactory;
         [Inject] private EnemySpawnDirector _enemySpawnDirector;
         [Inject] private ItemFactory _itemFactory;
+        [Inject] private MessageDisplayView _messageDisplayView;
         
         public void OnTowerCaptured(TrialTower tower)
         {
             var enemies = new List<EnemyBase>();
             var handlers = new Dictionary<EnemyBase, Action<EnemyBase>>();
+            _messageDisplayView.ShowText("Лудоманы вызваны");
             
             for (int i = 0; i < 5; i++)
             {

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Lean.Pool;
 using UnityEngine;
 using Users.FateX.Scripts.SlotMachine;
@@ -34,35 +35,35 @@ namespace Users.FateX.Scripts.CollectableItem
 
         private void HandleCollect(GameObject obj)
         {
-            if (obj.TryGetComponent(out IExperiencePoints experiencePoints))
-            {
-                _experienceSystem.AddExperiencePoints(experiencePoints);
-                
-                _itemManager.RemoveXpItem(obj.GetComponent<XpItem>());
-            }
-            
-            if (obj.TryGetComponent(out IMagnet magnet ))
-            {
-                UseMagnet(obj);
-            }
-
-            if (obj.TryGetComponent(out ICoin coin))
-            {
-                _roundCurrency.AddCoin(coin.CoinAmount);
-            }
-            
-            if (obj.TryGetComponent(out IHealableItem healable))
-            {
-                UseHeal(healable);
-            }
-            
-            if (obj.TryGetComponent(out IGamblingItem gamblingItem))
-            {
-                _slotMachineController.Gambling();
-            }
-            
             HomingMover.StartMove(obj.transform, _snakeInteraction.transform, () =>
             {
+                if (obj.TryGetComponent(out IExperiencePoints experiencePoints))
+                {
+                    _experienceSystem.AddExperiencePoints(experiencePoints);
+                
+                    _itemManager.RemoveXpItem(obj.GetComponent<XpItem>());
+                }
+            
+                if (obj.TryGetComponent(out IMagnet magnet ))
+                {
+                    UseMagnet(obj);
+                }
+
+                if (obj.TryGetComponent(out ICoin coin))
+                {
+                    _roundCurrency.AddCoin(coin.CoinAmount);
+                }
+            
+                if (obj.TryGetComponent(out IHealableItem healable))
+                {
+                    UseHeal(healable);
+                }
+            
+                if (obj.TryGetComponent(out IGamblingItem gamblingItem))
+                {
+                    _slotMachineController.Gambling();
+                }
+                
                 LeanPool.Despawn(obj);
             });
             
@@ -83,13 +84,21 @@ namespace Users.FateX.Scripts.CollectableItem
 
         public void UseMagnet(GameObject obj)
         {
-            foreach (var xpItem in _itemManager.GetXpItemsArray())
+            var xpItems = _itemManager.GetXpItemsArray().ToArray();
+    
+            foreach (var xpItem in xpItems)
             {
+                if (xpItem == null) continue;
+        
                 HomingMover.StartMove(xpItem.transform, _snakeInteraction.transform, () =>
                 {
-                    LeanPool.Despawn(obj);
+                    if (xpItem != null) 
+                    {
+                        _experienceSystem.AddExperiencePoints(xpItem);
+                        LeanPool.Despawn(xpItem.gameObject);
+                    }
                 });
-                    
+        
                 _itemManager.RemoveXpItem(xpItem.GetComponent<XpItem>());
             }
 

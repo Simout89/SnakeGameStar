@@ -28,6 +28,11 @@ namespace Users.FateX.Scripts
                 
                 enemy.TakeDamage(new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum,
                     UpgradeLevelsData.SegmentName, Body.transform.position));
+
+                if (Random.Range(0, 101) == 0)
+                {
+                    SnakeController.SnakeHealth.Heal(1f);
+                }
             }
         }
     }

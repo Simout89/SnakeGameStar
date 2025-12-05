@@ -26,6 +26,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<HealthView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SlotMachineView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<MessageDisplayView>().FromComponentsInHierarchy().AsSingle();
 
             Container.BindInterfacesAndSelfTo<EnemyManager>().FromNewComponentOnNewGameObject().AsSingle();
 

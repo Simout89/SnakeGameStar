@@ -41,44 +41,63 @@ public class HomingMover
     private static async UniTask GlobalTickLoop()
     {
         var toRemove = new List<Transform>();
+        var callbacksToInvoke = new List<Action>();
 
         while (_active.Count > 0)
         {
             await UniTask.Yield(PlayerLoopTiming.FixedUpdate);
             toRemove.Clear();
+            callbacksToInvoke.Clear();
 
-            foreach (var kvp in _active)
+            // Создаем копию ключей для безопасной итерации
+            var keys = new List<Transform>(_active.Keys);
+
+            foreach (var key in keys)
             {
-                if (kvp.Key == null || kvp.Value.Target == null)
+                // Проверяем, что элемент еще существует (мог быть удален в callback)
+                if (!_active.TryGetValue(key, out var data))
+                    continue;
+
+                if (key == null || data.Target == null)
                 {
-                    toRemove.Add(kvp.Key);
+                    toRemove.Add(key);
                     continue;
                 }
 
-                kvp.Key.position = Vector3.MoveTowards(
-                    kvp.Key.position, 
-                    kvp.Value.Target.position, 
-                    kvp.Value.Speed * Time.fixedDeltaTime
+                key.position = Vector3.MoveTowards(
+                    key.position, 
+                    data.Target.position, 
+                    data.Speed * Time.fixedDeltaTime
                 );
 
-                if (Vector3.Distance(kvp.Key.position, kvp.Value.Target.position) < 0.2f)
+                if (Vector3.Distance(key.position, data.Target.position) < 0.2f)
                 {
-                    toRemove.Add(kvp.Key);
+                    toRemove.Add(key);
                     
-                    try
+                    if (data.OnReached != null)
                     {
-                        kvp.Value.OnReached?.Invoke();
-                    }
-                    catch (Exception e)
-                    {
-                        Debug.LogError($"Ошибка в OnReached callback: {e}");
+                        callbacksToInvoke.Add(data.OnReached);
                     }
                 }
             }
 
+            // Сначала удаляем элементы
             foreach (var key in toRemove)
             {
                 _active.Remove(key);
+            }
+
+            // Затем вызываем callback'и (после модификации словаря)
+            foreach (var callback in callbacksToInvoke)
+            {
+                try
+                {
+                    callback.Invoke();
+                }
+                catch (Exception e)
+                {
+                    Debug.LogError($"Ошибка в OnReached callback: {e}");
+                }
             }
         }
 

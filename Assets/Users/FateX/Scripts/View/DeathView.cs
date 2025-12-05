@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
+using Users.FateX.Scripts.Utils;
 using Users.FateX.Scripts.View.Entry;
 using Zenject;
 using Скриптерсы.Services;
@@ -39,9 +40,16 @@ namespace Users.FateX.Scripts.View
             
             body.SetActive(true);
 
-            foreach (var entry in _statisticsService.GetStatistics())
+            var statistics = _statisticsService.GetStatistics();
+                
+            for (int i = 0; i < statistics.Length; i++)
             {
-                Instantiate(_statisticsViewEntry, container).Init(entry);
+                var entryText = Instantiate(_statisticsViewEntry, container);
+                entryText.Init(statistics[i]);
+                if (i % 2 == 0)
+                {
+                    entryText.BackGround.color = MyUtils.HexToColor("#272727");
+                }
             }
         }
 

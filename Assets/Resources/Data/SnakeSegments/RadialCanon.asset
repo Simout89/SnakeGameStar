@@ -12,8 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f335410b16a8420db435d9dab51ee6ed, type: 3}
   m_Name: RadialCanon
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
-  <SegmentName>k__BackingField: "\u041A\u0440\u0443\u0433\u043E\u0432\u0430\u044F
-    \u043F\u0443\u0448\u043A\u0430"
+  <SegmentName>k__BackingField: "\u0422\u0430\u043D\u043A"
   <SegmentIcon>k__BackingField: {fileID: 21300000, guid: b6a2c3edd2a31dd489485d1f5c00af56, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: cffe55d4b7d51a24bae43eadcd09574a, type: 3}
