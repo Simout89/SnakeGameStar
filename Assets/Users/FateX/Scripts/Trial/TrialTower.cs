@@ -13,6 +13,7 @@ namespace Users.FateX.Scripts.Trial
     public class TrialTower : MonoBehaviour
     {
         [Inject] private TrialWaveDirector _trialWaveDirector;
+        [Inject] private GameConfig _gameConfig;
         
         [SerializeField] private TriggerDetector _triggerDetector;
         [SerializeField] private SpriteRenderer _captureField;
@@ -135,6 +136,7 @@ namespace Users.FateX.Scripts.Trial
             captured = true;
             _trialWaveDirector.OnTowerCaptured(this);
             _towerSprite.color = Color.darkGray;
+            _towerSprite.material = _gameConfig.GameConfigData.EnemyMaterials.DefaultMaterial;
         }
     }
 }
