@@ -24,8 +24,7 @@ namespace Users.FateX.Scripts.Trial
         {
             var newTower = LeanPool.Spawn(_gameConfig.GameConfigData.TrialTower);
             _diContainer.InjectGameObject(newTower.gameObject);
-            newTower.TowerSprite.material.EnableKeyword("OUTBASE_ON");
-            newTower.TowerSprite.material.EnableKeyword("OUTTEX_ON");
+            newTower.TowerSprite.material = _gameConfig.GameConfigData.EnemyMaterials.RainbowMaterial;
             newTower.TrialTowerType = TrialTowerType.Gambling;
             newTower.transform.position = positions;
         }
@@ -34,8 +33,7 @@ namespace Users.FateX.Scripts.Trial
         {
             var newTower = LeanPool.Spawn(_gameConfig.GameConfigData.TrialTower);
             _diContainer.InjectGameObject(newTower.gameObject);
-            newTower.TowerSprite.material.EnableKeyword("OUTBASE_ON");
-            newTower.TowerSprite.material.SetColor("_OutlineColor", Color.yellow);
+            newTower.TowerSprite.material = _gameConfig.GameConfigData.EnemyMaterials.GoldMaterial;
             newTower.TrialTowerType = TrialTowerType.GoldRush;
             newTower.transform.position = positions;
         }

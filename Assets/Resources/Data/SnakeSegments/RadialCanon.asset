@@ -27,27 +27,62 @@ MonoBehaviour:
   - <AttackRange>k__BackingField: 1
     <DelayBetweenShots>k__BackingField: 0.7
     <Damage>k__BackingField: 0.6
-    <ProjectileCount>k__BackingField: 4
+    <ProjectileCount>k__BackingField: 3
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 1.1
     <DelayBetweenShots>k__BackingField: 0.6
     <Damage>k__BackingField: 0.6
-    <ProjectileCount>k__BackingField: 6
+    <ProjectileCount>k__BackingField: 4
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 1.1
     <DelayBetweenShots>k__BackingField: 0.5
-    <Damage>k__BackingField: 0.6
+    <Damage>k__BackingField: 0.7
+    <ProjectileCount>k__BackingField: 5
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 0.7
+    <ProjectileCount>k__BackingField: 6
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 0.9
+    <ProjectileCount>k__BackingField: 7
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 0.9
     <ProjectileCount>k__BackingField: 8
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 1.2
     <DelayBetweenShots>k__BackingField: 0.4
-    <Damage>k__BackingField: 0.6
+    <Damage>k__BackingField: 1.2
+    <ProjectileCount>k__BackingField: 9
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 1.2
+    <ProjectileCount>k__BackingField: 10
+    <DamageArea>k__BackingField: 0
+    <BouncesCount>k__BackingField: 0
+    <Duration>k__BackingField: 0
+  - <AttackRange>k__BackingField: 1.2
+    <DelayBetweenShots>k__BackingField: 0.4
+    <Damage>k__BackingField: 1.3
     <ProjectileCount>k__BackingField: 10
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0

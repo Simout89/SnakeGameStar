@@ -18,36 +18,36 @@ MonoBehaviour:
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
   <UpgradeStats>k__BackingField:
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 0.7
-    <Damage>k__BackingField: 0.5
+    <DelayBetweenShots>k__BackingField: 1.5
+    <Damage>k__BackingField: 1
     <ProjectileCount>k__BackingField: 1
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 0.7
-    <Damage>k__BackingField: 0.6
+    <DelayBetweenShots>k__BackingField: 1.4
+    <Damage>k__BackingField: 1.3
     <ProjectileCount>k__BackingField: 2
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 0.6
-    <Damage>k__BackingField: 0.6
+    <DelayBetweenShots>k__BackingField: 1.3
+    <Damage>k__BackingField: 1.6
     <ProjectileCount>k__BackingField: 3
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 0.5
-    <Damage>k__BackingField: 0.6
+    <DelayBetweenShots>k__BackingField: 1.2
+    <Damage>k__BackingField: 1.8
     <ProjectileCount>k__BackingField: 4
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 10
-    <DelayBetweenShots>k__BackingField: 0.4
-    <Damage>k__BackingField: 0.6
+    <DelayBetweenShots>k__BackingField: 1.1
+    <Damage>k__BackingField: 2.5
     <ProjectileCount>k__BackingField: 5
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 0

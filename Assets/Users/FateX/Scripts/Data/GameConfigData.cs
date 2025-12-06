@@ -41,7 +41,8 @@ namespace Users.FateX.Scripts.Data
     [Serializable]
     public class EnemyMaterials
     {
-        [field: SerializeField] public Material EliteEnemy { get; private set; }
+        [field: SerializeField] public Material GoldMaterial { get; private set; }
+        [field: SerializeField] public Material RainbowMaterial { get; private set; }
         [field: SerializeField] public Material DefaultMaterial { get; private set; }
     }
 }

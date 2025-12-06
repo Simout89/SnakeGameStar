@@ -52,10 +52,7 @@ namespace Users.FateX.Scripts
             
             enemy.MultiplyStats(3);
             
-            enemy.SpriteRenderer.material.EnableKeyword("OUTBASE_ON");
-            enemy.SpriteRenderer.material.EnableKeyword("OUTTEX_ON");
-            enemy.SpriteRenderer.material.SetColor("_OutlineColor", Color.white);
-
+            enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.RainbowMaterial;
             
             _enemyManager.AddEnemy(enemy);
 
@@ -71,10 +68,8 @@ namespace Users.FateX.Scripts
             enemy.MultiplyStats(0.1f);
 
             enemy.CoinDropCount = Random.Range(1, 2);
-            
-            enemy.SpriteRenderer.material.EnableKeyword("OUTBASE_ON");
-            enemy.SpriteRenderer.material.DisableKeyword("OUTTEX_ON");
-            enemy.SpriteRenderer.material.SetColor("_OutlineColor", Color.yellow);
+
+            enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.GoldMaterial;
             
             _enemyManager.AddEnemy(enemy);
 

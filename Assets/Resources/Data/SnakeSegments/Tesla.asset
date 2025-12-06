@@ -32,21 +32,21 @@ MonoBehaviour:
     <BouncesCount>k__BackingField: 4
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 12
-    <DelayBetweenShots>k__BackingField: 2.8
+    <DelayBetweenShots>k__BackingField: 2.6
     <Damage>k__BackingField: 1.5
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 4
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 12
-    <DelayBetweenShots>k__BackingField: 2.8
+    <DelayBetweenShots>k__BackingField: 2.3
     <Damage>k__BackingField: 1.5
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
     <BouncesCount>k__BackingField: 5
     <Duration>k__BackingField: 0
   - <AttackRange>k__BackingField: 14
-    <DelayBetweenShots>k__BackingField: 2.6
+    <DelayBetweenShots>k__BackingField: 2
     <Damage>k__BackingField: 1.8
     <ProjectileCount>k__BackingField: 0
     <DamageArea>k__BackingField: 0
