@@ -7,6 +7,7 @@ namespace Users.FateX.Scripts.Achievements
 {
     public class AchievementManager: IInitializable, IDisposable
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         public void Initialize()
         {
             GameEvents.OnDealDamage += HandleDealDamage;
@@ -28,6 +29,7 @@ namespace Users.FateX.Scripts.Achievements
         private void HandleDealDamage(DamageInfo obj)
         {
             Debug.Log($"Нанесен урон {obj.DamageDealerName} кол-во: {obj.Amount}");
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.DamageSound);
         }
     }
 }

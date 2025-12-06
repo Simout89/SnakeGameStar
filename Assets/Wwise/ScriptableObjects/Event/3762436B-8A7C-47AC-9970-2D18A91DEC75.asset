@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04992f23556b1864aadc49fb8ec12ea0, type: 3}
+  m_Name: 3762436B-8A7C-47AC-9970-2D18A91DEC75
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
+  objectName: Play_Damage
+  id: 784302017
+  guid: 3762436B-8A7C-47AC-9970-2D18A91DEC75
+  IsInUserDefinedSoundBank: 1

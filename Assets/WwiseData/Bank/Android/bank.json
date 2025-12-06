@@ -1,0 +1,47 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Android",
+  "BasePlatform": "Android",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "SoundBanks": [
+   {
+    "Id": "1744429087",
+    "Type": "User",
+    "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
+    "Language": "SFX",
+    "Hash": "{364B6573-7C4E-12DF-81E9-60682273B22E}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
+    "ShortName": "bank",
+    "Path": "bank.bnk",
+    "Media": [
+     {
+      "Id": "72320751",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Retro Swooosh 07.wav",
+      "CachePath": "A7/{A7A1FC1C-348C-AE41-CAAA-6E81806DD42C}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "784302017",
+      "Name": "Play_Damage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Damage",
+      "GUID": "{3762436B-8A7C-47AC-9970-2D18A91DEC75}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.1093333",
+      "DurationMax": "1.1093333",
+      "MediaRefs": [
+       {
+        "Id": "72320751"
+       }
+      ]
+     }
+    ]
+   }
+  ],
+  "FileHash": "{E6584582-9781-502E-92F4-975CF181E893}"
+ }
+}

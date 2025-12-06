@@ -25,19 +25,20 @@
 				</Property>
 				<Property Name="ExternalSourcesOutputPath" Type="string">
 					<ValueList>
-						<Value Platform="Android">GeneratedSoundBanks\Android\</Value>
-						<Value Platform="Web">GeneratedSoundBanks\Web\</Value>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
-						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+						<Value Platform="Android">GeneratedSoundBanks\Android</Value>
+						<Value Platform="Web">GeneratedSoundBanks\Web</Value>
+						<Value Platform="Windows">GeneratedSoundBanks\Windows</Value>
+						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
 					</ValueList>
 				</Property>
-				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="GenerateSoundBankXML" Type="bool" Value="False" /><Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" /><Property Name="SoundBankGenerateMaxAttenuationInfo" Type="bool" Value="True" /><Property Name="GenerateSoundBankJSON" Type="bool" Value="True" /><Property Name="SoundBankGeneratePrintGUID" Type="bool" Value="True" /><Property Name="SoundBankGeneratePrintPath" Type="bool" Value="True" /><Property Name="AutoSoundBankEnabled" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="../../SnakeGameStar/SnakeGameStar_WwiseProject/GeneratedSoundBanks/" />
+				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" />
+				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\StreamingAssets\Banks" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Android">GeneratedSoundBanks\Android\</Value>
-						<Value Platform="Web">GeneratedSoundBanks\Web\</Value>
-						<Value Platform="Windows">GeneratedSoundBanks\Windows\</Value>
-						<Value Platform="Mac">GeneratedSoundBanks\Mac\</Value>
+						<Value Platform="Android">..\Assets\StreamingAssets\Banks\Android\</Value>
+						<Value Platform="Web">..\Assets\StreamingAssets\Banks\Web\</Value>
+						<Value Platform="Windows">..\Assets\StreamingAssets\Banks\Windows\</Value>
+						<Value Platform="Mac">..\Assets\StreamingAssets\Banks\Mac\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -74,6 +75,10 @@
 				</Property>
 				<Property Name="WwiseVersionWhenCreated" Type="string" Value="Branch=wwise_v2025.1.3|Build=9037|VersionName=v2025.1.3|Config=Release" />
 			</PropertyList>
+			<MiscSettings>
+				<MiscSettingEntry Name="Cache"><![CDATA[.cache]]></MiscSettingEntry>
+				<MiscSettingEntry Name="Originals"><![CDATA[Originals]]></MiscSettingEntry>
+			</MiscSettings>
 			<SharedValues>
 				<SharedPropertyList ClassName="AudioFileSource" PluginType="0" CompanyID="1" PluginID="0">
 					<PropertyList>
@@ -1010,7 +1015,7 @@
 						</Property>
 						<Property Name="SoundBankPaths" Type="string">
 							<ValueList>
-								<Value></Value>
+								<Value>..\Assets\WwiseData\Bank\</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -6938,7 +6943,7 @@
 						</Property>
 						<Property Name="SoundBankPaths" Type="string">
 							<ValueList>
-								<Value></Value>
+								<Value>..\Assets\WwiseData\Bank\</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">

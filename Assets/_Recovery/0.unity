@@ -378,11 +378,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 087d5a61d22e490459168c5ea8cb64f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Snake
-  rotationSpeed: 200
-  speed: 5
-  startSize: 3
-  segmentDistance: 0.7
+  <SnakeData>k__BackingField: {fileID: 0}
   segmentPrefab: {fileID: 8059494009225979289, guid: 46d0cb61cdd3f064fbd4b78c9fa319f2, type: 3}
+  snakeHealth: {fileID: 0}
+  _snakeInteraction: {fileID: 0}
+  _rigidbody: {fileID: 0}
 --- !u!4 &212117664 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5101796803513621631, guid: 46d0cb61cdd3f064fbd4b78c9fa319f2, type: 3}
@@ -463,7 +463,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ce93e8b0aea46c19ea481915177e877, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SnakeInteraction
-  snake: {fileID: 212117662}
 --- !u!1001 &417888120
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1255,8 +1254,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41c3db2b608484b43b601feab887d0bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyManager
-  _snake: {fileID: 212117662}
-  enemySpeed: 2
 --- !u!1 &2109690511
 GameObject:
   m_ObjectHideFlags: 0
