@@ -12,63 +12,109 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d4f776e6a2144bdbc4fba01ed9cc41b, type: 3}
   m_Name: TestData
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.WaveData.WaveData
-  <TotalTime>k__BackingField: 450
+  <TotalTime>k__BackingField: 1200
   WaveChangeSpawns:
   - <TimeMarker>k__BackingField: 0
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: da532416fe9f3ab4b9f56341054b7298, type: 3}
-  - <TimeMarker>k__BackingField: 0.1
+  - <TimeMarker>k__BackingField: 0.05
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: fd3a91aabc7ff494abb0e123a9038148, type: 3}
     - {fileID: 2172284294067600571, guid: da532416fe9f3ab4b9f56341054b7298, type: 3}
-  - <TimeMarker>k__BackingField: 0.2
+  - <TimeMarker>k__BackingField: 0.1
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
-  - <TimeMarker>k__BackingField: 0.3
+  - <TimeMarker>k__BackingField: 0.15
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: c05ac6dcadebd624aaa628928150a363, type: 3}
-  - <TimeMarker>k__BackingField: 0.4
+    - {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
+  - <TimeMarker>k__BackingField: 0.2
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: 621ed13701a471d4da938c6117eacdcb, type: 3}
-  - <TimeMarker>k__BackingField: 0.5
+  - <TimeMarker>k__BackingField: 0.25
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 621ed13701a471d4da938c6117eacdcb, type: 3}
+    - {fileID: 2172284294067600571, guid: fd3a91aabc7ff494abb0e123a9038148, type: 3}
+  - <TimeMarker>k__BackingField: 0.3
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: 911ceb7ce4250d9468a8b48a3a2ea1b9, type: 3}
-  - <TimeMarker>k__BackingField: 0.6
+    - {fileID: 2172284294067600571, guid: aecfc52e3be778242a3026d152c123f9, type: 3}
+  - <TimeMarker>k__BackingField: 0.35
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 911ceb7ce4250d9468a8b48a3a2ea1b9, type: 3}
+  - <TimeMarker>k__BackingField: 0.4
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
+    - {fileID: 2172284294067600571, guid: 1da02ea453bf8684fb789daa3f4747e9, type: 3}
+  - <TimeMarker>k__BackingField: 0.45
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: 4fa521aa059c54144a1a90cc52e1f0fe, type: 3}
-  - <TimeMarker>k__BackingField: 0.7
+  - <TimeMarker>k__BackingField: 0.5
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: 6f5360e9bfc7198498c2879d45470f1a, type: 3}
-  - <TimeMarker>k__BackingField: 0.8
-    <Enemy>k__BackingField:
-    - {fileID: 2172284294067600571, guid: dabc8f378d7a956478a20a8cdb415713, type: 3}
-  - <TimeMarker>k__BackingField: 0.9
+    - {fileID: 2172284294067600571, guid: 4fa521aa059c54144a1a90cc52e1f0fe, type: 3}
+  - <TimeMarker>k__BackingField: 0.55
     <Enemy>k__BackingField:
     - {fileID: 2172284294067600571, guid: a7a9a3de245af2b4b8fe149d70fe716d, type: 3}
+    - {fileID: 2172284294067600571, guid: 94dfd8989bfdc234d99fe22bdb392be3, type: 3}
+  - <TimeMarker>k__BackingField: 0.6
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: dabc8f378d7a956478a20a8cdb415713, type: 3}
+  - <TimeMarker>k__BackingField: 0.65
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: dabc8f378d7a956478a20a8cdb415713, type: 3}
+    - {fileID: 2172284294067600571, guid: 6f5360e9bfc7198498c2879d45470f1a, type: 3}
+  - <TimeMarker>k__BackingField: 0.7
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: a7a9a3de245af2b4b8fe149d70fe716d, type: 3}
+    - {fileID: 2172284294067600571, guid: 6f5360e9bfc7198498c2879d45470f1a, type: 3}
+  - <TimeMarker>k__BackingField: 0.75
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 3ea1e83ae2c66984090ca1b2cbf0936c, type: 3}
+  - <TimeMarker>k__BackingField: 0.8
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 5097e4c801abd564897aacbaec582477, type: 3}
+    - {fileID: 2172284294067600571, guid: 3ea1e83ae2c66984090ca1b2cbf0936c, type: 3}
+  - <TimeMarker>k__BackingField: 0.85
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+  - <TimeMarker>k__BackingField: 0.9
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 3ea1e83ae2c66984090ca1b2cbf0936c, type: 3}
+    - {fileID: 2172284294067600571, guid: 5097e4c801abd564897aacbaec582477, type: 3}
+    - {fileID: 2172284294067600571, guid: 42a99f0a7d67a5f4c9187eb66b39d3af, type: 3}
+  - <TimeMarker>k__BackingField: 0.95
+    <Enemy>k__BackingField:
+    - {fileID: 2172284294067600571, guid: b8e0a2804513c854e99464f9d2e307d5, type: 3}
   WaveEventSpawns:
   - <TimeMarker>k__BackingField: 0.05
     <Enemys>k__BackingField:
     - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
     <OverrideSpawnRate>k__BackingField: -1
     <MultiplaySpawnRate>k__BackingField: -1
-  - <TimeMarker>k__BackingField: 0.15
-    <Enemys>k__BackingField:
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    <OverrideSpawnRate>k__BackingField: -1
-    <MultiplaySpawnRate>k__BackingField: -1
   - <TimeMarker>k__BackingField: 0.25
     <Enemys>k__BackingField:
     - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
     <OverrideSpawnRate>k__BackingField: -1
     <MultiplaySpawnRate>k__BackingField: -1
-  - <TimeMarker>k__BackingField: 0.35
+  - <TimeMarker>k__BackingField: 0.45
     <Enemys>k__BackingField:
     - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
-    - {fileID: 2172284294067600571, guid: 2ab14a309e97f4349865d15d634a0fff, type: 3}
+    - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
+    - {fileID: 2172284294067600571, guid: 916ebd6b810603a489f92451da90ab44, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1
+  - <TimeMarker>k__BackingField: 0.65
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: 3ea1e83ae2c66984090ca1b2cbf0936c, type: 3}
+    - {fileID: 2172284294067600571, guid: 42a99f0a7d67a5f4c9187eb66b39d3af, type: 3}
+    - {fileID: 2172284294067600571, guid: 5097e4c801abd564897aacbaec582477, type: 3}
+    <OverrideSpawnRate>k__BackingField: -1
+    <MultiplaySpawnRate>k__BackingField: -1
+  - <TimeMarker>k__BackingField: 0.85
+    <Enemys>k__BackingField:
+    - {fileID: 2172284294067600571, guid: b8e0a2804513c854e99464f9d2e307d5, type: 3}
     <OverrideSpawnRate>k__BackingField: -1
     <MultiplaySpawnRate>k__BackingField: -1
