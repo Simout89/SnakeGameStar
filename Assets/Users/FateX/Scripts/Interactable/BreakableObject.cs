@@ -1,4 +1,5 @@
 ﻿using System;
+using Cysharp.Threading.Tasks;
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine;
@@ -25,6 +26,31 @@ namespace Users.FateX.Scripts.Interactable
         }
 
         public float CurrentHealth { get; private set; }
+        
+        public async void Respawn(float delay)
+        {
+            await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: this.GetCancellationTokenOnDestroy());
+    
+            // Сбрасываем флаг смерти
+            alreadyDie = false;
+    
+            // Восстанавливаем здоровье
+            CurrentHealth = _breakableObjectData.Health;
+    
+            // Останавливаем все анимации
+            DOTween.Kill(_spriteRenderer);
+            shadow.DOKill();
+    
+            // Сбрасываем shader свойства
+            SetFloat("_FadeAmount", 0f);
+            SetFloat("_HitEffectBlend", 0f);
+    
+            // Восстанавливаем масштаб тени
+            shadow.localScale = Vector3.one;
+    
+            // Активируем объект
+            gameObject.SetActive(true);
+        }
 
         public void TakeDamage(DamageInfo damageInfo)
         {
@@ -71,6 +97,7 @@ namespace Users.FateX.Scripts.Interactable
 
                     
                     gameObject.SetActive(false);
+                    Respawn(180f);
                 });
             }
         }

@@ -34,18 +34,18 @@ namespace Users.FateX.Scripts.View
         public void OnPauseClick()
         {
             pauseBody.SetActive(true);
-            _gameStateManager.ChangeState(GameStates.Pause);
+            _gameStateManager.PushState(GameStates.Pause);
         }
 
         public void OnResumeClick()
         {
             pauseBody.SetActive(false);
-            _gameStateManager.ChangeState(_gameStateManager.PreviousState);
+            _gameStateManager.PopState();
         }
 
         public void OnMainMenuClick()
         {
-            _gameStateManager.ChangeState(GameStates.Play);
+            _gameStateManager.PopState();
             SceneManager.LoadScene((int)Scenes.MainMenu);
         }
     }

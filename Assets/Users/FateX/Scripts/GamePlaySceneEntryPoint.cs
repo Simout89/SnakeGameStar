@@ -63,7 +63,7 @@ namespace Users.FateX.Scripts
 
             _cardMenuController.SpawnRandomCards();
 
-            _gameStateManager.ChangeState(GameStates.CardMenu);
+            _gameStateManager.PushState(GameStates.CardMenu);
         }
     }
 }

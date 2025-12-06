@@ -41,7 +41,7 @@ namespace Users.FateX.Scripts
         {
             _deathView.Show();
             
-            _gameStateManager.ChangeState(GameStates.Death);
+            _gameStateManager.PushState(GameStates.Death);
             
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }

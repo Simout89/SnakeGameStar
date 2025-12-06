@@ -20,4 +20,5 @@ MonoBehaviour:
   <OverrideMaterial>k__BackingField: {fileID: 0}
   <OverrideLootXP>k__BackingField:
   - {fileID: 4043232107286505601, guid: 426fb2e11017bd44790719fedfda5ad0, type: 3}
+  - {fileID: 4043232107286505601, guid: 7f24dd7289eb79d45849e0514b058f42, type: 3}
   <ItemLoot>k__BackingField: []

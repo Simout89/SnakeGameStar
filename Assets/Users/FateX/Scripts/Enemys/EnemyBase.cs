@@ -76,7 +76,7 @@ namespace Users.FateX.Scripts
         public void MultiplyStats(float value)
         {
             CurrentHealth *= value;
-            statsMultiplayer = value;
+            // statsMultiplayer = value;
         }
 
         public void Move(Vector2 direction)

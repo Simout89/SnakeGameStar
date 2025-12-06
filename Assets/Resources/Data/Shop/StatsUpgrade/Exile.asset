@@ -37,3 +37,30 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
+  - <Cost>k__BackingField: 75
+    <GoldDropChance>k__BackingField: 0
+    <Exile>k__BackingField: 3
+    <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
+  - <Cost>k__BackingField: 100
+    <GoldDropChance>k__BackingField: 0
+    <Exile>k__BackingField: 4
+    <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0
+  - <Cost>k__BackingField: 125
+    <GoldDropChance>k__BackingField: 0
+    <Exile>k__BackingField: 50
+    <Reroll>k__BackingField: 0
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <ProjectileCount>k__BackingField: 0
+    <PickUpRange>k__BackingField: 0
+    <MoveSpeed>k__BackingField: 0

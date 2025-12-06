@@ -93,13 +93,13 @@ namespace Users.FateX.Scripts.SlotMachine
         private void GetReward(SlotMachinePrizeData prizeData)
         {
             _slotMachineView.StartGambling(prizeData);
-            _gameStateManager.ChangeState(GameStates.Gambling);
+            _gameStateManager.PushState(GameStates.Gambling);
             _prizeData = prizeData;
         }
 
         private void HandleCompleted()
         {
-            _gameStateManager.ChangeState(GameStates.Play);
+            _gameStateManager.PopState();
             
             _gameContext.SnakeHealth.SetInvincible(1);
 

@@ -33,7 +33,7 @@ namespace Users.FateX.Scripts
 
         private void HandleCardSelected()
         {
-            _gameStateManager.ChangeState(GameStates.Play);
+            _gameStateManager.PopState();
 
             TryOpenMenu();
         }
@@ -49,7 +49,7 @@ namespace Users.FateX.Scripts
             _pendingLevelUps--;
 
             _cardMenuController.SpawnRandomCards();
-            _gameStateManager.ChangeState(GameStates.CardMenu);
+            _gameStateManager.PushState(GameStates.CardMenu);
         }
     }
 

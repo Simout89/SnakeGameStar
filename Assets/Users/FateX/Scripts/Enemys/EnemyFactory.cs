@@ -30,6 +30,8 @@ namespace Users.FateX.Scripts
                 enemy.SpriteRenderer.material = enemyPrefab.EnemyData.OverrideMaterial;
             }
             
+            enemy.CoinDropCount = 0;
+            
             _enemyManager.AddEnemy(enemy);
         }
         
@@ -41,6 +43,8 @@ namespace Users.FateX.Scripts
             
             enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
             
+            enemy.CoinDropCount = 0;
+            
             _enemyManager.AddEnemy(enemy);
         }
 
@@ -51,6 +55,8 @@ namespace Users.FateX.Scripts
             enemy.transform.position = _enemySpawnArea.GetRandomPositionOnBorder();
             
             enemy.MultiplyStats(3);
+            
+            enemy.CoinDropCount = 0;
             
             enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.RainbowMaterial;
             
@@ -67,7 +73,7 @@ namespace Users.FateX.Scripts
             
             enemy.MultiplyStats(0.1f);
 
-            enemy.CoinDropCount = Random.Range(1, 2);
+            enemy.CoinDropCount = Random.Range(2, 3);
 
             enemy.SpriteRenderer.material = _gameConfig.GameConfigData.EnemyMaterials.GoldMaterial;
             
