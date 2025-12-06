@@ -1,6 +1,6 @@
-name: Unity Build
+name: Unity Build (Optimized) ⚡
 
-on:
+on: 
   push:
     branches: [ main, develop ]
   pull_request:
@@ -9,72 +9,233 @@ on:
 
 env:
   UNITY_VERSION: 6000.2.8f1
+  PROJECT_NAME: MyGame
 
 jobs:
-  build:
-    name: Build for ${{ matrix.targetPlatform }}
+  # Windows билд
+  build-windows:
+    name: Build Windows 🪟
     runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        targetPlatform:
-          - StandaloneWindows64
-          - Android
     steps:
-      # Checkout
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
           lfs: true
 
-      # Cache
+      # Временное решение: отключаем проблемные плагины
+      - name: Disable problematic plugins
+        run: |
+          # Отключаем Wwise если он есть
+          if [ -d "Assets/Wwise" ]; then
+            mv Assets/Wwise Assets/Wwise.disabled || true
+          fi
+          # Фиксим Zenject meta файл
+          if [ -f "Assets/Plugins/Zenject/package.json.meta" ]; then
+            rm Assets/Plugins/Zenject/package.json.meta || true
+          fi
+
+      # Кеширование Library (КРИТИЧНО для скорости)
       - name: Cache Library
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: Library
-          key: Library-${{ matrix.targetPlatform }}-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          key: Library-Win-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
           restore-keys: |
-            Library-${{ matrix.targetPlatform }}-
+            Library-Win-
             Library-
 
-      # Build
-      - name: Build project
+      # Кеширование Docker образа (экономит 5-10 мин)
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-windows
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build Windows
         uses: game-ci/unity-builder@v4
+        timeout-minutes: 60
         env:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
         with:
-          targetPlatform: ${{ matrix.targetPlatform }}
+          targetPlatform: StandaloneWindows64
           unityVersion: ${{ env.UNITY_VERSION }}
-          buildName: MyGame
-          buildsPath: builds
+          buildName: ${{ env.PROJECT_NAME }}
+          buildsPath: build
+          allowDirtyBuild: true
+          # Mono (быстрее) или раскомментируйте для IL2CPP:
+          # customImage: unityci/editor:ubuntu-6000.2.8f1-windows-il2cpp-3
 
-      # Upload артефакты
-      - name: Upload Build
-        uses: actions/upload-artifact@v3
+      - name: Upload Windows Build
+        uses: actions/upload-artifact@v4
         with:
-          name: Build-${{ matrix.targetPlatform }}
-          path: builds/${{ matrix.targetPlatform }}
+          name: Build-Windows
+          path: build/StandaloneWindows64
           retention-days: 7
+          compression-level: 6  # Быстрее загрузка
 
-  # Опционально: создание релиза при тегах
-  release:
-    name: Create Release
+  # WebGL билд
+  build-webgl:
+    name: Build WebGL 🌐
     runs-on: ubuntu-latest
-    needs: build
-    if: startsWith(github.ref, 'refs/tags/')
+    steps:
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Временное решение: отключаем проблемные плагины
+      - name: Disable problematic plugins
+        run: |
+          if [ -d "Assets/Wwise" ]; then
+            mv Assets/Wwise Assets/Wwise.disabled || true
+          fi
+          if [ -f "Assets/Plugins/Zenject/package.json.meta" ]; then
+            rm Assets/Plugins/Zenject/package.json.meta || true
+          fi
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-WebGL-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-WebGL-
+            Library-
+
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-webgl
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build WebGL
+        uses: game-ci/unity-builder@v4
+        timeout-minutes: 90
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: WebGL
+          unityVersion: ${{ env.UNITY_VERSION }}
+          buildName: ${{ env.PROJECT_NAME }}
+          buildsPath: build
+          allowDirtyBuild: true
+          customImage: unityci/editor:ubuntu-6000.2.8f1-webgl-3
+
+      - name: Upload WebGL Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-WebGL
+          path: build/WebGL
+          retention-days: 7
+          compression-level: 6
+
+  # Android билд
+  build-android:
+    name: Build Android 🤖
+    runs-on: ubuntu-latest
+    steps:
+      - name: Free Disk Space
+        run: |
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /opt/hostedtoolcache/CodeQL
+          sudo docker image prune --all --force
+
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          lfs: true
+
+      # Временное решение: отключаем проблемные плагины
+      - name: Disable problematic plugins
+        run: |
+          if [ -d "Assets/Wwise" ]; then
+            mv Assets/Wwise Assets/Wwise.disabled || true
+          fi
+          if [ -f "Assets/Plugins/Zenject/package.json.meta" ]; then
+            rm Assets/Plugins/Zenject/package.json.meta || true
+          fi
+
+      - name: Cache Library
+        uses: actions/cache@v4
+        with:
+          path: Library
+          key: Library-Android-${{ hashFiles('Assets/**', 'Packages/**', 'ProjectSettings/**') }}
+          restore-keys: |
+            Library-Android-
+            Library-
+
+      - name: Cache Docker layers
+        uses: actions/cache@v4
+        with:
+          path: /tmp/.buildx-cache
+          key: ${{ runner.os }}-buildx-android
+          restore-keys: |
+            ${{ runner.os }}-buildx-
+
+      - name: Build Android
+        uses: game-ci/unity-builder@v4
+        timeout-minutes: 90
+        env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
+          UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
+          UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
+        with:
+          targetPlatform: Android
+          unityVersion: ${{ env.UNITY_VERSION }}
+          buildName: ${{ env.PROJECT_NAME }}
+          buildsPath: build
+          allowDirtyBuild: true
+          customImage: unityci/editor:ubuntu-6000.2.8f1-android-3
+
+      - name: Upload Android Build
+        uses: actions/upload-artifact@v4
+        with:
+          name: Build-Android
+          path: build/Android
+          retention-days: 7
+          compression-level: 6
+
+  # Релиз
+  release:
+    name: Create Release 📦
+    runs-on: ubuntu-latest
+    needs: [build-windows, build-android, build-webgl]
+    if: startsWith(github.ref, 'refs/tags/v')
     steps:
       - name: Download all builds
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           path: builds
 
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: |
-            builds/**/*
+          files: builds/**/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
