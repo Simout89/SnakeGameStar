@@ -262,6 +262,7 @@ namespace Users.FateX.Scripts.Cards
                     _exiledMode = false;
                     return;
                 }
+                
 
                 _currencyService.AddCoins((int)card.Value);
                 _cardMenuView.ClearAllCards();
@@ -313,7 +314,6 @@ namespace Users.FateX.Scripts.Cards
                 return;
             }
             
-            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.CardSelected);
 
 
             segment.Upgrade();

@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts.Cards
         [Inject] private CardMenuController _cardMenuController;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private GameContext _gameContext;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         
         public void Initialize()
         {
@@ -21,6 +22,9 @@ namespace Users.FateX.Scripts.Cards
 
         private void HandleSelected()
         {
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.CardSelected);
+
             _gameContext.SnakeHealth.SetInvincible(1);
             // _gameStateManager.ChangeState(GameStates.Play);
         }

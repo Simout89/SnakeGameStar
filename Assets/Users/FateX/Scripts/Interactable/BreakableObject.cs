@@ -97,7 +97,7 @@ namespace Users.FateX.Scripts.Interactable
 
                     
                     gameObject.SetActive(false);
-                    Respawn(180f);
+                    //Respawn(180f);
                 });
             }
         }
