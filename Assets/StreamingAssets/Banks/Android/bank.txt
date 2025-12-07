@@ -1,0 +1,45 @@
+Event	ID	Name			Wwise Object Path	Notes
+	521777734	Play__MachineGun			\Default Work Unit\Weapon\Play__MachineGun	
+	784302017	Play_Damage			\Default Work Unit\Play_Damage	
+	1067214853	Stop_Slot_Loop			\Default Work Unit\Slot Machine\Stop_Slot_Loop	
+	1191497377	Play_Sword			\Default Work Unit\Weapon\Play_Sword	
+	1396882671	Play_Slot_Loop			\Default Work Unit\Slot Machine\Play_Slot_Loop	
+	1439161704	Play_SnakeDie			\Default Work Unit\Play_SnakeDie	
+	1716361963	Play_LvlUp			\Default Work Unit\Play_LvlUp	
+	1873612031	Play_CardSelected			\Default Work Unit\Play_CardSelected	
+	2228638855	Play_CollectCoin			\Default Work Unit\Play_CollectCoin	
+	2229301370	Play_Xp			\Default Work Unit\Play_Xp	
+	2298541870	Play_SpikeGun			\Default Work Unit\Weapon\Play_SpikeGun	
+	2387630660	Play_EatApple			\Default Work Unit\Play_EatApple	
+	2618825045	Play_TrialTowerCapture			\Default Work Unit\Play_TrialTowerCapture	
+	2768162129	Play_DisplayMessage			\Default Work Unit\Play_DisplayMessage	
+	2824054637	Play_Mortar_Shoot			\Default Work Unit\Weapon\Play_Mortar_Shoot	
+	2886612238	Play_Penta			\Default Work Unit\Weapon\Play_Penta	
+	3597908291	Play_Slot_completion			\Default Work Unit\Slot Machine\Play_Slot_completion	
+	3860455926	Play_PickUp			\Default Work Unit\Play_PickUp	
+	3893377015	Play_Tesla			\Default Work Unit\Weapon\Play_Tesla	
+	4030404899	Play_Explosion			\Default Work Unit\Weapon\Play_Explosion	
+	4179853477	Play_Slot_Win			\Default Work Unit\Slot Machine\Play_Slot_Win	
+
+In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	73924771	Tesla	.cache\43\{438E08E9-BAA1-8B34-8DDE-D1E1BFD6E2D8}.wem		\Containers\Default Work Unit\Weapon\Tesla		11093
+	178159659	LvlUp	.cache\ED\{ED2DE222-A229-7228-ABAE-34A2CB14389D}.wem		\Containers\Default Work Unit\LvlUp		25547
+	278875474	Slot_completion	.cache\7C\{7C3A9853-DF37-7050-6C6F-C26D9454779C}.wem		\Containers\Default Work Unit\Slot Machine\Slot_completion		14012
+	291181088	Xp	.cache\F3\{F3384F63-779D-B82C-7E6A-1637672E040E}.wem		\Containers\Default Work Unit\Xp		7784
+	308453629	Mortar Shoot	.cache\59\{595FA3E0-F201-4CB6-0BC4-7797CB50C90F}.wem		\Containers\Default Work Unit\Weapon\Mortar Shoot		9600
+	356062460	 MachineGun	.cache\ED\{ED33A596-A0DC-53DA-8118-9A9B19A4885A}.wem		\Containers\Default Work Unit\Weapon\ MachineGun		24992
+	508721672	PickUp	.cache\C9\{C9C17B8B-BBA9-C5A1-E25E-DFDD1B7C7FA6}.wem		\Containers\Default Work Unit\PickUp		1810
+	518293719	Damage	.cache\1B\{1B506426-23E9-88BE-50CF-A70395AF8064}.wem		\Containers\Default Work Unit\Damage		2252
+	532684351	Penta	.cache\9D\{9D20D73E-13A0-91DD-4C7F-B9EE27827BB6}.wem		\Containers\Default Work Unit\Weapon\Penta		6343
+	583867755	SnakeDie	.cache\AD\{AD8C0401-93E8-30D4-E69C-E43EC1E9D04A}.wem		\Containers\Default Work Unit\SnakeDie		40526
+	643516409	CardSelected	.cache\43\{435F87C4-C14F-2904-A613-CDF717F9EE0C}.wem		\Containers\Default Work Unit\CardSelected		20906
+	734243213	Sword	.cache\D8\{D89E2057-E48F-0BDE-D89F-915E4763E59D}.wem		\Containers\Default Work Unit\Weapon\Sword		8272
+	740252889	CollectCoin	.cache\A8\{A8AD8005-2F70-79A7-C1DE-98E5FFB6D1A0}.wem		\Containers\Default Work Unit\CollectCoin		12836
+	806303027	Explosion	.cache\F3\{F3B21F9A-0210-5970-F748-EE13BC68983D}.wem		\Containers\Default Work Unit\Weapon\Explosion		32514
+	867434290	Slot_Win	.cache\F5\{F5161339-62F6-534F-04F5-3DA2D6DF542B}.wem		\Containers\Default Work Unit\Slot Machine\Slot_Win		23969
+	885284157	Slot_Loop	.cache\42\{42CCA09E-2753-A6F8-E964-883E1A36ED13}.wem		\Containers\Default Work Unit\Slot Machine\Slot_Loop		115765
+	896543732	TrialTowerCapture	.cache\F3\{F34BB6A1-A30B-429E-8531-62097997095F}.wem		\Containers\Default Work Unit\TrialTowerCapture		48834
+	953991065	SpikeGun	.cache\C1\{C1DF1A26-CE1A-D93C-05A8-A7CDEEE518C2}.wem		\Containers\Default Work Unit\Weapon\SpikeGun		13995
+	989765823	EatApple	.cache\B5\{B5409A28-71F2-8575-6312-C02885DEBA66}.wem		\Containers\Default Work Unit\EatApple		9805
+	1024133082	DisplayMessage	.cache\AC\{AC3EFD7C-30EE-7F15-1A22-97E12AA8C585}.wem		\Containers\Default Work Unit\DisplayMessage		22742
+

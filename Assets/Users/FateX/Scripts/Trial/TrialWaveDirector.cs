@@ -13,6 +13,8 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private EnemySpawnDirector _enemySpawnDirector;
         [Inject] private ItemFactory _itemFactory;
         [Inject] private MessageDisplayView _messageDisplayView;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+
         
         public void OnTowerCaptured(TrialTower tower)
         {
@@ -34,6 +36,8 @@ namespace Users.FateX.Scripts.Trial
                     spawnCount = 15;
                 } break;
             }
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.TrialTowerCapture);
             
             for (int i = 0; i < spawnCount; i++)
             {

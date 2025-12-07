@@ -17,6 +17,7 @@ namespace Users.FateX.Scripts.Cards
         [Inject] private GameContext _gameContext;
         [Inject] private PlayerStats _playerStats;
         [Inject] private CurrencyService _currencyService;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
 
         private int rerrolUsed = 0;
         private int exileUsed = 0;
@@ -311,6 +312,9 @@ namespace Users.FateX.Scripts.Cards
                 _exiledMode = false;
                 return;
             }
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.CardSelected);
+
 
             segment.Upgrade();
             _cardMenuView.ClearAllCards();

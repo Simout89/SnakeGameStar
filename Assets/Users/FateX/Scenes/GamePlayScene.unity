@@ -522,7 +522,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7161741165014281432, guid: 04807228487ef774482b90a6491ad44c, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8219889686446849294, guid: 04807228487ef774482b90a6491ad44c, type: 3}
       propertyPath: m_LocalScale.y
@@ -6412,7 +6412,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &634300524
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6420,12 +6420,12 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 634300523}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 2112237651}
+  m_Father: {fileID: 1531239695}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -83071,6 +83071,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 634300524}
   - {fileID: 2112237651}
   m_Father: {fileID: 1563804510}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -83092,6 +83093,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.SlotMachine.SlotMachineView
   body: {fileID: 2112237650}
+  backGround: {fileID: 634300523}
   slotColumns:
   - {fileID: 627616261}
   - {fileID: 387598029}
@@ -99913,7 +99915,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2101523609
 RectTransform:
   m_ObjectHideFlags: 0
@@ -100076,7 +100078,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 634300524}
   - {fileID: 1968012319}
   - {fileID: 1354452130}
   - {fileID: 1031804413}

@@ -10,6 +10,7 @@ namespace Users.FateX.Scripts.Trial
 {
     public class TrialSpawnDirector : IInitializable, IDisposable
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [Inject] private GameConfig _gameConfig;
         [Inject] private TrialTowerFactory _trialTowerFactory;
         [Inject] private GameTimer _gameTimer;
@@ -39,6 +40,7 @@ namespace Users.FateX.Scripts.Trial
                     randomPoint.transform.position);
 
                 _messageDisplayView.ShowText("Появилась башня испытаний", Color.cyan);
+                _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.DisplayMessage);
             }
             else
             {

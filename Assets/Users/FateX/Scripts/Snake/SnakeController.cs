@@ -12,6 +12,7 @@ using Скриптерсы.Services;
 
 public class SnakeController : MonoBehaviour
 {
+    [Inject] private DiContainer _diContainer;
     private IInputService _inputService;
     
     private float rotationSpeed => SnakeData.BaseRotateSpeed;
@@ -97,6 +98,7 @@ public class SnakeController : MonoBehaviour
     public void Grow(SnakeSegmentBase snakeSegmentBase, bool origin = true)
     {
         var newSegment = Instantiate(snakeSegmentBase);
+        _diContainer.Inject(newSegment);
         Transform last = segmentsBase[segmentsBase.Count - 1].Body;
         newSegment.AdditionalParts.position = last.position;
         newSegment.Body.position = last.position;

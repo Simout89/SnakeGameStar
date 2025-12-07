@@ -11,6 +11,8 @@ namespace Users.FateX.Scripts
     {
         [Inject] private DeathView _deathView;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+
         private SnakeHealth _snakeHealth;
         
         public void SetSnakeHealth(SnakeHealth snakeHealth)
@@ -40,6 +42,8 @@ namespace Users.FateX.Scripts
         private void HandleDie()
         {
             _deathView.Show();
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SnakeDie);
             
             _gameStateManager.PushState(GameStates.Death);
             

@@ -2,11 +2,13 @@
 using DG.Tweening;
 using UnityEngine;
 using Users.FateX.Scripts.Data.Upgrade;
+using Zenject;
 
 namespace Users.FateX.Scripts.Upgrade
 {
     public class SnakeSegmentBase: MonoBehaviour, ITickable
     {
+        [Inject] protected GlobalSoundPlayer globalSoundPlayer;
         [field: SerializeField] public  Transform Body { get; private set; }
         [field: SerializeField] public  Transform AdditionalParts { get; private set; }
         [field: SerializeField] public TriggerDetector CollectableTrigger { get; private set; }

@@ -4,6 +4,13 @@
 		<WorkUnit Name="Default Work Unit" ID="{704C59B2-5EF0-477F-8EFA-DA92B0CF2CDE}" PersistMode="Standalone">
 			<ChildrenList>
 				<Event Name="Play_Damage" ID="{3762436B-8A7C-47AC-9970-2D18A91DEC75}">
+					<PropertyList>
+						<Property Name="InstanceLimit" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ChildrenList>
 						<Action Name="" ID="{A1D31968-BA0C-4D0A-A811-9A99ADF97711}" ShortID="601262446">
 							<ReferenceList>
@@ -14,6 +21,266 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Folder Name="Weapon" ID="{530CE800-4915-400A-AB36-132A58D687A4}" ShortID="847655867">
+					<ChildrenList>
+						<Event Name="Play__MachineGun" ID="{2EEC192F-E2D8-4B0C-ACF6-A59BF11B0983}">
+							<ChildrenList>
+								<Action Name="" ID="{9DDB2D70-A47C-40C3-A47A-DFEF7C887201}" ShortID="654359699">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name=" MachineGun" ID="{4887BE91-EF69-402B-8481-710C62488C99}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Sword" ID="{250AE555-7B77-40BF-9B2E-1923BA5F6ED7}">
+							<ChildrenList>
+								<Action Name="" ID="{023B208C-9FAB-4B3A-8331-27D8D0EBB9C1}" ShortID="29518114">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Sword" ID="{D02A1AD2-76C5-47B2-B064-AF50E1877D36}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_SpikeGun" ID="{74FA8462-A1DE-41F1-8259-7C9902C26E11}">
+							<ChildrenList>
+								<Action Name="" ID="{ADAB1027-ED41-4B90-9DC2-3B36EB4770CF}" ShortID="599496210">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="SpikeGun" ID="{7412258E-0606-4090-B7D9-48DAD50509A8}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Mortar_Shoot" ID="{6237793C-FE93-4677-8DFF-73146A9A3794}">
+							<ChildrenList>
+								<Action Name="" ID="{3125B140-F88C-4A86-8F7B-AA15C6168FEB}" ShortID="32253447">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Mortar Shoot" ID="{09B6991A-7E79-4037-98ED-70DC6A9E4658}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Penta" ID="{C7F5259B-4686-43C1-B64A-EAB175318550}">
+							<ChildrenList>
+								<Action Name="" ID="{A4587982-0907-430C-84B4-4E8A5972888F}" ShortID="6401968">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Penta" ID="{58CC70E8-F4B8-4900-B46F-27D66C6E26F8}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Tesla" ID="{3C8E873F-8D72-40E0-86C1-5456594D83AE}">
+							<ChildrenList>
+								<Action Name="" ID="{AA31B506-E816-42DD-8BBB-39DB18C969B1}" ShortID="750211640">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Tesla" ID="{8D9A9FBE-0D01-4D0C-88BC-6E7D49DC8795}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Explosion" ID="{56B1F2E7-E004-43AF-8785-2BA0E42855BC}">
+							<ChildrenList>
+								<Action Name="" ID="{D1F924BC-F971-4535-86A6-2F6E6590640F}" ShortID="908727269">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Explosion" ID="{C3327A55-4253-4B4E-BB92-D426AC535FE9}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
+				<Event Name="Play_CardSelected" ID="{DBCF8F46-52D0-49E5-B670-A3106B42854D}">
+					<ChildrenList>
+						<Action Name="" ID="{D0ECB51F-3366-4F33-BBD6-07934FA86D08}" ShortID="1053986254">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CardSelected" ID="{812778F3-2E3E-4325-9F08-D1032E0B8AEE}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_CollectCoin" ID="{95E98AC7-67A1-4915-8D1D-55D5846F0F54}">
+					<PropertyList>
+						<Property Name="InstanceLimit" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{75F6F736-B7C1-4E9C-A8D1-7364C2F33D6B}" ShortID="820469836">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="CollectCoin" ID="{0A59987F-50E0-4905-BFB7-E1AC7DDA6533}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_DisplayMessage" ID="{32486963-5619-4191-9C43-93C1E866747F}">
+					<ChildrenList>
+						<Action Name="" ID="{796502BC-448E-4E27-9CCB-BCD7EC528109}" ShortID="866252564">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DisplayMessage" ID="{2FD64631-C097-419C-8119-FC6FC6C3A99E}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_EatApple" ID="{FC679E0B-D220-4A2E-B6CF-729944532DCD}">
+					<PropertyList>
+						<Property Name="InstanceLimit" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{426AC6F7-FCA6-40FE-B6BA-9B5595F2CF9E}" ShortID="303878722">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="EatApple" ID="{8EE954E8-379B-4FFF-AFEE-A31F6C056AEE}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_LvlUp" ID="{31145222-D02A-45A3-95B2-4AE559C4A301}">
+					<ChildrenList>
+						<Action Name="" ID="{4FEC9045-D4D6-4113-9A5C-84D2F99549C8}" ShortID="520612552">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="LvlUp" ID="{13856BF3-ACB0-4288-BDB4-866633A8497A}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_PickUp" ID="{755BDAD6-AD01-4D80-983B-34AE8E007F0C}">
+					<PropertyList>
+						<Property Name="InstanceLimit" Type="int16">
+							<ValueList>
+								<Value>3</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{C046C802-C5A9-43F7-B067-5B6AA2CBFE1D}" ShortID="739877766">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="PickUp" ID="{28CF3FA9-4A9C-4E45-B7A9-ECEB6B8FADEA}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_SnakeDie" ID="{6E5104E2-87A8-4E4E-AFC2-EA2586F5F1FC}">
+					<ChildrenList>
+						<Action Name="" ID="{169AA16F-980E-481F-B777-483FCDF1734B}" ShortID="501079164">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="SnakeDie" ID="{4A60044F-52B7-4C8C-96A5-68A24D9D9C47}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_TrialTowerCapture" ID="{35139CBE-D086-4E32-87FA-723A3B684BA3}">
+					<ChildrenList>
+						<Action Name="" ID="{509A0700-B868-4ADB-BB1A-2FEB8A1983AA}" ShortID="45974842">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="TrialTowerCapture" ID="{0A1FD7C7-C306-4FDA-BBBB-C7EC17336970}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Xp" ID="{022E2080-EDE3-471C-99E9-BDE0B85ED0D5}">
+					<PropertyList>
+						<Property Name="InstanceLimit" Type="int16">
+							<ValueList>
+								<Value>2</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ChildrenList>
+						<Action Name="" ID="{EB876CD4-471D-4DC6-AD1B-F47D4E34F438}" ShortID="151122323">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Xp" ID="{3BE2D548-E141-4E9A-A3DA-47186FAB2E1B}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Folder Name="Slot Machine" ID="{3B899AAA-E999-44F6-BE42-24D269FF7FFD}" ShortID="202261879">
+					<ChildrenList>
+						<Event Name="Play_Slot_Win" ID="{63FE384A-678C-40B8-B98C-BE6A26B887B4}">
+							<ChildrenList>
+								<Action Name="" ID="{82B44659-328C-406B-9965-7209BDC927B1}" ShortID="738611587">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slot_Win" ID="{8EDA48FB-B2B4-4344-B125-928624A91E16}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Slot_Loop" ID="{0A6DCF57-1CE4-4247-88DF-B15138F83190}">
+							<ChildrenList>
+								<Action Name="" ID="{666B279B-1152-4BBC-B6CA-655791DC9B5C}" ShortID="399934692">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slot_Loop" ID="{4F406FC8-5BC2-40C3-B633-5E67BD41825E}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_Slot_Loop" ID="{E29D3533-A87D-42D1-B44F-6E3815D1D9C5}">
+							<ChildrenList>
+								<Action Name="" ID="{24F4221C-3066-491D-871C-114929A87F49}" ShortID="465499741">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+										<Property Name="FadeTime" Type="Real64" Value="0.1"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slot_Loop" ID="{4F406FC8-5BC2-40C3-B633-5E67BD41825E}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Play_Slot_completion" ID="{543DC41B-5D89-40FF-AB55-70138E2C8262}">
+							<ChildrenList>
+								<Action Name="" ID="{E42B6740-2566-4F8C-8DD9-B3EBE6D7303A}" ShortID="354182726">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="Slot_completion" ID="{8BD5481B-4891-4F7F-95D9-7C6751E8B1B5}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

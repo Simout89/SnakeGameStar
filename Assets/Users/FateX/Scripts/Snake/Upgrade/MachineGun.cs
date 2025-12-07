@@ -68,6 +68,8 @@ namespace Users.FateX.Scripts.Upgrade
         {
             for (int i = 0; i < CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum; i++)
             {
+                globalSoundPlayer.Play(globalSoundPlayer.SoundsData.WeaponSoundsData.MachineGun);
+                
                 var projectile = LeanPool.Spawn(
                     UpgradeLevelsData.Projectile,
                     muzzle.position,

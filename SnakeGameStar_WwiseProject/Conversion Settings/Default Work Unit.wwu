@@ -48,7 +48,7 @@
 					</PropertyList>
 					<ConversionPluginInfoList>
 						<ConversionPluginInfo Platform="Android">
-							<ConversionPlugin Name="" ID="{8C91FBE3-952D-4D7C-83B3-FAED713519E1}" PluginName="PCM" CompanyID="0" PluginID="1"/>
+							<ConversionPlugin Name="" ID="{74144860-203B-435C-B01C-5681E782879B}" PluginName="WEM Opus" CompanyID="0" PluginID="20"/>
 						</ConversionPluginInfo>
 						<ConversionPluginInfo Platform="Web">
 							<ConversionPlugin Name="" ID="{BCC1FE05-C9E7-420B-8D97-7B77CC9B6B4E}" PluginName="PCM" CompanyID="0" PluginID="1"/>

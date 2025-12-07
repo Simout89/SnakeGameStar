@@ -7,6 +7,8 @@ namespace Users.FateX.Scripts
 {
     public class ExperienceSystem : IInitializable
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        
         private float BaseXpValue = 5f;
         public float NextLevelXp { get; private set; } = 5;
         public float CurrentXp { get; private set; }
@@ -17,6 +19,8 @@ namespace Users.FateX.Scripts
 
         public void AddExperiencePoints(IExperiencePoints experiencePoints)
         {
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Xp);
+            
             CurrentXp += experiencePoints.Value;
             OnChangeXp?.Invoke();
 
@@ -41,6 +45,8 @@ namespace Users.FateX.Scripts
 
         private void UpLevel()
         {
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.LvlUp);
+            
             CurrentLevel++;
             CurrentXp -= NextLevelXp; // оставшийся опыт переносим на следующий уровень
             UpdateLevelXpRequirement();

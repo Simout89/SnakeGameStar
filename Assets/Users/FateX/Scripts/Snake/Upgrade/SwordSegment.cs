@@ -60,6 +60,8 @@ namespace Users.FateX.Scripts.Upgrade
         public override void Attack()
         {
             base.Attack();
+
+            globalSoundPlayer.Play(globalSoundPlayer.SoundsData.WeaponSoundsData.Sword);
             
             currentSequence?.Kill();
             
