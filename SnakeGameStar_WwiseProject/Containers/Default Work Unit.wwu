@@ -27,9 +27,16 @@
 								<MediaID ID="518293719"/>
 							</MediaIDList>
 						</AudioFileSource>
+						<AudioFileSource Name="Звук получения  врагами урона1" ID="{1ACBEA0D-6630-4DC5-AABB-74733D8795D4}">
+							<Language>SFX</Language>
+							<AudioFile>Звук получения  врагами урона1.wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="12196512"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Hit_3" ID="{53D364F9-4643-4B57-94F1-AD713BCE4A8A}" Platform="Linked"/>
+						<ActiveSource Name="Звук получения  врагами урона1" ID="{1ACBEA0D-6630-4DC5-AABB-74733D8795D4}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="LvlUp" ID="{13856BF3-ACB0-4288-BDB4-866633A8497A}" ShortID="545675257">
@@ -98,6 +105,13 @@
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="CollectCoin" ID="{0A59987F-50E0-4905-BFB7-E1AC7DDA6533}" ShortID="86038409">
+					<PropertyList>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-15</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
 					<ReferenceList>
 						<Reference Name="Conversion">
 							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
@@ -396,6 +410,13 @@
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="SpikeGun" ID="{7412258E-0606-4090-B7D9-48DAD50509A8}" ShortID="671320096">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-15</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
 									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
@@ -578,6 +599,131 @@
 						</Sound>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Ui" ID="{0C1737E9-5E98-4567-B454-5FB46B06DE46}" ShortID="842160478">
+					<ChildrenList>
+						<Sound Name="Buy" ID="{852CD5D2-104E-4A0B-8F9F-D82936383C01}" ShortID="970761576">
+							<PropertyList>
+								<Property Name="Volume" Type="Real64">
+									<ValueList>
+										<Value>-10</Value>
+									</ValueList>
+								</Property>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="079_Buy_sell_01" ID="{0E81321E-40D9-4119-AED2-87B60A4D9547}">
+									<Language>SFX</Language>
+									<AudioFile>079_Buy_sell_01.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="370091552"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="079_Buy_sell_01" ID="{0E81321E-40D9-4119-AED2-87B60A4D9547}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Denied" ID="{1CA5E499-CB69-4159-8F88-8D6AC390324E}" ShortID="182896318">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="033_Denied_03" ID="{A3ED68FB-9015-4A2A-AAA9-C5079839C222}">
+									<Language>SFX</Language>
+									<AudioFile>033_Denied_03.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="245487382"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="033_Denied_03" ID="{A3ED68FB-9015-4A2A-AAA9-C5079839C222}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Select" ID="{533D88B2-C016-434B-B0BF-024FC8157B4F}" ShortID="764138192">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JDSherbert - Ultimate UI SFX Pack - Select - 2" ID="{E4077DB8-1C86-4786-B195-C0F732C743AA}">
+									<Language>SFX</Language>
+									<AudioFile>JDSherbert - Ultimate UI SFX Pack - Select - 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="202057814"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JDSherbert - Ultimate UI SFX Pack - Select - 2" ID="{E4077DB8-1C86-4786-B195-C0F732C743AA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Swipe" ID="{7F562B7A-39ED-496A-A171-F7A66333C029}" ShortID="749412471">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JDSherbert - Ultimate UI SFX Pack - Swipe - 2" ID="{6A4D500F-1AD1-43CA-85BD-C34D4377DAF8}">
+									<PropertyList>
+										<Property Name="TrimBegin" Type="Real64" Value="0.0659431641196606"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="688385273"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JDSherbert - Ultimate UI SFX Pack - Swipe - 2" ID="{6A4D500F-1AD1-43CA-85BD-C34D4377DAF8}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="Cursor" ID="{3554BF09-0DB1-43C2-9D76-AECD16B33955}" ShortID="258743450">
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="JDSherbert - Ultimate UI SFX Pack - Cursor - 1" ID="{AA1C9752-6FB9-4902-9168-743A5D290CE9}">
+									<Language>SFX</Language>
+									<AudioFile>JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="122309088"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="JDSherbert - Ultimate UI SFX Pack - Cursor - 1" ID="{AA1C9752-6FB9-4902-9168-743A5D290CE9}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+					</ChildrenList>
+				</Folder>
+				<Folder Name="Music" ID="{D6D50D42-977B-4F95-B42D-928F145F6DF2}" ShortID="1043816000"/>
 			</ChildrenList>
 		</WorkUnit>
 	</Containers>

@@ -7,6 +7,7 @@ namespace Users.FateX.Scripts.Data
     public class SoundsData : ScriptableObject
     {
         [field: SerializeField] public WeaponSoundsData WeaponSoundsData { get; private set; }
+        [field: SerializeField] public UiSound UiSound { get; private set; }
         [field: SerializeField] public SlotMachine SlotMachine { get; private set; }
         [field: SerializeField] public AK.Wwise.Event DamageSound { get; private set; }
         [field: SerializeField] public AK.Wwise.Event CardSelected { get; private set; }
@@ -39,5 +40,14 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public AK.Wwise.Event LoopStop { get; private set; }
         [field: SerializeField] public AK.Wwise.Event Win { get; private set; }
         [field: SerializeField] public AK.Wwise.Event Complection { get; private set; }
+    }
+
+    [Serializable]
+    public class UiSound
+    {
+        [field: SerializeField] public AK.Wwise.Event Select { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event Swipe { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event Buy { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event Denied { get; private set; }
     }
 }

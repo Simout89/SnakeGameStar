@@ -18,6 +18,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public MagnetItem MagnetPrefab { get; private set; }
         [field: SerializeField] public AchievementEntryView AchievementEntryView { get; private set; }
         [field: SerializeField] public DeathAchievementEntryView DeathAchievementEntryView { get; private set; }
+        [field: SerializeField] public SnakeSegmentsEntryView SnakeSegmentsEntryView { get; private set; }
         [field: SerializeField] public GamblingItem GamblingItemPrefab { get; private set; }
         [field: SerializeField] public CoinItem CoinItemPrefab { get; private set; }
         [field: SerializeField] public HealableItem HealableItemPrefab { get; private set; }

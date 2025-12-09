@@ -14,9 +14,12 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY__MACHINEGUN = 521777734U;
+        static const AkUniqueID PLAY_BUY = 2824767826U;
         static const AkUniqueID PLAY_CARDSELECTED = 1873612031U;
         static const AkUniqueID PLAY_COLLECTCOIN = 2228638855U;
+        static const AkUniqueID PLAY_CURSOR = 2677223148U;
         static const AkUniqueID PLAY_DAMAGE = 784302017U;
+        static const AkUniqueID PLAY_DENIED = 2688642167U;
         static const AkUniqueID PLAY_DISPLAYMESSAGE = 2768162129U;
         static const AkUniqueID PLAY_EATAPPLE = 2387630660U;
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
@@ -24,11 +27,13 @@ namespace AK
         static const AkUniqueID PLAY_MORTAR_SHOOT = 2824054637U;
         static const AkUniqueID PLAY_PENTA = 2886612238U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
+        static const AkUniqueID PLAY_SELECT = 1042987450U;
         static const AkUniqueID PLAY_SLOT_COMPLETION = 3597908291U;
         static const AkUniqueID PLAY_SLOT_LOOP = 1396882671U;
         static const AkUniqueID PLAY_SLOT_WIN = 4179853477U;
         static const AkUniqueID PLAY_SNAKEDIE = 1439161704U;
         static const AkUniqueID PLAY_SPIKEGUN = 2298541870U;
+        static const AkUniqueID PLAY_SWIPE = 1089845932U;
         static const AkUniqueID PLAY_SWORD = 1191497377U;
         static const AkUniqueID PLAY_TESLA = 3893377015U;
         static const AkUniqueID PLAY_TRIALTOWERCAPTURE = 2618825045U;

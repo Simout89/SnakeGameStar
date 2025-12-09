@@ -10,18 +10,34 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{32D6064B-8CBF-8DD2-50C1-BDD40791CB8D}",
+    "Hash": "{D1E551B1-F859-7830-58F9-0916E586ADAA}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
     "Media": [
+     {
+      "Id": "12196512",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Звук получения  врагами урона1.wav",
+      "CachePath": "8B/{8B365154-DACB-FC7F-8EE5-3A9731368F36}.wem"
+     },
      {
       "Id": "73924771",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "цепная молния отскок.wav",
-      "CachePath": "D6/{D6209922-E0C2-D6E4-7154-A6CB22C307F6}.wem"
+      "CachePath": "33/{33B71E9E-6B94-6DAA-11FC-6B90F8134D42}.wem"
+     },
+     {
+      "Id": "122309088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav",
+      "CachePath": "31/{317B8234-FFE6-6DC9-A0DF-E89380B85F23}.wem"
      },
      {
       "Id": "178159659",
@@ -29,7 +45,23 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro Event StereoUP 02.wav",
-      "CachePath": "65/{657CF823-A716-5235-D7CE-5CDDE711C55A}.wem"
+      "CachePath": "0A/{0A1E126D-B075-B35F-B6F2-E8C94819B817}.wem"
+     },
+     {
+      "Id": "202057814",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Select - 2.wav",
+      "CachePath": "0E/{0EFA9F05-8647-02D6-CDC2-D527FC4636B6}.wem"
+     },
+     {
+      "Id": "245487382",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "033_Denied_03.wav",
+      "CachePath": "40/{4020EA5D-C313-58A0-F72B-4252934EAD4B}.wem"
      },
      {
       "Id": "278875474",
@@ -37,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "completion.wav",
-      "CachePath": "FC/{FC614BF8-E6B3-9A06-25E3-59B8818F9613}.wem"
+      "CachePath": "44/{44B401AE-DE4F-BE67-33A4-AE250567B62D}.wem"
      },
      {
       "Id": "308453629",
@@ -45,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Выстрел пушки (mp3cut.net).wav",
-      "CachePath": "04/{04246225-26CF-C10F-6800-16901577A867}.wem"
+      "CachePath": "B6/{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem"
      },
      {
       "Id": "356062460",
@@ -53,7 +85,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "762x54r Single WAV.wav",
-      "CachePath": "FF/{FF26B391-C178-C369-7ADE-7BB64F81A39A}.wem"
+      "CachePath": "4B/{4B52663B-EC57-F84F-8F8F-A35D916BBF73}.wem"
+     },
+     {
+      "Id": "370091552",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "079_Buy_sell_01.wav",
+      "CachePath": "2C/{2C449723-2DEB-2EC0-E862-B8D8277B7C4A}.wem"
      },
      {
       "Id": "508721672",
@@ -61,15 +101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "water_drop_synthetic.wav",
-      "CachePath": "DF/{DF81F4E6-DB4D-1B7B-B041-8AC728624B04}.wem"
-     },
-     {
-      "Id": "518293719",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Hit_3.wav",
-      "CachePath": "BE/{BE09EFC3-4362-2868-F0C2-73BF3687DBD4}.wem"
+      "CachePath": "D9/{D9798E64-25B6-0928-0C62-7C1D5B54889D}.wem"
      },
      {
       "Id": "532684351",
@@ -77,7 +109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Spell Impact 1.wav",
-      "CachePath": "E7/{E7940E85-DDAF-7EC0-E936-6F03F7CDB505}.wem"
+      "CachePath": "98/{98889210-FE4C-5B7D-533C-3139C5272558}.wem"
      },
      {
       "Id": "583867755",
@@ -85,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro Charge Off 11.wav",
-      "CachePath": "26/{26BC10D2-01BC-C997-7D44-A5BB70245A89}.wem"
+      "CachePath": "B1/{B13CAADB-4394-80E3-CA34-868342C34CA9}.wem"
      },
      {
       "Id": "643516409",
@@ -93,7 +125,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "match_xylophone_5.wav",
-      "CachePath": "5A/{5A4A1B82-3025-7D4F-8CA1-3618921F0CB9}.wem"
+      "CachePath": "EA/{EAD4FA64-0C75-3690-FB42-8BB7E0EDBDBC}.wem"
+     },
+     {
+      "Id": "688385273",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav",
+      "CachePath": "D3/{D3D70AD1-495D-2282-7246-7827AE3270DE}.wem"
      },
      {
       "Id": "734243213",
@@ -101,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sword Attack 1.wav",
-      "CachePath": "E6/{E62EB540-A6E7-A03A-ACE7-530E87BF3B82}.wem"
+      "CachePath": "67/{67D863D0-E685-5FFD-5E3D-2F1F66171E3B}.wem"
      },
      {
       "Id": "740252889",
@@ -109,7 +149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro PickUp Coin 07.wav",
-      "CachePath": "40/{40EE7FEA-A5C7-66A6-A6A8-4F4931262CAD}.wem"
+      "CachePath": "E3/{E3BF6D14-6D4D-3C6B-BFAE-78EDA1E82EF6}.wem"
      },
      {
       "Id": "806303027",
@@ -117,7 +157,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Explosion Medium 2-1.wav",
-      "CachePath": "0E/{0EBC97BC-2FB7-374B-C61D-61C9CF508C2A}.wem"
+      "CachePath": "F9/{F96276CD-2FCA-6422-0392-09C355AD8B2B}.wem"
      },
      {
       "Id": "867434290",
@@ -125,7 +165,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Win.wav",
-      "CachePath": "76/{768CE047-BE8D-A852-456C-AC5224AF588A}.wem"
+      "CachePath": "03/{031FA894-A46D-3378-68DB-62AB14045FA7}.wem"
      },
      {
       "Id": "885284157",
@@ -133,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Loop.wav",
-      "CachePath": "F0/{F0761A46-ACDC-1328-7824-35DEA74376E9}.wem"
+      "CachePath": "AC/{AC358AD9-E3F6-2299-C46F-06F9850785E2}.wem"
      },
      {
       "Id": "896543732",
@@ -141,7 +181,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "synth_cancel.wav",
-      "CachePath": "E5/{E58D8577-F2AA-34E6-F739-06C99809586D}.wem"
+      "CachePath": "D1/{D125521E-94E2-483B-CC51-18DF7F0D8166}.wem"
      },
      {
       "Id": "953991065",
@@ -149,7 +189,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sci-Fi Gun 1-1.wav",
-      "CachePath": "3D/{3DF5D767-BD7E-25D8-8586-0910E23CA096}.wem"
+      "CachePath": "FA/{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem"
      },
      {
       "Id": "989765823",
@@ -157,7 +197,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Звук-сьебалния-яблока.wav",
-      "CachePath": "9E/{9E446734-0926-121A-BCDA-F9F8EDBC1A32}.wem"
+      "CachePath": "E0/{E07F4A58-B5A9-C3BB-D969-55D31F0FA9B7}.wem"
      },
      {
       "Id": "990669999",
@@ -165,7 +205,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "2025-12-09-19-13-15-Trim (mp3cut.net).wav",
-      "CachePath": "7C/{7CF0E104-4D83-E5AA-D481-9D5CD296332D}.wem"
+      "CachePath": "A4/{A4033E25-86F0-6755-27A1-1F286A5DF893}.wem"
      },
      {
       "Id": "1024133082",
@@ -173,7 +213,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "steel_drums_chime_quick.wav",
-      "CachePath": "A5/{A5012DB8-4424-6EB0-C277-4840DF38162E}.wem"
+      "CachePath": "BE/{BE15E690-68D9-1463-970E-D9DA3DA0A68A}.wem"
      }
     ],
     "Events": [
@@ -188,6 +228,20 @@
       "MediaRefs": [
        {
         "Id": "356062460"
+       }
+      ]
+     },
+     {
+      "Id": "2824767826",
+      "Name": "Play_Buy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Buy",
+      "GUID": "{86A92AE7-EB62-4105-8580-92616BBCB94E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "370091552"
        }
       ]
      },
@@ -220,16 +274,44 @@
       ]
      },
      {
+      "Id": "2677223148",
+      "Name": "Play_Cursor",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Cursor",
+      "GUID": "{5876EA37-FD6B-4DC5-B318-C2DB2EE4F83E}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0052083",
+      "DurationMax": "2.0052083",
+      "MediaRefs": [
+       {
+        "Id": "122309088"
+       }
+      ]
+     },
+     {
       "Id": "784302017",
       "Name": "Play_Damage",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Damage",
       "GUID": "{3762436B-8A7C-47AC-9970-2D18A91DEC75}",
       "DurationType": "OneShot",
-      "DurationMin": "0.14405896",
-      "DurationMax": "0.14405896",
+      "DurationMin": "0.12673469",
+      "DurationMax": "0.12673469",
       "MediaRefs": [
        {
-        "Id": "518293719"
+        "Id": "12196512"
+       }
+      ]
+     },
+     {
+      "Id": "2688642167",
+      "Name": "Play_Denied",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Denied",
+      "GUID": "{A50C6B58-A8A0-450B-8E06-C6DE4E458A2C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "245487382"
        }
       ]
      },
@@ -332,6 +414,20 @@
       ]
      },
      {
+      "Id": "1042987450",
+      "Name": "Play_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Select",
+      "GUID": "{009FABB3-9C6A-402E-A251-ED186682D367}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0052083",
+      "DurationMax": "2.0052083",
+      "MediaRefs": [
+       {
+        "Id": "202057814"
+       }
+      ]
+     },
+     {
       "Id": "3597908291",
       "Name": "Play_Slot_completion",
       "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Play_Slot_completion",
@@ -398,6 +494,20 @@
       "MediaRefs": [
        {
         "Id": "953991065"
+       }
+      ]
+     },
+     {
+      "Id": "1089845932",
+      "Name": "Play_Swipe",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Swipe",
+      "GUID": "{05F93292-0A5B-4E54-9BC8-67CFC2B92793}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6423902",
+      "DurationMax": "0.6423902",
+      "MediaRefs": [
+       {
+        "Id": "688385273"
        }
       ]
      },
@@ -470,6 +580,6 @@
     ]
    }
   ],
-  "FileHash": "{C929A54D-5C1A-8F3E-4D76-4E845FCE7C23}"
+  "FileHash": "{A504AB26-FCCC-C638-3414-AE78A47AB697}"
  }
 }

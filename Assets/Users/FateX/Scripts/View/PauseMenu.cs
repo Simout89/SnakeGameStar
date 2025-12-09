@@ -12,6 +12,7 @@ namespace Users.FateX.Scripts.View
         [SerializeField] private GameObject pauseBody;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private IInputService _inputService;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         private void OnEnable()
         {
             _inputService.InputSystemActions.Player.Escape.performed += HandlePerformed;
@@ -24,6 +25,11 @@ namespace Users.FateX.Scripts.View
                 OnPauseClick();
             }
             
+        }
+        
+        public void PlaySelectSound()
+        {
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Select);
         }
 
         private void OnDisable()

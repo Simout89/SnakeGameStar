@@ -41,6 +41,23 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: fed1afccec96538439757b202b228d85, type: 2}
+  <UiSound>k__BackingField:
+    <Select>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f60deb6ce2033d24990debcf5080a2b7, type: 2}
+    <Swipe>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 2eb8bbb1d67a5174e820e3771115c171, type: 2}
+    <Buy>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e6964bf6ebef04d4d8422bc49e36f466, type: 2}
+    <Denied>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 1f1c69ffba9a2b24da3815051dd45005, type: 2}
   <SlotMachine>k__BackingField:
     <LoopPlay>k__BackingField:
       idInternal: 0

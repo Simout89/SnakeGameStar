@@ -12,6 +12,8 @@ namespace Users.FateX.Scripts.Shop
         [Inject] private ICurrencyService _currencyService;
         [Inject] private PlayerStats _playerStats;
         [Inject] private ISaveLoadService _saveService;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+
 
         private ShopModel _shopModel;
         private int selectedProductIndex;
@@ -66,6 +68,9 @@ namespace Users.FateX.Scripts.Shop
         private void OnProductClicked(int index)
         {
             if (_shopView == null) return;
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Select);
+
 
             selectedProductIndex = index;
             var product = _shopModel.ShopModelPositions[index];
@@ -111,6 +116,9 @@ namespace Users.FateX.Scripts.Shop
             if (product.StatsShopProduct.StatsUpgradeLevels.Length <= progress.CurrentLevel)
             {
                 Debug.Log("Макс лвл");
+                _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Denied);
+
+                
                 return;
             }
 
@@ -118,6 +126,7 @@ namespace Users.FateX.Scripts.Shop
             if (_currencyService.TrySpendCoins((int)cost))
             {
                 Debug.Log("Денег хватает");
+                _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Buy);
 
                 ApplyUpgradeEffect(product.StatsShopProduct, progress.CurrentLevel);
 
@@ -129,6 +138,9 @@ namespace Users.FateX.Scripts.Shop
             else
             {
                 Debug.Log("Денег не хватает");
+                
+                _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Denied);
+
             }
         }
     }
