@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Users.FateX.Scripts.Data;
@@ -10,9 +11,12 @@ namespace Users.FateX.Scripts.Achievements
     public class AchievementController : IInitializable, IDisposable
     {
         [Inject] private ISaveLoadService _saveLoadService;
+        [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
         [InjectOptional] private IAchievementView _achievementView;
         
         private AchievementModel _achievementModel;
+
+        private List<AchievementEntry> _newObtained = new List<AchievementEntry>();
 
         public void Initialize()
         {
@@ -24,6 +28,16 @@ namespace Users.FateX.Scripts.Achievements
             if (_achievementView != null)
             {
                 _achievementView.OnUpdate += HandleUpdateView;
+            }
+
+            foreach (var achievement in _achievementModel.AchievementEntries)
+            {
+                if (achievement.Value.AchievementSaveData.IsCompleted == true &&
+                    achievement.Value.AchievementSaveData.IsRewarded == false)
+                {
+                    _snakeSegmentsRepository.ObtainSegment(achievement.Value.AchievementData.CardData);
+                    achievement.Value.AchievementSaveData.IsRewarded = true;
+                }
             }
         }
 
@@ -41,11 +55,19 @@ namespace Users.FateX.Scripts.Achievements
                     if (achievement.Value.AchievementSaveData.Progress >=
                         achievement.Value.AchievementData.RequiredValue)
                     {
-                        achievement.Value.AchievementSaveData.IsCompleted = true;
                         Debug.Log("Достижение выполнено");
+                        
+                        achievement.Value.AchievementSaveData.IsCompleted = true;
+                        _newObtained.Add(achievement.Value);
                     }
                 }
             }
+        }
+
+        public AchievementEntry[] GetNewObtainedAchievement()
+        {
+            var array = _newObtained.ToArray();;
+            return array;
         }
 
         private void HandleDealDamage(DamageInfo obj)
@@ -62,8 +84,15 @@ namespace Users.FateX.Scripts.Achievements
             {
                 _achievementView.OnUpdate -= HandleUpdateView;
             }
+
+            foreach (var obtained in _newObtained)
+            {
+                obtained.AchievementSaveData.IsRewarded = true;
+                _snakeSegmentsRepository.ObtainSegment(obtained.AchievementData.CardData);
+            }
             
             _saveLoadService.SaveAchievements(_achievementModel.AchievementEntries);
+
 
         }
 

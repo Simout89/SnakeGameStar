@@ -13,6 +13,7 @@ namespace Скриптерсы.Services
 {
     public class SaveLoadService : ISaveLoadService
     {
+        [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
         [Inject] private GameConfig _gameConfig;
         private string CurrencySavePath => Path.Combine(Application.persistentDataPath, "currency_save.json");
         private string ShopSavePath => Path.Combine(Application.persistentDataPath, "shop_save.json");
@@ -124,6 +125,15 @@ namespace Скриптерсы.Services
         {
             ClearCurrencyData();
             ClearShopData();
+            
+            File.Delete(SegmentsSavePath);
+            LoadSegments();
+            
+            File.Delete(AchievementSavePath);
+            LoadAchievements();
+            
+            _snakeSegmentsRepository.ClearData();
+
             Debug.Log("Все данные игры очищены");
         }
 
@@ -201,15 +211,9 @@ namespace Скриптерсы.Services
 
                 List<SnakeSegmentEntry> snakeSegmentEntries = new();
 
-                foreach (var VARIABLE in snakeSegmentSaveData)
-                {
-                    Debug.LogError(VARIABLE.Id);
-                }
-
                 foreach (var segment in snakeSegmentSaveData)
                 {
-                    Debug.Log(segment.Id);
-
+    
                     //CardData segmentData = new();
                     //
                     //foreach (var VARIABLE in _gameConfig.GameConfigData.CardDatas)

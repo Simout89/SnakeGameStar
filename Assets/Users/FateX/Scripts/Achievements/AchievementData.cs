@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts.Achievements
@@ -12,7 +13,7 @@ namespace Users.FateX.Scripts.Achievements
         [field: SerializeField] public Sprite Icon { get; private set; }
         [field: SerializeField] public AchievementType AchievementType { get; private set; }
         [field: SerializeField] public int RequiredValue { get; private set; }
-        [field: SerializeField] public SnakeSegmentBase SnakeSegmentBase { get; private set; }
+        [field: SerializeField] public CardData CardData { get; private set; }
     }
 
     public enum AchievementType

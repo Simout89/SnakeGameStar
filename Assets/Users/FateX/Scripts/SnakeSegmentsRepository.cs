@@ -13,6 +13,11 @@ namespace Users.FateX.Scripts
         private List<SnakeSegmentEntry> segmentEntries = new List<SnakeSegmentEntry>();
         public IReadOnlyCollection<SnakeSegmentEntry> SegmentEntries => segmentEntries;
 
+        public void ClearData()
+        {
+            segmentEntries = _saveLoadService.GetSegmentEntries();
+        }
+
         public void Initialize()
         {
             segmentEntries = _saveLoadService.GetSegmentEntries();
@@ -21,6 +26,17 @@ namespace Users.FateX.Scripts
         public void Dispose()
         {
             _saveLoadService.SaveSegments(segmentEntries);
+        }
+
+        public void ObtainSegment(CardData cardData)
+        {
+            foreach (var segment in segmentEntries)
+            {
+                if (cardData.Id == segment.CardData.Id)
+                {
+                    segment.SnakeSegmentSaveData.IsObtained = true;
+                }
+            }
         }
 
         public CardData[] GetObtainedCardData()

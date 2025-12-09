@@ -5,6 +5,7 @@ using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Trial;
 using Users.FateX.Scripts.View;
+using Users.FateX.Scripts.View.Entry;
 
 namespace Users.FateX.Scripts.Data
 {
@@ -16,6 +17,7 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField, Header("Prefabs")] public XpItem XpPrefab { get; private set; }
         [field: SerializeField] public MagnetItem MagnetPrefab { get; private set; }
         [field: SerializeField] public AchievementEntryView AchievementEntryView { get; private set; }
+        [field: SerializeField] public DeathAchievementEntryView DeathAchievementEntryView { get; private set; }
         [field: SerializeField] public GamblingItem GamblingItemPrefab { get; private set; }
         [field: SerializeField] public CoinItem CoinItemPrefab { get; private set; }
         [field: SerializeField] public HealableItem HealableItemPrefab { get; private set; }

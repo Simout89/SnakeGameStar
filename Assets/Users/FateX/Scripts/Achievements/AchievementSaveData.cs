@@ -8,6 +8,7 @@ namespace Users.FateX.Scripts.Achievements
         public string Id;
         public float Progress;
         public bool IsCompleted;
+        public bool IsRewarded;
 
         public AchievementSaveData()
         {
