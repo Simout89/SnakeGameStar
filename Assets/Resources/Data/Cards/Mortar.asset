@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4089db18d4442fb650e0909c13cbc7, type: 3}
   m_Name: Mortar
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.CardData
+  <Id>k__BackingField: e
+  <IsObtained>k__BackingField: 1
   <Sprite>k__BackingField: {fileID: 21300000, guid: 9d29ec2e3370f9046abf4c1cefdebe72, type: 3}
   <CardType>k__BackingField: 0
+  <Value>k__BackingField: 0
   <SnakeSegmentBase>k__BackingField: {fileID: 9096899513531105914, guid: fe7caf8fb73fd294c890153e22a216c7, type: 3}
   <Description>k__BackingField: "\u0411\u044C\u0451\u0442 \u043F\u043E \u0441\u043B\u0443\u0447\u0430\u0439\u043D\u043E\u043C\u0443
     \u043F\u0440\u043E\u0442\u0438\u0432\u043D\u0438\u043A\u0443: \u0441\u043D\u0430\u0440\u044F\u0434

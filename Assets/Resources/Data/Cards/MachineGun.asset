@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4089db18d4442fb650e0909c13cbc7, type: 3}
   m_Name: MachineGun
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.CardData
+  <Id>k__BackingField: w
+  <IsObtained>k__BackingField: 1
   <Sprite>k__BackingField: {fileID: 21300000, guid: be5e3b9d57b6a634c8178459bc653964, type: 3}
   <CardType>k__BackingField: 0
+  <Value>k__BackingField: 0
   <SnakeSegmentBase>k__BackingField: {fileID: 3390149356430078541, guid: f126837828a9aff40a3e1260c7e73fd3, type: 3}
   <Description>k__BackingField: "\u041E\u0442\u043A\u0440\u044B\u0432\u0430\u0435\u0442
     \u043E\u0433\u043E\u043D\u044C \u043F\u043E \u0441\u0430\u043C\u043E\u043C\u0443

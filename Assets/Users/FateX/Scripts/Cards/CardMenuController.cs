@@ -12,6 +12,7 @@ namespace Users.FateX.Scripts.Cards
 {
     public class CardMenuController : IInitializable, IDisposable
     {
+        [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
         [Inject] private GameConfig _gameConfig;
         [Inject] private CardMenuView _cardMenuView;
         [Inject] private GameContext _gameContext;
@@ -161,7 +162,9 @@ namespace Users.FateX.Scripts.Cards
 
         private List<CardData> GetAvailableSegmentCards(bool isReroll)
         {
-            List<CardData> allSegmentCards = _gameConfig.GameConfigData.CardDatas
+            
+            
+            List<CardData> allSegmentCards = _snakeSegmentsRepository.GetObtainedCardData()
                 .Where(c => c.CardType == CardType.Segment)
                 .ToList();
 

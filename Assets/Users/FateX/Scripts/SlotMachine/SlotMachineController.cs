@@ -20,6 +20,7 @@ namespace Users.FateX.Scripts.SlotMachine
         [Inject] private SlotMachineView _slotMachineView;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private ItemFactory _itemFactory;
+        [Inject] private SnakeSegmentsRepository _segmentsRepository;
         
         private SlotMachinePrizeData _prizeData;
         private float _totalWeight;
@@ -163,9 +164,7 @@ namespace Users.FateX.Scripts.SlotMachine
                     if (_prizeData.SnakeSegmentBase != null && 
                         _prizeData.SnakeSegmentBase.Length > 0)
                     {
-                        var prize = _prizeData.SnakeSegmentBase[
-                            Random.Range(0, _prizeData.SnakeSegmentBase.Length)
-                        ];
+                        var prize = _segmentsRepository.GetObtainedCardData()[Random.Range(0, _segmentsRepository.GetObtainedCardData().Length)].SnakeSegmentBase;
                         _gameContext.SnakeController.Grow(prize, false);
                     }
                     break;
