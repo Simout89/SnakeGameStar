@@ -1,14 +1,23 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 using System.IO;
+using System.Linq;
+using Newtonsoft.Json;
+using Users.FateX.Scripts;
+using Users.FateX.Scripts.Achievements;
 using Users.FateX.Scripts.Shop;
 using Zenject;
 
 namespace Скриптерсы.Services
 {
-    public class SaveLoadService: ISaveLoadService
+    public class SaveLoadService : ISaveLoadService
     {
+        [Inject] private GameConfig _gameConfig;
         private string CurrencySavePath => Path.Combine(Application.persistentDataPath, "currency_save.json");
         private string ShopSavePath => Path.Combine(Application.persistentDataPath, "shop_save.json");
+        private string AchievementSavePath => Path.Combine(Application.persistentDataPath, "achievement_save.json");
+        private Dictionary<string, AchievementEntry> achievementEntries;
+
 
         // Методы для валюты
         public PlayerCurrencyData LoadCurrencyData()
@@ -114,6 +123,62 @@ namespace Скриптерсы.Services
             ClearShopData();
             Debug.Log("Все данные игры очищены");
         }
+
+        public void LoadAchievements()
+        {
+            if (File.Exists(AchievementSavePath))
+            {
+                string json = File.ReadAllText(AchievementSavePath);
+                List<AchievementSaveData> achievementSaveDatas =
+                    JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
+                Dictionary<string, AchievementEntry> achievementEntries = new();
+                foreach (var achievementSaveData in achievementSaveDatas)
+                {
+                    var achievementData =
+                        _gameConfig.GameConfigData.AchievementDatas.FirstOrDefault(a => a.Id == achievementSaveData.Id);
+
+                    achievementEntries.Add(achievementSaveData.Id,
+                        new AchievementEntry(achievementData, achievementSaveData));
+                }
+                
+                this.achievementEntries = achievementEntries;
+
+            }
+            else
+            {
+                Dictionary<string, AchievementEntry> achievementEntries = new();
+                foreach (var achievementSaveData in _gameConfig.GameConfigData.AchievementDatas)
+                {
+                    achievementEntries.Add(achievementSaveData.Id,
+                        new AchievementEntry(achievementSaveData, new AchievementSaveData(achievementSaveData)));
+                }
+                
+                this.achievementEntries = achievementEntries;
+
+            }
+        }
+
+        public void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries)
+        {
+            List<AchievementSaveData> achievementSaveDatas = new List<AchievementSaveData>();
+
+            foreach (var achievement in achievementEntries)
+            {
+                achievementSaveDatas.Add(achievement.Value.AchievementSaveData);
+            }
+
+            string json = JsonConvert.SerializeObject(achievementSaveDatas, Formatting.Indented);
+            File.WriteAllText(AchievementSavePath, json);
+            
+            Debug.Log("Достижения сохранены");
+        }
+
+        public Dictionary<string, AchievementEntry> GetAchievements()
+        {
+            LoadAchievements();
+            
+            return achievementEntries;
+        }
     }
 
     public interface ISaveLoadService
@@ -121,11 +186,16 @@ namespace Скриптерсы.Services
         public PlayerCurrencyData LoadCurrencyData();
         public void SaveCurrencyData(PlayerCurrencyData data);
         public void ClearCurrencyData();
-        
+
         public ShopSaveData LoadShopData();
         public void SaveShopData(ShopSaveData data);
         public void ClearShopData();
-        
+
         public void ClearAllData();
+
+
+        public void LoadAchievements();
+        public void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries);
+        public Dictionary<string, AchievementEntry> GetAchievements();
     }
 }

@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{0A2F3ACA-8087-17EE-A1C6-F35EAE4A6959}",
+    "Hash": "{32D6064B-8CBF-8DD2-50C1-BDD40791CB8D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
@@ -38,14 +38,6 @@
       "Location": "Memory",
       "ShortName": "completion.wav",
       "CachePath": "FC/{FC614BF8-E6B3-9A06-25E3-59B8818F9613}.wem"
-     },
-     {
-      "Id": "291181088",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Retro Water Drop 01.wav",
-      "CachePath": "59/{590E8F64-673B-D9F5-52F3-1E20F63E813D}.wem"
      },
      {
       "Id": "308453629",
@@ -166,6 +158,14 @@
       "Location": "Memory",
       "ShortName": "Звук-сьебалния-яблока.wav",
       "CachePath": "9E/{9E446734-0926-121A-BCDA-F9F8EDBC1A32}.wem"
+     },
+     {
+      "Id": "990669999",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "2025-12-09-19-13-15-Trim (mp3cut.net).wav",
+      "CachePath": "7C/{7CF0E104-4D83-E5AA-D481-9D5CD296332D}.wem"
      },
      {
       "Id": "1024133082",
@@ -449,11 +449,11 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Xp",
       "GUID": "{022E2080-EDE3-471C-99E9-BDE0B85ED0D5}",
       "DurationType": "OneShot",
-      "DurationMin": "0.36609977",
-      "DurationMax": "0.36609977",
+      "DurationMin": "0.38008332",
+      "DurationMax": "0.38008332",
       "MediaRefs": [
        {
-        "Id": "291181088"
+        "Id": "990669999"
        }
       ]
      },
@@ -470,6 +470,6 @@
     ]
    }
   ],
-  "FileHash": "{FE4C691A-4AD2-C4FF-EF5E-A3F50525E9AE}"
+  "FileHash": "{1B5CC371-23D8-3440-F03D-42864A4787FA}"
  }
 }

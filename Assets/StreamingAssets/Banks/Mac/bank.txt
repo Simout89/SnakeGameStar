@@ -25,7 +25,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	73924771	Tesla	.cache\D6\{D6209922-E0C2-D6E4-7154-A6CB22C307F6}.wem		\Containers\Default Work Unit\Weapon\Tesla		190416
 	178159659	LvlUp	.cache\65\{657CF823-A716-5235-D7CE-5CDDE711C55A}.wem		\Containers\Default Work Unit\LvlUp		327776
 	278875474	Slot_completion	.cache\FC\{FC614BF8-E6B3-9A06-25E3-59B8818F9613}.wem		\Containers\Default Work Unit\Slot Machine\Slot_completion		145948
-	291181088	Xp	.cache\59\{590E8F64-673B-D9F5-52F3-1E20F63E813D}.wem		\Containers\Default Work Unit\Xp		64676
 	308453629	Mortar Shoot	.cache\04\{04246225-26CF-C10F-6800-16901577A867}.wem		\Containers\Default Work Unit\Weapon\Mortar Shoot		104840
 	356062460	 MachineGun	.cache\FF\{FF26B391-C178-C369-7ADE-7BB64F81A39A}.wem		\Containers\Default Work Unit\Weapon\ MachineGun		352896
 	508721672	PickUp	.cache\DF\{DF81F4E6-DB4D-1B7B-B041-8AC728624B04}.wem		\Containers\Default Work Unit\PickUp		12588
@@ -41,5 +40,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	896543732	TrialTowerCapture	.cache\E5\{E58D8577-F2AA-34E6-F739-06C99809586D}.wem		\Containers\Default Work Unit\TrialTowerCapture		427012
 	953991065	SpikeGun	.cache\3D\{3DF5D767-BD7E-25D8-8586-0910E23CA096}.wem		\Containers\Default Work Unit\Weapon\SpikeGun		237216
 	989765823	EatApple	.cache\9E\{9E446734-0926-121A-BCDA-F9F8EDBC1A32}.wem		\Containers\Default Work Unit\EatApple		98552
+	990669999	Xp	.cache\7C\{7CF0E104-4D83-E5AA-D481-9D5CD296332D}.wem		\Containers\Default Work Unit\Xp		73072
 	1024133082	DisplayMessage	.cache\A5\{A5012DB8-4424-6EB0-C277-4840DF38162E}.wem		\Containers\Default Work Unit\DisplayMessage		188892
 

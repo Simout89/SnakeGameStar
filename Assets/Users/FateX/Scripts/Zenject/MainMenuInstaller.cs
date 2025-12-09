@@ -1,4 +1,5 @@
-﻿using Users.FateX.Scripts.Shop;
+﻿using Users.FateX.Scripts.Achievements;
+using Users.FateX.Scripts.Shop;
 using Zenject;
 
 namespace Скриптерсы.Zenject
@@ -9,6 +10,12 @@ namespace Скриптерсы.Zenject
         {
             Container.BindInterfacesAndSelfTo<ShopView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<ShopController>().AsSingle().NonLazy();
+            
+            
+            
+            Container.BindInterfacesAndSelfTo<AchievementController>().AsSingle().NonLazy();
+            Container.Bind<IAchievementView>().To<AchievementView>().FromComponentsInHierarchy().AsSingle();
+
         }
     }
 }

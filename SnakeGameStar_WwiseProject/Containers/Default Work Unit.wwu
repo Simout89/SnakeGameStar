@@ -166,7 +166,7 @@
 					<PropertyList>
 						<Property Name="Volume" Type="Real64">
 							<ValueList>
-								<Value>-10</Value>
+								<Value>5</Value>
 							</ValueList>
 						</Property>
 					</PropertyList>
@@ -186,9 +186,16 @@
 								<MediaID ID="291181088"/>
 							</MediaIDList>
 						</AudioFileSource>
+						<AudioFileSource Name="2025-12-09-19-13-15-Trim (mp3cut_net)" ID="{4213C6A1-69A9-4252-9966-38ECC114DB1C}">
+							<Language>SFX</Language>
+							<AudioFile>2025-12-09-19-13-15-Trim (mp3cut.net).wav</AudioFile>
+							<MediaIDList>
+								<MediaID ID="990669999"/>
+							</MediaIDList>
+						</AudioFileSource>
 					</ChildrenList>
 					<ActiveSourceList>
-						<ActiveSource Name="Retro Water Drop 01" ID="{D92A3B0F-1DDE-443A-95CA-F836D5B4898F}" Platform="Linked"/>
+						<ActiveSource Name="2025-12-09-19-13-15-Trim (mp3cut_net)" ID="{4213C6A1-69A9-4252-9966-38ECC114DB1C}" Platform="Linked"/>
 					</ActiveSourceList>
 				</Sound>
 				<Sound Name="SnakeDie" ID="{4A60044F-52B7-4C8C-96A5-68A24D9D9C47}" ShortID="345606886">

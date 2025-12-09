@@ -15,6 +15,8 @@ namespace Users.FateX.Scripts
         {
             _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
             
+            _saveLoadService.LoadAchievements();
+            
             SceneManager.LoadScene((int)Scenes.MainMenu);
         }
     }

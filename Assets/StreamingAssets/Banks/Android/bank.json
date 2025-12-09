@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{48315D72-4B80-C0F0-BA1D-08472DF7279D}",
+    "Hash": "{32D6064B-8CBF-8DD2-50C1-BDD40791CB8D}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "цепная молния отскок.wav",
-      "CachePath": "43/{438E08E9-BAA1-8B34-8DDE-D1E1BFD6E2D8}.wem"
+      "CachePath": "D6/{D6209922-E0C2-D6E4-7154-A6CB22C307F6}.wem"
      },
      {
       "Id": "178159659",
@@ -29,7 +29,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro Event StereoUP 02.wav",
-      "CachePath": "ED/{ED2DE222-A229-7228-ABAE-34A2CB14389D}.wem"
+      "CachePath": "65/{657CF823-A716-5235-D7CE-5CDDE711C55A}.wem"
      },
      {
       "Id": "278875474",
@@ -37,15 +37,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "completion.wav",
-      "CachePath": "7C/{7C3A9853-DF37-7050-6C6F-C26D9454779C}.wem"
-     },
-     {
-      "Id": "291181088",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Retro Water Drop 01.wav",
-      "CachePath": "F3/{F3384F63-779D-B82C-7E6A-1637672E040E}.wem"
+      "CachePath": "FC/{FC614BF8-E6B3-9A06-25E3-59B8818F9613}.wem"
      },
      {
       "Id": "308453629",
@@ -53,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Выстрел пушки (mp3cut.net).wav",
-      "CachePath": "59/{595FA3E0-F201-4CB6-0BC4-7797CB50C90F}.wem"
+      "CachePath": "04/{04246225-26CF-C10F-6800-16901577A867}.wem"
      },
      {
       "Id": "356062460",
@@ -61,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "762x54r Single WAV.wav",
-      "CachePath": "ED/{ED33A596-A0DC-53DA-8118-9A9B19A4885A}.wem"
+      "CachePath": "FF/{FF26B391-C178-C369-7ADE-7BB64F81A39A}.wem"
      },
      {
       "Id": "508721672",
@@ -69,7 +61,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "water_drop_synthetic.wav",
-      "CachePath": "C9/{C9C17B8B-BBA9-C5A1-E25E-DFDD1B7C7FA6}.wem"
+      "CachePath": "DF/{DF81F4E6-DB4D-1B7B-B041-8AC728624B04}.wem"
      },
      {
       "Id": "518293719",
@@ -77,7 +69,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Hit_3.wav",
-      "CachePath": "1B/{1B506426-23E9-88BE-50CF-A70395AF8064}.wem"
+      "CachePath": "BE/{BE09EFC3-4362-2868-F0C2-73BF3687DBD4}.wem"
      },
      {
       "Id": "532684351",
@@ -85,7 +77,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Spell Impact 1.wav",
-      "CachePath": "9D/{9D20D73E-13A0-91DD-4C7F-B9EE27827BB6}.wem"
+      "CachePath": "E7/{E7940E85-DDAF-7EC0-E936-6F03F7CDB505}.wem"
      },
      {
       "Id": "583867755",
@@ -93,7 +85,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro Charge Off 11.wav",
-      "CachePath": "AD/{AD8C0401-93E8-30D4-E69C-E43EC1E9D04A}.wem"
+      "CachePath": "26/{26BC10D2-01BC-C997-7D44-A5BB70245A89}.wem"
      },
      {
       "Id": "643516409",
@@ -101,7 +93,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "match_xylophone_5.wav",
-      "CachePath": "43/{435F87C4-C14F-2904-A613-CDF717F9EE0C}.wem"
+      "CachePath": "5A/{5A4A1B82-3025-7D4F-8CA1-3618921F0CB9}.wem"
      },
      {
       "Id": "734243213",
@@ -109,7 +101,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sword Attack 1.wav",
-      "CachePath": "D8/{D89E2057-E48F-0BDE-D89F-915E4763E59D}.wem"
+      "CachePath": "E6/{E62EB540-A6E7-A03A-ACE7-530E87BF3B82}.wem"
      },
      {
       "Id": "740252889",
@@ -117,7 +109,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Retro PickUp Coin 07.wav",
-      "CachePath": "A8/{A8AD8005-2F70-79A7-C1DE-98E5FFB6D1A0}.wem"
+      "CachePath": "40/{40EE7FEA-A5C7-66A6-A6A8-4F4931262CAD}.wem"
      },
      {
       "Id": "806303027",
@@ -125,7 +117,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Explosion Medium 2-1.wav",
-      "CachePath": "F3/{F3B21F9A-0210-5970-F748-EE13BC68983D}.wem"
+      "CachePath": "0E/{0EBC97BC-2FB7-374B-C61D-61C9CF508C2A}.wem"
      },
      {
       "Id": "867434290",
@@ -133,7 +125,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Win.wav",
-      "CachePath": "F5/{F5161339-62F6-534F-04F5-3DA2D6DF542B}.wem"
+      "CachePath": "76/{768CE047-BE8D-A852-456C-AC5224AF588A}.wem"
      },
      {
       "Id": "885284157",
@@ -141,7 +133,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Loop.wav",
-      "CachePath": "42/{42CCA09E-2753-A6F8-E964-883E1A36ED13}.wem"
+      "CachePath": "F0/{F0761A46-ACDC-1328-7824-35DEA74376E9}.wem"
      },
      {
       "Id": "896543732",
@@ -149,7 +141,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "synth_cancel.wav",
-      "CachePath": "F3/{F34BB6A1-A30B-429E-8531-62097997095F}.wem"
+      "CachePath": "E5/{E58D8577-F2AA-34E6-F739-06C99809586D}.wem"
      },
      {
       "Id": "953991065",
@@ -157,7 +149,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Sci-Fi Gun 1-1.wav",
-      "CachePath": "C1/{C1DF1A26-CE1A-D93C-05A8-A7CDEEE518C2}.wem"
+      "CachePath": "3D/{3DF5D767-BD7E-25D8-8586-0910E23CA096}.wem"
      },
      {
       "Id": "989765823",
@@ -165,7 +157,15 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Звук-сьебалния-яблока.wav",
-      "CachePath": "B5/{B5409A28-71F2-8575-6312-C02885DEBA66}.wem"
+      "CachePath": "9E/{9E446734-0926-121A-BCDA-F9F8EDBC1A32}.wem"
+     },
+     {
+      "Id": "990669999",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "2025-12-09-19-13-15-Trim (mp3cut.net).wav",
+      "CachePath": "7C/{7CF0E104-4D83-E5AA-D481-9D5CD296332D}.wem"
      },
      {
       "Id": "1024133082",
@@ -173,7 +173,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "steel_drums_chime_quick.wav",
-      "CachePath": "AC/{AC3EFD7C-30EE-7F15-1A22-97E12AA8C585}.wem"
+      "CachePath": "A5/{A5012DB8-4424-6EB0-C277-4840DF38162E}.wem"
      }
     ],
     "Events": [
@@ -449,11 +449,11 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Xp",
       "GUID": "{022E2080-EDE3-471C-99E9-BDE0B85ED0D5}",
       "DurationType": "OneShot",
-      "DurationMin": "0.36609977",
-      "DurationMax": "0.36609977",
+      "DurationMin": "0.38008332",
+      "DurationMax": "0.38008332",
       "MediaRefs": [
        {
-        "Id": "291181088"
+        "Id": "990669999"
        }
       ]
      },
@@ -470,6 +470,6 @@
     ]
    }
   ],
-  "FileHash": "{18BBC9AD-7030-73AF-6731-DB7DBCA7EF4C}"
+  "FileHash": "{7DF7D9AB-C0D5-6B89-9A4A-698F7854E32F}"
  }
 }

@@ -52,6 +52,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
             Container.BindInterfacesAndSelfTo<MonoHelper>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesAndSelfTo<GlobalSoundPlayer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AchievementController>().AsSingle();
         }
 
         private void BindFactories()
