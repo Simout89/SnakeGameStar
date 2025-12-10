@@ -22,16 +22,6 @@ namespace Users.FateX.Scripts.Tutorial
             resumeButton.onClick.AddListener(ResumeButtonClick);
         }
 
-        public void OnEnable()
-        {
-            _tutorialController.OnShowWindow += HandleShowWindow;
-        }
-        
-        public void OnDisable()
-        {
-            _tutorialController.OnShowWindow -= HandleShowWindow;
-        }
-
         private void HandleShowWindow(TutorialWindowType tutorialWindowType)
         {
             ShowWindow(tutorialWindowType);
@@ -70,6 +60,10 @@ namespace Users.FateX.Scripts.Tutorial
 
     public enum TutorialWindowType
     {
-        Move
+        Move,
+        CardSelect,
+        XpHealth,
+        KillEnemy,
+        DeathMenu
     }
 }

@@ -18,6 +18,7 @@ namespace Users.FateX.Scripts.Cards
         [Inject] private GameContext _gameContext;
         [Inject] private PlayerStats _playerStats;
         [Inject] private CurrencyService _currencyService;
+        [Inject] private RoundCurrency _roundCurrency;
         [Inject] private GlobalSoundPlayer _globalSoundPlayer;
 
         private int rerrolUsed = 0;
@@ -267,7 +268,8 @@ namespace Users.FateX.Scripts.Cards
                 }
                 
 
-                _currencyService.AddCoins((int)card.Value);
+                //_currencyService.AddCoins((int)card.Value);
+                _roundCurrency.AddCoin((int)card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
                 OnCardSelected?.Invoke();

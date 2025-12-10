@@ -6,6 +6,7 @@ using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Data.WaveData;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Services;
+using Users.FateX.Scripts.Tutorial;
 using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;
@@ -31,6 +32,8 @@ namespace Users.FateX.Scripts
         [Inject] private DeathHandler _deathHandler;
         [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [Inject] private GameConfig _gameConfig;
+        [Inject] private TutorialController _tutorialController;
+        [Inject] private SettingsController _settingsController;
         
         public void Initialize()
         {
@@ -64,7 +67,15 @@ namespace Users.FateX.Scripts
             _gameStateManager.PushState(GameStates.CardMenu);
             
             _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopMainMusic);
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopGameMusic);
             _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.PlayGameMusic);
+            
+            if(!_settingsController.SettingsSaveData.CardTutorial)
+            {
+                _tutorialController.ShowTutorial(TutorialWindowType.CardSelect);
+                _settingsController.SettingsSaveData.CardTutorial = true;
+            }
+            
         }
     }
 }

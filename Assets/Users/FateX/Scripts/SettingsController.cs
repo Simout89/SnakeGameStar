@@ -75,5 +75,9 @@ namespace Users.FateX.Scripts
         public float MusicVolume = 100;
         public float EffectVolume = 100;
         public int CurrentFps = 60;
+        public bool CardTutorial;
+        public bool MoveTutorial;
+        public bool KillTutorial;
+        public bool DeathTutorial;
     }
 }
