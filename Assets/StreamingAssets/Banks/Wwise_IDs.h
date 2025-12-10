@@ -41,6 +41,11 @@ namespace AK
         static const AkUniqueID STOP_SLOT_LOOP = 1067214853U;
     } // namespace EVENTS
 
+    namespace GAME_PARAMETERS
+    {
+        static const AkUniqueID MAIN_VOLUME = 2312172015U;
+    } // namespace GAME_PARAMETERS
+
     namespace BANKS
     {
         static const AkUniqueID INIT = 1355168291U;
@@ -49,6 +54,7 @@ namespace AK
 
     namespace BUSSES
     {
+        static const AkUniqueID EFFECTS = 1942696649U;
         static const AkUniqueID MAIN_AUDIO_BUS = 2246998526U;
     } // namespace BUSSES
 

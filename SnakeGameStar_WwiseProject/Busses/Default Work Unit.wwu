@@ -9,6 +9,80 @@
 							<ObjectRef Name="System" ID="{2E3995B5-0FA4-4F0A-BD7C-1D5F5453A7F2}" WorkUnitID="{012C57FC-4A9F-43B5-A99A-F78855BF53DA}"/>
 						</Reference>
 					</ReferenceList>
+					<ChildrenList>
+						<Bus Name="Effects" ID="{FAB1E6EB-298E-41E2-AC9F-4E721B8F07CD}">
+							<ObjectLists>
+								<ObjectList Name="RTPC">
+									<RTPC Name="" ID="{A5CF8489-1FBB-4D0B-889F-F6D68AE57BCE}" ShortID="995552249">
+										<PropertyList>
+											<Property Name="PropertyName" Type="string" Value="OutputBusVolume"/>
+										</PropertyList>
+										<ReferenceList>
+											<Reference Name="ControlInput">
+												<ObjectRef Name="Effects" ID="{7FF38826-760C-4F7F-B2C8-26BF708A673B}" WorkUnitID="{62638DEF-36EC-495A-9447-999013F2C587}"/>
+											</Reference>
+											<Reference Name="Curve">
+												<Custom>
+													<Curve Name="" ID="{A4D5BE46-7212-46DF-8093-38B773B88B93}">
+														<PropertyList>
+															<Property Name="Flags" Type="int32" Value="3"/>
+														</PropertyList>
+														<PointList>
+															<Point>
+																<XPos>0</XPos>
+																<YPos>-200</YPos>
+																<Flags>5</Flags>
+															</Point>
+															<Point>
+																<XPos>100</XPos>
+																<YPos>0</YPos>
+																<Flags>37</Flags>
+															</Point>
+														</PointList>
+													</Curve>
+												</Custom>
+											</Reference>
+										</ReferenceList>
+									</RTPC>
+								</ObjectList>
+							</ObjectLists>
+						</Bus>
+					</ChildrenList>
+					<ObjectLists>
+						<ObjectList Name="RTPC">
+							<RTPC Name="" ID="{E3B13777-423F-4472-BE3A-C7EB4F3316CD}" ShortID="765826750">
+								<PropertyList>
+									<Property Name="PropertyName" Type="string" Value="BusVolume"/>
+								</PropertyList>
+								<ReferenceList>
+									<Reference Name="ControlInput">
+										<ObjectRef Name="Main_Volume" ID="{C25809D5-1951-4A6C-AF00-7FF2598DB2A3}" WorkUnitID="{62638DEF-36EC-495A-9447-999013F2C587}"/>
+									</Reference>
+									<Reference Name="Curve">
+										<Custom>
+											<Curve Name="" ID="{0C099350-525E-4213-BB30-04BEBBC17892}">
+												<PropertyList>
+													<Property Name="Flags" Type="int32" Value="3"/>
+												</PropertyList>
+												<PointList>
+													<Point>
+														<XPos>0</XPos>
+														<YPos>-200</YPos>
+														<Flags>5</Flags>
+													</Point>
+													<Point>
+														<XPos>100</XPos>
+														<YPos>0</YPos>
+														<Flags>37</Flags>
+													</Point>
+												</PointList>
+											</Curve>
+										</Custom>
+									</Reference>
+								</ReferenceList>
+							</RTPC>
+						</ObjectList>
+					</ObjectLists>
 				</Bus>
 			</ChildrenList>
 		</WorkUnit>

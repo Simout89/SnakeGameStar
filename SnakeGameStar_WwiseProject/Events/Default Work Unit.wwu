@@ -160,15 +160,6 @@
 							</ValueList>
 						</Property>
 					</PropertyList>
-					<ChildrenList>
-						<Action Name="" ID="{426AC6F7-FCA6-40FE-B6BA-9B5595F2CF9E}" ShortID="303878722">
-							<ReferenceList>
-								<Reference Name="Target">
-									<ObjectRef Name="EatApple" ID="{8EE954E8-379B-4FFF-AFEE-A31F6C056AEE}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
-								</Reference>
-							</ReferenceList>
-						</Action>
-					</ChildrenList>
 				</Event>
 				<Event Name="Play_LvlUp" ID="{31145222-D02A-45A3-95B2-4AE559C4A301}">
 					<ChildrenList>

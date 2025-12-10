@@ -1,4 +1,8 @@
+Game Parameter	ID	Name			Wwise Object Path	Notes
+	2312172015	Main_Volume			\Default Work Unit\Main_Volume	
+
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	1942696649	Effects			\Default Work Unit\Main Audio Bus\Effects	
 	2246998526	Main Audio Bus			\Default Work Unit\Main Audio Bus	
 
 Audio Devices	ID	Name	Type				Notes

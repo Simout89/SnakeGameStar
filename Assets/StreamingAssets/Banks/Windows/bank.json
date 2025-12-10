@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{D1E551B1-F859-7830-58F9-0916E586ADAA}",
+    "Hash": "{3BF103D0-56EB-2CEC-878F-37B865F74160}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
@@ -192,14 +192,6 @@
       "CachePath": "FA/{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem"
      },
      {
-      "Id": "989765823",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "Звук-сьебалния-яблока.wav",
-      "CachePath": "E0/{E07F4A58-B5A9-C3BB-D969-55D31F0FA9B7}.wem"
-     },
-     {
       "Id": "990669999",
       "Language": "SFX",
       "Streaming": "false",
@@ -334,14 +326,10 @@
       "Name": "Play_EatApple",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_EatApple",
       "GUID": "{FC679E0B-D220-4A2E-B6CF-729944532DCD}",
+      "MaxAttenuation": "0",
       "DurationType": "OneShot",
-      "DurationMin": "0.55812246",
-      "DurationMax": "0.55812246",
-      "MediaRefs": [
-       {
-        "Id": "989765823"
-       }
-      ]
+      "DurationMin": "0",
+      "DurationMax": "0"
      },
      {
       "Id": "4030404899",
@@ -580,6 +568,6 @@
     ]
    }
   ],
-  "FileHash": "{CD0AF690-72EA-713A-BC13-E8469F35522B}"
+  "FileHash": "{F4F9DBC7-86BB-4639-C714-09390F16F6DE}"
  }
 }
