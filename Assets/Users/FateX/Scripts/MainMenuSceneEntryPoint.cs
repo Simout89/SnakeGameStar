@@ -15,6 +15,7 @@ namespace Users.FateX.Scripts
 
             
             _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopGameMusic);
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopMainMusic);
             _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.PlayMainMusic);
 
 

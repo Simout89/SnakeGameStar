@@ -15,6 +15,7 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private TrialTowerFactory _trialTowerFactory;
         [Inject] private GameTimer _gameTimer;
         [Inject] private MessageDisplayView _messageDisplayView;
+        [Inject] private ArrowView _arrowView;
         public List<GameObject> availablePoints = new List<GameObject>();
         private WeightedRandomGenerator _weightedRandomGenerator;
 
@@ -35,11 +36,14 @@ namespace Users.FateX.Scripts.Trial
                 var randomPoint = availablePoints[_weightedRandomGenerator.Next()];
                 availablePoints.Remove(randomPoint);
 
-                _trialTowerFactory.SpawnTowerByType(
+                var tower = _trialTowerFactory.SpawnTowerByType(
                     (TrialTowerType)Random.Range(0, Enum.GetValues(typeof(TrialTowerType)).Length),
                     randomPoint.transform.position);
 
                 _messageDisplayView.ShowText("Появилась башня испытаний", Color.cyan);
+                
+                _arrowView.StartTracking(tower.gameObject);
+                
                 _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.DisplayMessage);
             }
             else

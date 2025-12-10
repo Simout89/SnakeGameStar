@@ -14,6 +14,8 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private ItemFactory _itemFactory;
         [Inject] private MessageDisplayView _messageDisplayView;
         [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        [Inject] private ArrowView _arrowView;
+
 
         
         public void OnTowerCaptured(TrialTower tower)
@@ -22,6 +24,8 @@ namespace Users.FateX.Scripts.Trial
             var handlers = new Dictionary<EnemyBase, Action<EnemyBase>>();
 
             int spawnCount = 5;
+            
+            _arrowView.StopTracking(tower.gameObject);
             
             switch (tower.TrialTowerType)
             {

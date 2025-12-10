@@ -41,6 +41,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SlotMachineView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<MessageDisplayView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<ArrowView>().FromComponentsInHierarchy().AsSingle();
         }
 
         private void BindCoreSystems()
