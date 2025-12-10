@@ -19,6 +19,7 @@ namespace Скриптерсы.Services
         private string ShopSavePath => Path.Combine(Application.persistentDataPath, "shop_save.json");
         private string AchievementSavePath => Path.Combine(Application.persistentDataPath, "achievement_save.json");
         private string SegmentsSavePath => Path.Combine(Application.persistentDataPath, "segments_save.json");
+        private string SettingsSavePath => Path.Combine(Application.persistentDataPath, "settings_save.json");
         private Dictionary<string, AchievementEntry> achievementEntries;
         private List<SnakeSegmentEntry> _snakeSegmentEntries;
 
@@ -271,6 +272,27 @@ namespace Скриптерсы.Services
 
             return _snakeSegmentEntries;
         }
+
+        public SettingsSaveData LoadSettings()
+        {
+            if (File.Exists(SettingsSavePath))
+            {
+                string json = File.ReadAllText(SettingsSavePath);
+                SettingsSaveData settingsSaveData = JsonConvert.DeserializeObject<SettingsSaveData>(json);
+                return settingsSaveData;
+            }
+            else
+            {
+                SettingsSaveData settingsSaveData = new();
+                return settingsSaveData;
+            }
+        }
+
+        public void SaveSettings(SettingsSaveData settingsSaveData)
+        {
+            string json = JsonConvert.SerializeObject(settingsSaveData);
+            File.WriteAllText(SettingsSavePath, json);
+        }
     }
 
     public interface ISaveLoadService
@@ -293,5 +315,8 @@ namespace Скриптерсы.Services
         public void LoadSegments();
         public void SaveSegments(List<SnakeSegmentEntry> snakeSegmentEntries);
         public List<SnakeSegmentEntry> GetSegmentEntries();
+
+        public SettingsSaveData LoadSettings();
+        public void SaveSettings(SettingsSaveData settingsSaveData);
     }
 }

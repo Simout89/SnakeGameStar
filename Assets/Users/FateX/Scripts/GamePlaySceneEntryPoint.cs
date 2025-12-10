@@ -33,10 +33,6 @@ namespace Users.FateX.Scripts
         
         public void Initialize()
         {
-#if UNITY_ANDROID && !UNITY_EDITOR
-    Application.targetFrameRate = 90;
-#endif
-            
 
             // УРовень
             

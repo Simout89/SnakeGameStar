@@ -5,12 +5,17 @@
 			<ChildrenList>
 				<GameParameter Name="Main_Volume" ID="{C25809D5-1951-4A6C-AF00-7FF2598DB2A3}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
 				<GameParameter Name="Effects" ID="{7FF38826-760C-4F7F-B2C8-26BF708A673B}">
 					<PropertyList>
-						<Property Name="InitialValue" Type="Real64" Value="0"/>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
+					</PropertyList>
+				</GameParameter>
+				<GameParameter Name="Music_Volume" ID="{0C7DBFB8-98E5-40F6-B454-55B7F6A610A6}">
+					<PropertyList>
+						<Property Name="InitialValue" Type="Real64" Value="100"/>
 					</PropertyList>
 				</GameParameter>
 			</ChildrenList>
