@@ -13,6 +13,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	2229301370	Play_Xp			\Default Work Unit\Play_Xp	
 	2298541870	Play_SpikeGun			\Default Work Unit\Weapon\Play_SpikeGun	
 	2387630660	Play_EatApple			\Default Work Unit\Play_EatApple	
+	2481433679	Play_GamePlayMusic			\Default Work Unit\Music\Play_GamePlayMusic	
 	2618825045	Play_TrialTowerCapture			\Default Work Unit\Play_TrialTowerCapture	
 	2677223148	Play_Cursor			\Default Work Unit\Ui\Play_Cursor	
 	2688642167	Play_Denied			\Default Work Unit\Ui\Play_Denied	
@@ -24,6 +25,7 @@ Event	ID	Name			Wwise Object Path	Notes
 	3860455926	Play_PickUp			\Default Work Unit\Play_PickUp	
 	3893377015	Play_Tesla			\Default Work Unit\Weapon\Play_Tesla	
 	4030404899	Play_Explosion			\Default Work Unit\Weapon\Play_Explosion	
+	4072991621	Stop_GamePlayMusic			\Default Work Unit\Music\Stop_GamePlayMusic	
 	4179853477	Play_Slot_Win			\Default Work Unit\Slot Machine\Play_Slot_Win	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
@@ -35,6 +37,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	245487382	Denied	.cache\40\{4020EA5D-C313-58A0-F72B-4252934EAD4B}.wem		\Containers\Default Work Unit\Effects\Ui\Denied		5879
 	278875474	Slot_completion	.cache\44\{44B401AE-DE4F-BE67-33A4-AE250567B62D}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_completion		13693
 	308453629	Mortar Shoot	.cache\B6\{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem		\Containers\Default Work Unit\Effects\Weapon\Mortar Shoot		8104
+	308991835	GamePlayMusic	.cache\6C\{6C23A04E-E174-07AE-EB20-E863632F3D4D}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		9835205
 	356062460	 MachineGun	.cache\4B\{4B52663B-EC57-F84F-8F8F-A35D916BBF73}.wem		\Containers\Default Work Unit\Effects\Weapon\ MachineGun		21680
 	370091552	Buy	.cache\2C\{2C449723-2DEB-2EC0-E862-B8D8277B7C4A}.wem		\Containers\Default Work Unit\Effects\Ui\Buy		8566
 	508721672	PickUp	.cache\D9\{D9798E64-25B6-0928-0C62-7C1D5B54889D}.wem		\Containers\Default Work Unit\Effects\PickUp		1493

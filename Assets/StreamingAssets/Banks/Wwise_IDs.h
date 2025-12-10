@@ -23,6 +23,7 @@ namespace AK
         static const AkUniqueID PLAY_DISPLAYMESSAGE = 2768162129U;
         static const AkUniqueID PLAY_EATAPPLE = 2387630660U;
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
+        static const AkUniqueID PLAY_GAMEPLAYMUSIC = 2481433679U;
         static const AkUniqueID PLAY_LVLUP = 1716361963U;
         static const AkUniqueID PLAY_MORTAR_SHOOT = 2824054637U;
         static const AkUniqueID PLAY_PENTA = 2886612238U;
@@ -38,6 +39,7 @@ namespace AK
         static const AkUniqueID PLAY_TESLA = 3893377015U;
         static const AkUniqueID PLAY_TRIALTOWERCAPTURE = 2618825045U;
         static const AkUniqueID PLAY_XP = 2229301370U;
+        static const AkUniqueID STOP_GAMEPLAYMUSIC = 4072991621U;
         static const AkUniqueID STOP_SLOT_LOOP = 1067214853U;
     } // namespace EVENTS
 

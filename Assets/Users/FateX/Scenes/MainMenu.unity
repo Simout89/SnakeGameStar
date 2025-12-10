@@ -1860,7 +1860,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 277009425}
-  - component: {fileID: 277009424}
   m_Layer: 0
   m_Name: AKBANK
   m_TagString: Untagged
@@ -1868,31 +1867,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &277009424
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 277009423}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 48c0da13ab7f663418a0aeac3b8e79e5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: AK.Wwise.Unity.MonoBehaviour::AkBank
-  triggerList: f7e1664c
-  useOtherObject: 0
-  data:
-    idInternal: 0
-    valueGuidInternal: 
-    WwiseObjectReference: {fileID: 11400000, guid: 1b60f5c7d2d24904a8b7039051ae8722, type: 2}
-  decodeBank: 0
-  overrideLoadSetting: 0
-  loadAsynchronous: 0
-  saveDecodedBank: 0
-  unloadTriggerList: 958ca0ea
-  bankNameInternal: 
-  valueGuidInternal: 
 --- !u!4 &277009425
 Transform:
   m_ObjectHideFlags: 0

@@ -18,6 +18,8 @@ namespace Users.FateX.Scripts
             _saveLoadService.LoadAchievements();
             _saveLoadService.LoadSegments();
             
+            _gameConfig.GameConfigData.SoundsData.Bank.Load();
+            
             SceneManager.LoadScene((int)Scenes.MainMenu);
         }
     }

@@ -6,7 +6,9 @@ namespace Users.FateX.Scripts.Data
     [CreateAssetMenu(menuName = "Data/SoundsData")]
     public class SoundsData : ScriptableObject
     {
+        [field: SerializeField] public AK.Wwise.Bank Bank;
         [field: SerializeField] public WeaponSoundsData WeaponSoundsData { get; private set; }
+        [field: SerializeField] public Music Music { get; private set; }
         [field: SerializeField] public UiSound UiSound { get; private set; }
         [field: SerializeField] public SlotMachine SlotMachine { get; private set; }
         [field: SerializeField] public AK.Wwise.Event DamageSound { get; private set; }
@@ -49,5 +51,13 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public AK.Wwise.Event Swipe { get; private set; }
         [field: SerializeField] public AK.Wwise.Event Buy { get; private set; }
         [field: SerializeField] public AK.Wwise.Event Denied { get; private set; }
+    }
+
+    [Serializable]
+    public class Music
+    {
+        [field: SerializeField] public AK.Wwise.Event PlayGameMusic { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event StopGameMusic { get; private set; }
+
     }
 }

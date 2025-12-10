@@ -29,10 +29,12 @@ namespace Users.FateX.Scripts
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private HealthView _healthView;
         [Inject] private DeathHandler _deathHandler;
-
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        [Inject] private GameConfig _gameConfig;
         
         public void Initialize()
         {
+            _gameConfig.GameConfigData.SoundsData.Bank.Load();
 
             // УРовень
             
@@ -60,6 +62,8 @@ namespace Users.FateX.Scripts
             _cardMenuController.SpawnRandomCards();
 
             _gameStateManager.PushState(GameStates.CardMenu);
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.PlayGameMusic);
         }
     }
 }

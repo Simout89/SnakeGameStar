@@ -1,5 +1,6 @@
 ﻿using Users.FateX.Scripts;
 using Users.FateX.Scripts.Services;
+using Users.FateX.Scripts.Tutorial;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -16,6 +17,7 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
             Container.BindInterfacesAndSelfTo<SettingsController>().AsSingle();
             Container.BindInterfacesAndSelfTo<SnakeSegmentsRepository>().AsSingle();
+            Container.BindInterfacesAndSelfTo<TutorialController>().AsSingle();
 
         }
 

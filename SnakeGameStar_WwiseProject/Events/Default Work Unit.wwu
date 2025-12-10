@@ -346,6 +346,35 @@
 						</Event>
 					</ChildrenList>
 				</Folder>
+				<Folder Name="Music" ID="{FF2AE4A1-367E-4500-AF16-CF431344359D}" ShortID="465647013">
+					<ChildrenList>
+						<Event Name="Play_GamePlayMusic" ID="{1989617F-7479-4743-9F0D-A320E2235A9E}">
+							<ChildrenList>
+								<Action Name="" ID="{8585C18C-83CF-4D61-8EC0-672A6AF2520C}" ShortID="921743644">
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GamePlayMusic" ID="{92CFE495-31C1-40E9-836E-FC8102BE0733}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+						<Event Name="Stop_GamePlayMusic" ID="{FD16F5BB-6BC1-43CA-9745-B6EC1D619A55}">
+							<ChildrenList>
+								<Action Name="" ID="{ADA35328-7C61-434B-9871-E1EECE9A5125}" ShortID="983549831">
+									<PropertyList>
+										<Property Name="ActionType" Type="int16" Value="2"/>
+									</PropertyList>
+									<ReferenceList>
+										<Reference Name="Target">
+											<ObjectRef Name="GamePlayMusic" ID="{92CFE495-31C1-40E9-836E-FC8102BE0733}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+										</Reference>
+									</ReferenceList>
+								</Action>
+							</ChildrenList>
+						</Event>
+					</ChildrenList>
+				</Folder>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d928098f96345b38bc887d1ca4d2599, type: 3}
   m_Name: SoundsData
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SoundsData
+  Bank:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 0}
   <WeaponSoundsData>k__BackingField:
     <Tesla>k__BackingField:
       idInternal: 0
@@ -41,6 +45,15 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: fed1afccec96538439757b202b228d85, type: 2}
+  <Music>k__BackingField:
+    <PlayGameMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: b372db35ed6fe9d46b58e8e8fe3bfe8e, type: 2}
+    <StopGameMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 26be62fc5ddafc745beacebb2b2bb98f, type: 2}
   <UiSound>k__BackingField:
     <Select>k__BackingField:
       idInternal: 0

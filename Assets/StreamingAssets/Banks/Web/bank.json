@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{3BF103D0-56EB-2CEC-878F-37B865F74160}",
+    "Hash": "{147790B7-1BA7-EBC3-A793-CF1F87DBB3B9}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
@@ -78,6 +78,14 @@
       "Location": "Memory",
       "ShortName": "Выстрел пушки (mp3cut.net).wav",
       "CachePath": "B6/{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem"
+     },
+     {
+      "Id": "308991835",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "untitled.wav",
+      "CachePath": "6C/{6C23A04E-E174-07AE-EB20-E863632F3D4D}.wem"
      },
      {
       "Id": "356062460",
@@ -346,6 +354,18 @@
       ]
      },
      {
+      "Id": "2481433679",
+      "Name": "Play_GamePlayMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Play_GamePlayMusic",
+      "GUID": "{1989617F-7479-4743-9F0D-A320E2235A9E}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "308991835"
+       }
+      ]
+     },
+     {
       "Id": "1716361963",
       "Name": "Play_LvlUp",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_LvlUp",
@@ -556,6 +576,16 @@
       ]
      },
      {
+      "Id": "4072991621",
+      "Name": "Stop_GamePlayMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Stop_GamePlayMusic",
+      "GUID": "{FD16F5BB-6BC1-43CA-9745-B6EC1D619A55}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1067214853",
       "Name": "Stop_Slot_Loop",
       "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Stop_Slot_Loop",
@@ -568,6 +598,6 @@
     ]
    }
   ],
-  "FileHash": "{98D4A143-3221-B12E-7827-098DFE07D6FB}"
+  "FileHash": "{0DD3F35C-046F-3E86-FC7F-2FA1359523FA}"
  }
 }
