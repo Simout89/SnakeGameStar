@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
     "Language": "SFX",
-    "Hash": "{147790B7-1BA7-EBC3-A793-CF1F87DBB3B9}",
+    "Hash": "{9D66DF89-9F76-FE1E-785E-05E5B4A0870A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
     "ShortName": "bank",
     "Path": "bank.bnk",
@@ -78,14 +78,6 @@
       "Location": "Memory",
       "ShortName": "Выстрел пушки (mp3cut.net).wav",
       "CachePath": "B6/{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem"
-     },
-     {
-      "Id": "308991835",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "untitled.wav",
-      "CachePath": "6C/{6C23A04E-E174-07AE-EB20-E863632F3D4D}.wem"
      },
      {
       "Id": "356062460",
@@ -200,12 +192,28 @@
       "CachePath": "FA/{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem"
      },
      {
+      "Id": "960944044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "snake_music_MainTheme_mixmaster_1.wav",
+      "CachePath": "E0/{E0CF1D80-0B15-DA2E-6F90-E385C1402F9D}.wem"
+     },
+     {
       "Id": "990669999",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "2025-12-09-19-13-15-Trim (mp3cut.net).wav",
       "CachePath": "A4/{A4033E25-86F0-6755-27A1-1F286A5DF893}.wem"
+     },
+     {
+      "Id": "1006937210",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Project_4.wav",
+      "CachePath": "AC/{AC12BA21-C960-C7D8-7993-FC2C4E9247CF}.wem"
      },
      {
       "Id": "1024133082",
@@ -361,7 +369,7 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "308991835"
+        "Id": "1006937210"
        }
       ]
      },
@@ -376,6 +384,18 @@
       "MediaRefs": [
        {
         "Id": "178159659"
+       }
+      ]
+     },
+     {
+      "Id": "667425441",
+      "Name": "Play_MainMenuMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Play_MainMenuMusic",
+      "GUID": "{2347D41D-C415-4627-B5AA-0097F90B0F5B}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "960944044"
        }
       ]
      },
@@ -586,6 +606,16 @@
       "DurationMax": "0"
      },
      {
+      "Id": "1307794083",
+      "Name": "Stop_MainMenuMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Stop_MainMenuMusic",
+      "GUID": "{7A7C2D4D-EE96-4284-A2B8-C1567BBE4955}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
       "Id": "1067214853",
       "Name": "Stop_Slot_Loop",
       "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Stop_Slot_Loop",
@@ -598,6 +628,6 @@
     ]
    }
   ],
-  "FileHash": "{8D85F7D1-AE85-C89D-F334-2D738F6892DE}"
+  "FileHash": "{151F0BC2-3217-4CB5-FA37-C9322E38E865}"
  }
 }

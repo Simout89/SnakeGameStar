@@ -17,6 +17,8 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GameConfig>().AsSingle();
             Container.BindInterfacesAndSelfTo<SettingsController>().AsSingle();
             Container.BindInterfacesAndSelfTo<SnakeSegmentsRepository>().AsSingle();
+            Container.BindInterfacesAndSelfTo<MonoHelper>().FromNewComponentOnNewGameObject().AsSingle();
+
             Container.BindInterfacesAndSelfTo<TutorialController>().AsSingle();
 
         }

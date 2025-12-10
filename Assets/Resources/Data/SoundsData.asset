@@ -15,7 +15,7 @@ MonoBehaviour:
   Bank:
     idInternal: 0
     valueGuidInternal: 
-    WwiseObjectReference: {fileID: 0}
+    WwiseObjectReference: {fileID: 11400000, guid: 1b60f5c7d2d24904a8b7039051ae8722, type: 2}
   <WeaponSoundsData>k__BackingField:
     <Tesla>k__BackingField:
       idInternal: 0
@@ -54,6 +54,14 @@ MonoBehaviour:
       idInternal: 0
       valueGuidInternal: 
       WwiseObjectReference: {fileID: 11400000, guid: 26be62fc5ddafc745beacebb2b2bb98f, type: 2}
+    <PlayMainMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 305d7630ff92b3f438da3c9a28b18c53, type: 2}
+    <StopMainMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 0ffce26ee36599d4780d44f7d6c053fa, type: 2}
   <UiSound>k__BackingField:
     <Select>k__BackingField:
       idInternal: 0

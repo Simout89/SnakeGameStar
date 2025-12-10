@@ -19,7 +19,6 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<AchievementController>().AsSingle().NonLazy();
             Container.Bind<IAchievementView>().To<AchievementView>().FromComponentsInHierarchy().AsSingle();
             
-            Container.BindInterfacesAndSelfTo<MonoHelper>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesAndSelfTo<GlobalSoundPlayer>().AsSingle();
 
         }

@@ -10,6 +10,7 @@ namespace Users.FateX.Scripts.Achievements
         [SerializeField] private Image _image;
         [SerializeField] private TMP_Text name;
         [SerializeField] private TMP_Text title;
+        [SerializeField] private TMP_Text progressText;
         [SerializeField] private GameObject CheckMark;
         
         public void Init(AchievementEntry achievementEntry)
@@ -20,6 +21,9 @@ namespace Users.FateX.Scripts.Achievements
 
             CheckMark.SetActive(achievementEntry.AchievementSaveData.IsCompleted);
 
+
+            progressText.text = achievementEntry.AchievementSaveData.Progress + "/" +
+                                achievementEntry.AchievementData.RequiredValue;
         }
     }
 }

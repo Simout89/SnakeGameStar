@@ -63,6 +63,7 @@ namespace Users.FateX.Scripts
 
             _gameStateManager.PushState(GameStates.CardMenu);
             
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopMainMusic);
             _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.PlayGameMusic);
         }
     }

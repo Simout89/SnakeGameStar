@@ -58,6 +58,8 @@ namespace Users.FateX.Scripts.Data
     {
         [field: SerializeField] public AK.Wwise.Event PlayGameMusic { get; private set; }
         [field: SerializeField] public AK.Wwise.Event StopGameMusic { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event PlayMainMusic { get; private set; }
+        [field: SerializeField] public AK.Wwise.Event StopMainMusic { get; private set; }
 
     }
 }

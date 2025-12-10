@@ -25,6 +25,7 @@ namespace AK
         static const AkUniqueID PLAY_EXPLOSION = 4030404899U;
         static const AkUniqueID PLAY_GAMEPLAYMUSIC = 2481433679U;
         static const AkUniqueID PLAY_LVLUP = 1716361963U;
+        static const AkUniqueID PLAY_MAINMENUMUSIC = 667425441U;
         static const AkUniqueID PLAY_MORTAR_SHOOT = 2824054637U;
         static const AkUniqueID PLAY_PENTA = 2886612238U;
         static const AkUniqueID PLAY_PICKUP = 3860455926U;
@@ -40,6 +41,7 @@ namespace AK
         static const AkUniqueID PLAY_TRIALTOWERCAPTURE = 2618825045U;
         static const AkUniqueID PLAY_XP = 2229301370U;
         static const AkUniqueID STOP_GAMEPLAYMUSIC = 4072991621U;
+        static const AkUniqueID STOP_MAINMENUMUSIC = 1307794083U;
         static const AkUniqueID STOP_SLOT_LOOP = 1067214853U;
     } // namespace EVENTS
 

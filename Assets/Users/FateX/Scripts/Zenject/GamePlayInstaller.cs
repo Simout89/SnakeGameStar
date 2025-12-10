@@ -51,7 +51,6 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
-            Container.BindInterfacesAndSelfTo<MonoHelper>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesAndSelfTo<GlobalSoundPlayer>().AsSingle();
             Container.BindInterfacesAndSelfTo<AchievementController>().AsSingle();
             

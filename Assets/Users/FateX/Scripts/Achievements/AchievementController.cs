@@ -12,7 +12,10 @@ namespace Users.FateX.Scripts.Achievements
     {
         [Inject] private ISaveLoadService _saveLoadService;
         [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
+
+        [InjectOptional] private ExperienceSystem _experienceSystem;
         [InjectOptional] private IAchievementView _achievementView;
+        [InjectOptional] private GameTimer _gameTimer;
         
         private AchievementModel _achievementModel;
 
@@ -29,6 +32,12 @@ namespace Users.FateX.Scripts.Achievements
             {
                 _achievementView.OnUpdate += HandleUpdateView;
             }
+
+            if(_gameTimer != null)
+                _gameTimer.OnSecondChanged += HandleSecondChanged;
+
+            if (_experienceSystem != null)
+                _experienceSystem.OnGetLevel += HandleGetLevel;
 
             foreach (var achievement in _achievementModel.AchievementEntries)
             {
@@ -47,20 +56,30 @@ namespace Users.FateX.Scripts.Achievements
             {
                 if (achievement.Value.AchievementData.AchievementType == AchievementType.Kill)
                 {
-                    if(achievement.Value.AchievementSaveData.IsCompleted)
-                        continue;
-                    
-                    achievement.Value.AchievementSaveData.Progress++;
-
-                    if (achievement.Value.AchievementSaveData.Progress >=
-                        achievement.Value.AchievementData.RequiredValue)
-                    {
-                        Debug.Log("Достижение выполнено");
-                        
-                        achievement.Value.AchievementSaveData.IsCompleted = true;
-                        _newObtained.Add(achievement.Value);
-                    }
+                    AchievementAddProgress(achievement);
                 }
+                if (achievement.Value.AchievementData.AchievementType == AchievementType.KillWithWeapon &&
+                          achievement.Value.AchievementData.SnakeSegmentBase.UpgradeLevelsData.SegmentName == arg2.DamageDealerName)
+                {
+                    AchievementAddProgress(achievement);
+                }
+            }
+        }
+
+        private void AchievementAddProgress(KeyValuePair<string, AchievementEntry> achievement)
+        {
+            if(achievement.Value.AchievementSaveData.IsCompleted)
+                return;
+                    
+            achievement.Value.AchievementSaveData.Progress++;
+
+            if (achievement.Value.AchievementSaveData.Progress >=
+                achievement.Value.AchievementData.RequiredValue)
+            {
+                Debug.Log("Достижение выполнено");
+                        
+                achievement.Value.AchievementSaveData.IsCompleted = true;
+                _newObtained.Add(achievement.Value);
             }
         }
 
@@ -84,6 +103,12 @@ namespace Users.FateX.Scripts.Achievements
             {
                 _achievementView.OnUpdate -= HandleUpdateView;
             }
+            
+            if(_gameTimer != null)
+                _gameTimer.OnSecondChanged -= HandleSecondChanged;
+            
+            if (_experienceSystem != null)
+                _experienceSystem.OnGetLevel -= HandleGetLevel;
 
             foreach (var obtained in _newObtained)
             {
@@ -94,6 +119,28 @@ namespace Users.FateX.Scripts.Achievements
             _saveLoadService.SaveAchievements(_achievementModel.AchievementEntries);
 
 
+        }
+
+        private void HandleGetLevel()
+        {
+            foreach (var achievement in _achievementModel.AchievementEntries)
+            {
+                if (achievement.Value.AchievementData.AchievementType == AchievementType.LevelUp)
+                {
+                    AchievementAddProgress(achievement);
+                }
+            }
+        }
+
+        private void HandleSecondChanged(int obj)
+        {
+            foreach (var achievement in _achievementModel.AchievementEntries)
+            {
+                if (achievement.Value.AchievementData.AchievementType == AchievementType.LiveTime)
+                {
+                    AchievementAddProgress(achievement);
+                }
+            }
         }
 
         private void HandleUpdateView()

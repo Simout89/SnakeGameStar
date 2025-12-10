@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b6e3a6d11714d0189bb1919bcd27b87, type: 3}
+  m_Name: "\u0414\u0430 \u0412\u0438\u043D\u0447\u0438"
+  m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Achievements.AchievementData
+  <Id>k__BackingField: 1
+  <Name>k__BackingField: "\u0414\u0430 \u0412\u0438\u043D\u0447\u0438"
+  <Title>k__BackingField: "\u0423\u0431\u0435\u0439\u0442\u0435 100 \u0432\u0440\u0430\u0433\u043E\u0432
+    \u043C\u043E\u0440\u0442\u0438\u0440\u043E\u0439"
+  <Icon>k__BackingField: {fileID: 21300000, guid: b6a2c3edd2a31dd489485d1f5c00af56, type: 3}
+  <AchievementType>k__BackingField: 1
+  <RequiredValue>k__BackingField: 100
+  <SnakeSegmentBase>k__BackingField: {fileID: 9096899513531105914, guid: fe7caf8fb73fd294c890153e22a216c7, type: 3}
+  <CardData>k__BackingField: {fileID: 11400000, guid: d01ecfcb0f16f4947a701e256ca9a61e, type: 2}

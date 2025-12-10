@@ -34,7 +34,10 @@ MonoBehaviour:
   <TrialTower>k__BackingField: {fileID: 4440455438817000682, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
   <InfinityEnemy>k__BackingField: {fileID: 2172284294067600571, guid: e13a93561533de947808f2f141ea2b76, type: 3}
   <AchievementDatas>k__BackingField:
+  - {fileID: 11400000, guid: acfb7fc682a3e824db8dff0a404d0dc6, type: 2}
+  - {fileID: 11400000, guid: 066d73ba4e8a18642854cddc78dbdd5f, type: 2}
   - {fileID: 11400000, guid: 7f988403d0662e54a98ba7fabadb5ef7, type: 2}
+  - {fileID: 11400000, guid: 7e0c0b168fff4eb4db1d9adeb468646f, type: 2}
   <CardDatas>k__BackingField:
   - {fileID: 11400000, guid: b77f9f64f4127cd4d879f7033d957579, type: 2}
   - {fileID: 11400000, guid: ae14fa50c8a913847b3611edefc9ec62, type: 2}

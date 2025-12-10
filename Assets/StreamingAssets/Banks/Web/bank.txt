@@ -1,10 +1,12 @@
 Event	ID	Name			Wwise Object Path	Notes
 	521777734	Play__MachineGun			\Default Work Unit\Weapon\Play__MachineGun	
+	667425441	Play_MainMenuMusic			\Default Work Unit\Music\Play_MainMenuMusic	
 	784302017	Play_Damage			\Default Work Unit\Play_Damage	
 	1042987450	Play_Select			\Default Work Unit\Ui\Play_Select	
 	1067214853	Stop_Slot_Loop			\Default Work Unit\Slot Machine\Stop_Slot_Loop	
 	1089845932	Play_Swipe			\Default Work Unit\Ui\Play_Swipe	
 	1191497377	Play_Sword			\Default Work Unit\Weapon\Play_Sword	
+	1307794083	Stop_MainMenuMusic			\Default Work Unit\Music\Stop_MainMenuMusic	
 	1396882671	Play_Slot_Loop			\Default Work Unit\Slot Machine\Play_Slot_Loop	
 	1439161704	Play_SnakeDie			\Default Work Unit\Play_SnakeDie	
 	1716361963	Play_LvlUp			\Default Work Unit\Play_LvlUp	
@@ -37,7 +39,6 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	245487382	Denied	.cache\40\{4020EA5D-C313-58A0-F72B-4252934EAD4B}.wem		\Containers\Default Work Unit\Effects\Ui\Denied		5879
 	278875474	Slot_completion	.cache\44\{44B401AE-DE4F-BE67-33A4-AE250567B62D}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_completion		13693
 	308453629	Mortar Shoot	.cache\B6\{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem		\Containers\Default Work Unit\Effects\Weapon\Mortar Shoot		8104
-	308991835	GamePlayMusic	.cache\6C\{6C23A04E-E174-07AE-EB20-E863632F3D4D}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		9835205
 	356062460	 MachineGun	.cache\4B\{4B52663B-EC57-F84F-8F8F-A35D916BBF73}.wem		\Containers\Default Work Unit\Effects\Weapon\ MachineGun		21680
 	370091552	Buy	.cache\2C\{2C449723-2DEB-2EC0-E862-B8D8277B7C4A}.wem		\Containers\Default Work Unit\Effects\Ui\Buy		8566
 	508721672	PickUp	.cache\D9\{D9798E64-25B6-0928-0C62-7C1D5B54889D}.wem		\Containers\Default Work Unit\Effects\PickUp		1493
@@ -52,6 +53,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	885284157	Slot_Loop	.cache\AC\{AC358AD9-E3F6-2299-C46F-06F9850785E2}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_Loop		126612
 	896543732	TrialTowerCapture	.cache\D1\{D125521E-94E2-483B-CC51-18DF7F0D8166}.wem		\Containers\Default Work Unit\Effects\TrialTowerCapture		30049
 	953991065	SpikeGun	.cache\FA\{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem		\Containers\Default Work Unit\Effects\Weapon\SpikeGun		19845
+	960944044	MainMenuMusic	.cache\E0\{E0CF1D80-0B15-DA2E-6F90-E385C1402F9D}.wem		\Containers\Default Work Unit\Music\MainMenuMusic		2376135
 	990669999	Xp	.cache\A4\{A4033E25-86F0-6755-27A1-1F286A5DF893}.wem		\Containers\Default Work Unit\Effects\Xp		4361
+	1006937210	GamePlayMusic	.cache\AC\{AC12BA21-C960-C7D8-7993-FC2C4E9247CF}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		5402345
 	1024133082	DisplayMessage	.cache\BE\{BE15E690-68D9-1463-970E-D9DA3DA0A68A}.wem		\Containers\Default Work Unit\Effects\DisplayMessage		15469
 

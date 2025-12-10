@@ -8,11 +8,6 @@
 						<Sound Name="GamePlayMusic" ID="{92CFE495-31C1-40E9-836E-FC8102BE0733}" ShortID="617305759">
 							<PropertyList>
 								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
-								<Property Name="Volume" Type="Real64">
-									<ValueList>
-										<Value>-20</Value>
-									</ValueList>
-								</Property>
 							</PropertyList>
 							<ReferenceList>
 								<Reference Name="Conversion">
@@ -23,23 +18,48 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="untitled" ID="{6D87B916-DD08-4830-9C57-D1FA603936E2}">
+								<AudioFileSource Name="Project_4" ID="{814407D2-3A1A-4BD8-84BE-5F61858461EA}">
 									<PropertyList>
-										<Property Name="FadeInDuration" Type="Real64" Value="4.35624088311761"/>
-										<Property Name="LoopBegin" Type="Real64" Value="1.86777978281285"/>
-										<Property Name="LoopEnd" Type="Real64" Value="510.428205919392"/>
+										<Property Name="FadeInDuration" Type="Real64" Value="4.356"/>
+										<Property Name="LoopBegin" Type="Real64" Value="1.86"/>
+										<Property Name="LoopEnd" Type="Real64" Value="510.42"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
-										<Property Name="TrimEnd" Type="Real64" Value="510.704865966268"/>
+										<Property Name="TrimEnd" Type="Real64" Value="510.7"/>
 									</PropertyList>
 									<Language>SFX</Language>
-									<AudioFile>untitled.wav</AudioFile>
+									<AudioFile>Project_4.wav</AudioFile>
 									<MediaIDList>
-										<MediaID ID="308991835"/>
+										<MediaID ID="1006937210"/>
 									</MediaIDList>
 								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="untitled" ID="{6D87B916-DD08-4830-9C57-D1FA603936E2}" Platform="Linked"/>
+								<ActiveSource Name="Project_4" ID="{814407D2-3A1A-4BD8-84BE-5F61858461EA}" Platform="Linked"/>
+							</ActiveSourceList>
+						</Sound>
+						<Sound Name="MainMenuMusic" ID="{6A4E0651-E00A-44ED-AF5E-0A704F9F404A}" ShortID="65962779">
+							<PropertyList>
+								<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+							</PropertyList>
+							<ReferenceList>
+								<Reference Name="Conversion">
+									<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+								</Reference>
+								<Reference Name="OutputBus">
+									<ObjectRef Name="Music_Bus" ID="{1C79FC58-5309-45E7-AB24-B4593376FC0F}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+								</Reference>
+							</ReferenceList>
+							<ChildrenList>
+								<AudioFileSource Name="snake_music_MainTheme_mixmaster_1" ID="{996D6520-B873-4BEF-8C7D-43C2863B677B}">
+									<Language>SFX</Language>
+									<AudioFile>snake_music_MainTheme_mixmaster_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="960944044"/>
+									</MediaIDList>
+								</AudioFileSource>
+							</ChildrenList>
+							<ActiveSourceList>
+								<ActiveSource Name="snake_music_MainTheme_mixmaster_1" ID="{996D6520-B873-4BEF-8C7D-43C2863B677B}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 					</ChildrenList>
