@@ -1,7 +1,7 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Android",
-  "BasePlatform": "Android",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
   "SchemaVersion": "16",
   "SoundBankVersion": "172",
   "SoundBanks": [
@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{D607FAE4-286F-E3D2-6A15-749E9E0F8915}",
+    "Hash": "{DE51296C-1F3F-114A-A616-0E2F0AF163AC}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -76,6 +76,6 @@
     ]
    }
   ],
-  "FileHash": "{1813231D-36EA-0EA5-2769-0C8DA9EEA5CA}"
+  "FileHash": "{8ABFADFE-BA23-18E8-3E93-1BDF910DF38D}"
  }
 }

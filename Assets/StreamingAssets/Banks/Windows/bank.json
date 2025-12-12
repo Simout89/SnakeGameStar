@@ -1,7 +1,7 @@
 {
  "SoundBanksInfo": {
-  "Platform": "Android",
-  "BasePlatform": "Android",
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
   "SchemaVersion": "16",
   "SoundBankVersion": "172",
   "SoundBanks": [
@@ -628,6 +628,6 @@
     ]
    }
   ],
-  "FileHash": "{C0387519-ECFB-CF0A-8A72-AD4C54DC4779}"
+  "FileHash": "{7FC309B2-D9E1-18D7-DAAF-E2DE8299BB1E}"
  }
 }
