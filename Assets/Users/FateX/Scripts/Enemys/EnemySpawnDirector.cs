@@ -46,7 +46,8 @@ namespace Users.FateX.Scripts.Enemy
 
         private void HandleSecondTick(int obj)
         {
-            if (_waveData == null) return;
+            if (_waveData == null || _waveData.WaveChangeSpawns == null || _waveData.WaveChangeSpawns.Length == 0) 
+                return;
 
             float normalizedTime = (float)obj / _waveData.TotalTime;
 
@@ -56,7 +57,7 @@ namespace Users.FateX.Scripts.Enemy
                 return;
             }
 
-            if (normalizedTime >= 1f && !_allWavesCompleted)
+            if (normalizedTime >= 1f)
             {
                 _allWavesCompleted = true;
                 OnAllWavesCompleted?.Invoke();
@@ -80,12 +81,17 @@ namespace Users.FateX.Scripts.Enemy
                         ? _waveData.WaveChangeSpawns[i + 1].TimeMarker
                         : 1f;
 
-                    float segmentDuration = nextMarker - currentMarker;
+                    float segmentDuration = Mathf.Max(nextMarker - currentMarker, 0.0001f);
                     segmentProgress = (normalizedTime - currentMarker) / segmentDuration;
+                    segmentProgress = Mathf.Clamp01(segmentProgress);
                 }
                 else
                     break;
             }
+
+            var enemies = _waveData.WaveChangeSpawns[currentEnemyIndex].Enemy;
+            if (enemies == null || enemies.Length == 0)
+                return;
 
             float enemiesToAdd = GetEnemyCountFloat(segmentProgress, currentEnemyIndex);
             enemiesToAdd = ApplyEventModifiers(enemiesToAdd);
@@ -96,7 +102,7 @@ namespace Users.FateX.Scripts.Enemy
             if (spawnCount > 0)
             {
                 for (int i = 0; i < spawnCount; i++)
-                    SpawnNextEnemyInArray(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+                    SpawnNextEnemyInArray(enemies);
 
                 _enemySpawnBuffer -= spawnCount;
             }
@@ -248,9 +254,7 @@ namespace Users.FateX.Scripts.Enemy
             if (enemies == null || enemies.Length == 0)
                 return;
 
-            if (_currentEnemyArrayIndex >= enemies.Length)
-                _currentEnemyArrayIndex = 0;
-
+            _currentEnemyArrayIndex = Mathf.Abs(_currentEnemyArrayIndex) % enemies.Length;
             _enemyFactory.SpawnEnemy(enemies[_currentEnemyArrayIndex]);
             _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % enemies.Length;
         }

@@ -58,6 +58,9 @@ namespace Users.FateX.Scripts.Trial
 
         private void HandleSecond(int obj)
         {
+            if (_gameConfig.GameConfigData.SpawnTrialTowerEverySeconds <= 0)
+                return;
+        
             if (obj % _gameConfig.GameConfigData.SpawnTrialTowerEverySeconds == 0)
             {
                 SpawnRandomTower();
