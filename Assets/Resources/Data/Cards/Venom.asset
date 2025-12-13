@@ -21,3 +21,15 @@ MonoBehaviour:
   <Description>k__BackingField: "\u041E\u0442\u0440\u0430\u0432\u043B\u044F\u0435\u0442
     \u043E\u0431\u043B\u0430\u0441\u0442\u044C \u0432\u043E\u043A\u0440\u0443\u0433
     \u0441\u0435\u043A\u0446\u0438\u0438, \u043D\u0430\u043D\u043E\u0441\u044F \u0443\u0440\u043E\u043D."
+  <LocalizedDescription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 1404818153472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

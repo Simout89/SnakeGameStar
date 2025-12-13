@@ -1,0 +1,92 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Shop Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Shop
+  m_TableCollectionNameGuidString: 13b9dd98dd4f91a4d9f50c6bd1e66f07
+  m_Entries:
+  - m_Id: 316618563584
+    m_Key: Strength_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 549238857728
+    m_Key: Strength_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 651277885440
+    m_Key: Exile_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 666012475392
+    m_Key: Exile_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772115783680
+    m_Key: Greed_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 823982546944
+    m_Key: Greed_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895583510528
+    m_Key: Max HP_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 978030944256
+    m_Key: Max HP_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1096964628480
+    m_Key: Speed_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1119618064384
+    m_Key: Speed_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1238207815680
+    m_Key: Magnet_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1268977229824
+    m_Key: Magnet_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340041322496
+    m_Key: Projectiles_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553200046080
+    m_Key: Projectiles_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645923524608
+    m_Key: Reroll_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1674369294336
+    m_Key: Reroll_d
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4053053054272929892
+  references:
+    version: 2
+    RefIds:
+    - rid: 4053053054272929892
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1765631026362

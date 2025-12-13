@@ -15,17 +15,18 @@ namespace Скриптерсы.Services
         [Inject] private ExperienceSystem experienceSystem;
         [Inject] private GameContext gameContext;
         [Inject] private CollectableHandler collectableHandler;
+        [Inject] private GameConfig _gameConfig;
 
         public string[] GetStatistics()
         {
             List<string> statistic = new List<string>();
-            statistic.Add(FormatStatisticLine("Прожил времени:", MyUtils.FormatSeconds(gameTimer.CurrentTime)));
-            statistic.Add(FormatStatisticLine("Монет получено:", roundCurrency.Coin.ToString()));
-            statistic.Add(FormatStatisticLine("Врагов убито:", enemyDeathHandler.TotalEnemyDie.ToString()));
-            statistic.Add(FormatStatisticLine("Уровней получено:", experienceSystem.CurrentLevel.ToString()));
-            statistic.Add(FormatStatisticLine("Секций получено:", (gameContext.SnakeController.SegmentsBase.Count - 1).ToString()));
-            statistic.Add(FormatStatisticLine("Яблок съедено:", collectableHandler.HealItemUsed.ToString()));
-            statistic.Add(FormatStatisticLine("Магнитов использовано:", collectableHandler.MagnetItemUsed.ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.TimeSurvived.GetLocalizedString()}:", MyUtils.FormatSeconds(gameTimer.CurrentTime)));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.CoinsEarned.GetLocalizedString()}:", roundCurrency.Coin.ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.EnemiesKilled.GetLocalizedString()}:", enemyDeathHandler.TotalEnemyDie.ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.LevelsGained.GetLocalizedString()}:", experienceSystem.CurrentLevel.ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.SegmentsGained.GetLocalizedString()}:", (gameContext.SnakeController.SegmentsBase.Count - 1).ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.ApplesEaten.GetLocalizedString()}:", collectableHandler.HealItemUsed.ToString()));
+            statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.MagnetsUsed.GetLocalizedString()}:", collectableHandler.MagnetItemUsed.ToString()));
             return statistic.ToArray();
         }
 

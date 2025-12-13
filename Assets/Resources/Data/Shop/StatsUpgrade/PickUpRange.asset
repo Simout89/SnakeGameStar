@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4caf2d52254ef999331a5871c21c1f, type: 3}
   m_Name: PickUpRange
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.StatsShopProduct
+  <LocalizedName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:13b9dd98dd4f91a4d9f50c6bd1e66f07
+    m_TableEntryReference:
+      m_KeyId: 1238207815680
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <LocalizedDesription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:13b9dd98dd4f91a4d9f50c6bd1e66f07
+    m_TableEntryReference:
+      m_KeyId: 1268977229824
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <Name>k__BackingField: "\u041C\u0430\u0433\u043D\u0438\u0442"
   <Desription>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
     \u0440\u0430\u0434\u0438\u0443\u0441 \u043F\u043E\u0434\u0431\u043E\u0440\u0430
@@ -63,3 +81,6 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0.5
     <MoveSpeed>k__BackingField: 0
+  references:
+    version: 2
+    RefIds: []

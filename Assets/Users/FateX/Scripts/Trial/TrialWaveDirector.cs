@@ -15,6 +15,7 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private MessageDisplayView _messageDisplayView;
         [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [Inject] private ArrowView _arrowView;
+        [Inject] private GameConfig _gameConfig;
 
 
         
@@ -31,12 +32,12 @@ namespace Users.FateX.Scripts.Trial
             {
                 case TrialTowerType.Gambling:
                 {
-                    _messageDisplayView.ShowText("Лудоманы вызваны", Color.purple);
+                    _messageDisplayView.ShowText(_gameConfig.GameConfigData.LocalizationData.TrialTowerGambler.GetLocalizedString(), Color.purple);
                     spawnCount = 5;
                 } break;
                 case TrialTowerType.GoldRush:
                 {
-                    _messageDisplayView.ShowText("Денежные мешки вызваны", Color.yellow);
+                    _messageDisplayView.ShowText(_gameConfig.GameConfigData.LocalizationData.TrialTowerCoinBag.GetLocalizedString(), Color.yellow);
                     spawnCount = 15;
                 } break;
             }

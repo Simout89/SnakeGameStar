@@ -14,6 +14,7 @@ namespace Users.FateX.Scripts.Data
     {
         [field: SerializeField] public EnemyMaterials EnemyMaterials { get; private set; }
         [field: SerializeField] public SoundsData SoundsData { get; private set; }
+        [field: SerializeField] public LocalizationData LocalizationData { get; private set; }
         [field: SerializeField, Header("Prefabs")] public XpItem XpPrefab { get; private set; }
         [field: SerializeField] public MagnetItem MagnetPrefab { get; private set; }
         [field: SerializeField] public AchievementEntryView AchievementEntryView { get; private set; }

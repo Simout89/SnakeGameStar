@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Tesla
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: "\u0422\u0435\u0441\u043B\u0430"
+  <LocalizedName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 1993341919232
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <SegmentIcon>k__BackingField: {fileID: 4352589117243522375, guid: 5731f15a0a51eb643ad839795e750aa2, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
@@ -53,3 +62,6 @@ MonoBehaviour:
     <BouncesCount>k__BackingField: 5
     <Duration>k__BackingField: 0
   <Vfx>k__BackingField: {fileID: 1980034782213133366, guid: 9f6bc53e55a78e84aab3096781fcde03, type: 3}
+  references:
+    version: 2
+    RefIds: []

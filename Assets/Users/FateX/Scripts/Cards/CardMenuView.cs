@@ -22,7 +22,7 @@ namespace Users.FateX.Scripts.Cards
         {
             var newCard = Instantiate(_gameConfig.GameConfigData.CardPrefab, _cardContainer);
             
-            string displayText = string.IsNullOrEmpty(customText) ? cardData.Description : customText;
+            string displayText = string.IsNullOrEmpty(customText) ? cardData.LocalizedDescription.GetLocalizedString() : customText;
             newCard.Init(cardData, displayText);
 
             SetBackgroundActive(true);

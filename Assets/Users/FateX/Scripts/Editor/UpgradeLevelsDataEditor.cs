@@ -2,4 +2,4 @@
 using Users.FateX.Scripts.Data.Upgrade;
 
 [CustomEditor(typeof(UpgradeLevelsData))]
-public class UpgradeLevelsDataEditor : UniversalScriptableEditor { }
+public class pgradeLevelsDataEditor { }

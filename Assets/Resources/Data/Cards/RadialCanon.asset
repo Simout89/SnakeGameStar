@@ -20,3 +20,15 @@ MonoBehaviour:
   <SnakeSegmentBase>k__BackingField: {fileID: 7742535736117989413, guid: 5df4a2427b076cc41aa85a102396ebeb, type: 3}
   <Description>k__BackingField: "\u0421\u0442\u0440\u0435\u043B\u044F\u0435\u0442
     \u0441\u0440\u0430\u0437\u0443 \u0432\u043E \u0432\u0441\u0435 \u0441\u0442\u043E\u0440\u043E\u043D\u044B"
+  <LocalizedDescription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 750141825024
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

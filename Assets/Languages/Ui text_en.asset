@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Ui text_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b8b46531c687fc94bb1676835304ccb6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 202780958720
+    m_Localized: Lair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73428623360
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 275858317312
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752503218176
+    m_Localized: Weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 791866761216
+    m_Localized: Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 868639301632
+    m_Localized: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1306713382912
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460057137152
+    m_Localized: Select a product by clicking on it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4798387576832
+    m_Localized: The Tower of Trials has appeared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654264668160
+    m_Localized: The gamblers have been summoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5692156010496
+    m_Localized: The moneybags have been summoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26621883965440
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850532253696
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27383129169920
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27431908925440
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27464439947264
+    m_Localized: Effects Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27848030019584
+    m_Localized: Show fps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27950543003648
+    m_Localized: Set Fps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28242936324096
+    m_Localized: Clear Saves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29044182605824
+    m_Localized: Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29276047925248
+    m_Localized: Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29553052344320
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29613211246592
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

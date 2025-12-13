@@ -12,6 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b6e3a6d11714d0189bb1919bcd27b87, type: 3}
   m_Name: "\u041A\u0443\u043B\u044C\u0442\u0438\u0437\u043C"
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Achievements.AchievementData
+  <LocalizedName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:70bcc9143f24e9e438fcfb688d3ac661
+    m_TableEntryReference:
+      m_KeyId: 600786853888
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <LocalizedDescription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:70bcc9143f24e9e438fcfb688d3ac661
+    m_TableEntryReference:
+      m_KeyId: 618943995904
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <Id>k__BackingField: 0
   <Name>k__BackingField: "\u041A\u0443\u043B\u044C\u0442\u0438\u0437\u043C"
   <Title>k__BackingField: "\u041F\u0440\u043E\u0436\u0438\u0432\u0438\u0442\u0435
@@ -21,3 +39,6 @@ MonoBehaviour:
   <RequiredValue>k__BackingField: 600
   <SnakeSegmentBase>k__BackingField: {fileID: 0}
   <CardData>k__BackingField: {fileID: 11400000, guid: ccd1470c6bf150f4b88a649cec3af499, type: 2}
+  references:
+    version: 2
+    RefIds: []

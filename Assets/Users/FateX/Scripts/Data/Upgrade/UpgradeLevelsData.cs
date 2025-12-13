@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Localization;
 using Users.FateX.Scripts.Combat;
 
 namespace Users.FateX.Scripts.Data.Upgrade
@@ -9,6 +10,7 @@ namespace Users.FateX.Scripts.Data.Upgrade
     {
         [Header("Settings")]
         [field: SerializeField] public string SegmentName { get; private set; }
+        [field: SerializeField] public LocalizedString LocalizedName { get; private set; }
         [field: SerializeField] public Sprite SegmentIcon { get; private set; }
         [field: SerializeField] public int BaseSegmentsCount { get; private set; } = 1;
         [field: SerializeField] public Projectile Projectile { get; private set; }

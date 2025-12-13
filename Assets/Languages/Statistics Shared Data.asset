@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Statistics Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Statistics
+  m_TableCollectionNameGuidString: 9ea1dfc8a85a8534da94b44f2a1276cb
+  m_Entries:
+  - m_Id: 213375770624
+    m_Key: TimeSurvived
+    m_Metadata:
+      m_Items: []
+  - m_Id: 288156016640
+    m_Key: CoinsEarned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 334146560000
+    m_Key: EnemiesKilled
+    m_Metadata:
+      m_Items: []
+  - m_Id: 359362715648
+    m_Key: LevelsGained
+    m_Metadata:
+      m_Items: []
+  - m_Id: 375309459456
+    m_Key: SegmentsGained
+    m_Metadata:
+      m_Items: []
+  - m_Id: 379545706496
+    m_Key: ApplesEaten
+    m_Metadata:
+      m_Items: []
+  - m_Id: 393491767296
+    m_Key: MagnetsUsed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1664718200832
+    m_Key: deathViewGained
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4053053054272929907
+  references:
+    version: 2
+    RefIds:
+    - rid: 4053053054272929907
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1765636687994

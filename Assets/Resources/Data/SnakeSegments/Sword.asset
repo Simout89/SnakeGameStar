@@ -13,6 +13,15 @@ MonoBehaviour:
   m_Name: Sword
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.Upgrade.UpgradeLevelsData
   <SegmentName>k__BackingField: "\u042D\u043A\u0441\u043A\u0430\u043B\u0438\u0431\u0443\u0440"
+  <LocalizedName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 1188098465792
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <SegmentIcon>k__BackingField: {fileID: 21300000, guid: c0775583d33dd2640a0db209e0f62ba6, type: 3}
   <BaseSegmentsCount>k__BackingField: 1
   <Projectile>k__BackingField: {fileID: 3744759696988870182, guid: 795b5e4b2f06b8146b6038432bf1339f, type: 3}
@@ -53,3 +62,6 @@ MonoBehaviour:
     <BouncesCount>k__BackingField: 0
     <Duration>k__BackingField: 0
   <Vfx>k__BackingField: {fileID: 1980034782213133366, guid: 9f6bc53e55a78e84aab3096781fcde03, type: 3}
+  references:
+    version: 2
+    RefIds: []

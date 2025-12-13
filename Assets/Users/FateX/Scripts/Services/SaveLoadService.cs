@@ -240,8 +240,6 @@ namespace Скриптерсы.Services
 #else
             File.WriteAllText(AchievementSavePath, json);
 #endif
-
-            Debug.Log("Достижения сохранены");
         }
 
         public Dictionary<string, AchievementEntry> GetAchievements()

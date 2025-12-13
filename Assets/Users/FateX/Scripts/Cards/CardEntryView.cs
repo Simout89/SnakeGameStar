@@ -29,7 +29,7 @@ namespace Users.FateX.Scripts.Cards
             _text.lineSpacing = 15f;
 
             if (cardData.SnakeSegmentBase != null)
-                _cardName.text = cardData.SnakeSegmentBase.UpgradeLevelsData.SegmentName;
+                _cardName.text = cardData.SnakeSegmentBase.UpgradeLevelsData.LocalizedName.GetLocalizedString();
 
             _image.sprite = cardData.Sprite;
 

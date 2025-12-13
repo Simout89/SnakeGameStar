@@ -83,8 +83,8 @@ namespace Users.FateX.Scripts.Shop
             }
 
             _shopView.SetDescription(
-                product.StatsShopProduct.Name, 
-                product.StatsShopProduct.Desription,
+                product.StatsShopProduct.LocalizedName.GetLocalizedString(), 
+                product.StatsShopProduct.LocalizedDesription.GetLocalizedString(),
                 product.StatsShopProduct.StatsUpgradeLevels[currentLevel].Cost.ToString()
             );
         }

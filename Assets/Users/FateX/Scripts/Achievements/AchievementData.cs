@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
 
@@ -7,6 +8,8 @@ namespace Users.FateX.Scripts.Achievements
     [CreateAssetMenu(menuName = "Data/AchievementData")]
     public class AchievementData: ScriptableObject
     {
+        [field: SerializeField] public LocalizedString LocalizedName { get; private set; }
+        [field: SerializeField] public LocalizedString LocalizedDescription { get; private set; }
         [field: SerializeField] public string Id { get; private set; }
         [field: SerializeField] public string Name { get; private set; }
         [field: SerializeField] public string Title { get; private set; }

@@ -17,6 +17,7 @@ MonoBehaviour:
     <RainbowMaterial>k__BackingField: {fileID: 2100000, guid: 11d8f52bad8b3404f884f4a09b41ea2d, type: 2}
     <DefaultMaterial>k__BackingField: {fileID: 2100000, guid: 57ad75e32f1df654a837dad59062bec4, type: 2}
   <SoundsData>k__BackingField: {fileID: 11400000, guid: 1f1c05bf673f36641860ac5119916a82, type: 2}
+  <LocalizationData>k__BackingField: {fileID: 11400000, guid: 13cac7a23d2f14a489ab7cc69f6459ed, type: 2}
   <XpPrefab>k__BackingField: {fileID: 4043232107286505601, guid: 0d2951f07091d584681f98e884aa0643, type: 3}
   <MagnetPrefab>k__BackingField: {fileID: 6485121111209911736, guid: e488eb9cdb4aa2446acb0bd390f910da, type: 3}
   <AchievementEntryView>k__BackingField: {fileID: 2146716016827976074, guid: 8740f66dc8364dd4e8066c35e11fb56b, type: 3}

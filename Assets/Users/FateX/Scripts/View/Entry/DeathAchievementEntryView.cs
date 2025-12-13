@@ -12,12 +12,12 @@ namespace Users.FateX.Scripts.View.Entry
         [SerializeField] private TMP_Text title;
         [SerializeField] private TMP_Text prize;
         
-        public void Init(AchievementEntry achievementEntry)
+        public void Init(AchievementEntry achievementEntry, GameConfig gameConfig)
         {
             _image.sprite = achievementEntry.AchievementData.Icon;
-            name.text = achievementEntry.AchievementData.Name;
-            title.text = achievementEntry.AchievementData.Title;
-            prize.text = $"Получено {achievementEntry.AchievementData.CardData.SnakeSegmentBase.UpgradeLevelsData.SegmentName}";
+            name.text = achievementEntry.AchievementData.LocalizedName.GetLocalizedString();
+            title.text = achievementEntry.AchievementData.LocalizedDescription.GetLocalizedString();
+            prize.text = $"{gameConfig.GameConfigData.LocalizationData.Gained.GetLocalizedString()}: <color=white>{achievementEntry.AchievementData.CardData.SnakeSegmentBase.UpgradeLevelsData.LocalizedName.GetLocalizedString()}";
         }
     }
 }

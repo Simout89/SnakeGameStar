@@ -1,0 +1,110 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Segments Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Segments
+  m_TableCollectionNameGuidString: 840daa387a559634ca9d9914a70b7782
+  m_Entries:
+  - m_Id: 5938077696
+    m_Key: FireTrail_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123097571328
+    m_Key: FireTrail_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337116127232
+    m_Key: MachineGun_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358930702336
+    m_Key: MachineGun_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470348193792
+    m_Key: Mortar_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514564546560
+    m_Key: Mortar_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608235937792
+    m_Key: Pentagram_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 615806656512
+    m_Key: 'Pentagram_d
+
+'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688145817600
+    m_Key: RadialCanon_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 750141825024
+    m_Key: RadialCanon_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 828067799040
+    m_Key: Morgenstern_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 928278110208
+    m_Key: Morgenstern_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070389518336
+    m_Key: SpikeGun_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1078996230144
+    m_Key: SpikeGun_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1188098465792
+    m_Key: Sword_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1195220393984
+    m_Key: Sword_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1400862924800
+    m_Key: Venom_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1404818153472
+    m_Key: Venom_d
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1993341919232
+    m_Key: Tesla_n
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2013638156288
+    m_Key: Tesla_d
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4053053054272929897
+  references:
+    version: 2
+    RefIds:
+    - rid: 4053053054272929897
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1765634271669

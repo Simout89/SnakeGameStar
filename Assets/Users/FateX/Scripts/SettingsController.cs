@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Localization.Settings;
 using Zenject;
 using Скриптерсы.Services;
 
@@ -62,6 +63,16 @@ namespace Users.FateX.Scripts
             _saveLoadService.SaveSettings(_settingsSaveData);
         }
 
+        public void ChangeLanguage(string obj)
+        {
+            var locale = LocalizationSettings.AvailableLocales.GetLocale(obj);
+            if (locale != null)
+            {
+                _settingsSaveData.Language = obj;
+                LocalizationSettings.SelectedLocale = locale;
+            }
+        }
+
         public void Dispose()
         {
             _saveLoadService.SaveSettings(_settingsSaveData);
@@ -75,6 +86,7 @@ namespace Users.FateX.Scripts
         public float MusicVolume = 100;
         public float EffectVolume = 100;
         public int CurrentFps = 60;
+        public string Language = "en";
         public bool CardTutorial;
         public bool MoveTutorial;
         public bool KillTutorial;

@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Localization;
 using Users.FateX.Scripts.Upgrade;
 
 namespace Users.FateX.Scripts.Data
@@ -15,6 +16,8 @@ namespace Users.FateX.Scripts.Data
         [field: TextArea(10, 10)]
         [field: SerializeField] 
         public string Description { get; private set; }
+        [field: SerializeField] public LocalizedString LocalizedDescription { get; private set; }
+
     }
 
     public enum CardType

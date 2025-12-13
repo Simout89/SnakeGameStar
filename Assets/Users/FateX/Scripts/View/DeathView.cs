@@ -59,7 +59,7 @@ namespace Users.FateX.Scripts.View
             var achievements= _achievementController.GetNewObtainedAchievement();
             foreach (var achievement in achievements)
             {
-                Instantiate(_gameConfig.GameConfigData.DeathAchievementEntryView, containerAchievement).Init(achievement);
+                Instantiate(_gameConfig.GameConfigData.DeathAchievementEntryView, containerAchievement).Init(achievement, _gameConfig);
             }
         }
 

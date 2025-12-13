@@ -39,8 +39,8 @@ namespace Users.FateX.Scripts.Trial
                 var tower = _trialTowerFactory.SpawnTowerByType(
                     (TrialTowerType)Random.Range(0, Enum.GetValues(typeof(TrialTowerType)).Length),
                     randomPoint.transform.position);
-
-                _messageDisplayView.ShowText("Появилась башня испытаний", Color.cyan);
+                
+                _messageDisplayView.ShowText(_gameConfig.GameConfigData.LocalizationData.TrialTowerSpawnText.GetLocalizedString(), Color.cyan);
                 
                 _arrowView.StartTracking(tower.gameObject);
                 
