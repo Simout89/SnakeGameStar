@@ -16,6 +16,7 @@ MonoBehaviour:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 1b60f5c7d2d24904a8b7039051ae8722, type: 2}
+  BankAddressable: {fileID: 11400000, guid: 401d9d3fe2df9c04f921fd746499bc56, type: 2}
   <WeaponSoundsData>k__BackingField:
     <Tesla>k__BackingField:
       idInternal: 0

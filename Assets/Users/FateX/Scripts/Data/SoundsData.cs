@@ -1,4 +1,5 @@
 ﻿using System;
+using AK.Wwise.Unity.WwiseAddressables;
 using UnityEngine;
 
 namespace Users.FateX.Scripts.Data
@@ -7,6 +8,7 @@ namespace Users.FateX.Scripts.Data
     public class SoundsData : ScriptableObject
     {
         [field: SerializeField] public AK.Wwise.Bank Bank;
+        [field: SerializeField] public WwiseAddressableSoundBank BankAddressable;
         [field: SerializeField] public WeaponSoundsData WeaponSoundsData { get; private set; }
         [field: SerializeField] public Music Music { get; private set; }
         [field: SerializeField] public UiSound UiSound { get; private set; }

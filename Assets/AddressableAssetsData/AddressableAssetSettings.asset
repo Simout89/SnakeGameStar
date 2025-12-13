@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468a46d0ae32c3544b7d98094e6448a9, type: 3}
   m_Name: AddressableAssetSettings
   m_EditorClassIdentifier: Unity.Addressables.Editor::UnityEditor.AddressableAssets.Settings.AddressableAssetSettings
-  m_DefaultGroup: 
+  m_DefaultGroup: f7e11dcd06cbf2643a5b0f1d3e1e24e5
   m_currentHash:
     serializedVersion: 2
-    Hash: 00000000000000000000000000000000
+    Hash: 85dea742079a8c32dbbe5555b2568148
   m_OptimizeCatalogSize: 0
   m_BuildRemoteCatalog: 0
   m_CatalogRequestsTimeout: 0
@@ -24,11 +24,11 @@ MonoBehaviour:
   m_InternalBundleIdMode: 1
   m_AssetLoadMode: 0
   m_BundledAssetProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.BundledAssetProvider
   m_AssetBundleProviderType:
-    m_AssemblyName: 
-    m_ClassName: 
+    m_AssemblyName: Unity.ResourceManager, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null
+    m_ClassName: UnityEngine.ResourceManagement.ResourceProviders.AssetBundleProvider
   m_IgnoreUnsupportedFilesInBuild: 0
   m_UniqueBundleIds: 0
   m_EnableJsonCatalog: 0
@@ -54,12 +54,21 @@ MonoBehaviour:
     m_Id: 
   m_RemoteCatalogLoadPath:
     m_Id: 
-  m_ContentStateBuildPathProfileVariableName: 
+  m_ContentStateBuildPathProfileVariableName: <default settings path>
   m_CustomContentStateBuildPath: 
   m_ContentStateBuildPath: 
   m_BuildAddressablesWithPlayerBuild: 0
   m_overridePlayerVersion: '[UnityEditor.PlayerSettings.bundleVersion]'
-  m_GroupAssets: []
+  m_GroupAssets:
+  - {fileID: 11400000, guid: d2ae7aebe5b71144f83c87c67d23d5ca, type: 2}
+  - {fileID: 11400000, guid: 443f4cd757e3b0243a71b45829a5b5c3, type: 2}
+  - {fileID: 11400000, guid: 4484b2443c2c54c46a4b1b7084cea824, type: 2}
+  - {fileID: 11400000, guid: f77d771dc30dfe5478bcfae91338d04c, type: 2}
+  - {fileID: 11400000, guid: 0df2066c61e906d4c96d312b19f7e067, type: 2}
+  - {fileID: 11400000, guid: 77afbaae5dbf15543b658e826157a950, type: 2}
+  - {fileID: 11400000, guid: c4162dc5210e7af47b661e7c8c688e3f, type: 2}
+  - {fileID: 11400000, guid: ad4c53cb83de1e147b4be36989d5cd93, type: 2}
+  - {fileID: 11400000, guid: 02e109cce9617054585f2cca451feb6f, type: 2}
   m_BuildSettings:
     m_LogResourceManagerExceptions: 1
     m_BundleBuildPath: Temp/com.unity.addressables/AssetBundles
@@ -106,7 +115,7 @@ MonoBehaviour:
   m_CertificateHandlerType:
     m_AssemblyName: 
     m_ClassName: 
-  m_ActivePlayerDataBuilderIndex: 2
+  m_ActivePlayerDataBuilderIndex: 3
   m_DataBuilders:
   - {fileID: 11400000, guid: d009a3c7d3379fb4084acaa18f0fbbaf, type: 2}
   - {fileID: 11400000, guid: b87c2855cf6f14540861d597221bdc85, type: 2}

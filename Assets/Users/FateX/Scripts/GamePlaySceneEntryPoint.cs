@@ -1,4 +1,5 @@
 ﻿using System;
+using AK.Wwise.Unity.WwiseAddressables;
 using UnityEngine;
 using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
@@ -37,6 +38,9 @@ namespace Users.FateX.Scripts
         
         public void Initialize()
         {
+            
+
+            
             _gameConfig.GameConfigData.SoundsData.Bank.Load();
 
             // УРовень

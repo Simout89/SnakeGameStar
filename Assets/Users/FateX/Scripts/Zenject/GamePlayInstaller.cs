@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AK.Wwise.Unity.WwiseAddressables;
+using UnityEngine;
 using Users.FateX.Scripts;
 using Users.FateX.Scripts.Achievements;
 using Users.FateX.Scripts.Cards;
@@ -32,6 +33,10 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<EnemySpawnArea>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SnakeSpawner>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
+            
+            
+            
+            
         }
 
         private void BindViews()
