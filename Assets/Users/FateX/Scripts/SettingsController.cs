@@ -22,6 +22,12 @@ namespace Users.FateX.Scripts
             AkUnitySoundEngine.SetRTPCValue("Main_Volume", _settingsSaveData.GlobalVolume);
             AkUnitySoundEngine.SetRTPCValue("Effects", _settingsSaveData.EffectVolume);
             AkUnitySoundEngine.SetRTPCValue("Music_Volume", _settingsSaveData.MusicVolume);
+            
+            LocalizationSettings.InitializationOperation.Completed += (op) =>
+            {
+                var locale = LocalizationSettings.AvailableLocales.Locales[_settingsSaveData.Language];
+                LocalizationSettings.SelectedLocale = locale;
+            };
         }
 
         public void ChangedShowFps(bool value)
@@ -63,14 +69,12 @@ namespace Users.FateX.Scripts
             _saveLoadService.SaveSettings(_settingsSaveData);
         }
 
-        public void ChangeLanguage(string obj)
+        public void ChangeLanguage(int index)
         {
-            var locale = LocalizationSettings.AvailableLocales.GetLocale(obj);
-            if (locale != null)
-            {
-                _settingsSaveData.Language = obj;
-                LocalizationSettings.SelectedLocale = locale;
-            }
+            _settingsSaveData.Language = index;
+
+            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+
         }
 
         public void Dispose()
@@ -86,7 +90,7 @@ namespace Users.FateX.Scripts
         public float MusicVolume = 100;
         public float EffectVolume = 100;
         public int CurrentFps = 60;
-        public string Language = "en";
+        public int Language;
         public bool CardTutorial;
         public bool MoveTutorial;
         public bool KillTutorial;

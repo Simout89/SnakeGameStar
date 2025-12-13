@@ -107,6 +107,70 @@ MonoBehaviour:
     m_Key: ui_Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 131043741917184
+    m_Key: ui_Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131128743682048
+    m_Key: tutorial_Card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131287552614400
+    m_Key: tutorial_Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131305692979200
+    m_Key: tutorial_XpHealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131334033891328
+    m_Key: tutorial_KillEnemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131357521993728
+    m_Key: tutorial_Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132923649941504
+    m_Key: ui_Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132967811768320
+    m_Key: ui_AttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133019481399296
+    m_Key: ui_Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133086711898112
+    m_Key: ui_Duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133185861050368
+    m_Key: ui_AttackRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133276147638272
+    m_Key: ui_BounceCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133380711636992
+    m_Key: ui_AreaOfEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133462244712448
+    m_Key: ui_ProjectileCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134240506208256
+    m_Key: ui_HealCard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134263679737856
+    m_Key: ui_CoinCard
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

@@ -242,7 +242,10 @@ namespace Users.FateX.Scripts.Cards
 
         private void ProcessHealCard(CardData card)
         {
-            _cardMenuView.ShowCard(card, $"Восполняет {card.Value} здоровья").Button.onClick.AddListener(() =>
+
+            string text = _gameConfig.GameConfigData.LocalizationData.ui_HealCard.GetLocalizedString(card.Value);
+            
+            _cardMenuView.ShowCard(card, text).Button.onClick.AddListener(() =>
             {
                 if (_exiledMode)
                 {
@@ -259,7 +262,10 @@ namespace Users.FateX.Scripts.Cards
 
         private void ProcessCoinCard(CardData card)
         {
-            _cardMenuView.ShowCard(card, $"Дает {card.Value} монет").Button.onClick.AddListener(() =>
+            string text = _gameConfig.GameConfigData.LocalizationData.ui_CoinCard.GetLocalizedString(card.Value);
+
+            
+            _cardMenuView.ShowCard(card, text).Button.onClick.AddListener(() =>
             {
                 if (_exiledMode)
                 {
@@ -286,19 +292,19 @@ namespace Users.FateX.Scripts.Cards
 
             if (!segment.Origin)
             {
-                statsText += $"<color=red>Копия</color><line-height=1em>\n";
+                statsText += $"<color=red>{_gameConfig.GameConfigData.LocalizationData.ui_Copy}</color><line-height=1em>\n";
             }
             
             statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
-                "Скорость атаки:", true);
+                $"{_gameConfig.GameConfigData.LocalizationData.ui_AttackSpeed.GetLocalizedString()}:", true);
             statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer,
-                nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Урон:");
-            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Длителность:");
-            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "Радиус атаки:");
-            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, "Кол-во отскоков:");
-            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, "Область действия:");
+                nextStats.Damage * GameConstant.VisualDamageMultiplayer, $"{_gameConfig.GameConfigData.LocalizationData.ui_Damage.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, $"{_gameConfig.GameConfigData.LocalizationData.ui_Duration.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, $"{_gameConfig.GameConfigData.LocalizationData.ui_AttackRange.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, $"{_gameConfig.GameConfigData.LocalizationData.ui_BounceCount.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, $"{_gameConfig.GameConfigData.LocalizationData.ui_AreaOfEffect.GetLocalizedString()}:");
             statsText += GetStatDifference(currentStats.ProjectileCount, nextStats.ProjectileCount,
-                "Кол-во снарядов:");
+                $"{_gameConfig.GameConfigData.LocalizationData.ui_ProjectileCount.GetLocalizedString()}:");
 
             return statsText;
         }

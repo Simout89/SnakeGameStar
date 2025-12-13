@@ -20,5 +20,18 @@ namespace Users.FateX.Scripts.Data
         [field: SerializeField] public LocalizedString LevelsGained { get; private set; }
         
         [field: SerializeField] public LocalizedString Gained  { get; private set; }
+        [field: SerializeField] public LocalizedString Upgrade  { get; private set; }
+        
+        
+        [field: SerializeField] public LocalizedString ui_AttackSpeed { get; private set; }
+        [field: SerializeField] public LocalizedString ui_Damage { get; private set; }
+        [field: SerializeField] public LocalizedString ui_Duration { get; private set; }
+        [field: SerializeField] public LocalizedString ui_AttackRange { get; private set; }
+        [field: SerializeField] public LocalizedString ui_BounceCount { get; private set; }
+        [field: SerializeField] public LocalizedString ui_AreaOfEffect { get; private set; }
+        [field: SerializeField] public LocalizedString ui_ProjectileCount { get; private set; }
+        [field: SerializeField] public LocalizedString ui_Copy { get; private set; }
+        [field: SerializeField] public LocalizedString ui_CoinCard { get; private set; }
+        [field: SerializeField] public LocalizedString ui_HealCard { get; private set; }
     }
 }

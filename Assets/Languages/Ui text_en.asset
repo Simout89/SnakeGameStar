@@ -110,6 +110,78 @@ MonoBehaviour:
     m_Localized: Menu
     m_Metadata:
       m_Items: []
+  - m_Id: 131043741917184
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131128743682048
+    m_Localized: <color=yellow>Choose a card</color> to start with, if you want <color=yellow>other
+      cards</color>, there are buttons on the left to <color=yellow>change cards
+      or exile them</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131287552614400
+    m_Localized: <color=yellow>Tap the screen</color> to make a <color=yellow>joystick</color>
+      appear for movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131305692979200
+    m_Localized: <color=yellow>Top left</color> displays your <color=yellow>health,
+      experience and level</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131334033891328
+    m_Localized: For <color=yellow>killing enemies</color> you receive <color=#00DAFF>experience
+      crystals</color>. Collect them to <color=yellow>level up and become stronger</color>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131357521993728
+    m_Localized: This is your first, but not your last death. Don't despair! If you
+      managed to collect <color=yellow>coins</color> - they can be spent in the <color=green>lair</color>
+      in the <color=#FF00CB>main menu</color>. There are also <color=#00F1FF>achievements</color>
+      there, for which you can receive <color=yellow>new weapons</color>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132923649941504
+    m_Localized: Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132967811768320
+    m_Localized: Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133019481399296
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133086711898112
+    m_Localized: Duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133185861050368
+    m_Localized: Attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133276147638272
+    m_Localized: Bounce count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133380711636992
+    m_Localized: Area of effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133462244712448
+    m_Localized: Projectile Count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134240506208256
+    m_Localized: Restores {0} health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134263679737856
+    m_Localized: Gives {0} coins
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

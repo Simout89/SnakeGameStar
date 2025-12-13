@@ -111,6 +111,105 @@ MonoBehaviour:
     m_FallbackState: 0
     m_WaitForCompletion: 0
     m_LocalVariables: []
+  <Upgrade>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 131043741917184
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_AttackSpeed>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 132967811768320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_Damage>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133019481399296
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_Duration>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133086711898112
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_AttackRange>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133185861050368
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_BounceCount>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133276147638272
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_AreaOfEffect>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133380711636992
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_ProjectileCount>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 133462244712448
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_Copy>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 132923649941504
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_CoinCard>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 134263679737856
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <ui_HealCard>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:b8b46531c687fc94bb1676835304ccb6
+    m_TableEntryReference:
+      m_KeyId: 134240506208256
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   references:
     version: 2
     RefIds: []

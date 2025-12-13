@@ -1,8 +1,7 @@
-﻿using System;
+﻿using System.Collections;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
-using UnityEngine.UI;
 using Zenject;
 
 namespace Users.FateX.Scripts.View
@@ -13,8 +12,10 @@ namespace Users.FateX.Scripts.View
         [SerializeField] private TMP_Dropdown _dropdown;
         
         
-        private void Awake()
+        private IEnumerator Start()
         {
+            yield return LocalizationSettings.InitializationOperation;
+            
             _dropdown.ClearOptions();
             
             foreach (var locale in LocalizationSettings.AvailableLocales.Locales)
@@ -23,14 +24,13 @@ namespace Users.FateX.Scripts.View
             }
             
             _dropdown.RefreshShownValue();
-            
+            _dropdown.value = _settingsController.SettingsSaveData.Language;
             _dropdown.onValueChanged.AddListener(OnLanguageChanged);
-
         }
         
         private void OnLanguageChanged(int index)
         {
-            LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
+            _settingsController.ChangeLanguage(index);
         }
     }
 }
