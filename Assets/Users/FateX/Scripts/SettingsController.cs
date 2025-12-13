@@ -71,7 +71,7 @@ namespace Users.FateX.Scripts
     public class SettingsSaveData
     {
         public bool ShowFps;
-        public float GlobalVolume = 100;
+        public float GlobalVolume = 30;
         public float MusicVolume = 100;
         public float EffectVolume = 100;
         public int CurrentFps = 60;

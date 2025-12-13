@@ -29,11 +29,19 @@ namespace Скриптерсы.Services
         {
             try
             {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                if (PlayerPrefs.HasKey(CurrencySavePath))
+                {
+                    string json = PlayerPrefs.GetString(CurrencySavePath);
+                    return JsonUtility.FromJson<PlayerCurrencyData>(json);
+                }
+#else
                 if (File.Exists(CurrencySavePath))
                 {
                     string json = File.ReadAllText(CurrencySavePath);
                     return JsonUtility.FromJson<PlayerCurrencyData>(json);
                 }
+#endif
             }
             catch (System.Exception e)
             {
@@ -48,7 +56,12 @@ namespace Скриптерсы.Services
             try
             {
                 string json = JsonUtility.ToJson(data, true);
+#if UNITY_WEBGL && !UNITY_EDITOR
+                PlayerPrefs.SetString(CurrencySavePath, json);
+                PlayerPrefs.Save();
+#else
                 File.WriteAllText(CurrencySavePath, json);
+#endif
                 Debug.Log($"Валюта сохранена в: {CurrencySavePath}");
             }
             catch (System.Exception e)
@@ -61,11 +74,16 @@ namespace Скриптерсы.Services
         {
             try
             {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                PlayerPrefs.DeleteKey(CurrencySavePath);
+                PlayerPrefs.Save();
+#else
                 if (File.Exists(CurrencySavePath))
                 {
                     File.Delete(CurrencySavePath);
-                    Debug.Log("Данные валюты очищены");
                 }
+#endif
+                Debug.Log("Данные валюты очищены");
             }
             catch (System.Exception e)
             {
@@ -78,11 +96,19 @@ namespace Скриптерсы.Services
         {
             try
             {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                if (PlayerPrefs.HasKey(ShopSavePath))
+                {
+                    string json = PlayerPrefs.GetString(ShopSavePath);
+                    return JsonUtility.FromJson<ShopSaveData>(json);
+                }
+#else
                 if (File.Exists(ShopSavePath))
                 {
                     string json = File.ReadAllText(ShopSavePath);
                     return JsonUtility.FromJson<ShopSaveData>(json);
                 }
+#endif
             }
             catch (System.Exception e)
             {
@@ -97,7 +123,12 @@ namespace Скриптерсы.Services
             try
             {
                 string json = JsonUtility.ToJson(data, true);
+#if UNITY_WEBGL && !UNITY_EDITOR
+                PlayerPrefs.SetString(ShopSavePath, json);
+                PlayerPrefs.Save();
+#else
                 File.WriteAllText(ShopSavePath, json);
+#endif
                 Debug.Log($"Магазин сохранен в: {ShopSavePath}");
             }
             catch (System.Exception e)
@@ -110,11 +141,16 @@ namespace Скриптерсы.Services
         {
             try
             {
+#if UNITY_WEBGL && !UNITY_EDITOR
+                PlayerPrefs.DeleteKey(ShopSavePath);
+                PlayerPrefs.Save();
+#else
                 if (File.Exists(ShopSavePath))
                 {
                     File.Delete(ShopSavePath);
-                    Debug.Log("Данные магазина очищены");
                 }
+#endif
+                Debug.Log("Данные магазина очищены");
             }
             catch (System.Exception e)
             {
@@ -126,13 +162,23 @@ namespace Скриптерсы.Services
         {
             ClearCurrencyData();
             ClearShopData();
-            
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            PlayerPrefs.DeleteKey(SegmentsSavePath);
+            PlayerPrefs.Save();
+#else
             File.Delete(SegmentsSavePath);
+#endif
             LoadSegments();
-            
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            PlayerPrefs.DeleteKey(AchievementSavePath);
+            PlayerPrefs.Save();
+#else
             File.Delete(AchievementSavePath);
+#endif
             LoadAchievements();
-            
+
             _snakeSegmentsRepository.ClearData();
 
             Debug.Log("Все данные игры очищены");
@@ -140,9 +186,15 @@ namespace Скриптерсы.Services
 
         public void LoadAchievements()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            if (PlayerPrefs.HasKey(AchievementSavePath))
+            {
+                string json = PlayerPrefs.GetString(AchievementSavePath);
+#else
             if (File.Exists(AchievementSavePath))
             {
                 string json = File.ReadAllText(AchievementSavePath);
+#endif
 
                 List<AchievementSaveData> achievementSaveDatas =
                     JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
@@ -182,7 +234,12 @@ namespace Скриптерсы.Services
             }
 
             string json = JsonConvert.SerializeObject(achievementSaveDatas, Formatting.Indented);
+#if UNITY_WEBGL && !UNITY_EDITOR
+            PlayerPrefs.SetString(AchievementSavePath, json);
+            PlayerPrefs.Save();
+#else
             File.WriteAllText(AchievementSavePath, json);
+#endif
 
             Debug.Log("Достижения сохранены");
         }
@@ -199,9 +256,15 @@ namespace Скриптерсы.Services
 
         public void LoadSegments()
         {
+#if UNITY_WEBGL && !UNITY_EDITOR
+            if (PlayerPrefs.HasKey(SegmentsSavePath))
+            {
+                string json = PlayerPrefs.GetString(SegmentsSavePath);
+#else
             if (File.Exists(SegmentsSavePath))
             {
                 string json = File.ReadAllText(SegmentsSavePath);
+#endif
 
                 Debug.Log(json);
 
@@ -214,7 +277,6 @@ namespace Скриптерсы.Services
 
                 foreach (var segment in snakeSegmentSaveData)
                 {
-    
                     //CardData segmentData = new();
                     //
                     //foreach (var VARIABLE in _gameConfig.GameConfigData.CardDatas)
@@ -258,7 +320,12 @@ namespace Скриптерсы.Services
             }
 
             string json = JsonConvert.SerializeObject(segmentSaveDatas, Formatting.Indented);
+#if UNITY_WEBGL && !UNITY_EDITOR
+            PlayerPrefs.SetString(SegmentsSavePath, json);
+            PlayerPrefs.Save();
+#else
             File.WriteAllText(SegmentsSavePath, json);
+#endif
 
             Debug.Log("Сегменты сохранены");
         }
@@ -275,6 +342,20 @@ namespace Скриптерсы.Services
 
         public SettingsSaveData LoadSettings()
         {
+            
+#if UNITY_WEBGL && !UNITY_EDITOR
+            if (PlayerPrefs.HasKey(SettingsSavePath))
+            {
+                string json = PlayerPrefs.GetString(SettingsSavePath);
+                SettingsSaveData settingsSaveData = JsonConvert.DeserializeObject<SettingsSaveData>(json);
+                return settingsSaveData;
+            }
+            else
+            {
+                SettingsSaveData settingsSaveData = new();
+                return settingsSaveData;
+            }
+#else
             if (File.Exists(SettingsSavePath))
             {
                 string json = File.ReadAllText(SettingsSavePath);
@@ -286,12 +367,20 @@ namespace Скриптерсы.Services
                 SettingsSaveData settingsSaveData = new();
                 return settingsSaveData;
             }
+#endif
         }
 
         public void SaveSettings(SettingsSaveData settingsSaveData)
         {
             string json = JsonConvert.SerializeObject(settingsSaveData);
+
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            PlayerPrefs.SetString(SettingsSavePath, json);
+            PlayerPrefs.Save();
+#else
             File.WriteAllText(SettingsSavePath, json);
+#endif
         }
     }
 
