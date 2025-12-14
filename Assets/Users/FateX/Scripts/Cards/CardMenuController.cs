@@ -292,7 +292,7 @@ namespace Users.FateX.Scripts.Cards
 
             if (!segment.Origin)
             {
-                statsText += $"<color=red>{_gameConfig.GameConfigData.LocalizationData.ui_Copy}</color><line-height=1em>\n";
+                statsText += $"<color=red>{_gameConfig.GameConfigData.LocalizationData.ui_Copy.GetLocalizedString()}</color><line-height=1em>\n";
             }
             
             statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
