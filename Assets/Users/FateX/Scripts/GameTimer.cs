@@ -34,7 +34,7 @@ namespace Users.FateX.Scripts
         public void StartTimer(float duration)
         {
             //this.duration = duration;
-            this.duration = 999999;
+            this.duration = 99999;
             
             if (_isRunning) return;
             
