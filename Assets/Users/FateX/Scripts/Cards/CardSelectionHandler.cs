@@ -35,6 +35,7 @@ namespace Users.FateX.Scripts.Cards
             {
                 _tutorialController.ShowTutorial(TutorialWindowType.Move);
                 _settingsController.SettingsSaveData.MoveTutorial = true;
+                _settingsController.SaveSettings();
             }
             // _gameStateManager.ChangeState(GameStates.Play);
         }

@@ -45,6 +45,7 @@ namespace Users.FateX.Scripts
             {
                 _tutorialController.ShowTutorial(TutorialWindowType.DeathMenu);
                 _settingsController.SettingsSaveData.DeathTutorial = true;
+                _settingsController.SaveSettings();
             }
         }
 

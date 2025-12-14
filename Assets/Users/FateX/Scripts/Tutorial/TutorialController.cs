@@ -38,6 +38,7 @@ namespace Users.FateX.Scripts.Tutorial
             {
                 ShowTutorial(TutorialWindowType.KillEnemy);
                 _settingsController.SettingsSaveData.KillTutorial = true;
+                _settingsController.SaveSettings();
             }
         }
 

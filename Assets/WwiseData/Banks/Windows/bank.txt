@@ -31,30 +31,30 @@ Event	ID	Name			Wwise Object Path	Notes
 	4179853477	Play_Slot_Win			\Default Work Unit\Slot Machine\Play_Slot_Win	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	12196512	Damage	.cache\8B\{8B365154-DACB-FC7F-8EE5-3A9731368F36}.wem		\Containers\Default Work Unit\Effects\Damage		1542
-	73924771	Tesla	.cache\33\{33B71E9E-6B94-6DAA-11FC-6B90F8134D42}.wem		\Containers\Default Work Unit\Effects\Weapon\Tesla		11753
-	122309088	Cursor	.cache\31\{317B8234-FFE6-6DC9-A0DF-E89380B85F23}.wem		\Containers\Default Work Unit\Effects\Ui\Cursor		3842
-	178159659	LvlUp	.cache\0A\{0A1E126D-B075-B35F-B6F2-E8C94819B817}.wem		\Containers\Default Work Unit\Effects\LvlUp		25821
-	202057814	Select	.cache\0E\{0EFA9F05-8647-02D6-CDC2-D527FC4636B6}.wem		\Containers\Default Work Unit\Effects\Ui\Select		6274
-	245487382	Denied	.cache\40\{4020EA5D-C313-58A0-F72B-4252934EAD4B}.wem		\Containers\Default Work Unit\Effects\Ui\Denied		5879
-	278875474	Slot_completion	.cache\44\{44B401AE-DE4F-BE67-33A4-AE250567B62D}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_completion		13693
-	308453629	Mortar Shoot	.cache\B6\{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem		\Containers\Default Work Unit\Effects\Weapon\Mortar Shoot		8104
-	356062460	 MachineGun	.cache\4B\{4B52663B-EC57-F84F-8F8F-A35D916BBF73}.wem		\Containers\Default Work Unit\Effects\Weapon\ MachineGun		21680
-	370091552	Buy	.cache\2C\{2C449723-2DEB-2EC0-E862-B8D8277B7C4A}.wem		\Containers\Default Work Unit\Effects\Ui\Buy		8566
-	508721672	PickUp	.cache\D9\{D9798E64-25B6-0928-0C62-7C1D5B54889D}.wem		\Containers\Default Work Unit\Effects\PickUp		1493
-	532684351	Penta	.cache\98\{98889210-FE4C-5B7D-533C-3139C5272558}.wem		\Containers\Default Work Unit\Effects\Weapon\Penta		7188
-	583867755	SnakeDie	.cache\B1\{B13CAADB-4394-80E3-CA34-868342C34CA9}.wem		\Containers\Default Work Unit\Effects\SnakeDie		36215
-	643516409	CardSelected	.cache\EA\{EAD4FA64-0C75-3690-FB42-8BB7E0EDBDBC}.wem		\Containers\Default Work Unit\Effects\CardSelected		16097
-	688385273	Swipe	.cache\D3\{D3D70AD1-495D-2282-7246-7827AE3270DE}.wem		\Containers\Default Work Unit\Effects\Ui\Swipe		4619
-	734243213	Sword	.cache\67\{67D863D0-E685-5FFD-5E3D-2F1F66171E3B}.wem		\Containers\Default Work Unit\Effects\Weapon\Sword		9817
-	740252889	CollectCoin	.cache\E3\{E3BF6D14-6D4D-3C6B-BFAE-78EDA1E82EF6}.wem		\Containers\Default Work Unit\Effects\CollectCoin		5517
-	806303027	Explosion	.cache\F9\{F96276CD-2FCA-6422-0392-09C355AD8B2B}.wem		\Containers\Default Work Unit\Effects\Weapon\Explosion		36455
-	867434290	Slot_Win	.cache\03\{031FA894-A46D-3378-68DB-62AB14045FA7}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_Win		25632
-	885284157	Slot_Loop	.cache\AC\{AC358AD9-E3F6-2299-C46F-06F9850785E2}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_Loop		126612
-	896543732	TrialTowerCapture	.cache\D1\{D125521E-94E2-483B-CC51-18DF7F0D8166}.wem		\Containers\Default Work Unit\Effects\TrialTowerCapture		30049
-	953991065	SpikeGun	.cache\FA\{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem		\Containers\Default Work Unit\Effects\Weapon\SpikeGun		19845
-	960944044	MainMenuMusic	.cache\E0\{E0CF1D80-0B15-DA2E-6F90-E385C1402F9D}.wem		\Containers\Default Work Unit\Music\MainMenuMusic		2376135
-	990669999	Xp	.cache\A4\{A4033E25-86F0-6755-27A1-1F286A5DF893}.wem		\Containers\Default Work Unit\Effects\Xp		4361
-	1006937210	GamePlayMusic	.cache\AC\{AC12BA21-C960-C7D8-7993-FC2C4E9247CF}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		5402345
-	1024133082	DisplayMessage	.cache\BE\{BE15E690-68D9-1463-970E-D9DA3DA0A68A}.wem		\Containers\Default Work Unit\Effects\DisplayMessage		15469
+	12196512	Damage	.cache\8C\{8C831022-0580-A192-A9DE-40E73C367ED3}.wem		\Containers\Default Work Unit\Effects\Damage		663
+	73924771	Tesla	.cache\5E\{5E709917-2BC9-8FC0-3C0D-309DFC005B04}.wem		\Containers\Default Work Unit\Effects\Weapon\Tesla		9631
+	122309088	Cursor	.cache\63\{63863398-77A5-996F-1626-0E14026FEB7C}.wem		\Containers\Default Work Unit\Effects\Ui\Cursor		1291
+	178159659	LvlUp	.cache\DB\{DBC90662-8E90-B397-B06D-1EF1D2A63025}.wem		\Containers\Default Work Unit\Effects\LvlUp		10597
+	202057814	Select	.cache\34\{3424E2A6-51F8-129C-11FE-F77055176CA8}.wem		\Containers\Default Work Unit\Effects\Ui\Select		5959
+	245487382	Denied	.cache\5D\{5D76484E-05C1-A87A-097B-8E1DCEBBA4D7}.wem		\Containers\Default Work Unit\Effects\Ui\Denied		1576
+	278875474	Slot_completion	.cache\19\{196ACEE5-B268-C4FB-21AA-0440AF4382FD}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_completion		6555
+	308453629	Mortar Shoot	.cache\71\{7183E62B-2D85-750C-9529-712BAD35537F}.wem		\Containers\Default Work Unit\Effects\Weapon\Mortar Shoot		2782
+	356062460	MachineGun	.cache\67\{67A59740-63D3-69E8-585E-F3A3F5D11D1E}.wem		\Containers\Default Work Unit\Effects\Weapon\MachineGun		16251
+	370091552	Buy	.cache\DD\{DD6E4E57-DAC3-02CD-08C7-8E9BAE2910DA}.wem		\Containers\Default Work Unit\Effects\Ui\Buy		6495
+	508721672	PickUp	.cache\DB\{DB643BCD-A3AD-60BC-0028-33ED825B2D4B}.wem		\Containers\Default Work Unit\Effects\PickUp		532
+	532684351	Penta	.cache\33\{33FD9AC2-93A2-45E8-53A2-D0954C197DF4}.wem		\Containers\Default Work Unit\Effects\Weapon\Penta		3712
+	583867755	SnakeDie	.cache\C5\{C54593E3-5425-B610-E28B-E5CEF06A743E}.wem		\Containers\Default Work Unit\Effects\SnakeDie		25286
+	643516409	CardSelected	.cache\71\{71A266AA-8DF1-1E3E-78D4-4C115A843FA9}.wem		\Containers\Default Work Unit\Effects\CardSelected		8531
+	688385273	Swipe	.cache\41\{41676C18-9219-5B36-D632-1685DFFF447E}.wem		\Containers\Default Work Unit\Effects\Ui\Swipe		4113
+	734243213	Sword	.cache\B3\{B36A6947-E4FA-F60E-5375-0C3B70258562}.wem		\Containers\Default Work Unit\Effects\Weapon\Sword		4610
+	740252889	CollectCoin	.cache\4A\{4A95C73E-61F9-7C3D-A6B6-731276DC69A7}.wem		\Containers\Default Work Unit\Effects\CollectCoin		4154
+	806303027	Explosion	.cache\48\{48964EA9-5190-5404-D468-63C31B7F5D13}.wem		\Containers\Default Work Unit\Effects\Weapon\Explosion		4621
+	867434290	Slot_Win	.cache\C5\{C5EEC348-1914-5B40-34A5-1A767F0BA81A}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_Win		12553
+	885284157	Slot_Loop	.cache\5D\{5DF227D9-8D8E-8041-7658-DBB1675797D6}.wem		\Containers\Default Work Unit\Effects\Slot Machine\Slot_Loop		55969
+	896543732	TrialTowerCapture	.cache\5D\{5D0B8A4C-BCA9-A3E2-0A47-298C13DA4BC9}.wem		\Containers\Default Work Unit\Effects\TrialTowerCapture		5273
+	953991065	SpikeGun	.cache\B3\{B3B19804-E83C-2D94-4F58-C0E89017A997}.wem		\Containers\Default Work Unit\Effects\Weapon\SpikeGun		9925
+	960944044	MainMenuMusic	.cache\9E\{9EBB9D16-95B1-7826-CD7A-DB950EAE81E3}.wem		\Containers\Default Work Unit\Music\MainMenuMusic		852345
+	990669999	Xp	.cache\1D\{1D1ADAF7-1AD8-AAE2-12B2-4C5088D00CD3}.wem		\Containers\Default Work Unit\Effects\Xp		3042
+	1006937210	GamePlayMusic	.cache\48\{4833668F-C009-854C-2977-763A4A110D04}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		4841267
+	1024133082	DisplayMessage	.cache\3D\{3D0088E8-8E0D-A706-C190-C3C633C05BA5}.wem		\Containers\Default Work Unit\Effects\DisplayMessage		3855
 

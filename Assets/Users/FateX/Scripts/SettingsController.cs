@@ -10,7 +10,19 @@ namespace Users.FateX.Scripts
     {
         [Inject] private ISaveLoadService _saveLoadService;
         private SettingsSaveData _settingsSaveData;
-        public SettingsSaveData SettingsSaveData => _settingsSaveData;
+
+        public SettingsSaveData SettingsSaveData 
+        { 
+            get 
+            { 
+                return _settingsSaveData; 
+            }
+            set
+            {
+                _settingsSaveData = value;
+                _saveLoadService.SaveSettings(_settingsSaveData);
+            }
+        }
         public event Action<SettingsSaveData> OnSettingsChanged;
         
         public void Initialize()
@@ -33,6 +45,12 @@ namespace Users.FateX.Scripts
         public void ChangedShowFps(bool value)
         {
             _settingsSaveData.ShowFps = value;
+            OnSettingsChanged?.Invoke(_settingsSaveData);
+            _saveLoadService.SaveSettings(_settingsSaveData);
+        }
+
+        public void SaveSettings()
+        {
             OnSettingsChanged?.Invoke(_settingsSaveData);
             _saveLoadService.SaveSettings(_settingsSaveData);
         }
@@ -74,7 +92,7 @@ namespace Users.FateX.Scripts
             _settingsSaveData.Language = index;
 
             LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.Locales[index];
-
+            SaveSettings();
         }
 
         public void Dispose()

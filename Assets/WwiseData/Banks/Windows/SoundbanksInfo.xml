@@ -30,114 +30,114 @@
 				<GameParameter Id="2312172015" Name="Main_Volume" ObjectPath="\Game Parameters\Default Work Unit\Main_Volume" GUID="{C25809D5-1951-4A6C-AF00-7FF2598DB2A3}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{9D66DF89-9F76-FE1E-785E-05E5B4A0870A}">
+		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{5A0E93E0-9223-0D92-8306-DAF4209C0919}">
 			<ObjectPath>\SoundBanks\Default Work Unit\bank</ObjectPath>
 			<ShortName>bank</ShortName>
 			<Path>bank.bnk</Path>
 			<Media>
 				<File Id="12196512" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Звук получения  врагами урона1.wav</ShortName>
-					<CachePath>8B/{8B365154-DACB-FC7F-8EE5-3A9731368F36}.wem</CachePath>
+					<CachePath>8C/{8C831022-0580-A192-A9DE-40E73C367ED3}.wem</CachePath>
 				</File>
 				<File Id="73924771" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>цепная молния отскок.wav</ShortName>
-					<CachePath>33/{33B71E9E-6B94-6DAA-11FC-6B90F8134D42}.wem</CachePath>
+					<CachePath>5E/{5E709917-2BC9-8FC0-3C0D-309DFC005B04}.wem</CachePath>
 				</File>
 				<File Id="122309088" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav</ShortName>
-					<CachePath>31/{317B8234-FFE6-6DC9-A0DF-E89380B85F23}.wem</CachePath>
+					<CachePath>63/{63863398-77A5-996F-1626-0E14026FEB7C}.wem</CachePath>
 				</File>
 				<File Id="178159659" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retro Event StereoUP 02.wav</ShortName>
-					<CachePath>0A/{0A1E126D-B075-B35F-B6F2-E8C94819B817}.wem</CachePath>
+					<CachePath>DB/{DBC90662-8E90-B397-B06D-1EF1D2A63025}.wem</CachePath>
 				</File>
 				<File Id="202057814" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>JDSherbert - Ultimate UI SFX Pack - Select - 2.wav</ShortName>
-					<CachePath>0E/{0EFA9F05-8647-02D6-CDC2-D527FC4636B6}.wem</CachePath>
+					<CachePath>34/{3424E2A6-51F8-129C-11FE-F77055176CA8}.wem</CachePath>
 				</File>
 				<File Id="245487382" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>033_Denied_03.wav</ShortName>
-					<CachePath>40/{4020EA5D-C313-58A0-F72B-4252934EAD4B}.wem</CachePath>
+					<CachePath>5D/{5D76484E-05C1-A87A-097B-8E1DCEBBA4D7}.wem</CachePath>
 				</File>
 				<File Id="278875474" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>completion.wav</ShortName>
-					<CachePath>44/{44B401AE-DE4F-BE67-33A4-AE250567B62D}.wem</CachePath>
+					<CachePath>19/{196ACEE5-B268-C4FB-21AA-0440AF4382FD}.wem</CachePath>
 				</File>
 				<File Id="308453629" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Выстрел пушки (mp3cut.net).wav</ShortName>
-					<CachePath>B6/{B6D0FD3C-F006-92D2-0867-0B9300033D71}.wem</CachePath>
+					<CachePath>71/{7183E62B-2D85-750C-9529-712BAD35537F}.wem</CachePath>
 				</File>
 				<File Id="356062460" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>762x54r Single WAV.wav</ShortName>
-					<CachePath>4B/{4B52663B-EC57-F84F-8F8F-A35D916BBF73}.wem</CachePath>
+					<CachePath>67/{67A59740-63D3-69E8-585E-F3A3F5D11D1E}.wem</CachePath>
 				</File>
 				<File Id="370091552" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>079_Buy_sell_01.wav</ShortName>
-					<CachePath>2C/{2C449723-2DEB-2EC0-E862-B8D8277B7C4A}.wem</CachePath>
+					<CachePath>DD/{DD6E4E57-DAC3-02CD-08C7-8E9BAE2910DA}.wem</CachePath>
 				</File>
 				<File Id="508721672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>water_drop_synthetic.wav</ShortName>
-					<CachePath>D9/{D9798E64-25B6-0928-0C62-7C1D5B54889D}.wem</CachePath>
+					<CachePath>DB/{DB643BCD-A3AD-60BC-0028-33ED825B2D4B}.wem</CachePath>
 				</File>
 				<File Id="532684351" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Spell Impact 1.wav</ShortName>
-					<CachePath>98/{98889210-FE4C-5B7D-533C-3139C5272558}.wem</CachePath>
+					<CachePath>33/{33FD9AC2-93A2-45E8-53A2-D0954C197DF4}.wem</CachePath>
 				</File>
 				<File Id="583867755" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retro Charge Off 11.wav</ShortName>
-					<CachePath>B1/{B13CAADB-4394-80E3-CA34-868342C34CA9}.wem</CachePath>
+					<CachePath>C5/{C54593E3-5425-B610-E28B-E5CEF06A743E}.wem</CachePath>
 				</File>
 				<File Id="643516409" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>match_xylophone_5.wav</ShortName>
-					<CachePath>EA/{EAD4FA64-0C75-3690-FB42-8BB7E0EDBDBC}.wem</CachePath>
+					<CachePath>71/{71A266AA-8DF1-1E3E-78D4-4C115A843FA9}.wem</CachePath>
 				</File>
 				<File Id="688385273" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav</ShortName>
-					<CachePath>D3/{D3D70AD1-495D-2282-7246-7827AE3270DE}.wem</CachePath>
+					<CachePath>41/{41676C18-9219-5B36-D632-1685DFFF447E}.wem</CachePath>
 				</File>
 				<File Id="734243213" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sword Attack 1.wav</ShortName>
-					<CachePath>67/{67D863D0-E685-5FFD-5E3D-2F1F66171E3B}.wem</CachePath>
+					<CachePath>B3/{B36A6947-E4FA-F60E-5375-0C3B70258562}.wem</CachePath>
 				</File>
 				<File Id="740252889" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Retro PickUp Coin 07.wav</ShortName>
-					<CachePath>E3/{E3BF6D14-6D4D-3C6B-BFAE-78EDA1E82EF6}.wem</CachePath>
+					<CachePath>4A/{4A95C73E-61F9-7C3D-A6B6-731276DC69A7}.wem</CachePath>
 				</File>
 				<File Id="806303027" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Explosion Medium 2-1.wav</ShortName>
-					<CachePath>F9/{F96276CD-2FCA-6422-0392-09C355AD8B2B}.wem</CachePath>
+					<CachePath>48/{48964EA9-5190-5404-D468-63C31B7F5D13}.wem</CachePath>
 				</File>
 				<File Id="867434290" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Win.wav</ShortName>
-					<CachePath>03/{031FA894-A46D-3378-68DB-62AB14045FA7}.wem</CachePath>
+					<CachePath>C5/{C5EEC348-1914-5B40-34A5-1A767F0BA81A}.wem</CachePath>
 				</File>
 				<File Id="885284157" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Loop.wav</ShortName>
-					<CachePath>AC/{AC358AD9-E3F6-2299-C46F-06F9850785E2}.wem</CachePath>
+					<CachePath>5D/{5DF227D9-8D8E-8041-7658-DBB1675797D6}.wem</CachePath>
 				</File>
 				<File Id="896543732" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>synth_cancel.wav</ShortName>
-					<CachePath>D1/{D125521E-94E2-483B-CC51-18DF7F0D8166}.wem</CachePath>
+					<CachePath>5D/{5D0B8A4C-BCA9-A3E2-0A47-298C13DA4BC9}.wem</CachePath>
 				</File>
 				<File Id="953991065" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Sci-Fi Gun 1-1.wav</ShortName>
-					<CachePath>FA/{FABBA8E9-2E1F-0966-34F4-1E505C2C6975}.wem</CachePath>
+					<CachePath>B3/{B3B19804-E83C-2D94-4F58-C0E89017A997}.wem</CachePath>
 				</File>
 				<File Id="960944044" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>snake_music_MainTheme_mixmaster_1.wav</ShortName>
-					<CachePath>E0/{E0CF1D80-0B15-DA2E-6F90-E385C1402F9D}.wem</CachePath>
+					<CachePath>9E/{9EBB9D16-95B1-7826-CD7A-DB950EAE81E3}.wem</CachePath>
 				</File>
 				<File Id="990669999" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>2025-12-09-19-13-15-Trim (mp3cut.net).wav</ShortName>
-					<CachePath>A4/{A4033E25-86F0-6755-27A1-1F286A5DF893}.wem</CachePath>
+					<CachePath>1D/{1D1ADAF7-1AD8-AAE2-12B2-4C5088D00CD3}.wem</CachePath>
 				</File>
 				<File Id="1006937210" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>Project_4.wav</ShortName>
-					<CachePath>AC/{AC12BA21-C960-C7D8-7993-FC2C4E9247CF}.wem</CachePath>
+					<CachePath>48/{4833668F-C009-854C-2977-763A4A110D04}.wem</CachePath>
 				</File>
 				<File Id="1024133082" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>steel_drums_chime_quick.wav</ShortName>
-					<CachePath>BE/{BE15E690-68D9-1463-970E-D9DA3DA0A68A}.wem</CachePath>
+					<CachePath>3D/{3D0088E8-8E0D-A706-C190-C3C633C05BA5}.wem</CachePath>
 				</File>
 			</Media>
 			<Events>
@@ -278,5 +278,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FA38CAB9-3E84-64E6-B86E-FE1E1B48462C}</FileHash>
+	<FileHash>{AFF09AD2-A578-CA39-8AA7-4728F3263AA1}</FileHash>
 </SoundBanksInfo>

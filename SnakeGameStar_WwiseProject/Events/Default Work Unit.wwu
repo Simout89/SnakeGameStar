@@ -33,7 +33,7 @@
 								<Action Name="" ID="{9DDB2D70-A47C-40C3-A47A-DFEF7C887201}" ShortID="654359699">
 									<ReferenceList>
 										<Reference Name="Target">
-											<ObjectRef Name=" MachineGun" ID="{4887BE91-EF69-402B-8481-710C62488C99}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
+											<ObjectRef Name="MachineGun" ID="{4887BE91-EF69-402B-8481-710C62488C99}" WorkUnitID="{0FA3F47C-7BFB-4ABF-87CC-2DC4FAE0FC10}"/>
 										</Reference>
 									</ReferenceList>
 								</Action>

@@ -78,6 +78,7 @@ namespace Users.FateX.Scripts
             {
                 _tutorialController.ShowTutorial(TutorialWindowType.CardSelect);
                 _settingsController.SettingsSaveData.CardTutorial = true;
+                _settingsController.SaveSettings();
             }
             
         }

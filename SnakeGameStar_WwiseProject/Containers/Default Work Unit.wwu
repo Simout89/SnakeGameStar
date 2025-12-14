@@ -168,7 +168,7 @@
 										<ActiveSource Name="цепная молния отскок" ID="{ADC281A1-8FD7-4C89-B106-E73F8160518E}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
-								<Sound Name=" MachineGun" ID="{4887BE91-EF69-402B-8481-710C62488C99}" ShortID="681461471">
+								<Sound Name="MachineGun" ID="{4887BE91-EF69-402B-8481-710C62488C99}" ShortID="681461471">
 									<ReferenceList>
 										<Reference Name="Conversion">
 											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
@@ -188,28 +188,6 @@
 									</ChildrenList>
 									<ActiveSourceList>
 										<ActiveSource Name="762x54r Single WAV" ID="{692125D0-F6E4-4F50-A80E-32E94B8095D7}" Platform="Linked"/>
-									</ActiveSourceList>
-								</Sound>
-								<Sound Name="MachineGun2" ID="{5A468C87-A325-407C-91B5-246CD6500670}" ShortID="483707219">
-									<ReferenceList>
-										<Reference Name="Conversion">
-											<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
-										</Reference>
-										<Reference Name="OutputBus">
-											<ObjectRef Name="Effects" ID="{FAB1E6EB-298E-41E2-AC9F-4E721B8F07CD}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
-										</Reference>
-									</ReferenceList>
-									<ChildrenList>
-										<AudioFileSource Name="556 Single WAV" ID="{9A2C47A3-44EF-436C-9C7E-AAFA1472A62B}">
-											<Language>SFX</Language>
-											<AudioFile>556 Single WAV.wav</AudioFile>
-											<MediaIDList>
-												<MediaID ID="690882898"/>
-											</MediaIDList>
-										</AudioFileSource>
-									</ChildrenList>
-									<ActiveSourceList>
-										<ActiveSource Name="556 Single WAV" ID="{9A2C47A3-44EF-436C-9C7E-AAFA1472A62B}" Platform="Linked"/>
 									</ActiveSourceList>
 								</Sound>
 								<Sound Name="SpikeGun" ID="{7412258E-0606-4090-B7D9-48DAD50509A8}" ShortID="671320096">
@@ -543,20 +521,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Retro Swooosh 07" ID="{93AE5430-655B-410D-8EF5-993A494E4432}">
-									<Language>SFX</Language>
-									<AudioFile>Retro Swooosh 07.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="72320751"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="Hit_3" ID="{53D364F9-4643-4B57-94F1-AD713BCE4A8A}">
-									<Language>SFX</Language>
-									<AudioFile>Hit_3.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="518293719"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="Звук получения  врагами урона1" ID="{1ACBEA0D-6630-4DC5-AABB-74733D8795D4}">
 									<Language>SFX</Language>
 									<AudioFile>Звук получения  врагами урона1.wav</AudioFile>
@@ -579,13 +543,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="звук лвл апа" ID="{55C64441-FBAE-40C9-B2A2-A315D85AA2A6}">
-									<Language>SFX</Language>
-									<AudioFile>звук лвл апа.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="1005670187"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="Retro Event StereoUP 02" ID="{CE04207E-2D9E-4C3A-8479-85B232A92F39}">
 									<Language>SFX</Language>
 									<AudioFile>Retro Event StereoUP 02.wav</AudioFile>
@@ -615,13 +572,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="подбор монетки" ID="{F33DA837-B513-4274-8D84-A369492E8461}">
-									<Language>SFX</Language>
-									<AudioFile>подбор монетки.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="566566735"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="Retro PickUp Coin 07" ID="{E5FB8528-BDE4-4B69-BB02-C8F1F69007F3}">
 									<Language>SFX</Language>
 									<AudioFile>Retro PickUp Coin 07.wav</AudioFile>
@@ -644,20 +594,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Retro Blop 07" ID="{096D2E79-1571-4AB1-948C-DE42D8850F01}">
-									<Language>SFX</Language>
-									<AudioFile>Retro Blop 07.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="412320990"/>
-									</MediaIDList>
-								</AudioFileSource>
-								<AudioFileSource Name="Retro Event Acute 11" ID="{97919820-AE74-4184-9872-EDE2920772EB}">
-									<Language>SFX</Language>
-									<AudioFile>Retro Event Acute 11.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="770165254"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="water_drop_synthetic" ID="{8A5AB142-0AD8-4D58-A252-AE8BF515967A}">
 									<Language>SFX</Language>
 									<AudioFile>water_drop_synthetic.wav</AudioFile>
@@ -687,13 +623,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="Retro Water Drop 01" ID="{D92A3B0F-1DDE-443A-95CA-F836D5B4898F}">
-									<Language>SFX</Language>
-									<AudioFile>Retro Water Drop 01.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="291181088"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="2025-12-09-19-13-15-Trim (mp3cut_net)" ID="{4213C6A1-69A9-4252-9966-38ECC114DB1C}">
 									<Language>SFX</Language>
 									<AudioFile>2025-12-09-19-13-15-Trim (mp3cut.net).wav</AudioFile>
@@ -716,13 +645,6 @@
 								</Reference>
 							</ReferenceList>
 							<ChildrenList>
-								<AudioFileSource Name="39_Absorb_04" ID="{303DC5C6-9E15-49C3-B78C-37520388E088}">
-									<Language>SFX</Language>
-									<AudioFile>39_Absorb_04.wav</AudioFile>
-									<MediaIDList>
-										<MediaID ID="844761369"/>
-									</MediaIDList>
-								</AudioFileSource>
 								<AudioFileSource Name="synth_cancel" ID="{04557757-9616-4493-8920-05CB1754D9A8}">
 									<Language>SFX</Language>
 									<AudioFile>synth_cancel.wav</AudioFile>

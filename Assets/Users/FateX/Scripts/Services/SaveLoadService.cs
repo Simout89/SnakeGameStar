@@ -186,6 +186,16 @@ namespace Скриптерсы.Services
 
         public void LoadAchievements()
         {
+            Dictionary<string, AchievementEntry> achievementEntries = new();
+            
+            // Сначала создаем записи для всех достижений из конфига
+            foreach (var achievementData in _gameConfig.GameConfigData.AchievementDatas)
+            {
+                achievementEntries.Add(achievementData.Id,
+                    new AchievementEntry(achievementData, new AchievementSaveData(achievementData)));
+            }
+            
+            // Затем перезаписываем данными из сохранения (если есть)
 #if UNITY_WEBGL && !UNITY_EDITOR
             if (PlayerPrefs.HasKey(AchievementSavePath))
             {
@@ -195,33 +205,31 @@ namespace Скриптерсы.Services
             {
                 string json = File.ReadAllText(AchievementSavePath);
 #endif
-
-                List<AchievementSaveData> achievementSaveDatas =
-                    JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
-
-                Dictionary<string, AchievementEntry> achievementEntries = new();
-                foreach (var achievementSaveData in achievementSaveDatas)
+                try
                 {
-                    var achievementData =
-                        _gameConfig.GameConfigData.AchievementDatas.FirstOrDefault(a => a.Id == achievementSaveData.Id);
+                    List<AchievementSaveData> achievementSaveDatas =
+                        JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
 
-                    achievementEntries.Add(achievementSaveData.Id,
-                        new AchievementEntry(achievementData, achievementSaveData));
+                    foreach (var saveData in achievementSaveDatas)
+                    {
+                        if (achievementEntries.ContainsKey(saveData.Id))
+                        {
+                            var achievementData = _gameConfig.GameConfigData.AchievementDatas
+                                .FirstOrDefault(a => a.Id == saveData.Id);
+                            if (achievementData != null)
+                            {
+                                achievementEntries[saveData.Id] = new AchievementEntry(achievementData, saveData);
+                            }
+                        }
+                    }
                 }
-
-                this.achievementEntries = achievementEntries;
-            }
-            else
-            {
-                Dictionary<string, AchievementEntry> achievementEntries = new();
-                foreach (var achievementSaveData in _gameConfig.GameConfigData.AchievementDatas)
+                catch (System.Exception e)
                 {
-                    achievementEntries.Add(achievementSaveData.Id,
-                        new AchievementEntry(achievementSaveData, new AchievementSaveData(achievementSaveData)));
+                    Debug.LogWarning($"Ошибка при загрузке сохранений достижений: {e.Message}. Используются значения по умолчанию.");
                 }
-
-                this.achievementEntries = achievementEntries;
             }
+            
+            this.achievementEntries = achievementEntries;
         }
 
         public void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries)
@@ -254,6 +262,18 @@ namespace Скриптерсы.Services
 
         public void LoadSegments()
         {
+            List<SnakeSegmentEntry> snakeSegmentEntries = new();
+            
+            // Сначала создаем записи для всех сегментов из конфига
+            foreach (var cardData in _gameConfig.GameConfigData.CardDatas)
+            {
+                if (cardData.CardType != CardType.Segment)
+                    continue;
+
+                snakeSegmentEntries.Add(new SnakeSegmentEntry(cardData, new SnakeSegmentSaveData(cardData)));
+            }
+            
+            // Затем перезаписываем данными из сохранения (если есть)
 #if UNITY_WEBGL && !UNITY_EDITOR
             if (PlayerPrefs.HasKey(SegmentsSavePath))
             {
@@ -263,49 +283,41 @@ namespace Скриптерсы.Services
             {
                 string json = File.ReadAllText(SegmentsSavePath);
 #endif
-
-                Debug.Log(json);
-
-                List<SnakeSegmentSaveData> snakeSegmentSaveData =
-                    JsonConvert.DeserializeObject<List<SnakeSegmentSaveData>>(json);
-
-                Debug.Log(snakeSegmentSaveData.Count);
-
-                List<SnakeSegmentEntry> snakeSegmentEntries = new();
-
-                foreach (var segment in snakeSegmentSaveData)
+                try
                 {
-                    //CardData segmentData = new();
-                    //
-                    //foreach (var VARIABLE in _gameConfig.GameConfigData.CardDatas)
-                    //{
-                    //    if (VARIABLE.Id == segment.Id)
-                    //    {
-                    //        segmentData = VARIABLE;
-                    //    }
-                    //}
+                    Debug.Log(json);
 
-                    var segmentData =
-                        _gameConfig.GameConfigData.CardDatas.FirstOrDefault(a => a.Id.SequenceEqual(segment.Id));
+                    List<SnakeSegmentSaveData> snakeSegmentSaveData =
+                        JsonConvert.DeserializeObject<List<SnakeSegmentSaveData>>(json);
 
-                    snakeSegmentEntries.Add(new SnakeSegmentEntry(segmentData, segment));
+                    Debug.Log(snakeSegmentSaveData.Count);
+
+                    foreach (var saveData in snakeSegmentSaveData)
+                    {
+                        // Ищем соответствующий сегмент в уже созданном списке
+                        var existingEntry = snakeSegmentEntries.FirstOrDefault(e => e.CardData.Id.SequenceEqual(saveData.Id));
+                        
+                        if (existingEntry != null)
+                        {
+                            // Заменяем дефолтную запись на сохраненную
+                            int index = snakeSegmentEntries.IndexOf(existingEntry);
+                            var segmentData = _gameConfig.GameConfigData.CardDatas
+                                .FirstOrDefault(a => a.Id.SequenceEqual(saveData.Id));
+                            
+                            if (segmentData != null)
+                            {
+                                snakeSegmentEntries[index] = new SnakeSegmentEntry(segmentData, saveData);
+                            }
+                        }
+                    }
                 }
-
-                this._snakeSegmentEntries = snakeSegmentEntries;
-            }
-            else
-            {
-                List<SnakeSegmentEntry> snakeSegmentEntries = new();
-                foreach (var cardData in _gameConfig.GameConfigData.CardDatas)
+                catch (System.Exception e)
                 {
-                    if (cardData.CardType != CardType.Segment)
-                        continue;
-
-                    snakeSegmentEntries.Add(new SnakeSegmentEntry(cardData, new SnakeSegmentSaveData(cardData)));
+                    Debug.LogWarning($"Ошибка при загрузке сохранений сегментов: {e.Message}. Используются значения по умолчанию.");
                 }
-
-                this._snakeSegmentEntries = snakeSegmentEntries;
             }
+            
+            this._snakeSegmentEntries = snakeSegmentEntries;
         }
 
         public void SaveSegments(List<SnakeSegmentEntry> snakeSegmentEntries)
