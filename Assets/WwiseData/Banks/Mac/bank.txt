@@ -41,6 +41,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	308453629	Mortar Shoot	.cache\71\{71553A90-317F-EE6B-DF40-1072BD15694A}.wem		\Containers\Default Work Unit\Effects\Weapon\Mortar Shoot		5097
 	356062460	MachineGun	.cache\3C\{3C46C6CB-11A0-0170-AECC-29D10F217790}.wem		\Containers\Default Work Unit\Effects\Weapon\MachineGun		16251
 	370091552	Buy	.cache\7C\{7C6F536E-A29E-D19E-965B-3B78ED85ABE6}.wem		\Containers\Default Work Unit\Effects\Ui\Buy		6495
+	384292634	GamePlayMusic	.cache\01\{01DE3ED5-7E92-A510-C733-BCDB208ADB38}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		1325519
 	508721672	PickUp	.cache\65\{658C20B9-C962-0355-7366-6FC44F747CAE}.wem		\Containers\Default Work Unit\Effects\PickUp		1084
 	532684351	Penta	.cache\54\{5471A099-5EC1-7BB2-A60C-109C02047F02}.wem		\Containers\Default Work Unit\Effects\Weapon\Penta		3712
 	583867755	SnakeDie	.cache\5C\{5CF2CA22-BE27-6FF8-BDCC-590DF425A6D6}.wem		\Containers\Default Work Unit\Effects\SnakeDie		27003
@@ -55,6 +56,5 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	953991065	SpikeGun	.cache\AC\{ACD6938B-AF2B-DCDC-EB07-DD41C8CA032C}.wem		\Containers\Default Work Unit\Effects\Weapon\SpikeGun		9790
 	960944044	MainMenuMusic	.cache\34\{34F2FC2C-95CC-F0D6-E661-DB7C452036D0}.wem		\Containers\Default Work Unit\Music\MainMenuMusic		1315403
 	990669999	Xp	.cache\06\{06991AC2-77E5-2733-9223-D199E7624A64}.wem		\Containers\Default Work Unit\Effects\Xp		3100
-	1006937210	GamePlayMusic	.cache\6F\{6F955777-2C90-CEC5-3AB3-E1125E019D7B}.wem		\Containers\Default Work Unit\Music\GamePlayMusic		4841267
 	1024133082	DisplayMessage	.cache\07\{0745AEB3-943D-A808-6F07-EC83EF8B54BD}.wem		\Containers\Default Work Unit\Effects\DisplayMessage		8976
 

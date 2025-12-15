@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="172">
 	<SoundBanks>
-		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{5A0E93E0-9223-0D92-8306-DAF4209C0919}">
+		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{37638B3B-3609-2308-F72B-9930DAFFC8C4}">
 			<ObjectPath>\SoundBanks\Default Work Unit\bank</ObjectPath>
 			<ShortName>bank</ShortName>
 			<Path>bank.bnk</Path>
@@ -45,6 +45,10 @@
 				<File Id="370091552" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>079_Buy_sell_01.wav</ShortName>
 					<CachePath>DD/{DD6E4E57-DAC3-02CD-08C7-8E9BAE2910DA}.wem</CachePath>
+				</File>
+				<File Id="384292634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>snake_music_gameplayTheme_mixmaster_1.wav</ShortName>
+					<CachePath>48/{489E60AA-2A2B-5A54-2B46-F5FEA2F67513}.wem</CachePath>
 				</File>
 				<File Id="508721672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>water_drop_synthetic.wav</ShortName>
@@ -102,10 +106,6 @@
 					<ShortName>2025-12-09-19-13-15-Trim (mp3cut.net).wav</ShortName>
 					<CachePath>1D/{1D1ADAF7-1AD8-AAE2-12B2-4C5088D00CD3}.wem</CachePath>
 				</File>
-				<File Id="1006937210" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Project_4.wav</ShortName>
-					<CachePath>48/{4833668F-C009-854C-2977-763A4A110D04}.wem</CachePath>
-				</File>
 				<File Id="1024133082" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>steel_drums_chime_quick.wav</ShortName>
 					<CachePath>3D/{3D0088E8-8E0D-A706-C190-C3C633C05BA5}.wem</CachePath>
@@ -160,7 +160,7 @@
 				</Event>
 				<Event Id="2481433679" Name="Play_GamePlayMusic" ObjectPath="\Events\Default Work Unit\Music\Play_GamePlayMusic" GUID="{1989617F-7479-4743-9F0D-A320E2235A9E}" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="1006937210"/>
+						<MediaRef Id="384292634"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1716361963" Name="Play_LvlUp" ObjectPath="\Events\Default Work Unit\Play_LvlUp" GUID="{31145222-D02A-45A3-95B2-4AE559C4A301}" DurationType="OneShot" DurationMin="1.7066667" DurationMax="1.7066667">
@@ -249,5 +249,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{E08FCFD9-38B7-3AB5-FE3D-1E3982E984CC}</FileHash>
+	<FileHash>{9B1176F5-F544-E410-0BD8-2C096520D43A}</FileHash>
 </SoundBanksInfo>

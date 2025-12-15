@@ -32,9 +32,20 @@
 										<MediaID ID="1006937210"/>
 									</MediaIDList>
 								</AudioFileSource>
+								<AudioFileSource Name="snake_music_gameplayTheme_mixmaster_1" ID="{1101F2BC-6B7C-401D-A5F9-FEA6EB41453E}">
+									<PropertyList>
+										<Property Name="LoopBegin" Type="Real64" Value="7.39400014604314"/>
+										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
+									</PropertyList>
+									<Language>SFX</Language>
+									<AudioFile>snake_music_gameplayTheme_mixmaster_1.wav</AudioFile>
+									<MediaIDList>
+										<MediaID ID="384292634"/>
+									</MediaIDList>
+								</AudioFileSource>
 							</ChildrenList>
 							<ActiveSourceList>
-								<ActiveSource Name="Project_4" ID="{814407D2-3A1A-4BD8-84BE-5F61858461EA}" Platform="Linked"/>
+								<ActiveSource Name="snake_music_gameplayTheme_mixmaster_1" ID="{1101F2BC-6B7C-401D-A5F9-FEA6EB41453E}" Platform="Linked"/>
 							</ActiveSourceList>
 						</Sound>
 						<Sound Name="MainMenuMusic" ID="{6A4E0651-E00A-44ED-AF5E-0A704F9F404A}" ShortID="65962779">

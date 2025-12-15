@@ -30,7 +30,7 @@
 				<GameParameter Id="2312172015" Name="Main_Volume" ObjectPath="\Game Parameters\Default Work Unit\Main_Volume" GUID="{C25809D5-1951-4A6C-AF00-7FF2598DB2A3}"/>
 			</GameParameters>
 		</SoundBank>
-		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{DE1D143D-695F-4538-D68E-F35722433F38}">
+		<SoundBank Id="1744429087" Type="User" GUID="{FCF866C7-8080-421F-A589-F2938BE0518E}" Language="SFX" Hash="{121A2195-5083-FA54-9CEC-060A4D5CA790}">
 			<ObjectPath>\SoundBanks\Default Work Unit\bank</ObjectPath>
 			<ShortName>bank</ShortName>
 			<Path>bank.bnk</Path>
@@ -74,6 +74,10 @@
 				<File Id="370091552" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>079_Buy_sell_01.wav</ShortName>
 					<CachePath>7C/{7C6F536E-A29E-D19E-965B-3B78ED85ABE6}.wem</CachePath>
+				</File>
+				<File Id="384292634" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>snake_music_gameplayTheme_mixmaster_1.wav</ShortName>
+					<CachePath>01/{01DE3ED5-7E92-A510-C733-BCDB208ADB38}.wem</CachePath>
 				</File>
 				<File Id="508721672" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>water_drop_synthetic.wav</ShortName>
@@ -131,10 +135,6 @@
 					<ShortName>2025-12-09-19-13-15-Trim (mp3cut.net).wav</ShortName>
 					<CachePath>06/{06991AC2-77E5-2733-9223-D199E7624A64}.wem</CachePath>
 				</File>
-				<File Id="1006937210" Language="SFX" Streaming="false" Location="Memory">
-					<ShortName>Project_4.wav</ShortName>
-					<CachePath>6F/{6F955777-2C90-CEC5-3AB3-E1125E019D7B}.wem</CachePath>
-				</File>
 				<File Id="1024133082" Language="SFX" Streaming="false" Location="Memory">
 					<ShortName>steel_drums_chime_quick.wav</ShortName>
 					<CachePath>07/{0745AEB3-943D-A808-6F07-EC83EF8B54BD}.wem</CachePath>
@@ -189,7 +189,7 @@
 				</Event>
 				<Event Id="2481433679" Name="Play_GamePlayMusic" ObjectPath="\Events\Default Work Unit\Music\Play_GamePlayMusic" GUID="{1989617F-7479-4743-9F0D-A320E2235A9E}" DurationType="Infinite">
 					<MediaRefs>
-						<MediaRef Id="1006937210"/>
+						<MediaRef Id="384292634"/>
 					</MediaRefs>
 				</Event>
 				<Event Id="1716361963" Name="Play_LvlUp" ObjectPath="\Events\Default Work Unit\Play_LvlUp" GUID="{31145222-D02A-45A3-95B2-4AE559C4A301}" DurationType="OneShot" DurationMin="1.7066667" DurationMax="1.7066667">
@@ -278,5 +278,5 @@
 			</Events>
 		</SoundBank>
 	</SoundBanks>
-	<FileHash>{FCA49C2E-C6A0-4701-D84B-4BFF850A389C}</FileHash>
+	<FileHash>{8B4EF364-1EC8-CDEF-EE25-57ACA13EDD91}</FileHash>
 </SoundBanksInfo>
