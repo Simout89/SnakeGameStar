@@ -1,6 +1,8 @@
 ﻿using System;
 using AK.Wwise.Unity.WwiseAddressables;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
@@ -80,6 +82,10 @@ namespace Users.FateX.Scripts
                 _settingsController.SettingsSaveData.CardTutorial = true;
                 _settingsController.SaveSettings();
             }
+            
+            AnalyticsService.Instance.RecordEvent(
+                new OnRunStartedEvent()
+            );
             
         }
     }
