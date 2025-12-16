@@ -1,4 +1,6 @@
-﻿using UnityEngine;
+﻿using Unity.Services.Analytics;
+using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Data;
 using Zenject;
 using Скриптерсы.Services;
@@ -129,6 +131,12 @@ namespace Users.FateX.Scripts.Shop
                 _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.UiSound.Buy);
 
                 ApplyUpgradeEffect(product.StatsShopProduct, progress.CurrentLevel);
+                
+                AnalyticsService.Instance.RecordEvent(
+                    new OnShopPurchase(
+                        product.StatsShopProduct.Name
+                    )
+                );
 
                 product.ShopSlotEntry.AddLight();
                 progress.CurrentLevel++;

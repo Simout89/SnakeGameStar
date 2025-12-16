@@ -5,6 +5,9 @@ using Users.FateX.Scripts.Data;
 using Zenject;
 using Скриптерсы.Services;
 using System.Threading.Tasks;
+using Unity.Services.Analytics;
+using Unity.Services.Core;
+using UnityEngine.UnityConsent;
 
 namespace Users.FateX.Scripts
 {
@@ -17,7 +20,14 @@ namespace Users.FateX.Scripts
         {
             // 1. Ждём загрузки локализации
             await InitializeLocalization();
+
+            await UnityServices.InitializeAsync();
             
+            EndUserConsent.SetConsentState(new ConsentState 
+            {
+                AnalyticsIntent = ConsentStatus.Granted,
+                AdsIntent = ConsentStatus.Denied
+            });            
             // 2. Загружаем конфиг
             _gameConfig.SetConfig(Resources.LoadAll<GameConfigData>("Data")[0]);
             

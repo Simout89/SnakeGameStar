@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
+using Unity.Services.Analytics;
 using Users.FateX.Scripts;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Enemys;
 using Users.FateX.Scripts.Utils;
@@ -27,6 +29,17 @@ namespace Скриптерсы.Services
             statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.SegmentsGained.GetLocalizedString()}:", (gameContext.SnakeController.SegmentsBase.Count - 1).ToString()));
             statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.ApplesEaten.GetLocalizedString()}:", collectableHandler.HealItemUsed.ToString()));
             statistic.Add(FormatStatisticLine($"{_gameConfig.GameConfigData.LocalizationData.MagnetsUsed.GetLocalizedString()}:", collectableHandler.MagnetItemUsed.ToString()));
+
+            AnalyticsService.Instance.RecordEvent(
+                new OnRunEndedEvent(
+                    lifeTime: (int)gameTimer.CurrentTime,
+                    segmentsCounts: (gameContext.SnakeController.SegmentsBase.Count - 1),
+                    userLevel: (int)experienceSystem.CurrentLevel,
+                    coinsEarned: roundCurrency.Coin,
+                    onEnemyKilled: enemyDeathHandler.TotalEnemyDie
+                )
+            );
+            
             return statistic.ToArray();
         }
 

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
 using Zenject;
@@ -235,6 +237,11 @@ namespace Users.FateX.Scripts.Cards
                     _gameContext.SnakeController.Grow(card.SnakeSegmentBase);
                     _cardMenuView.ClearAllCards();
                     _lastShownCards.Clear();
+                    AnalyticsService.Instance.RecordEvent(
+                        new OnCardSelectedEvent(
+                            card.SnakeSegmentBase.UpgradeLevelsData.SegmentName
+                        )
+                    );
                     OnCardSelected?.Invoke();
                 }
             });
@@ -256,6 +263,11 @@ namespace Users.FateX.Scripts.Cards
                 _gameContext.SnakeHealth.Heal(card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
+                AnalyticsService.Instance.RecordEvent(
+                    new OnCardSelectedEvent(
+                        "healCard"
+                    )
+                );
                 OnCardSelected?.Invoke();
             });
         }
@@ -278,6 +290,11 @@ namespace Users.FateX.Scripts.Cards
                 _roundCurrency.AddCoin((int)card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
+                AnalyticsService.Instance.RecordEvent(
+                    new OnCardSelectedEvent(
+                        "coinCard"
+                    )
+                );
                 OnCardSelected?.Invoke();
             });
         }
@@ -330,6 +347,11 @@ namespace Users.FateX.Scripts.Cards
             segment.Upgrade();
             _cardMenuView.ClearAllCards();
             _lastShownCards.Clear();
+            AnalyticsService.Instance.RecordEvent(
+                new OnCardSelectedEvent(
+                    segment.UpgradeLevelsData.SegmentName
+                )
+            );
             OnCardSelected?.Invoke();
         }
 
