@@ -182,6 +182,18 @@ MonoBehaviour:
     m_Localized: Gives {0} coins
     m_Metadata:
       m_Items: []
+  - m_Id: 1161167648055296
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161182378450944
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161285138898944
+    m_Localized: Delete save file?
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

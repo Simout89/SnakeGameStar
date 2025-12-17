@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

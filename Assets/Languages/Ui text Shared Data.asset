@@ -171,6 +171,18 @@ MonoBehaviour:
     m_Key: ui_CoinCard
     m_Metadata:
       m_Items: []
+  - m_Id: 1161167648055296
+    m_Key: ui_Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161182378450944
+    m_Key: ui_Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161285138898944
+    m_Key: ui_ClearSaveQuestion
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

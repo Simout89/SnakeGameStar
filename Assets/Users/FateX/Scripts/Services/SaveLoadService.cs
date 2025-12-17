@@ -1,250 +1,163 @@
 ﻿using System.Collections.Generic;
-using UnityEngine;
 using System.IO;
 using System.Linq;
 using Newtonsoft.Json;
-using Users.FateX.Scripts;
+using UnityEngine;
 using Users.FateX.Scripts.Achievements;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Shop;
+using Users.FateX.Scripts.Utils;
 using Zenject;
+using Скриптерсы.Services;
 
-namespace Скриптерсы.Services
+namespace Users.FateX.Scripts.Services
 {
     public class SaveLoadService : ISaveLoadService
     {
         [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
         [Inject] private GameConfig _gameConfig;
+
+        // ===== FILE PATHS (NON-WEBGL) =====
         private string CurrencySavePath => Path.Combine(Application.persistentDataPath, "currency_save.json");
         private string ShopSavePath => Path.Combine(Application.persistentDataPath, "shop_save.json");
         private string AchievementSavePath => Path.Combine(Application.persistentDataPath, "achievement_save.json");
         private string SegmentsSavePath => Path.Combine(Application.persistentDataPath, "segments_save.json");
         private string SettingsSavePath => Path.Combine(Application.persistentDataPath, "settings_save.json");
+
+        // ===== WEBGL KEYS =====
+        private const string CurrencyKey = "currency_save";
+        private const string ShopKey = "shop_save";
+        private const string AchievementKey = "achievement_save";
+        private const string SegmentsKey = "segments_save";
+        private const string SettingsKey = "settings_save";
+
         private Dictionary<string, AchievementEntry> achievementEntries;
         private List<SnakeSegmentEntry> _snakeSegmentEntries;
 
+        // ================= CURRENCY =================
 
-        // Методы для валюты
         public PlayerCurrencyData LoadCurrencyData()
         {
-            try
-            {
-#if UNITY_WEBGL && !UNITY_EDITOR
-                if (PlayerPrefs.HasKey(CurrencySavePath))
-                {
-                    string json = PlayerPrefs.GetString(CurrencySavePath);
-                    return JsonUtility.FromJson<PlayerCurrencyData>(json);
-                }
-#else
-                if (File.Exists(CurrencySavePath))
-                {
-                    string json = File.ReadAllText(CurrencySavePath);
-                    return JsonUtility.FromJson<PlayerCurrencyData>(json);
-                }
-#endif
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка загрузки валюты: {e.Message}");
-            }
 
-            return new PlayerCurrencyData(0);
+#if UNITY_WEBGL && !UNITY_EDITOR
+            string json = WebLocalStorage.Get(CurrencyKey);
+            if (string.IsNullOrEmpty(json))
+                return new PlayerCurrencyData(0);
+
+            return JsonUtility.FromJson<PlayerCurrencyData>(json);
+#else
+            if (!File.Exists(CurrencySavePath))
+                return new PlayerCurrencyData(0);
+
+            return JsonUtility.FromJson<PlayerCurrencyData>(File.ReadAllText(CurrencySavePath));
+#endif
         }
 
         public void SaveCurrencyData(PlayerCurrencyData data)
         {
-            try
-            {
-                string json = JsonUtility.ToJson(data, true);
+            string json = JsonUtility.ToJson(data, true);
+
 #if UNITY_WEBGL && !UNITY_EDITOR
-                PlayerPrefs.SetString(CurrencySavePath, json);
-                PlayerPrefs.Save();
+            WebLocalStorage.Set(CurrencyKey, json);
 #else
-                File.WriteAllText(CurrencySavePath, json);
+            File.WriteAllText(CurrencySavePath, json);
 #endif
-                Debug.Log($"Валюта сохранена в: {CurrencySavePath}");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка сохранения валюты: {e.Message}");
-            }
         }
 
         public void ClearCurrencyData()
         {
-            try
-            {
 #if UNITY_WEBGL && !UNITY_EDITOR
-                PlayerPrefs.DeleteKey(CurrencySavePath);
-                PlayerPrefs.Save();
+            WebLocalStorage.Delete(CurrencyKey);
 #else
-                if (File.Exists(CurrencySavePath))
-                {
-                    File.Delete(CurrencySavePath);
-                }
+            if (File.Exists(CurrencySavePath))
+                File.Delete(CurrencySavePath);
 #endif
-                Debug.Log("Данные валюты очищены");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка очистки валюты: {e.Message}");
-            }
         }
 
-        // Методы для магазина
+        // ================= SHOP =================
+
         public ShopSaveData LoadShopData()
         {
-            try
-            {
 #if UNITY_WEBGL && !UNITY_EDITOR
-                if (PlayerPrefs.HasKey(ShopSavePath))
-                {
-                    string json = PlayerPrefs.GetString(ShopSavePath);
-                    return JsonUtility.FromJson<ShopSaveData>(json);
-                }
+            string json = WebLocalStorage.Get(ShopKey);
+            return string.IsNullOrEmpty(json) ? new ShopSaveData() : JsonUtility.FromJson<ShopSaveData>(json);
 #else
-                if (File.Exists(ShopSavePath))
-                {
-                    string json = File.ReadAllText(ShopSavePath);
-                    return JsonUtility.FromJson<ShopSaveData>(json);
-                }
-#endif
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка загрузки магазина: {e.Message}");
-            }
+            if (!File.Exists(ShopSavePath))
+                return new ShopSaveData();
 
-            return new ShopSaveData();
+            return JsonUtility.FromJson<ShopSaveData>(File.ReadAllText(ShopSavePath));
+#endif
         }
 
         public void SaveShopData(ShopSaveData data)
         {
-            try
-            {
-                string json = JsonUtility.ToJson(data, true);
+            string json = JsonUtility.ToJson(data, true);
+
 #if UNITY_WEBGL && !UNITY_EDITOR
-                PlayerPrefs.SetString(ShopSavePath, json);
-                PlayerPrefs.Save();
+            WebLocalStorage.Set(ShopKey, json);
 #else
-                File.WriteAllText(ShopSavePath, json);
+            File.WriteAllText(ShopSavePath, json);
 #endif
-                Debug.Log($"Магазин сохранен в: {ShopSavePath}");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка сохранения магазина: {e.Message}");
-            }
         }
 
         public void ClearShopData()
         {
-            try
-            {
 #if UNITY_WEBGL && !UNITY_EDITOR
-                PlayerPrefs.DeleteKey(ShopSavePath);
-                PlayerPrefs.Save();
+            WebLocalStorage.Delete(ShopKey);
 #else
-                if (File.Exists(ShopSavePath))
-                {
-                    File.Delete(ShopSavePath);
-                }
+            if (File.Exists(ShopSavePath))
+                File.Delete(ShopSavePath);
 #endif
-                Debug.Log("Данные магазина очищены");
-            }
-            catch (System.Exception e)
-            {
-                Debug.LogError($"Ошибка очистки магазина: {e.Message}");
-            }
         }
 
-        public void ClearAllData()
-        {
-            ClearCurrencyData();
-            ClearShopData();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-            PlayerPrefs.DeleteKey(SegmentsSavePath);
-            PlayerPrefs.Save();
-#else
-            File.Delete(SegmentsSavePath);
-#endif
-            LoadSegments();
-
-#if UNITY_WEBGL && !UNITY_EDITOR
-            PlayerPrefs.DeleteKey(AchievementSavePath);
-            PlayerPrefs.Save();
-#else
-            File.Delete(AchievementSavePath);
-#endif
-            LoadAchievements();
-
-            _snakeSegmentsRepository.ClearData();
-
-            Debug.Log("Все данные игры очищены");
-        }
+        // ================= ACHIEVEMENTS =================
 
         public void LoadAchievements()
         {
-            Dictionary<string, AchievementEntry> achievementEntries = new();
-            
-            // Сначала создаем записи для всех достижений из конфига
-            foreach (var achievementData in _gameConfig.GameConfigData.AchievementDatas)
-            {
-                achievementEntries.Add(achievementData.Id,
-                    new AchievementEntry(achievementData, new AchievementSaveData(achievementData)));
-            }
-            
-            // Затем перезаписываем данными из сохранения (если есть)
-#if UNITY_WEBGL && !UNITY_EDITOR
-            if (PlayerPrefs.HasKey(AchievementSavePath))
-            {
-                string json = PlayerPrefs.GetString(AchievementSavePath);
-#else
-            if (File.Exists(AchievementSavePath))
-            {
-                string json = File.ReadAllText(AchievementSavePath);
-#endif
-                try
-                {
-                    List<AchievementSaveData> achievementSaveDatas =
-                        JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
+            achievementEntries = new();
 
-                    foreach (var saveData in achievementSaveDatas)
-                    {
-                        if (achievementEntries.ContainsKey(saveData.Id))
-                        {
-                            var achievementData = _gameConfig.GameConfigData.AchievementDatas
-                                .FirstOrDefault(a => a.Id == saveData.Id);
-                            if (achievementData != null)
-                            {
-                                achievementEntries[saveData.Id] = new AchievementEntry(achievementData, saveData);
-                            }
-                        }
-                    }
-                }
-                catch (System.Exception e)
+            foreach (var data in _gameConfig.GameConfigData.AchievementDatas)
+            {
+                achievementEntries.Add(
+                    data.Id,
+                    new AchievementEntry(data, new AchievementSaveData(data))
+                );
+            }
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            string json = WebLocalStorage.Get(AchievementKey);
+#else
+            string json = File.Exists(AchievementSavePath) ? File.ReadAllText(AchievementSavePath) : null;
+#endif
+            if (string.IsNullOrEmpty(json))
+                return;
+
+            try
+            {
+                var saved = JsonConvert.DeserializeObject<List<AchievementSaveData>>(json);
+
+                foreach (var save in saved)
                 {
-                    Debug.LogWarning($"Ошибка при загрузке сохранений достижений: {e.Message}. Используются значения по умолчанию.");
+                    if (!achievementEntries.ContainsKey(save.Id))
+                        continue;
+
+                    var cfg = _gameConfig.GameConfigData.AchievementDatas.First(a => a.Id == save.Id);
+                    achievementEntries[save.Id] = new AchievementEntry(cfg, save);
                 }
             }
-            
-            this.achievementEntries = achievementEntries;
+            catch
+            {
+                Debug.LogWarning("Achievements save corrupted, defaults used");
+            }
         }
 
-        public void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries)
+        public void SaveAchievements(Dictionary<string, AchievementEntry> entries)
         {
-            List<AchievementSaveData> achievementSaveDatas = new List<AchievementSaveData>();
+            var list = entries.Values.Select(e => e.AchievementSaveData).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented);
 
-            foreach (var achievement in achievementEntries)
-            {
-                achievementSaveDatas.Add(achievement.Value.AchievementSaveData);
-            }
-
-            string json = JsonConvert.SerializeObject(achievementSaveDatas, Formatting.Indented);
 #if UNITY_WEBGL && !UNITY_EDITOR
-            PlayerPrefs.SetString(AchievementSavePath, json);
-            PlayerPrefs.Save();
+            WebLocalStorage.Set(AchievementKey, json);
 #else
             File.WriteAllText(AchievementSavePath, json);
 #endif
@@ -253,169 +166,147 @@ namespace Скриптерсы.Services
         public Dictionary<string, AchievementEntry> GetAchievements()
         {
             if (achievementEntries == null)
-            {
                 LoadAchievements();
-            }
 
             return achievementEntries;
         }
 
+        // ================= SEGMENTS =================
+
         public void LoadSegments()
         {
-            List<SnakeSegmentEntry> snakeSegmentEntries = new();
-            
-            // Сначала создаем записи для всех сегментов из конфига
-            foreach (var cardData in _gameConfig.GameConfigData.CardDatas)
+            _snakeSegmentEntries = new();
+
+            foreach (var card in _gameConfig.GameConfigData.CardDatas)
             {
-                if (cardData.CardType != CardType.Segment)
+                if (card.CardType != CardType.Segment)
                     continue;
 
-                snakeSegmentEntries.Add(new SnakeSegmentEntry(cardData, new SnakeSegmentSaveData(cardData)));
+                _snakeSegmentEntries.Add(
+                    new SnakeSegmentEntry(card, new SnakeSegmentSaveData(card))
+                );
             }
-            
-            // Затем перезаписываем данными из сохранения (если есть)
+
 #if UNITY_WEBGL && !UNITY_EDITOR
-            if (PlayerPrefs.HasKey(SegmentsSavePath))
-            {
-                string json = PlayerPrefs.GetString(SegmentsSavePath);
+            string json = WebLocalStorage.Get(SegmentsKey);
 #else
-            if (File.Exists(SegmentsSavePath))
-            {
-                string json = File.ReadAllText(SegmentsSavePath);
+            string json = File.Exists(SegmentsSavePath) ? File.ReadAllText(SegmentsSavePath) : null;
 #endif
-                try
+            if (string.IsNullOrEmpty(json))
+                return;
+
+            try
+            {
+                var saved = JsonConvert.DeserializeObject<List<SnakeSegmentSaveData>>(json);
+
+                foreach (var save in saved)
                 {
-                    Debug.Log(json);
+                    var entry = _snakeSegmentEntries.FirstOrDefault(e => e.CardData.Id.SequenceEqual(save.Id));
+                    if (entry == null) continue;
 
-                    List<SnakeSegmentSaveData> snakeSegmentSaveData =
-                        JsonConvert.DeserializeObject<List<SnakeSegmentSaveData>>(json);
-
-                    Debug.Log(snakeSegmentSaveData.Count);
-
-                    foreach (var saveData in snakeSegmentSaveData)
-                    {
-                        // Ищем соответствующий сегмент в уже созданном списке
-                        var existingEntry = snakeSegmentEntries.FirstOrDefault(e => e.CardData.Id.SequenceEqual(saveData.Id));
-                        
-                        if (existingEntry != null)
-                        {
-                            // Заменяем дефолтную запись на сохраненную
-                            int index = snakeSegmentEntries.IndexOf(existingEntry);
-                            var segmentData = _gameConfig.GameConfigData.CardDatas
-                                .FirstOrDefault(a => a.Id.SequenceEqual(saveData.Id));
-                            
-                            if (segmentData != null)
-                            {
-                                snakeSegmentEntries[index] = new SnakeSegmentEntry(segmentData, saveData);
-                            }
-                        }
-                    }
-                }
-                catch (System.Exception e)
-                {
-                    Debug.LogWarning($"Ошибка при загрузке сохранений сегментов: {e.Message}. Используются значения по умолчанию.");
+                    int index = _snakeSegmentEntries.IndexOf(entry);
+                    var cfg = _gameConfig.GameConfigData.CardDatas.First(c => c.Id.SequenceEqual(save.Id));
+                    _snakeSegmentEntries[index] = new SnakeSegmentEntry(cfg, save);
                 }
             }
-            
-            this._snakeSegmentEntries = snakeSegmentEntries;
+            catch
+            {
+                Debug.LogWarning("Segments save corrupted, defaults used");
+            }
         }
 
-        public void SaveSegments(List<SnakeSegmentEntry> snakeSegmentEntries)
+        public void SaveSegments(List<SnakeSegmentEntry> entries)
         {
-            List<SnakeSegmentSaveData> segmentSaveDatas = new List<SnakeSegmentSaveData>();
+            var list = entries.Select(e => e.SnakeSegmentSaveData).ToList();
+            string json = JsonConvert.SerializeObject(list, Formatting.Indented);
 
-            foreach (var segment in snakeSegmentEntries)
-            {
-                segmentSaveDatas.Add(segment.SnakeSegmentSaveData);
-            }
-
-            string json = JsonConvert.SerializeObject(segmentSaveDatas, Formatting.Indented);
 #if UNITY_WEBGL && !UNITY_EDITOR
-            PlayerPrefs.SetString(SegmentsSavePath, json);
-            PlayerPrefs.Save();
+            WebLocalStorage.Set(SegmentsKey, json);
 #else
             File.WriteAllText(SegmentsSavePath, json);
 #endif
-
-            Debug.Log("Сегменты сохранены");
         }
 
         public List<SnakeSegmentEntry> GetSegmentEntries()
         {
             if (_snakeSegmentEntries == null)
-            {
                 LoadSegments();
-            }
 
             return _snakeSegmentEntries;
         }
 
+        // ================= SETTINGS =================
+
         public SettingsSaveData LoadSettings()
         {
-            
 #if UNITY_WEBGL && !UNITY_EDITOR
-            if (PlayerPrefs.HasKey(SettingsSavePath))
-            {
-                string json = PlayerPrefs.GetString(SettingsSavePath);
-                SettingsSaveData settingsSaveData = JsonConvert.DeserializeObject<SettingsSaveData>(json);
-                return settingsSaveData;
-            }
-            else
-            {
-                SettingsSaveData settingsSaveData = new();
-                return settingsSaveData;
-            }
+            string json = WebLocalStorage.Get(SettingsKey);
+            return string.IsNullOrEmpty(json)
+                ? new SettingsSaveData()
+                : JsonConvert.DeserializeObject<SettingsSaveData>(json);
 #else
-            if (File.Exists(SettingsSavePath))
-            {
-                string json = File.ReadAllText(SettingsSavePath);
-                SettingsSaveData settingsSaveData = JsonConvert.DeserializeObject<SettingsSaveData>(json);
-                return settingsSaveData;
-            }
-            else
-            {
-                SettingsSaveData settingsSaveData = new();
-                return settingsSaveData;
-            }
+            if (!File.Exists(SettingsSavePath))
+                return new SettingsSaveData();
+
+            return JsonConvert.DeserializeObject<SettingsSaveData>(File.ReadAllText(SettingsSavePath));
 #endif
         }
 
-        public void SaveSettings(SettingsSaveData settingsSaveData)
+        public void SaveSettings(SettingsSaveData data)
         {
-            string json = JsonConvert.SerializeObject(settingsSaveData);
-
+            string json = JsonConvert.SerializeObject(data);
 
 #if UNITY_WEBGL && !UNITY_EDITOR
-            PlayerPrefs.SetString(SettingsSavePath, json);
-            PlayerPrefs.Save();
+            WebLocalStorage.Set(SettingsKey, json);
 #else
             File.WriteAllText(SettingsSavePath, json);
 #endif
+        }
+
+        // ================= CLEAR ALL =================
+
+        public void ClearAllData()
+        {
+            ClearCurrencyData();
+            ClearShopData();
+
+#if UNITY_WEBGL && !UNITY_EDITOR
+            WebLocalStorage.Delete(AchievementKey);
+            WebLocalStorage.Delete(SegmentsKey);
+            WebLocalStorage.Delete(SettingsKey);
+#else
+            if (File.Exists(AchievementSavePath)) File.Delete(AchievementSavePath);
+            if (File.Exists(SegmentsSavePath)) File.Delete(SegmentsSavePath);
+            if (File.Exists(SettingsSavePath)) File.Delete(SettingsSavePath);
+#endif
+
+            achievementEntries = null;
+            _snakeSegmentEntries = null;
+            _snakeSegmentsRepository.ClearData();
         }
     }
 
     public interface ISaveLoadService
     {
-        public PlayerCurrencyData LoadCurrencyData();
-        public void SaveCurrencyData(PlayerCurrencyData data);
-        public void ClearCurrencyData();
+        PlayerCurrencyData LoadCurrencyData();
+        void SaveCurrencyData(PlayerCurrencyData data);
+        void ClearCurrencyData();
 
-        public ShopSaveData LoadShopData();
-        public void SaveShopData(ShopSaveData data);
-        public void ClearShopData();
+        ShopSaveData LoadShopData();
+        void SaveShopData(ShopSaveData data);
+        void ClearShopData();
 
-        public void ClearAllData();
+        void ClearAllData();
 
+        void LoadAchievements();
+        void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries);
+        Dictionary<string, AchievementEntry> GetAchievements();
 
-        public void LoadAchievements();
-        public void SaveAchievements(Dictionary<string, AchievementEntry> achievementEntries);
-        public Dictionary<string, AchievementEntry> GetAchievements();
+        void LoadSegments();
+        void SaveSegments(List<SnakeSegmentEntry> snakeSegmentEntries);
+        List<SnakeSegmentEntry> GetSegmentEntries();
 
-        public void LoadSegments();
-        public void SaveSegments(List<SnakeSegmentEntry> snakeSegmentEntries);
-        public List<SnakeSegmentEntry> GetSegmentEntries();
-
-        public SettingsSaveData LoadSettings();
-        public void SaveSettings(SettingsSaveData settingsSaveData);
+        SettingsSaveData LoadSettings();
+        void SaveSettings(SettingsSaveData settingsSaveData);
     }
 }

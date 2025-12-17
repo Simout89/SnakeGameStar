@@ -178,6 +178,8 @@ MonoBehaviour:
         type: 3}'
     - line: '|   - {fileID: 11400000, guid: f0e9b7035f9637c46befe94521ab2d9e, type:
         2}'
+    - line: '|   - {fileID: 11400000, guid: f5a3b4fe7b474ac45b4ec697266f3f39, type:
+        2}'
     - line: '|   metroInputSource: 0'
     - line: '|   wsaTransparentSwapchain: 0'
     - line: '|   m_HolographicPauseOnTrackingLoss: 1'
@@ -483,7 +485,8 @@ MonoBehaviour:
     - line: '|   openGLRequireES31: 0'
     - line: '|   openGLRequireES31AEP: 0'
     - line: '|   openGLRequireES32: 0'
-    - line: '|   m_TemplateCustomTags: {}'
+    - line: '|   m_TemplateCustomTags:'
+    - line: '|     PRODUCT_DESCRIPTION: '
     - line: '|   mobileMTRendering:'
     - line: '|     Android: 1'
     - line: '|     iPhone: 1'

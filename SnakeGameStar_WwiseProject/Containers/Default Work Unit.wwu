@@ -34,7 +34,6 @@
 								</AudioFileSource>
 								<AudioFileSource Name="snake_music_gameplayTheme_mixmaster_1" ID="{1101F2BC-6B7C-401D-A5F9-FEA6EB41453E}">
 									<PropertyList>
-										<Property Name="LoopBegin" Type="Real64" Value="7.39400014604314"/>
 										<Property Name="OverrideWavLoop" Type="bool" Value="True"/>
 									</PropertyList>
 									<Language>SFX</Language>

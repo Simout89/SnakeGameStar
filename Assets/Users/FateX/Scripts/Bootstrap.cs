@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Unity.Services.Analytics;
 using Unity.Services.Core;
 using UnityEngine.UnityConsent;
+using Users.FateX.Scripts.Services;
 
 namespace Users.FateX.Scripts
 {

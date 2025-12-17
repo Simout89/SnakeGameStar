@@ -23,7 +23,17 @@ namespace Users.FateX.Scripts.Achievements
             name.text = achievementEntry.AchievementData.LocalizedName.GetLocalizedString();
             title.text = DigitColorizer.ColorDigits(achievementEntry.AchievementData.LocalizedDescription.GetLocalizedString(), Color.yellow);
 
-            CheckMark.SetActive(achievementEntry.AchievementSaveData.IsCompleted);
+
+            if (achievementEntry.AchievementSaveData.IsCompleted)
+            {
+                CheckMark.SetActive(true);
+                _image.color = Color.white;
+            }
+            else
+            {
+                CheckMark.SetActive(false);
+                _image.color = Color.black;
+            }
 
 
             progressText.text = achievementEntry.AchievementSaveData.Progress + "/" +

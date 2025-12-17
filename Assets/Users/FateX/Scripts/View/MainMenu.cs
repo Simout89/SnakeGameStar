@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

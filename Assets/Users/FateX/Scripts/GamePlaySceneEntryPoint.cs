@@ -83,6 +83,7 @@ namespace Users.FateX.Scripts
                 _settingsController.SaveSettings();
             }
             
+            
             AnalyticsService.Instance.RecordEvent(
                 new OnRunStartedEvent()
             );

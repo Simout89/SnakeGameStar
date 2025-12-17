@@ -171,11 +171,21 @@ namespace Users.FateX.Scripts.View
 
         public void OnRestartClick()
         {
+            AnalyticsService.Instance.RecordEvent(
+                new OnDeathViewChooseButton(
+                    "Restart"
+                )
+            );
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
         public void OnMenuClick()
         {
+            AnalyticsService.Instance.RecordEvent(
+                new OnDeathViewChooseButton(
+                    "MainMenu"
+                )
+            );
             SceneManager.LoadScene(0);
         }
 

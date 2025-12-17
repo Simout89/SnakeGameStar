@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

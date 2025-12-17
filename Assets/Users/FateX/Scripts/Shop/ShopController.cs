@@ -2,6 +2,7 @@
 using UnityEngine;
 using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Data;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 

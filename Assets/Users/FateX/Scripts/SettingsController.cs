@@ -1,6 +1,7 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.Localization.Settings;
+using Users.FateX.Scripts.Services;
 using Zenject;
 using Скриптерсы.Services;
 
