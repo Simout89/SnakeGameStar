@@ -5,8 +5,6 @@ using System.IO;
 using System.IO.Compression;
 using System.Collections.Generic;
 using UnityEditor.Build.Reporting;
-using System.Linq;
-using UnityEditor.Build.Profile;
 
 public class MultiBuildTool : EditorWindow
 {
@@ -33,21 +31,11 @@ public class MultiBuildTool : EditorWindow
         public string buildProfile = "Default";
         public string customPath = "";
         
-#if UNITY_6000_0_OR_NEWER
-        public BuildProfile buildProfileAsset = null;
-#endif
-        
         public PlatformBuildSettings(bool enabled = false)
         {
             this.enabled = enabled;
         }
     }
-    
-    // Кэш для Build Profiles
-    private List<string> availableBuildProfiles = new List<string>();
-#if UNITY_6000_0_OR_NEWER
-    private Dictionary<string, BuildProfile> buildProfileAssets = new Dictionary<string, BuildProfile>();
-#endif
     
     [MenuItem("Tools/Multi-Platform Build Tool")]
     public static void ShowWindow()
@@ -61,7 +49,6 @@ public class MultiBuildTool : EditorWindow
         LoadSettingsFromPlayerSettings();
         LoadSettings();
         InitializePlatforms();
-        LoadBuildProfiles();
     }
     
     private void LoadSettingsFromPlayerSettings()
@@ -69,65 +56,6 @@ public class MultiBuildTool : EditorWindow
         // Загружаем название и версию из Player Settings
         buildName = PlayerSettings.productName;
         buildVersion = PlayerSettings.bundleVersion;
-    }
-    
-    private void LoadBuildProfiles()
-    {
-        availableBuildProfiles.Clear();
-        buildProfilePaths.Clear();
-        
-        // Ищем все .asset файлы в папке Build Profiles
-        string buildProfilesPath = "Assets/Settings/Build Profiles";
-        
-        if (Directory.Exists(buildProfilesPath))
-        {
-            string[] files = Directory.GetFiles(buildProfilesPath, "*.asset", SearchOption.AllDirectories);
-            
-            foreach (string file in files)
-            {
-                string relativePath = file.Replace("\\", "/");
-                string fileName = Path.GetFileNameWithoutExtension(file);
-                
-                availableBuildProfiles.Add(fileName);
-                buildProfilePaths[fileName] = relativePath;
-            }
-        }
-        
-        // Также ищем во всем проекте на случай если путь другой
-        if (availableBuildProfiles.Count == 0)
-        {
-            string[] allAssets = AssetDatabase.FindAssets("t:Object", new[] { "Assets" });
-            
-            foreach (string guid in allAssets)
-            {
-                string path = AssetDatabase.GUIDToAssetPath(guid);
-                
-                if (path.Contains("Build Profile") && path.EndsWith(".asset"))
-                {
-                    string fileName = Path.GetFileNameWithoutExtension(path);
-                    
-                    if (!availableBuildProfiles.Contains(fileName))
-                    {
-                        availableBuildProfiles.Add(fileName);
-                        buildProfilePaths[fileName] = path;
-                    }
-                }
-            }
-        }
-        
-        if (availableBuildProfiles.Count == 0)
-        {
-            availableBuildProfiles.Add("Default");
-        }
-        
-        Debug.Log($"Found {availableBuildProfiles.Count} build profiles");
-        foreach (var profile in availableBuildProfiles)
-        {
-            if (buildProfilePaths.ContainsKey(profile))
-            {
-                Debug.Log($"  - {profile}: {buildProfilePaths[profile]}");
-            }
-        }
     }
     
     private void InitializePlatforms()
@@ -235,38 +163,8 @@ public class MultiBuildTool : EditorWindow
         
         // Build Profile
         EditorGUI.BeginDisabledGroup(!settings.enabled);
-        
         EditorGUILayout.LabelField("Profile:", GUILayout.Width(50));
-        
-        // Dropdown с доступными профилями
-        if (availableBuildProfiles.Count > 0)
-        {
-            int currentIndex = availableBuildProfiles.IndexOf(settings.buildProfile);
-            if (currentIndex == -1) currentIndex = 0;
-            
-            int newIndex = EditorGUILayout.Popup(currentIndex, availableBuildProfiles.ToArray(), GUILayout.Width(120));
-            
-            if (newIndex >= 0 && newIndex < availableBuildProfiles.Count)
-            {
-                settings.buildProfile = availableBuildProfiles[newIndex];
-                
-                // Сохраняем путь к профилю
-                if (buildProfilePaths.ContainsKey(settings.buildProfile))
-                {
-                    settings.buildProfilePath = buildProfilePaths[settings.buildProfile];
-                }
-            }
-        }
-        else
-        {
-            settings.buildProfile = EditorGUILayout.TextField(settings.buildProfile, GUILayout.Width(120));
-        }
-        
-        // Кнопка обновления списка профилей
-        if (GUILayout.Button("↻", GUILayout.Width(25)))
-        {
-            LoadBuildProfiles();
-        }
+        settings.buildProfile = EditorGUILayout.TextField(settings.buildProfile, GUILayout.Width(100));
         
         // Кастомный путь (опционально)
         if (GUILayout.Button("Path...", GUILayout.Width(60)))
@@ -280,7 +178,7 @@ public class MultiBuildTool : EditorWindow
         
         if (!string.IsNullOrEmpty(settings.customPath))
         {
-            EditorGUILayout.LabelField("✓", GUILayout.Width(20));
+            EditorGUILayout.LabelField("Custom", GUILayout.Width(50));
         }
         
         EditorGUI.EndDisabledGroup();
@@ -435,33 +333,26 @@ public class MultiBuildTool : EditorWindow
             
             string buildPath = Path.Combine(versionedPath, GetBuildFileName(target));
             
-            // Применяем настройки из Build Profile если он указан
-            if (!string.IsNullOrEmpty(settings.buildProfilePath) && File.Exists(settings.buildProfilePath))
+            // Настройки сборки
+            BuildPlayerOptions buildOptions = new BuildPlayerOptions
             {
-                Debug.Log($"Using build profile: {settings.buildProfile} ({settings.buildProfilePath})");
-                
-                // Загружаем настройки профиля
-                UnityEngine.Object profileAsset = AssetDatabase.LoadAssetAtPath<UnityEngine.Object>(settings.buildProfilePath);
-                
-                if (profileAsset != null)
-                {
-                    // Можно читать настройки из профиля через SerializedObject
-                    SerializedObject serializedProfile = new SerializedObject(profileAsset);
-                    
-                    // Здесь можно применить настройки из профиля к PlayerSettings
-                    // Например: компрессия, оптимизация, define symbols и т.д.
-                    ApplyProfileSettings(serializedProfile, target);
-                }
-            }
+                scenes = GetScenePaths(),
+                locationPathName = buildPath,
+                target = target,
+                options = BuildOptions.None
+            };
             
-            // Стандартная сборка
-            BuildPlayerOptions buildOptions = GetBuildPlayerOptions(target, buildPath, settings);
+            // Применяем build profile если нужно
+            // PlayerSettings можно настроить здесь
+            
+            // Собираем
             BuildReport report = BuildPipeline.BuildPlayer(buildOptions);
             
             if (report.summary.result == BuildResult.Succeeded)
             {
                 Debug.Log($"Build succeeded for {platformName}: {buildPath}");
                 
+                // Создаём архив если нужно
                 if (createArchive && ShouldArchivePlatform(target))
                 {
                     CreateZipArchive(versionedPath, basePath, platformName);
@@ -480,48 +371,6 @@ public class MultiBuildTool : EditorWindow
             Debug.LogError($"Build error for {target}: {e.Message}");
             return false;
         }
-    }
-    
-    private void ApplyProfileSettings(SerializedObject profileObject, BuildTarget target)
-    {
-        // Здесь можно применять настройки из профиля
-        // Например, читать свойства и применять их к PlayerSettings
-        
-        // Пример: чтение define symbols
-        SerializedProperty definesProp = profileObject.FindProperty("scriptingDefines");
-        if (definesProp != null && definesProp.isArray)
-        {
-            List<string> defines = new List<string>();
-            for (int i = 0; i < definesProp.arraySize; i++)
-            {
-                defines.Add(definesProp.GetArrayElementAtIndex(i).stringValue);
-            }
-            
-            if (defines.Count > 0)
-            {
-                PlayerSettings.SetScriptingDefineSymbolsForGroup(
-                    BuildPipeline.GetBuildTargetGroup(target),
-                    string.Join(";", defines)
-                );
-            }
-        }
-        
-        // Можно добавить больше настроек по необходимости
-    }
-    
-    private BuildPlayerOptions GetBuildPlayerOptions(BuildTarget target, string buildPath, PlatformBuildSettings settings)
-    {
-        BuildPlayerOptions buildOptions = new BuildPlayerOptions
-        {
-            scenes = GetScenePaths(),
-            locationPathName = buildPath,
-            target = target,
-            options = BuildOptions.None
-        };
-        
-        Debug.Log($"Building for {target} with profile: {settings.buildProfile}");
-        
-        return buildOptions;
     }
     
     private void CreateZipArchive(string sourceFolder, string baseFolder, string platformName)
