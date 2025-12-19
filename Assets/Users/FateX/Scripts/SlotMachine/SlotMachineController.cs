@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Utils;
@@ -103,6 +105,12 @@ namespace Users.FateX.Scripts.SlotMachine
             _gameStateManager.PopState();
             
             _gameContext.SnakeHealth.SetInvincible(1);
+            
+            AnalyticsService.Instance.RecordEvent(
+                new OnGamblingEvent(
+                    _prizeData.SlotMachinePrizeType.ToString()
+                )
+            );
 
             
             switch (_prizeData.SlotMachinePrizeType)
