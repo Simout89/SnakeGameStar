@@ -12,7 +12,128 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d928098f96345b38bc887d1ca4d2599, type: 3}
   m_Name: SoundsData
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.SoundsData
+  Bank:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 1b60f5c7d2d24904a8b7039051ae8722, type: 2}
+  BankAddressable: {fileID: 11400000, guid: 401d9d3fe2df9c04f921fd746499bc56, type: 2}
+  <WeaponSoundsData>k__BackingField:
+    <Tesla>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: a369bd5f9cef07843821d5b27f1c246c, type: 2}
+    <Mortar>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: cb3de1223a173b4408226fca8307b498, type: 2}
+    <Explosion>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f5ba1780cc1c4d94e9e738d544c1fa88, type: 2}
+    <MachineGun>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 5dcac53357d4ace42ab112ee5f7b321b, type: 2}
+    <Pentagram>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 323ac579529ec044590482ab41e0749c, type: 2}
+    <SpikeGun>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 5d6ec848aa840644e8e0ee61666ca940, type: 2}
+    <Sword>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: fed1afccec96538439757b202b228d85, type: 2}
+  <Music>k__BackingField:
+    <PlayGameMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: b372db35ed6fe9d46b58e8e8fe3bfe8e, type: 2}
+    <StopGameMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 26be62fc5ddafc745beacebb2b2bb98f, type: 2}
+    <PlayMainMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 305d7630ff92b3f438da3c9a28b18c53, type: 2}
+    <StopMainMusic>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 0ffce26ee36599d4780d44f7d6c053fa, type: 2}
+  <UiSound>k__BackingField:
+    <Select>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f60deb6ce2033d24990debcf5080a2b7, type: 2}
+    <Swipe>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 2eb8bbb1d67a5174e820e3771115c171, type: 2}
+    <Buy>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: e6964bf6ebef04d4d8422bc49e36f466, type: 2}
+    <Denied>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 1f1c69ffba9a2b24da3815051dd45005, type: 2}
+  <SlotMachine>k__BackingField:
+    <LoopPlay>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: f57ce6a4793fb1c4bb5960f2b40666b4, type: 2}
+    <LoopStop>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 79641ad05752553448908b65dde512e7, type: 2}
+    <Win>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: 5873193049d39a64aaa348f492cbdb60, type: 2}
+    <Complection>k__BackingField:
+      idInternal: 0
+      valueGuidInternal: 
+      WwiseObjectReference: {fileID: 11400000, guid: bd00c97e66164984d8e60953732bfe52, type: 2}
   <DamageSound>k__BackingField:
     idInternal: 0
     valueGuidInternal: 
     WwiseObjectReference: {fileID: 11400000, guid: 41308b5013c73ce4abba35b54673d6fd, type: 2}
+  <CardSelected>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 2ab90ac484d2cc542b6ee8b4f93a64d1, type: 2}
+  <CollectCoin>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 993f20d1437e10a459c593b585a2d0d0, type: 2}
+  <DisplayMessage>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 903db394d2bcb3e42a9b346c5a49aaca, type: 2}
+  <EatApple>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 86149a7801ebab54f95bfd43fcb87ed0, type: 2}
+  <LvlUp>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 365a4751bb5b2f34785a5b650cf50302, type: 2}
+  <PickUp>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 3ce2304f8f3e0c74fa09975b2e5125c7, type: 2}
+  <SnakeDie>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: bf5a2325166b1d2469f5eaf80c51ae6d, type: 2}
+  <TrialTowerCapture>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: cb8b01ecabc7f5147ab5551e91a3e092, type: 2}
+  <Xp>k__BackingField:
+    idInternal: 0
+    valueGuidInternal: 
+    WwiseObjectReference: {fileID: 11400000, guid: 8bd4c00b5c393924a9f85a209785c238, type: 2}

@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using AK.Wwise.Unity.WwiseAddressables;
+using UnityEngine;
 using Users.FateX.Scripts;
 using Users.FateX.Scripts.Achievements;
 using Users.FateX.Scripts.Cards;
@@ -9,6 +10,7 @@ using Users.FateX.Scripts.Entity;
 using Users.FateX.Scripts.Shop;
 using Users.FateX.Scripts.SlotMachine;
 using Users.FateX.Scripts.Trial;
+using Users.FateX.Scripts.Tutorial;
 using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;
@@ -31,6 +33,10 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<EnemySpawnArea>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SnakeSpawner>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<CameraController>().FromComponentsInHierarchy().AsSingle();
+            
+            
+            
+            
         }
 
         private void BindViews()
@@ -40,6 +46,8 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<DeathView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<SlotMachineView>().FromComponentsInHierarchy().AsSingle();
             Container.BindInterfacesAndSelfTo<MessageDisplayView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<ArrowView>().FromComponentsInHierarchy().AsSingle();
+            Container.BindInterfacesAndSelfTo<TutorialView>().FromComponentsInHierarchy().AsSingle();
         }
 
         private void BindCoreSystems()
@@ -50,8 +58,10 @@ namespace Скриптерсы.Zenject
             Container.BindInterfacesAndSelfTo<GamePlaySceneEntryPoint>().AsSingle();
             Container.BindInterfacesAndSelfTo<EnemySpawnDirector>().AsSingle();
             Container.BindInterfacesAndSelfTo<GameContext>().AsSingle();
-            Container.BindInterfacesAndSelfTo<MonoHelper>().FromNewComponentOnNewGameObject().AsSingle();
             Container.BindInterfacesAndSelfTo<GlobalSoundPlayer>().AsSingle();
+            Container.BindInterfacesAndSelfTo<AchievementController>().AsSingle();
+            
+            Container.BindInterfacesAndSelfTo<TutorialController>().AsSingle();
         }
 
         private void BindFactories()

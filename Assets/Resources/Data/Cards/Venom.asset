@@ -12,9 +12,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4089db18d4442fb650e0909c13cbc7, type: 3}
   m_Name: Venom
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.CardData
+  <Id>k__BackingField: p
+  <IsObtained>k__BackingField: 1
   <Sprite>k__BackingField: {fileID: 21300000, guid: bd2df17e3789a774b84c0a7c859c452d, type: 3}
   <CardType>k__BackingField: 0
+  <Value>k__BackingField: 0
   <SnakeSegmentBase>k__BackingField: {fileID: 6923404821585934565, guid: 70ddcfbcd1b474d42a347b17c3cb642c, type: 3}
   <Description>k__BackingField: "\u041E\u0442\u0440\u0430\u0432\u043B\u044F\u0435\u0442
     \u043E\u0431\u043B\u0430\u0441\u0442\u044C \u0432\u043E\u043A\u0440\u0443\u0433
     \u0441\u0435\u043A\u0446\u0438\u0438, \u043D\u0430\u043D\u043E\u0441\u044F \u0443\u0440\u043E\u043D."
+  <LocalizedDescription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 1404818153472
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

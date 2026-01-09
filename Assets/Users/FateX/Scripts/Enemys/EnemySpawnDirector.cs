@@ -46,7 +46,8 @@ namespace Users.FateX.Scripts.Enemy
 
         private void HandleSecondTick(int obj)
         {
-            if (_waveData == null) return;
+            if (_waveData == null || _waveData.WaveChangeSpawns == null || _waveData.WaveChangeSpawns.Length == 0)
+                return;
 
             float normalizedTime = (float)obj / _waveData.TotalTime;
 
@@ -56,7 +57,7 @@ namespace Users.FateX.Scripts.Enemy
                 return;
             }
 
-            if (normalizedTime >= 1f && !_allWavesCompleted)
+            if (normalizedTime >= 1f)
             {
                 _allWavesCompleted = true;
                 OnAllWavesCompleted?.Invoke();
@@ -65,7 +66,7 @@ namespace Users.FateX.Scripts.Enemy
 
             HandleEventSpawns(normalizedTime);
 
-            int currentEnemyIndex = 0;
+            int currentEnemyIndex = -1;
             float segmentProgress = 0f;
 
             for (int i = 0; i < _waveData.WaveChangeSpawns.Length; i++)
@@ -73,19 +74,34 @@ namespace Users.FateX.Scripts.Enemy
                 if (normalizedTime >= _waveData.WaveChangeSpawns[i].TimeMarker)
                 {
                     currentEnemyIndex = i;
-                    _currentWaveIndex = i;
+
+                    // ДОБАВЛЕНО: сбрасываем индекс при смене волны
+                    if (_currentWaveIndex != i)
+                    {
+                        _currentWaveIndex = i;
+                        _currentEnemyArrayIndex = 0; // СБРОС!
+                    }
 
                     float currentMarker = _waveData.WaveChangeSpawns[i].TimeMarker;
                     float nextMarker = (i + 1 < _waveData.WaveChangeSpawns.Length)
                         ? _waveData.WaveChangeSpawns[i + 1].TimeMarker
                         : 1f;
 
-                    float segmentDuration = nextMarker - currentMarker;
+                    float segmentDuration = Mathf.Max(nextMarker - currentMarker, 0.0001f);
                     segmentProgress = (normalizedTime - currentMarker) / segmentDuration;
+                    segmentProgress = Mathf.Clamp01(segmentProgress);
                 }
                 else
                     break;
             }
+
+            if (currentEnemyIndex < 0)
+                return;
+
+            var enemies = _waveData.WaveChangeSpawns[currentEnemyIndex].Enemy;
+
+            if (enemies == null || enemies.Length == 0)
+                return;
 
             float enemiesToAdd = GetEnemyCountFloat(segmentProgress, currentEnemyIndex);
             enemiesToAdd = ApplyEventModifiers(enemiesToAdd);
@@ -96,7 +112,7 @@ namespace Users.FateX.Scripts.Enemy
             if (spawnCount > 0)
             {
                 for (int i = 0; i < spawnCount; i++)
-                    SpawnNextEnemyInArray(_waveData.WaveChangeSpawns[currentEnemyIndex].Enemy);
+                    SpawnNextEnemyInArray(enemies);
 
                 _enemySpawnBuffer -= spawnCount;
             }
@@ -115,7 +131,7 @@ namespace Users.FateX.Scripts.Enemy
 
             // Используем 0.89f вместо 1f - это пик перед падением!
             float segmentProgress = 0.89f;
-    
+
             float enemiesToAdd = GetEnemyCountFloat(segmentProgress, Mathf.FloorToInt(_infinityEnemyIndex));
             enemiesToAdd = ApplyEventModifiers(enemiesToAdd);
             _enemySpawnBuffer += enemiesToAdd;
@@ -124,7 +140,15 @@ namespace Users.FateX.Scripts.Enemy
 
             if (spawnCount > 0)
             {
-                var finalEnemies = _waveData.WaveChangeSpawns[^1].Enemy;
+                // ИСПРАВЛЕНИЕ: проверяем, что массив WaveChangeSpawns не пуст
+                if (_waveData.WaveChangeSpawns.Length == 0)
+                    return;
+
+                var finalEnemies = _waveData.WaveChangeSpawns[_waveData.WaveChangeSpawns.Length - 1].Enemy;
+
+                // ИСПРАВЛЕНИЕ: проверяем, что массив врагов существует и не пуст
+                if (finalEnemies == null || finalEnemies.Length == 0)
+                    return;
 
                 for (int i = 0; i < spawnCount; i++)
                 {
@@ -248,9 +272,7 @@ namespace Users.FateX.Scripts.Enemy
             if (enemies == null || enemies.Length == 0)
                 return;
 
-            if (_currentEnemyArrayIndex >= enemies.Length)
-                _currentEnemyArrayIndex = 0;
-
+            _currentEnemyArrayIndex = Mathf.Abs(_currentEnemyArrayIndex) % enemies.Length;
             _enemyFactory.SpawnEnemy(enemies[_currentEnemyArrayIndex]);
             _currentEnemyArrayIndex = (_currentEnemyArrayIndex + 1) % enemies.Length;
         }

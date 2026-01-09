@@ -1,10 +1,13 @@
-﻿using TMPro;
+﻿using System;
+using TMPro;
 using UnityEngine;
+using Zenject;
 
 namespace Users.FateX.Scripts.DebugUtils
 {
     public class DebugFPSCounter: MonoBehaviour
     {
+        [Inject] private SettingsController _settingsController;
         [SerializeField] private TMP_Text fpsText;       // Ссылка на UI Text для отображения FPS
         private int frameSample = 30; // Количество кадров для усреднения
 
@@ -13,6 +16,12 @@ namespace Users.FateX.Scripts.DebugUtils
 
         void Update()
         {
+            if(!_settingsController.SettingsSaveData.ShowFps)
+            {
+                fpsText.text = "";
+                return;
+            }
+            
             deltaTimeSum += Time.unscaledDeltaTime;
             frameCount++;
 

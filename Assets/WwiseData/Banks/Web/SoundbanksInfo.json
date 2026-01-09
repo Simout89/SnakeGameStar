@@ -1,0 +1,711 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Web",
+  "BasePlatform": "Web",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "172",
+  "RootPaths": {
+   "ProjectRoot": "../../../../SnakeGameStar_WwiseProject",
+   "SourceFilesRoot": "../../../../SnakeGameStar_WwiseProject/.cache",
+   "SoundBanksRoot": ".",
+   "ExternalSourcesInputFile": "",
+   "ExternalSourcesOutputRoot": "../../../../SnakeGameStar_WwiseProject/GeneratedSoundBanks/Web"
+  },
+  "DialogueEvents": [],
+  "SoundBanks": [
+   {
+    "Id": "1355168291",
+    "Type": "User",
+    "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
+    "Language": "SFX",
+    "Hash": "{B986380E-D929-2686-4FE7-87F143830AFA}",
+    "ObjectPath": "Init",
+    "ShortName": "Init",
+    "Path": "Init.bnk",
+    "Plugins": {
+     "AudioDevices": [
+      {
+       "Id": "2317455096",
+       "Name": "No_Output",
+       "ObjectPath": "\\Devices\\Default Work Unit\\No_Output",
+       "GUID": "{FF53375D-598B-4E35-B7AF-8262E4E1FDEE}",
+       "LibName": "No Output",
+       "LibId": "11862023"
+      },
+      {
+       "Id": "3859886410",
+       "Name": "System",
+       "ObjectPath": "\\Devices\\Default Work Unit\\System",
+       "GUID": "{2E3995B5-0FA4-4F0A-BD7C-1D5F5453A7F2}",
+       "LibName": "System",
+       "LibId": "11403271"
+      }
+     ]
+    },
+    "Busses": [
+     {
+      "Id": "1942696649",
+      "Name": "Effects",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Effects",
+      "GUID": "{FAB1E6EB-298E-41E2-AC9F-4E721B8F07CD}"
+     },
+     {
+      "Id": "2246998526",
+      "Name": "Main Audio Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     },
+     {
+      "Id": "2680856269",
+      "Name": "Music_Bus",
+      "ObjectPath": "\\Busses\\Default Work Unit\\Main Audio Bus\\Music_Bus",
+      "GUID": "{1C79FC58-5309-45E7-AB24-B4593376FC0F}"
+     }
+    ],
+    "GameParameters": [
+     {
+      "Id": "1006694123",
+      "Name": "Music_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Music_Volume",
+      "GUID": "{0C7DBFB8-98E5-40F6-B454-55B7F6A610A6}"
+     },
+     {
+      "Id": "1942696649",
+      "Name": "Effects",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Effects",
+      "GUID": "{7FF38826-760C-4F7F-B2C8-26BF708A673B}"
+     },
+     {
+      "Id": "2312172015",
+      "Name": "Main_Volume",
+      "ObjectPath": "\\Game Parameters\\Default Work Unit\\Main_Volume",
+      "GUID": "{C25809D5-1951-4A6C-AF00-7FF2598DB2A3}"
+     }
+    ]
+   },
+   {
+    "Id": "1744429087",
+    "Type": "User",
+    "GUID": "{FCF866C7-8080-421F-A589-F2938BE0518E}",
+    "Language": "SFX",
+    "Hash": "{121A2195-5083-FA54-9CEC-060A4D5CA790}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\bank",
+    "ShortName": "bank",
+    "Path": "bank.bnk",
+    "Media": [
+     {
+      "Id": "12196512",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Звук получения  врагами урона1.wav",
+      "CachePath": "27/{27F3CC1E-B87F-FED9-BF14-E8997D75BFBE}.wem"
+     },
+     {
+      "Id": "73924771",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "цепная молния отскок.wav",
+      "CachePath": "B3/{B358254A-1C4F-A44B-5773-F5F2B4DFBE55}.wem"
+     },
+     {
+      "Id": "122309088",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Cursor - 1.wav",
+      "CachePath": "64/{644C01D1-5BB8-D423-206B-A82F100FDE21}.wem"
+     },
+     {
+      "Id": "178159659",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Retro Event StereoUP 02.wav",
+      "CachePath": "98/{9829C0BC-857D-3868-6448-940E1601D46C}.wem"
+     },
+     {
+      "Id": "202057814",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Select - 2.wav",
+      "CachePath": "C1/{C113AE3D-1F2C-622E-6F1D-B1AD120567FB}.wem"
+     },
+     {
+      "Id": "245487382",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "033_Denied_03.wav",
+      "CachePath": "2C/{2C5B3A47-CCE9-0BC7-DAEF-222892A201E3}.wem"
+     },
+     {
+      "Id": "278875474",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "completion.wav",
+      "CachePath": "68/{68C391DA-B5FF-6382-5109-3678816E6C5F}.wem"
+     },
+     {
+      "Id": "308453629",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Выстрел пушки (mp3cut.net).wav",
+      "CachePath": "71/{71553A90-317F-EE6B-DF40-1072BD15694A}.wem"
+     },
+     {
+      "Id": "356062460",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "762x54r Single WAV.wav",
+      "CachePath": "3C/{3C46C6CB-11A0-0170-AECC-29D10F217790}.wem"
+     },
+     {
+      "Id": "370091552",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "079_Buy_sell_01.wav",
+      "CachePath": "7C/{7C6F536E-A29E-D19E-965B-3B78ED85ABE6}.wem"
+     },
+     {
+      "Id": "384292634",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "snake_music_gameplayTheme_mixmaster_1.wav",
+      "CachePath": "01/{01DE3ED5-7E92-A510-C733-BCDB208ADB38}.wem"
+     },
+     {
+      "Id": "508721672",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "water_drop_synthetic.wav",
+      "CachePath": "65/{658C20B9-C962-0355-7366-6FC44F747CAE}.wem"
+     },
+     {
+      "Id": "532684351",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Spell Impact 1.wav",
+      "CachePath": "54/{5471A099-5EC1-7BB2-A60C-109C02047F02}.wem"
+     },
+     {
+      "Id": "583867755",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Retro Charge Off 11.wav",
+      "CachePath": "5C/{5CF2CA22-BE27-6FF8-BDCC-590DF425A6D6}.wem"
+     },
+     {
+      "Id": "643516409",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "match_xylophone_5.wav",
+      "CachePath": "98/{983C8486-FFED-479E-D30E-816F51BC8CFB}.wem"
+     },
+     {
+      "Id": "688385273",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "JDSherbert - Ultimate UI SFX Pack - Swipe - 2.wav",
+      "CachePath": "8C/{8C696C2A-E214-17D3-F571-2078E99A8E3A}.wem"
+     },
+     {
+      "Id": "734243213",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sword Attack 1.wav",
+      "CachePath": "94/{94DBD9BD-BDBF-2A1A-523C-CA460C39D6E0}.wem"
+     },
+     {
+      "Id": "740252889",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Retro PickUp Coin 07.wav",
+      "CachePath": "DA/{DA6A3F07-A7D8-53F5-D5F8-836557DDBB57}.wem"
+     },
+     {
+      "Id": "806303027",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Explosion Medium 2-1.wav",
+      "CachePath": "F9/{F9C4C85E-27A1-53E5-4053-117CB0A0E753}.wem"
+     },
+     {
+      "Id": "867434290",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Win.wav",
+      "CachePath": "2E/{2ED97515-BFC4-A103-C044-526FBEC6BFEA}.wem"
+     },
+     {
+      "Id": "885284157",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Loop.wav",
+      "CachePath": "B7/{B7101B66-229F-827D-CAD1-E8309CFF70B9}.wem"
+     },
+     {
+      "Id": "896543732",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "synth_cancel.wav",
+      "CachePath": "99/{99AFD75E-4D4F-4478-A519-9FA57935541E}.wem"
+     },
+     {
+      "Id": "953991065",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Sci-Fi Gun 1-1.wav",
+      "CachePath": "AC/{ACD6938B-AF2B-DCDC-EB07-DD41C8CA032C}.wem"
+     },
+     {
+      "Id": "960944044",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "snake_music_MainTheme_mixmaster_1.wav",
+      "CachePath": "34/{34F2FC2C-95CC-F0D6-E661-DB7C452036D0}.wem"
+     },
+     {
+      "Id": "990669999",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "2025-12-09-19-13-15-Trim (mp3cut.net).wav",
+      "CachePath": "06/{06991AC2-77E5-2733-9223-D199E7624A64}.wem"
+     },
+     {
+      "Id": "1024133082",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "steel_drums_chime_quick.wav",
+      "CachePath": "07/{0745AEB3-943D-A808-6F07-EC83EF8B54BD}.wem"
+     }
+    ],
+    "Events": [
+     {
+      "Id": "521777734",
+      "Name": "Play__MachineGun",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play__MachineGun",
+      "GUID": "{2EEC192F-E2D8-4B0C-ACF6-A59BF11B0983}",
+      "DurationType": "OneShot",
+      "DurationMin": "2",
+      "DurationMax": "2",
+      "MediaRefs": [
+       {
+        "Id": "356062460"
+       }
+      ]
+     },
+     {
+      "Id": "2824767826",
+      "Name": "Play_Buy",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Buy",
+      "GUID": "{86A92AE7-EB62-4105-8580-92616BBCB94E}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "370091552"
+       }
+      ]
+     },
+     {
+      "Id": "1873612031",
+      "Name": "Play_CardSelected",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_CardSelected",
+      "GUID": "{DBCF8F46-52D0-49E5-B670-A3106B42854D}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0068254",
+      "DurationMax": "1.0068254",
+      "MediaRefs": [
+       {
+        "Id": "643516409"
+       }
+      ]
+     },
+     {
+      "Id": "2228638855",
+      "Name": "Play_CollectCoin",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_CollectCoin",
+      "GUID": "{95E98AC7-67A1-4915-8D1D-55D5846F0F54}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.47764173",
+      "DurationMax": "0.47764173",
+      "MediaRefs": [
+       {
+        "Id": "740252889"
+       }
+      ]
+     },
+     {
+      "Id": "2677223148",
+      "Name": "Play_Cursor",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Cursor",
+      "GUID": "{5876EA37-FD6B-4DC5-B318-C2DB2EE4F83E}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0052083",
+      "DurationMax": "2.0052083",
+      "MediaRefs": [
+       {
+        "Id": "122309088"
+       }
+      ]
+     },
+     {
+      "Id": "784302017",
+      "Name": "Play_Damage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Damage",
+      "GUID": "{3762436B-8A7C-47AC-9970-2D18A91DEC75}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.12673469",
+      "DurationMax": "0.12673469",
+      "MediaRefs": [
+       {
+        "Id": "12196512"
+       }
+      ]
+     },
+     {
+      "Id": "2688642167",
+      "Name": "Play_Denied",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Denied",
+      "GUID": "{A50C6B58-A8A0-450B-8E06-C6DE4E458A2C}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3333334",
+      "DurationMax": "1.3333334",
+      "MediaRefs": [
+       {
+        "Id": "245487382"
+       }
+      ]
+     },
+     {
+      "Id": "2768162129",
+      "Name": "Play_DisplayMessage",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_DisplayMessage",
+      "GUID": "{32486963-5619-4191-9C43-93C1E866747F}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0702721",
+      "DurationMax": "1.0702721",
+      "MediaRefs": [
+       {
+        "Id": "1024133082"
+       }
+      ]
+     },
+     {
+      "Id": "2387630660",
+      "Name": "Play_EatApple",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_EatApple",
+      "GUID": "{FC679E0B-D220-4A2E-B6CF-729944532DCD}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "4030404899",
+      "Name": "Play_Explosion",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_Explosion",
+      "GUID": "{56B1F2E7-E004-43AF-8785-2BA0E42855BC}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.6250114",
+      "DurationMax": "2.6250114",
+      "MediaRefs": [
+       {
+        "Id": "806303027"
+       }
+      ]
+     },
+     {
+      "Id": "2481433679",
+      "Name": "Play_GamePlayMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Play_GamePlayMusic",
+      "GUID": "{1989617F-7479-4743-9F0D-A320E2235A9E}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "384292634"
+       }
+      ]
+     },
+     {
+      "Id": "1716361963",
+      "Name": "Play_LvlUp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_LvlUp",
+      "GUID": "{31145222-D02A-45A3-95B2-4AE559C4A301}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.7066667",
+      "DurationMax": "1.7066667",
+      "MediaRefs": [
+       {
+        "Id": "178159659"
+       }
+      ]
+     },
+     {
+      "Id": "667425441",
+      "Name": "Play_MainMenuMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Play_MainMenuMusic",
+      "GUID": "{2347D41D-C415-4627-B5AA-0097F90B0F5B}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "960944044"
+       }
+      ]
+     },
+     {
+      "Id": "2824054637",
+      "Name": "Play_Mortar_Shoot",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_Mortar_Shoot",
+      "GUID": "{6237793C-FE93-4677-8DFF-73146A9A3794}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.59378684",
+      "DurationMax": "0.59378684",
+      "MediaRefs": [
+       {
+        "Id": "308453629"
+       }
+      ]
+     },
+     {
+      "Id": "2886612238",
+      "Name": "Play_Penta",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_Penta",
+      "GUID": "{C7F5259B-4686-43C1-B64A-EAB175318550}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.37151927",
+      "DurationMax": "0.37151927",
+      "MediaRefs": [
+       {
+        "Id": "532684351"
+       }
+      ]
+     },
+     {
+      "Id": "3860455926",
+      "Name": "Play_PickUp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_PickUp",
+      "GUID": "{755BDAD6-AD01-4D80-983B-34AE8E007F0C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.07081632",
+      "DurationMax": "0.07081632",
+      "MediaRefs": [
+       {
+        "Id": "508721672"
+       }
+      ]
+     },
+     {
+      "Id": "1042987450",
+      "Name": "Play_Select",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Select",
+      "GUID": "{009FABB3-9C6A-402E-A251-ED186682D367}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.0052083",
+      "DurationMax": "2.0052083",
+      "MediaRefs": [
+       {
+        "Id": "202057814"
+       }
+      ]
+     },
+     {
+      "Id": "3597908291",
+      "Name": "Play_Slot_completion",
+      "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Play_Slot_completion",
+      "GUID": "{543DC41B-5D89-40FF-AB55-70138E2C8262}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.8268182",
+      "DurationMax": "0.8268182",
+      "MediaRefs": [
+       {
+        "Id": "278875474"
+       }
+      ]
+     },
+     {
+      "Id": "1396882671",
+      "Name": "Play_Slot_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Play_Slot_Loop",
+      "GUID": "{0A6DCF57-1CE4-4247-88DF-B15138F83190}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.7220407",
+      "DurationMax": "6.7220407",
+      "MediaRefs": [
+       {
+        "Id": "885284157"
+       }
+      ]
+     },
+     {
+      "Id": "4179853477",
+      "Name": "Play_Slot_Win",
+      "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Play_Slot_Win",
+      "GUID": "{63FE384A-678C-40B8-B98C-BE6A26B887B4}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.5657495",
+      "DurationMax": "1.5657495",
+      "MediaRefs": [
+       {
+        "Id": "867434290"
+       }
+      ]
+     },
+     {
+      "Id": "1439161704",
+      "Name": "Play_SnakeDie",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_SnakeDie",
+      "GUID": "{6E5104E2-87A8-4E4E-AFC2-EA2586F5F1FC}",
+      "DurationType": "OneShot",
+      "DurationMin": "3.3151248",
+      "DurationMax": "3.3151248",
+      "MediaRefs": [
+       {
+        "Id": "583867755"
+       }
+      ]
+     },
+     {
+      "Id": "2298541870",
+      "Name": "Play_SpikeGun",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_SpikeGun",
+      "GUID": "{74FA8462-A1DE-41F1-8259-7C9902C26E11}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3442177",
+      "DurationMax": "1.3442177",
+      "MediaRefs": [
+       {
+        "Id": "953991065"
+       }
+      ]
+     },
+     {
+      "Id": "1089845932",
+      "Name": "Play_Swipe",
+      "ObjectPath": "\\Events\\Default Work Unit\\Ui\\Play_Swipe",
+      "GUID": "{05F93292-0A5B-4E54-9BC8-67CFC2B92793}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.6423902",
+      "DurationMax": "0.6423902",
+      "MediaRefs": [
+       {
+        "Id": "688385273"
+       }
+      ]
+     },
+     {
+      "Id": "1191497377",
+      "Name": "Play_Sword",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_Sword",
+      "GUID": "{250AE555-7B77-40BF-9B2E-1923BA5F6ED7}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.5",
+      "DurationMax": "0.5",
+      "MediaRefs": [
+       {
+        "Id": "734243213"
+       }
+      ]
+     },
+     {
+      "Id": "3893377015",
+      "Name": "Play_Tesla",
+      "ObjectPath": "\\Events\\Default Work Unit\\Weapon\\Play_Tesla",
+      "GUID": "{3C8E873F-8D72-40E0-86C1-5456594D83AE}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.0789006",
+      "DurationMax": "1.0789006",
+      "MediaRefs": [
+       {
+        "Id": "73924771"
+       }
+      ]
+     },
+     {
+      "Id": "2618825045",
+      "Name": "Play_TrialTowerCapture",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_TrialTowerCapture",
+      "GUID": "{35139CBE-D086-4E32-87FA-723A3B684BA3}",
+      "DurationType": "OneShot",
+      "DurationMin": "2.4201586",
+      "DurationMax": "2.4201586",
+      "MediaRefs": [
+       {
+        "Id": "896543732"
+       }
+      ]
+     },
+     {
+      "Id": "2229301370",
+      "Name": "Play_Xp",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Xp",
+      "GUID": "{022E2080-EDE3-471C-99E9-BDE0B85ED0D5}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.38008332",
+      "DurationMax": "0.38008332",
+      "MediaRefs": [
+       {
+        "Id": "990669999"
+       }
+      ]
+     },
+     {
+      "Id": "4072991621",
+      "Name": "Stop_GamePlayMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Stop_GamePlayMusic",
+      "GUID": "{FD16F5BB-6BC1-43CA-9745-B6EC1D619A55}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1307794083",
+      "Name": "Stop_MainMenuMusic",
+      "ObjectPath": "\\Events\\Default Work Unit\\Music\\Stop_MainMenuMusic",
+      "GUID": "{7A7C2D4D-EE96-4284-A2B8-C1567BBE4955}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "1067214853",
+      "Name": "Stop_Slot_Loop",
+      "ObjectPath": "\\Events\\Default Work Unit\\Slot Machine\\Stop_Slot_Loop",
+      "GUID": "{E29D3533-A87D-42D1-B44F-6E3815D1D9C5}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     }
+    ]
+   }
+  ],
+  "FileHash": "{0641006D-AB6F-C250-5280-FB92CEA96083}"
+ }
+}

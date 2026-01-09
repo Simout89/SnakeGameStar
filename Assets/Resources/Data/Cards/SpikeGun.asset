@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd4089db18d4442fb650e0909c13cbc7, type: 3}
   m_Name: SpikeGun
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.CardData
+  <Id>k__BackingField: y
+  <IsObtained>k__BackingField: 0
   <Sprite>k__BackingField: {fileID: 21300000, guid: 4d709456e7ee4184b9be29bd7f59745c, type: 3}
   <CardType>k__BackingField: 0
   <Value>k__BackingField: 0
@@ -20,3 +22,15 @@ MonoBehaviour:
     \u0448\u0438\u043F\u0430\u043C\u0438, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
     \u043F\u0440\u043E\u0431\u0438\u0432\u0430\u044E\u0442 \u0432\u0440\u0430\u0433\u043E\u0432
     \u043D\u0430\u0441\u043A\u0432\u043E\u0437\u044C"
+  <LocalizedDescription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:840daa387a559634ca9d9914a70b7782
+    m_TableEntryReference:
+      m_KeyId: 1078996230144
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

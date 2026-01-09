@@ -9,33 +9,38 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private GameConfig _gameConfig;
         [Inject] private DiContainer _diContainer;
 
-        public void SpawnTowerByType(TrialTowerType trialTowerType, Vector3 position)
+        public TrialTower SpawnTowerByType(TrialTowerType trialTowerType, Vector3 position)
         {
             switch (trialTowerType)
             {
-                case TrialTowerType.Gambling: SpawnGamblingTower(position);
+                case TrialTowerType.Gambling: return SpawnGamblingTower(position);
                     break;
-                case TrialTowerType.GoldRush: SpawnGoldRushTower(position);
+                case TrialTowerType.GoldRush: return SpawnGoldRushTower(position);
                     break;
             }
+
+            return null;
         }
 
-        public void SpawnGamblingTower(Vector3 positions)
+        public TrialTower SpawnGamblingTower(Vector3 positions)
         {
             var newTower = LeanPool.Spawn(_gameConfig.GameConfigData.TrialTower);
             _diContainer.InjectGameObject(newTower.gameObject);
             newTower.TowerSprite.material = _gameConfig.GameConfigData.EnemyMaterials.RainbowMaterial;
             newTower.TrialTowerType = TrialTowerType.Gambling;
             newTower.transform.position = positions;
+            return newTower;
         }
         
-        public void SpawnGoldRushTower(Vector3 positions)
+        public TrialTower SpawnGoldRushTower(Vector3 positions)
         {
             var newTower = LeanPool.Spawn(_gameConfig.GameConfigData.TrialTower);
             _diContainer.InjectGameObject(newTower.gameObject);
             newTower.TowerSprite.material = _gameConfig.GameConfigData.EnemyMaterials.GoldMaterial;
             newTower.TrialTowerType = TrialTowerType.GoldRush;
             newTower.transform.position = positions;
+            return newTower;
+
         }
     }
 

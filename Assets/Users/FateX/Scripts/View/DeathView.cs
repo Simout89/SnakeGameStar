@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 using Cysharp.Threading.Tasks;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.Services.Analytics;
+using UnityEngine.Serialization;
+using Users.FateX.Scripts.Achievements;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Utils;
 using Users.FateX.Scripts.View.Entry;
 using Zenject;
@@ -16,13 +20,15 @@ namespace Users.FateX.Scripts.View
     {
         [SerializeField] private GameObject body;
         [SerializeField] private Transform container;
+        [FormerlySerializedAs("containerAchievemnt")] [SerializeField] private Transform containerAchievement;
         [SerializeField] private Transform squaresContainer;
         [SerializeField] private Canvas canvas;
         [SerializeField] private StatisticsViewEntry _statisticsViewEntry;
         [SerializeField] private int gridSize = 20;
         [SerializeField] private float animationDuration = 2f;
         [SerializeField] private Color squareColor = Color.black;
-        
+        [Inject] private AchievementController _achievementController;
+        [Inject] private GameConfig _gameConfig;
         [Inject] private IStatisticsService _statisticsService;
         
         private List<Image> squares = new List<Image>();
@@ -50,6 +56,12 @@ namespace Users.FateX.Scripts.View
                 {
                     entryText.BackGround.color = MyUtils.HexToColor("#272727");
                 }
+            }
+
+            var achievements= _achievementController.GetNewObtainedAchievement();
+            foreach (var achievement in achievements)
+            {
+                Instantiate(_gameConfig.GameConfigData.DeathAchievementEntryView, containerAchievement).Init(achievement, _gameConfig);
             }
         }
 
@@ -159,11 +171,21 @@ namespace Users.FateX.Scripts.View
 
         public void OnRestartClick()
         {
+            AnalyticsService.Instance.RecordEvent(
+                new OnDeathViewChooseButton(
+                    "Restart"
+                )
+            );
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
         
         public void OnMenuClick()
         {
+            AnalyticsService.Instance.RecordEvent(
+                new OnDeathViewChooseButton(
+                    "MainMenu"
+                )
+            );
             SceneManager.LoadScene(0);
         }
 

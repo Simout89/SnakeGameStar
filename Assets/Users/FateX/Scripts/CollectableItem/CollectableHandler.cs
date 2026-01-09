@@ -10,6 +10,7 @@ namespace Users.FateX.Scripts.CollectableItem
 {
     public class CollectableHandler: IDisposable
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [Inject] private ExperienceSystem _experienceSystem;
         [Inject] private ItemManager _itemManager;
         [Inject] private GameContext _gameContext;
@@ -35,6 +36,8 @@ namespace Users.FateX.Scripts.CollectableItem
 
         private void HandleCollect(GameObject obj)
         {
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.PickUp);
+            
             HomingMover.StartMove(obj.transform, _snakeInteraction.transform, () =>
             {
                 if (obj.TryGetComponent(out IExperiencePoints experiencePoints))
@@ -47,16 +50,21 @@ namespace Users.FateX.Scripts.CollectableItem
                 if (obj.TryGetComponent(out IMagnet magnet ))
                 {
                     UseMagnet(obj);
+                    
                 }
 
                 if (obj.TryGetComponent(out ICoin coin))
                 {
                     _roundCurrency.AddCoin(coin.CoinAmount);
+                    _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.CollectCoin);
+
                 }
             
                 if (obj.TryGetComponent(out IHealableItem healable))
                 {
                     UseHeal(healable);
+                    _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.EatApple);
+
                 }
             
                 if (obj.TryGetComponent(out IGamblingItem gamblingItem))

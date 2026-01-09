@@ -1,11 +1,15 @@
 ﻿using System;
+using AK.Wwise.Unity.WwiseAddressables;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Cards;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Data.WaveData;
 using Users.FateX.Scripts.Enemy;
 using Users.FateX.Scripts.Services;
+using Users.FateX.Scripts.Tutorial;
 using Users.FateX.Scripts.View;
 using Zenject;
 using Скриптерсы.Services;
@@ -29,14 +33,17 @@ namespace Users.FateX.Scripts
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private HealthView _healthView;
         [Inject] private DeathHandler _deathHandler;
-
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        [Inject] private GameConfig _gameConfig;
+        [Inject] private TutorialController _tutorialController;
+        [Inject] private SettingsController _settingsController;
         
         public void Initialize()
         {
-#if UNITY_ANDROID && !UNITY_EDITOR
-    Application.targetFrameRate = 90;
-#endif
             
+
+            
+            _gameConfig.GameConfigData.SoundsData.Bank.Load();
 
             // УРовень
             
@@ -64,6 +71,23 @@ namespace Users.FateX.Scripts
             _cardMenuController.SpawnRandomCards();
 
             _gameStateManager.PushState(GameStates.CardMenu);
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopMainMusic);
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.StopGameMusic);
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.Music.PlayGameMusic);
+            
+            if(!_settingsController.SettingsSaveData.CardTutorial)
+            {
+                _tutorialController.ShowTutorial(TutorialWindowType.CardSelect);
+                _settingsController.SettingsSaveData.CardTutorial = true;
+                _settingsController.SaveSettings();
+            }
+            
+            
+            AnalyticsService.Instance.RecordEvent(
+                new OnRunStartedEvent()
+            );
+            
         }
     }
 }

@@ -3,6 +3,8 @@ using Users.FateX.Scripts.Enemy;
 using Zenject;
 using System;
 using System.Collections.Generic;
+using Unity.Services.Analytics;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.View;
 
 namespace Users.FateX.Scripts.Trial
@@ -13,6 +15,11 @@ namespace Users.FateX.Scripts.Trial
         [Inject] private EnemySpawnDirector _enemySpawnDirector;
         [Inject] private ItemFactory _itemFactory;
         [Inject] private MessageDisplayView _messageDisplayView;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        [Inject] private ArrowView _arrowView;
+        [Inject] private GameConfig _gameConfig;
+
+        private bool firstTowerCaptured = false;
         
         public void OnTowerCaptured(TrialTower tower)
         {
@@ -20,20 +27,35 @@ namespace Users.FateX.Scripts.Trial
             var handlers = new Dictionary<EnemyBase, Action<EnemyBase>>();
 
             int spawnCount = 5;
+
+
+            if (!firstTowerCaptured)
+            {
+                AnalyticsService.Instance.RecordEvent(
+                    new OnCaptureFirstTower()
+                );
+
+                firstTowerCaptured = true;
+            }
+            
+            
+            _arrowView.StopTracking(tower.gameObject);
             
             switch (tower.TrialTowerType)
             {
                 case TrialTowerType.Gambling:
                 {
-                    _messageDisplayView.ShowText("Лудоманы вызваны", Color.purple);
+                    _messageDisplayView.ShowText(_gameConfig.GameConfigData.LocalizationData.TrialTowerGambler.GetLocalizedString(), Color.purple);
                     spawnCount = 5;
                 } break;
                 case TrialTowerType.GoldRush:
                 {
-                    _messageDisplayView.ShowText("Денежные мешки вызваны", Color.yellow);
+                    _messageDisplayView.ShowText(_gameConfig.GameConfigData.LocalizationData.TrialTowerCoinBag.GetLocalizedString(), Color.yellow);
                     spawnCount = 15;
                 } break;
             }
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.TrialTowerCapture);
             
             for (int i = 0; i < spawnCount; i++)
             {

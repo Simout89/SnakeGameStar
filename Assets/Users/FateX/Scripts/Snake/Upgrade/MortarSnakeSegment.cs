@@ -19,9 +19,16 @@ namespace Users.FateX.Scripts.Upgrade
             EnemyBase[] enemyBases = EnemyFinder.GetRandomEnemies(gunPivot.position, CurrentStats.AttackRange,
                 CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum);
 
+            if (enemyBases.Length > 0)
+            {
+                globalSoundPlayer.Play(globalSoundPlayer.SoundsData.WeaponSoundsData.Mortar);
+            }
+            
             foreach (var enemy in enemyBases)
             {
                 var projectile = LeanPool.Spawn(upgradeLevelsData.Projectile, gunPivot.position, Quaternion.identity);
+                
+                projectile.InitSoundPlayer(globalSoundPlayer);
 
                 projectile.LaunchArc(enemy.transform, 1f,
                     new DamageInfo(CurrentStats.Damage + SnakeController.PlayerStats.Damage.Sum,

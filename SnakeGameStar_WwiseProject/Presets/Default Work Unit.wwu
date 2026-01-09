@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
 <WwiseDocument Type="WorkUnit" ID="{C564AE55-8D57-4680-A8DD-1FAF162C446A}" SchemaVersion="133">
 	<Presets>
-		<WorkUnit Name="Default Work Unit" ID="{C564AE55-8D57-4680-A8DD-1FAF162C446A}" PersistMode="Standalone"/>
+		<WorkUnit Name="Default Work Unit" ID="{C564AE55-8D57-4680-A8DD-1FAF162C446A}" PersistMode="Standalone">
+			<ChildrenList>
+				<Sound Name="untitled" ID="{55EEF466-E83B-4979-BE5C-5983C9E6FB99}">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+						<Property Name="Volume" Type="Real64">
+							<ValueList>
+								<Value>-20</Value>
+							</ValueList>
+						</Property>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Main Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+						</Reference>
+					</ReferenceList>
+				</Sound>
+				<Sound Name="GamePlayMusic" ID="{5CCC48DB-9E15-4FCA-8EE5-43E181AF310D}">
+					<PropertyList>
+						<Property Name="IsLoopingEnabled" Type="bool" Value="True"/>
+					</PropertyList>
+					<ReferenceList>
+						<Reference Name="Conversion">
+							<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{CCEC6E61-107A-4002-97FE-69C5667F22A3}"/>
+						</Reference>
+						<Reference Name="OutputBus">
+							<ObjectRef Name="Music_Bus" ID="{1C79FC58-5309-45E7-AB24-B4593376FC0F}" WorkUnitID="{528CC737-89BF-4640-8255-8DCE0563C18C}"/>
+						</Reference>
+					</ReferenceList>
+				</Sound>
+			</ChildrenList>
+		</WorkUnit>
 	</Presets>
 </WwiseDocument>

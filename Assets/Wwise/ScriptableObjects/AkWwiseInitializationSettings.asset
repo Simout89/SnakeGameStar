@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 91a2d51ebd2dea0428891091941264e9, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f444e2f1a81dc54cab58569a7ca372c, type: 3}
   m_Name: AkWwiseInitializationSettings
-  m_EditorClassIdentifier: AK.Wwise.Unity.API::AkWwiseInitializationSettings
+  m_EditorClassIdentifier: AK.Wwise.Unity.Addressables::AK.Wwise.Unity.WwiseAddressables.AkWwiseAddressablesInitializationSettings
   PlatformSettingsNameList:
   - Android
   - Mac
@@ -24,15 +24,15 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 5339220419ed8e74fae42c9fa73dc375, type: 2}
   InvalidReferencePlatforms: []
   UserSettings:
-    m_BasePath: Banks
+    m_BasePath: Audio\GeneratedSoundBanks
     m_StartupLanguage: English(US)
     m_EngineLogging: 1
     m_IsDecodedBankEnabled: 0
-    m_IsAutoBankEnabled: 0
+    m_IsAutoBankEnabled: 1
     m_DefaultListenerScalingFactor: 1
     m_MaximumNumberOfPositioningPaths: 255
     m_CommandQueueSize: 262144
-    m_SamplesPerFrame: 512
+    m_SamplesPerFrame: 1024
     m_MainOutputSettings:
       m_AudioDeviceShareset: 
       m_DeviceID: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
   AdvancedSettings:
     m_IOMemorySize: 2097152
     m_TargetAutoStreamBufferLengthMs: 380
-    m_UseStreamCache: 0
-    m_LoadBankAsynchronously: 0
+    m_UseStreamCache: 1
+    m_LoadBankAsynchronously: 1
     m_MaximumPinnedBytesInCache: 4294967295
     m_EnableGameSyncPreparation: 0
     m_ContinuousPlaybackLookAhead: 1

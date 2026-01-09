@@ -17,8 +17,12 @@ MonoBehaviour:
     <RainbowMaterial>k__BackingField: {fileID: 2100000, guid: 11d8f52bad8b3404f884f4a09b41ea2d, type: 2}
     <DefaultMaterial>k__BackingField: {fileID: 2100000, guid: 57ad75e32f1df654a837dad59062bec4, type: 2}
   <SoundsData>k__BackingField: {fileID: 11400000, guid: 1f1c05bf673f36641860ac5119916a82, type: 2}
+  <LocalizationData>k__BackingField: {fileID: 11400000, guid: 13cac7a23d2f14a489ab7cc69f6459ed, type: 2}
   <XpPrefab>k__BackingField: {fileID: 4043232107286505601, guid: 0d2951f07091d584681f98e884aa0643, type: 3}
   <MagnetPrefab>k__BackingField: {fileID: 6485121111209911736, guid: e488eb9cdb4aa2446acb0bd390f910da, type: 3}
+  <AchievementEntryView>k__BackingField: {fileID: 2146716016827976074, guid: 8740f66dc8364dd4e8066c35e11fb56b, type: 3}
+  <DeathAchievementEntryView>k__BackingField: {fileID: 7347663392387641729, guid: 06d679c1f2d908d40846621f80845a7d, type: 3}
+  <SnakeSegmentsEntryView>k__BackingField: {fileID: 8238814011383748060, guid: 14e99f0fc98bd194981c222c2924764e, type: 3}
   <GamblingItemPrefab>k__BackingField: {fileID: 5680374288626682495, guid: 04807228487ef774482b90a6491ad44c, type: 3}
   <CoinItemPrefab>k__BackingField: {fileID: 1889280363881644124, guid: e18bd1c7d5f502b4992a21928d3e0780, type: 3}
   <HealableItemPrefab>k__BackingField: {fileID: 3770474225613000502, guid: 68a2c123efa92dd44ae567fa8bfb6b60, type: 3}
@@ -30,6 +34,11 @@ MonoBehaviour:
     CoinCard: {fileID: 11400000, guid: 2fac202a6671cce49b3af79d3e36176d, type: 2}
   <TrialTower>k__BackingField: {fileID: 4440455438817000682, guid: c62143f92e6493a4ba6a9712c354f94e, type: 3}
   <InfinityEnemy>k__BackingField: {fileID: 2172284294067600571, guid: e13a93561533de947808f2f141ea2b76, type: 3}
+  <AchievementDatas>k__BackingField:
+  - {fileID: 11400000, guid: acfb7fc682a3e824db8dff0a404d0dc6, type: 2}
+  - {fileID: 11400000, guid: 066d73ba4e8a18642854cddc78dbdd5f, type: 2}
+  - {fileID: 11400000, guid: 7f988403d0662e54a98ba7fabadb5ef7, type: 2}
+  - {fileID: 11400000, guid: 7e0c0b168fff4eb4db1d9adeb468646f, type: 2}
   <CardDatas>k__BackingField:
   - {fileID: 11400000, guid: b77f9f64f4127cd4d879f7033d957579, type: 2}
   - {fileID: 11400000, guid: ae14fa50c8a913847b3611edefc9ec62, type: 2}

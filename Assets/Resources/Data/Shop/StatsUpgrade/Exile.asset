@@ -12,14 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db4caf2d52254ef999331a5871c21c1f, type: 3}
   m_Name: Exile
   m_EditorClassIdentifier: Assembly-CSharp::Users.FateX.Scripts.Data.StatsShopProduct
+  <LocalizedName>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:13b9dd98dd4f91a4d9f50c6bd1e66f07
+    m_TableEntryReference:
+      m_KeyId: 651277885440
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  <LocalizedDesription>k__BackingField:
+    m_TableReference:
+      m_TableCollectionName: GUID:13b9dd98dd4f91a4d9f50c6bd1e66f07
+    m_TableEntryReference:
+      m_KeyId: 666012475392
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
   <Name>k__BackingField: "\u0418\u0437\u0433\u0430\u043D\u0438\u0435"
   <Desription>k__BackingField: "\u0423\u0432\u0435\u043B\u0438\u0447\u0438\u0432\u0430\u0435\u0442
     \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u043E \u0438\u0437\u0433\u0430\u043D\u0438\u0439
     \u043F\u0440\u0438 \u0432\u044B\u0431\u043E\u0440\u0435 \u043A\u0430\u0440\u0442
     \u043D\u0430 1 \u0437\u0430 \u0443\u0440\u043E\u0432\u0435\u043D\u044C"
-  <Icon>k__BackingField: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
+  <Icon>k__BackingField: {fileID: -6671453388149132432, guid: a7d3a9e8e458d3d468ddd65f60512fc6, type: 3}
   <StatsUpgradeLevels>k__BackingField:
-  - <Cost>k__BackingField: 25
+  - <Cost>k__BackingField: 50
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 1
     <Reroll>k__BackingField: 0
@@ -28,7 +46,7 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 50
+  - <Cost>k__BackingField: 100
     <GoldDropChance>k__BackingField: 0
     <Exile>k__BackingField: 2
     <Reroll>k__BackingField: 0
@@ -37,30 +55,6 @@ MonoBehaviour:
     <ProjectileCount>k__BackingField: 0
     <PickUpRange>k__BackingField: 0
     <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 75
-    <GoldDropChance>k__BackingField: 0
-    <Exile>k__BackingField: 3
-    <Reroll>k__BackingField: 0
-    <Health>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <ProjectileCount>k__BackingField: 0
-    <PickUpRange>k__BackingField: 0
-    <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 100
-    <GoldDropChance>k__BackingField: 0
-    <Exile>k__BackingField: 4
-    <Reroll>k__BackingField: 0
-    <Health>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <ProjectileCount>k__BackingField: 0
-    <PickUpRange>k__BackingField: 0
-    <MoveSpeed>k__BackingField: 0
-  - <Cost>k__BackingField: 125
-    <GoldDropChance>k__BackingField: 0
-    <Exile>k__BackingField: 50
-    <Reroll>k__BackingField: 0
-    <Health>k__BackingField: 0
-    <Damage>k__BackingField: 0
-    <ProjectileCount>k__BackingField: 0
-    <PickUpRange>k__BackingField: 0
-    <MoveSpeed>k__BackingField: 0
+  references:
+    version: 2
+    RefIds: []

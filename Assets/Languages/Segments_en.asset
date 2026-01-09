@@ -1,0 +1,104 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Segments_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 840daa387a559634ca9d9914a70b7782, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 5938077696
+    m_Localized: Fire Trail
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123097571328
+    m_Localized: Leaves a trail of fire from the last segment, dealing periodic damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 337116127232
+    m_Localized: Machine Gun
+    m_Metadata:
+      m_Items: []
+  - m_Id: 358930702336
+    m_Localized: Opens fire at the nearest enemy.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 470348193792
+    m_Localized: Mortar
+    m_Metadata:
+      m_Items: []
+  - m_Id: 514564546560
+    m_Localized: 'Hits a random enemy: the projectile moves in an arc and deals area
+      damage on impact.'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 608235937792
+    m_Localized: Pentagram
+    m_Metadata:
+      m_Items: []
+  - m_Id: 615806656512
+    m_Localized: Deals damage to a random enemy with a 1% chance to restore health.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 688145817600
+    m_Localized: Tank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 750141825024
+    m_Localized: Shoots in all directions at once
+    m_Metadata:
+      m_Items: []
+  - m_Id: 828067799040
+    m_Localized: Morgenstern
+    m_Metadata:
+      m_Items: []
+  - m_Id: 928278110208
+    m_Localized: Spikes rotating in orbit around the segment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1070389518336
+    m_Localized: Spikes
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1078996230144
+    m_Localized: Fires spikes that pierce through enemies.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1188098465792
+    m_Localized: Excalibur
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1195220393984
+    m_Localized: A pair of swords attacks enemies on both sides of the segment.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1400862924800
+    m_Localized: Plague
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1404818153472
+    m_Localized: Poisons the area around the segment, dealing damage.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1993341919232
+    m_Localized: Tesla
+    m_Metadata:
+      m_Items: []
+  - m_Id: 2013638156288
+    m_Localized: Creates a chain lightning that hits enemies.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

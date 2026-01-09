@@ -11,6 +11,8 @@ namespace Users.FateX.Scripts.Upgrade
         {
             base.Attack();
             
+            globalSoundPlayer.Play(globalSoundPlayer.SoundsData.WeaponSoundsData.SpikeGun);
+            
             int totalProjectiles = CurrentStats.ProjectileCount + SnakeController.PlayerStats.ProjectileCount.Sum;
             
             for (int i = 0; i < totalProjectiles; i++)

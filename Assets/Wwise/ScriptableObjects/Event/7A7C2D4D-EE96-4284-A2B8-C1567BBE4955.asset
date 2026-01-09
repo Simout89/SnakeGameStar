@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 04992f23556b1864aadc49fb8ec12ea0, type: 3}
+  m_Name: 7A7C2D4D-EE96-4284-A2B8-C1567BBE4955
+  m_EditorClassIdentifier: AK.Wwise.Unity.API.WwiseTypes::WwiseEventReference
+  objectName: Stop_MainMenuMusic
+  id: 1307794083
+  guid: 7A7C2D4D-EE96-4284-A2B8-C1567BBE4955
+  IsInUserDefinedSoundBank: 1

@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Upgrade;
 using Zenject;
@@ -12,11 +14,14 @@ namespace Users.FateX.Scripts.Cards
 {
     public class CardMenuController : IInitializable, IDisposable
     {
+        [Inject] private SnakeSegmentsRepository _snakeSegmentsRepository;
         [Inject] private GameConfig _gameConfig;
         [Inject] private CardMenuView _cardMenuView;
         [Inject] private GameContext _gameContext;
         [Inject] private PlayerStats _playerStats;
         [Inject] private CurrencyService _currencyService;
+        [Inject] private RoundCurrency _roundCurrency;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
 
         private int rerrolUsed = 0;
         private int exileUsed = 0;
@@ -160,7 +165,9 @@ namespace Users.FateX.Scripts.Cards
 
         private List<CardData> GetAvailableSegmentCards(bool isReroll)
         {
-            List<CardData> allSegmentCards = _gameConfig.GameConfigData.CardDatas
+            
+            
+            List<CardData> allSegmentCards = _snakeSegmentsRepository.GetObtainedCardData()
                 .Where(c => c.CardType == CardType.Segment)
                 .ToList();
 
@@ -230,6 +237,11 @@ namespace Users.FateX.Scripts.Cards
                     _gameContext.SnakeController.Grow(card.SnakeSegmentBase);
                     _cardMenuView.ClearAllCards();
                     _lastShownCards.Clear();
+                    AnalyticsService.Instance.RecordEvent(
+                        new OnCardSelectedEvent(
+                            card.SnakeSegmentBase.UpgradeLevelsData.SegmentName
+                        )
+                    );
                     OnCardSelected?.Invoke();
                 }
             });
@@ -237,7 +249,10 @@ namespace Users.FateX.Scripts.Cards
 
         private void ProcessHealCard(CardData card)
         {
-            _cardMenuView.ShowCard(card, $"Восполняет {card.Value} здоровья").Button.onClick.AddListener(() =>
+
+            string text = _gameConfig.GameConfigData.LocalizationData.ui_HealCard.GetLocalizedString(card.Value);
+            
+            _cardMenuView.ShowCard(card, text).Button.onClick.AddListener(() =>
             {
                 if (_exiledMode)
                 {
@@ -248,23 +263,38 @@ namespace Users.FateX.Scripts.Cards
                 _gameContext.SnakeHealth.Heal(card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
+                AnalyticsService.Instance.RecordEvent(
+                    new OnCardSelectedEvent(
+                        "healCard"
+                    )
+                );
                 OnCardSelected?.Invoke();
             });
         }
 
         private void ProcessCoinCard(CardData card)
         {
-            _cardMenuView.ShowCard(card, $"Дает {card.Value} монет").Button.onClick.AddListener(() =>
+            string text = _gameConfig.GameConfigData.LocalizationData.ui_CoinCard.GetLocalizedString(card.Value);
+
+            
+            _cardMenuView.ShowCard(card, text).Button.onClick.AddListener(() =>
             {
                 if (_exiledMode)
                 {
                     _exiledMode = false;
                     return;
                 }
+                
 
-                _currencyService.AddCoins((int)card.Value);
+                //_currencyService.AddCoins((int)card.Value);
+                _roundCurrency.AddCoin((int)card.Value);
                 _cardMenuView.ClearAllCards();
                 _lastShownCards.Clear();
+                AnalyticsService.Instance.RecordEvent(
+                    new OnCardSelectedEvent(
+                        "coinCard"
+                    )
+                );
                 OnCardSelected?.Invoke();
             });
         }
@@ -279,19 +309,19 @@ namespace Users.FateX.Scripts.Cards
 
             if (!segment.Origin)
             {
-                statsText += $"<color=red>Копия</color><line-height=1em>\n";
+                statsText += $"<color=red>{_gameConfig.GameConfigData.LocalizationData.ui_Copy.GetLocalizedString()}</color><line-height=1em>\n";
             }
             
             statsText += GetStatDifference(currentStats.DelayBetweenShots * 10, nextStats.DelayBetweenShots * 10,
-                "Скорость атаки:", true);
+                $"{_gameConfig.GameConfigData.LocalizationData.ui_AttackSpeed.GetLocalizedString()}:", true);
             statsText += GetStatDifference(currentStats.Damage * GameConstant.VisualDamageMultiplayer,
-                nextStats.Damage * GameConstant.VisualDamageMultiplayer, "Урон:");
-            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, "Длителность:");
-            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, "Радиус атаки:");
-            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, "Кол-во отскоков:");
-            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, "Область действия:");
+                nextStats.Damage * GameConstant.VisualDamageMultiplayer, $"{_gameConfig.GameConfigData.LocalizationData.ui_Damage.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.Duration, nextStats.Duration, $"{_gameConfig.GameConfigData.LocalizationData.ui_Duration.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.AttackRange, nextStats.AttackRange, $"{_gameConfig.GameConfigData.LocalizationData.ui_AttackRange.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.BouncesCount, nextStats.BouncesCount, $"{_gameConfig.GameConfigData.LocalizationData.ui_BounceCount.GetLocalizedString()}:");
+            statsText += GetStatDifference(currentStats.DamageArea, nextStats.DamageArea, $"{_gameConfig.GameConfigData.LocalizationData.ui_AreaOfEffect.GetLocalizedString()}:");
             statsText += GetStatDifference(currentStats.ProjectileCount, nextStats.ProjectileCount,
-                "Кол-во снарядов:");
+                $"{_gameConfig.GameConfigData.LocalizationData.ui_ProjectileCount.GetLocalizedString()}:");
 
             return statsText;
         }
@@ -311,10 +341,17 @@ namespace Users.FateX.Scripts.Cards
                 _exiledMode = false;
                 return;
             }
+            
+
 
             segment.Upgrade();
             _cardMenuView.ClearAllCards();
             _lastShownCards.Clear();
+            AnalyticsService.Instance.RecordEvent(
+                new OnCardSelectedEvent(
+                    segment.UpgradeLevelsData.SegmentName
+                )
+            );
             OnCardSelected?.Invoke();
         }
 

@@ -12,7 +12,9 @@ namespace Users.FateX.Scripts.SlotMachine
 {
     public class SlotMachineView : MonoBehaviour
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [SerializeField] private GameObject body;
+        [SerializeField] private GameObject backGround;
         [SerializeField] private Transform[] slotColumns; // 3 колонки для слотов
         [SerializeField] private GameObject slotItemPrefab; // Префаб элемента слота с Image компонентом
         [SerializeField] private int visibleItemsPerColumn = 5; // Количество видимых элементов в колонке
@@ -81,6 +83,7 @@ namespace Users.FateX.Scripts.SlotMachine
         {
             body.transform.localScale = Vector3.zero;
             body.SetActive(true);
+            backGround.SetActive(true);
             body.transform.DOScale(Vector3.one, 0.3f).SetUpdate(true).OnComplete(() => {});
             skipAnimation = false;
             currentPrize = slotMachinePrizeData;
@@ -94,7 +97,8 @@ namespace Users.FateX.Scripts.SlotMachine
 
         private async UniTask StartSpin(SlotMachinePrizeData prize)
         {
-            // Запускаем анимацию лампочек
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SlotMachine.LoopPlay);
+            
             StartLightAnimation().Forget();
 
             // Запускаем вращение всех колонок одновременно
@@ -104,23 +108,39 @@ namespace Users.FateX.Scripts.SlotMachine
             for (int i = 0; i < columns.Count; i++)
             {
                 float stopDelay = i * 0.5f; // Каждая колонка останавливается с задержкой
-                spinTasks.Add(SpinColumn(columns[i], prize.Icon, stopDelay));
+                spinTasks.Add(SpinColumn(columns[i], prize.Icon, stopDelay, i));
             }
 
-            await UniTask.WhenAll(spinTasks);
+            // await UniTask.WhenAny(spinTasks);
+            
 
+            await UniTask.WhenAll(spinTasks);
+            
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SlotMachine.LoopStop);
+
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SlotMachine.Win);
+
+
+            // _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SlotMachine.LoopStop);
             // Останавливаем анимацию лампочек
             isLightAnimationRunning = false;
 
             // Финальная анимация победы лампочек
+            
             await WinLightAnimation();
+            
 
             await button.OnClickAsync();
 
             // Выключаем все лампочки
             TurnOffAllLights();
+            
+
 
             body.SetActive(false);
+            backGround.SetActive(false);
+
 
             OnAnimationCompleted?.Invoke();
         }
@@ -191,11 +211,11 @@ namespace Users.FateX.Scripts.SlotMachine
             }
         }
 
-        private async UniTask SpinColumn(SlotColumn column, Sprite targetSprite, float stopDelay)
+        private async UniTask SpinColumn(SlotColumn column, Sprite targetSprite, float stopDelay, int number)
         {
-            float spinDuration = 2f; // Общая длительность вращения (без учета задержки)
+            float spinDuration = 5f; // Общая длительность вращения (без учета задержки)
             float fastSpinTime = 1.3f; // Время быстрого вращения
-            float slowDownTime = 0.7f; // Время замедления
+            float slowDownTime = 2f; // Время замедления
 
             float currentSpeed = 0f;
             float maxSpeed = 2000f; // Максимальная скорость в пикселях/сек
@@ -255,6 +275,14 @@ namespace Users.FateX.Scripts.SlotMachine
                 }
 
                 await UniTask.Yield(PlayerLoopTiming.Update);
+            }
+
+            if (number == 1)
+            {
+            }
+            else if(number == 0)
+            {
+                _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SlotMachine.Complection);
             }
 
             // Плавное позиционирование на целевой спрайт с анимацией

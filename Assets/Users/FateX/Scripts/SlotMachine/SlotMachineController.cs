@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Cysharp.Threading.Tasks;
+using Unity.Services.Analytics;
 using UnityEngine;
+using Users.FateX.Scripts.Analytics.Events;
 using Users.FateX.Scripts.CollectableItem;
 using Users.FateX.Scripts.Data;
 using Users.FateX.Scripts.Utils;
@@ -20,6 +22,7 @@ namespace Users.FateX.Scripts.SlotMachine
         [Inject] private SlotMachineView _slotMachineView;
         [Inject] private GameStateManager _gameStateManager;
         [Inject] private ItemFactory _itemFactory;
+        [Inject] private SnakeSegmentsRepository _segmentsRepository;
         
         private SlotMachinePrizeData _prizeData;
         private float _totalWeight;
@@ -102,6 +105,12 @@ namespace Users.FateX.Scripts.SlotMachine
             _gameStateManager.PopState();
             
             _gameContext.SnakeHealth.SetInvincible(1);
+            
+            AnalyticsService.Instance.RecordEvent(
+                new OnGamblingEvent(
+                    _prizeData.SlotMachinePrizeType.ToString()
+                )
+            );
 
             
             switch (_prizeData.SlotMachinePrizeType)
@@ -163,9 +172,7 @@ namespace Users.FateX.Scripts.SlotMachine
                     if (_prizeData.SnakeSegmentBase != null && 
                         _prizeData.SnakeSegmentBase.Length > 0)
                     {
-                        var prize = _prizeData.SnakeSegmentBase[
-                            Random.Range(0, _prizeData.SnakeSegmentBase.Length)
-                        ];
+                        var prize = _segmentsRepository.GetObtainedCardData()[Random.Range(0, _segmentsRepository.GetObtainedCardData().Length)].SnakeSegmentBase;
                         _gameContext.SnakeController.Grow(prize, false);
                     }
                     break;

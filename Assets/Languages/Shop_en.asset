@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Shop_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 13b9dd98dd4f91a4d9f50c6bd1e66f07, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 316618563584
+    m_Localized: Strength
+    m_Metadata:
+      m_Items: []
+  - m_Id: 549238857728
+    m_Localized: Increases all damage by 2 per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 651277885440
+    m_Localized: Exile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 666012475392
+    m_Localized: Increases the number of exiles when selecting cards by 1 per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 772115783680
+    m_Localized: Greed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 823982546944
+    m_Localized: Increases coin drop chance by 2% per rank
+    m_Metadata:
+      m_Items: []
+  - m_Id: 895583510528
+    m_Localized: Max HP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 978030944256
+    m_Localized: Increases health by 20 per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1096964628480
+    m_Localized: Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1119618064384
+    m_Localized: Increases movement speed by 1 per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1238207815680
+    m_Localized: Magnet
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1268977229824
+    m_Localized: Increases pickup radius by 10% per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1340041322496
+    m_Localized: Projectiles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1553200046080
+    m_Localized: Increases projectile count by 1 per level
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1645923524608
+    m_Localized: Reroll
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1674369294336
+    m_Localized: Increases the number of rerolls when selecting cards by 1 per level
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

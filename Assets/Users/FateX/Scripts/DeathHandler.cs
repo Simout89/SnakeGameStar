@@ -2,6 +2,7 @@
 using DG.Tweening;
 using Lean.Pool;
 using UnityEngine.SceneManagement;
+using Users.FateX.Scripts.Tutorial;
 using Users.FateX.Scripts.View;
 using Zenject;
 
@@ -11,6 +12,10 @@ namespace Users.FateX.Scripts
     {
         [Inject] private DeathView _deathView;
         [Inject] private GameStateManager _gameStateManager;
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
+        [Inject] private TutorialController _tutorialController;
+        [Inject] private SettingsController _settingsController;
+
         private SnakeHealth _snakeHealth;
         
         public void SetSnakeHealth(SnakeHealth snakeHealth)
@@ -35,11 +40,20 @@ namespace Users.FateX.Scripts
             DOTween.KillAll();
             
             LeanPool.DespawnAll();
+
+            if (!_settingsController.SettingsSaveData.DeathTutorial)
+            {
+                _tutorialController.ShowTutorial(TutorialWindowType.DeathMenu);
+                _settingsController.SettingsSaveData.DeathTutorial = true;
+                _settingsController.SaveSettings();
+            }
         }
 
         private void HandleDie()
         {
             _deathView.Show();
+            
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.SnakeDie);
             
             _gameStateManager.PushState(GameStates.Death);
             

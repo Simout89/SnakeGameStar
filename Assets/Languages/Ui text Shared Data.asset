@@ -1,0 +1,196 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Ui text Shared Data
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.SharedTableData
+  m_TableCollectionName: Ui text
+  m_TableCollectionNameGuidString: b8b46531c687fc94bb1676835304ccb6
+  m_Entries:
+  - m_Id: 73428623360
+    m_Key: ui_Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 202780958720
+    m_Key: ui_Lair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 275858317312
+    m_Key: ui_Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752503218176
+    m_Key: ui_Weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 791866761216
+    m_Key: ui_Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 868639301632
+    m_Key: ui_Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1306713382912
+    m_Key: ui_Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460057137152
+    m_Key: ui_ShopStartText
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4798387576832
+    m_Key: trialTowerSpawn
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654264668160
+    m_Key: trialTowerGambling
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5692156010496
+    m_Key: trialTowerCoinBag
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26621883965440
+    m_Key: ui_Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850532253696
+    m_Key: ui_MainMenu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27383129169920
+    m_Key: ui_MasterVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27431908925440
+    m_Key: ui_MusicVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27464439947264
+    m_Key: ui_EffectsVolume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27848030019584
+    m_Key: ui_ShowFps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27950543003648
+    m_Key: ui_SetFps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28242936324096
+    m_Key: ui_ClearSaves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29044182605824
+    m_Key: ui_Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29276047925248
+    m_Key: ui_Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29553052344320
+    m_Key: ui_Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29613211246592
+    m_Key: ui_Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131043741917184
+    m_Key: ui_Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131128743682048
+    m_Key: tutorial_Card
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131287552614400
+    m_Key: tutorial_Move
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131305692979200
+    m_Key: tutorial_XpHealth
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131334033891328
+    m_Key: tutorial_KillEnemy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131357521993728
+    m_Key: tutorial_Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132923649941504
+    m_Key: ui_Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132967811768320
+    m_Key: ui_AttackSpeed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133019481399296
+    m_Key: ui_Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133086711898112
+    m_Key: ui_Duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133185861050368
+    m_Key: ui_AttackRange
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133276147638272
+    m_Key: ui_BounceCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133380711636992
+    m_Key: ui_AreaOfEffect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133462244712448
+    m_Key: ui_ProjectileCount
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134240506208256
+    m_Key: ui_HealCard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134263679737856
+    m_Key: ui_CoinCard
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161167648055296
+    m_Key: ui_Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161182378450944
+    m_Key: ui_Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161285138898944
+    m_Key: ui_ClearSaveQuestion
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 4053053039351955760
+  references:
+    version: 2
+    RefIds:
+    - rid: 4053053039351955760
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1765629503713

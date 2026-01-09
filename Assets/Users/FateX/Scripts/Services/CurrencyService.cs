@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using Users.FateX.Scripts.Services;
 using Zenject;
 
 namespace Скриптерсы.Services

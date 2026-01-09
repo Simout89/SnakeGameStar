@@ -10,10 +10,12 @@ namespace Users.FateX.Scripts.Trial
 {
     public class TrialSpawnDirector : IInitializable, IDisposable
     {
+        [Inject] private GlobalSoundPlayer _globalSoundPlayer;
         [Inject] private GameConfig _gameConfig;
         [Inject] private TrialTowerFactory _trialTowerFactory;
         [Inject] private GameTimer _gameTimer;
         [Inject] private MessageDisplayView _messageDisplayView;
+        [Inject] private ArrowView _arrowView;
         public List<GameObject> availablePoints = new List<GameObject>();
         private WeightedRandomGenerator _weightedRandomGenerator;
 
@@ -24,26 +26,29 @@ namespace Users.FateX.Scripts.Trial
             var spawnPoints = GameObject.FindGameObjectsWithTag("TrialTowerPoint");
             availablePoints = new List<GameObject>(spawnPoints);
 
-            _weightedRandomGenerator = new WeightedRandomGenerator(0, Enum.GetValues(typeof(TrialTowerType)).Length - 1, 1.5f);
+            _weightedRandomGenerator =
+                new WeightedRandomGenerator(0, Enum.GetValues(typeof(TrialTowerType)).Length - 1, 1.5f);
         }
 
         public void SpawnRandomTower()
         {
-            if (availablePoints.Count > 0)
-            {
-                var randomPoint = availablePoints[_weightedRandomGenerator.Next()];
-                availablePoints.Remove(randomPoint);
+            if (availablePoints.Count == 0)
+                return;
 
-                _trialTowerFactory.SpawnTowerByType(
-                    (TrialTowerType)Random.Range(0, Enum.GetValues(typeof(TrialTowerType)).Length),
-                    randomPoint.transform.position);
+            int randomIndex = Random.Range(0, availablePoints.Count);
+            var randomPoint = availablePoints[randomIndex];
+            availablePoints.RemoveAt(randomIndex);
+            var towerType = (TrialTowerType)_weightedRandomGenerator.Next();
 
-                _messageDisplayView.ShowText("Появилась башня испытаний", Color.cyan);
-            }
-            else
-            {
-            }
+            var tower = _trialTowerFactory.SpawnTowerByType(towerType, randomPoint.transform.position);
+
+            _messageDisplayView.ShowText(
+                _gameConfig.GameConfigData.LocalizationData.TrialTowerSpawnText.GetLocalizedString(), Color.cyan);
+
+            _arrowView.StartTracking(tower.gameObject);
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.DisplayMessage);
         }
+
 
         public void Dispose()
         {
@@ -52,6 +57,9 @@ namespace Users.FateX.Scripts.Trial
 
         private void HandleSecond(int obj)
         {
+            if (_gameConfig.GameConfigData.SpawnTrialTowerEverySeconds <= 0)
+                return;
+
             if (obj % _gameConfig.GameConfigData.SpawnTrialTowerEverySeconds == 0)
             {
                 SpawnRandomTower();

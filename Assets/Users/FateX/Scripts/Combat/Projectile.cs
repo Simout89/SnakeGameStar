@@ -13,12 +13,18 @@ namespace Users.FateX.Scripts.Combat
         [SerializeField] private GameObject explosionVfx;
         [SerializeField] private LayerMask _snakeLayerMask;
         [SerializeField] private Rigidbody2D _rigidbody2D;
-            
+
+        private GlobalSoundPlayer _globalSoundPlayer;
         private Transform target;
         private CancellationTokenSource cts;
         private float areaOfEffectRaidus;
         private DamageInfo damageInfo;
         private bool piercing;
+
+        public void InitSoundPlayer(GlobalSoundPlayer globalSoundPlayer)
+        {
+            _globalSoundPlayer = globalSoundPlayer;
+        }
 
         public void LaunchArc(Transform targetEnemy, float flightTime, DamageInfo damageInfo, float AOERadius = 0)
         {
@@ -128,6 +134,8 @@ namespace Users.FateX.Scripts.Combat
 
         private void AreaOfEffectDamage()
         {
+            _globalSoundPlayer.Play(_globalSoundPlayer.SoundsData.WeaponSoundsData.Explosion);
+            
             Collider2D[] colliders = Physics2D.OverlapCircleAll(projectileTransform.position, areaOfEffectRaidus, ~_snakeLayerMask);
             foreach (var collider in colliders)
             {

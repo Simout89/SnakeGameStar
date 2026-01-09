@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Ui text_en
+  m_EditorClassIdentifier: Unity.Localization::UnityEngine.Localization.Tables.StringTable
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: b8b46531c687fc94bb1676835304ccb6, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 202780958720
+    m_Localized: Lair
+    m_Metadata:
+      m_Items: []
+  - m_Id: 73428623360
+    m_Localized: Play
+    m_Metadata:
+      m_Items: []
+  - m_Id: 275858317312
+    m_Localized: Settings
+    m_Metadata:
+      m_Items: []
+  - m_Id: 752503218176
+    m_Localized: Weapons
+    m_Metadata:
+      m_Items: []
+  - m_Id: 791866761216
+    m_Localized: Achievement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 868639301632
+    m_Localized: Shop
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1306713382912
+    m_Localized: Buy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1460057137152
+    m_Localized: Select a product by clicking on it
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4798387576832
+    m_Localized: The Tower of Trials has appeared
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5654264668160
+    m_Localized: The gamblers have been summoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 5692156010496
+    m_Localized: The moneybags have been summoned
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26621883965440
+    m_Localized: Continue
+    m_Metadata:
+      m_Items: []
+  - m_Id: 26850532253696
+    m_Localized: Main menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27383129169920
+    m_Localized: Master Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27431908925440
+    m_Localized: Music Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27464439947264
+    m_Localized: Effects Volume
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27848030019584
+    m_Localized: Show fps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 27950543003648
+    m_Localized: Set Fps
+    m_Metadata:
+      m_Items: []
+  - m_Id: 28242936324096
+    m_Localized: Clear Saves
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29044182605824
+    m_Localized: Death
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29276047925248
+    m_Localized: Statistics
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29553052344320
+    m_Localized: Restart
+    m_Metadata:
+      m_Items: []
+  - m_Id: 29613211246592
+    m_Localized: Menu
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131043741917184
+    m_Localized: Upgrade
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131128743682048
+    m_Localized: <color=yellow>Choose a card</color> to start with, if you want <color=yellow>other
+      cards</color>, there are buttons on the left to <color=yellow>change cards
+      or exile them</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131287552614400
+    m_Localized: <color=yellow>Tap the screen</color> to make a <color=yellow>joystick</color>
+      appear for movement
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131305692979200
+    m_Localized: <color=yellow>Top left</color> displays your <color=yellow>health,
+      experience and level</color>
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131334033891328
+    m_Localized: For <color=yellow>killing enemies</color> you receive <color=#00DAFF>experience
+      crystals</color>. Collect them to <color=yellow>level up and become stronger</color>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 131357521993728
+    m_Localized: This is your first, but not your last death. Don't despair! If you
+      managed to collect <color=yellow>coins</color> - they can be spent in the <color=green>lair</color>
+      in the <color=#FF00CB>main menu</color>. There are also <color=#00F1FF>achievements</color>
+      there, for which you can receive <color=yellow>new weapons</color>.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132923649941504
+    m_Localized: Copy
+    m_Metadata:
+      m_Items: []
+  - m_Id: 132967811768320
+    m_Localized: Attack Speed
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133019481399296
+    m_Localized: Damage
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133086711898112
+    m_Localized: Duration
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133185861050368
+    m_Localized: Attack range
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133276147638272
+    m_Localized: Bounce count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133380711636992
+    m_Localized: Area of effect
+    m_Metadata:
+      m_Items: []
+  - m_Id: 133462244712448
+    m_Localized: Projectile Count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134240506208256
+    m_Localized: Restores {0} health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 134263679737856
+    m_Localized: Gives {0} coins
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161167648055296
+    m_Localized: Cancel
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161182378450944
+    m_Localized: Delete
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1161285138898944
+    m_Localized: Delete save file?
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

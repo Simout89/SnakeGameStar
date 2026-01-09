@@ -17,39 +17,44 @@ namespace Users.FateX.Scripts.Interactable
         private MaterialPropertyBlock materialPropertyBlock;
         private bool alreadyDie = false;
 
-
         private void Awake()
         {
             CurrentHealth = _breakableObjectData.Health;
             materialPropertyBlock = new MaterialPropertyBlock();
-
         }
 
         public float CurrentHealth { get; private set; }
         
         public async void Respawn(float delay)
         {
-            await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: this.GetCancellationTokenOnDestroy());
-    
-            // Сбрасываем флаг смерти
-            alreadyDie = false;
-    
-            // Восстанавливаем здоровье
-            CurrentHealth = _breakableObjectData.Health;
-    
-            // Останавливаем все анимации
-            DOTween.Kill(_spriteRenderer);
-            shadow.DOKill();
-    
-            // Сбрасываем shader свойства
-            SetFloat("_FadeAmount", 0f);
-            SetFloat("_HitEffectBlend", 0f);
-    
-            // Восстанавливаем масштаб тени
-            shadow.localScale = Vector3.one;
-    
-            // Активируем объект
-            gameObject.SetActive(true);
+            try
+            {
+                await UniTask.Delay(TimeSpan.FromSeconds(delay), cancellationToken: this.GetCancellationTokenOnDestroy());
+        
+                // Сбрасываем флаг смерти
+                alreadyDie = false;
+        
+                // Восстанавливаем здоровье
+                CurrentHealth = _breakableObjectData.Health;
+        
+                // Останавливаем все анимации
+                DOTween.Kill(_spriteRenderer);
+                shadow.DOKill();
+        
+                // Сбрасываем shader свойства
+                SetFloat("_FadeAmount", 0f);
+                SetFloat("_HitEffectBlend", 0f);
+        
+                // Восстанавливаем масштаб тени
+                shadow.localScale = Vector3.one;
+        
+                // Активируем объект
+                gameObject.SetActive(true);
+            }
+            catch (OperationCanceledException)
+            {
+                // Объект был уничтожен во время ожидания - это нормально
+            }
         }
 
         public void TakeDamage(DamageInfo damageInfo)
@@ -94,10 +99,8 @@ namespace Users.FateX.Scripts.Interactable
                     0.5f
                 ).OnComplete(() =>
                 {
-
-                    
                     gameObject.SetActive(false);
-                    Respawn(180f);
+                    Respawn(120);
                 });
             }
         }

@@ -31,14 +31,16 @@
 						<Value Platform="Mac">GeneratedSoundBanks\Mac</Value>
 					</ValueList>
 				</Property>
+				<Property Name="GenerateMainSoundBank" Type="bool" Value="True" />
+				<Property Name="GenerateSoundBankXML" Type="bool" Value="True" />
 				<Property Name="SoundBankGenerateHeaderFile" Type="bool" Value="True" />
-				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\StreamingAssets\Banks" />
+				<Property Name="SoundBankGenerateEstimatedDuration" Type="bool" Value="True" /><Property Name="SoundBankHeaderFilePath" Type="string" Value="..\Assets\WwiseData\Banks" />
 				<Property Name="SoundBankPaths" Type="string">
 					<ValueList>
-						<Value Platform="Android">..\Assets\StreamingAssets\Banks\Android\</Value>
-						<Value Platform="Web">..\Assets\StreamingAssets\Banks\Web\</Value>
-						<Value Platform="Windows">..\Assets\StreamingAssets\Banks\Windows\</Value>
-						<Value Platform="Mac">..\Assets\StreamingAssets\Banks\Mac\</Value>
+						<Value Platform="Android">..\Assets\WwiseData\Banks\Android\</Value>
+						<Value Platform="Web">..\Assets\WwiseData\Banks\Web\</Value>
+						<Value Platform="Windows">..\Assets\WwiseData\Banks\Windows\</Value>
+						<Value Platform="Mac">..\Assets\WwiseData\Banks\Mac\</Value>
 					</ValueList>
 				</Property>
 				<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -1015,7 +1017,7 @@
 						</Property>
 						<Property Name="SoundBankPaths" Type="string">
 							<ValueList>
-								<Value>..\Assets\WwiseData\Bank\</Value>
+								<Value>..\Assets\WwiseData\Banks\</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
@@ -6943,7 +6945,7 @@
 						</Property>
 						<Property Name="SoundBankPaths" Type="string">
 							<ValueList>
-								<Value>..\Assets\WwiseData\Bank\</Value>
+								<Value>..\Assets\WwiseData\Banks\</Value>
 							</ValueList>
 						</Property>
 						<Property Name="SoundBankPostGenerateCustomCmdDescription" Type="string">
