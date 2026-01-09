@@ -2,7 +2,7 @@
 
 English
 
-Jormungand
+Jormungand https://sim-out.itch.io/jormungand
 
 Jormungand
  is a RogueLike Snake game developed in 3 weeks using Unity. The game is available on WebGL, Desktop, and Android. It combines classic Snake gameplay with roguelike mechanics. All visuals, music, and most of the code were created by the team.
@@ -19,7 +19,7 @@ Original visuals and music
 
 Русский
 
-Jormungand
+Jormungand https://sim-out.itch.io/jormungand
 
 Jormungand
  — это RogueLike Snake игра, разработанная за 3 недели на Unity. Доступна для WebGL, ПК и Android. Игра сочетает классический геймплей Snake с элементами roguelike. Все визуальные элементы, музыка и большая часть кода были созданы командой.
