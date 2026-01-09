@@ -9,3 +9,7 @@ This game Jormungand
 Русский
 Эта игра Jormungand
  была создана всего за 3 недели. Проект разработан с энтузиазмом и в сжатые сроки, демонстрируя идеи и механики игры, реализованные за короткое время.
+
+![Jormungand screenshot](https://img.itch.zone/aW1hZ2UvNDEwOTc4Ny8yNDU5NjgyNS5qcGc=/original/Ivl1Rp.jpg)
+![Jormungand screenshot](https://img.itch.zone/aW1hZ2UvNDEwOTc4Ny8yNDU4MjUwNS5wbmc=/original/2%2Fm3tM.png)
+![Jormungand screenshot](https://img.itch.zone/aW1hZ2UvNDEwOTc4Ny8yNDU5Njg5MS5qcGc=/original/1lqVr8.jpg)
