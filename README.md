@@ -1,4 +1,4 @@
-https://img.itch.zone/aW1nLzI0NTcwNzg5LnBuZw==/315x250%23c/Z70%2F7N.png
+![Jormungand screenshot](https://img.itch.zone/aW1nLzI0NTcwNzg5LnBuZw==/315x250%23c/Z70%2F7N.png)
 
 English
 This game Jormungand
